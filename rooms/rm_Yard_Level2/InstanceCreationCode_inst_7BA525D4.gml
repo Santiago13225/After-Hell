@@ -1,0 +1,2 @@
+targetRoom = rm_Yard_Level1;
+targetObj = inst_627EC35A;

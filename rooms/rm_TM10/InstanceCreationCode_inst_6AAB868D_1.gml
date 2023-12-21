@@ -1,0 +1,2 @@
+//targetRoom = rm_WaterStation_Level2;
+targetObj = inst_24FABBDD;

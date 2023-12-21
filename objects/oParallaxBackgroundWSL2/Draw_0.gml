@@ -1,0 +1,13 @@
+///oParallexBackgroundWSL2 Draw Event
+/*This object represents the parallax background WSL2 object.*/
+//This event is responsible for handling parallax background WSL2 object drawing.
+var _camX = camera_get_view_x(view_camera[0]);
+var _camY = camera_get_view_y(view_camera[0]);
+//draw_sprite(bgWaterStationLevel1, 0, _camX, _camY);
+
+var _p = 0.5;
+
+draw_sprite_tiled_ext(bgWaterStationLevel1, 0, _camX * _p, _camY * _p, 1.5, 1.5, c_white, 1);
+//draw_sprite(bgWaterStationLevel1, 0, _camX * _p, _camY * _p);
+//draw_sprite_tiled(bgWaterStationLevel1, 0, _camX * _p, _camY * _p);
+//draw_sprite_tiled(bgWaterStationLevel1, 1, _camX * 0.25, _camY * 0.25);//subimg 1!!!
