@@ -7,7 +7,11 @@ Welcome to After Hell, a thrilling 8-bit top-down shooter game where you battle 
 ...
 
 ## Features:
-...
+- 13 Different Levels
+- 8 Different Weapons with Upgrades for Each
+- Unique Background Music for each Level
+- Retro Arcade-Like Graphics
+- Wave-Based Survival
 
 ## Installation:
 ...
