@@ -1,7 +1,6 @@
 <a href="https://gx.games/games/jltf0i/after-hell/" target="_blank" rel="noreferrer"><img src="https://github.com/Santiago13225/After-Hell/assets/69102034/11dd5ea3-b300-49cd-9ac3-df5da7623a52" alt="After Hell" /></a>
-
-
-![After Hell Title](https://github.com/Santiago13225/After-Hell/assets/69102034/11dd5ea3-b300-49cd-9ac3-df5da7623a52)
+# Want to try it out?
+You can click on the logo above to play the game, but please note that GX.games may not work with all browsers. Also note that this game is intended to be played on a laptop or a computer with a keyboard and a mouse.
 
 ## Description:
 Welcome to After Hell, a thrilling 8-bit top-down shooter game where you battle through endless waves of zombies.
