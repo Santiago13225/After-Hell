@@ -3,7 +3,7 @@
 You can click on the logo above to play the game, but please note that GX.games may not work with all browsers. Also note that this game is intended to be played on a laptop or a computer with a keyboard and a mouse.
 
 ## Description:
-Welcome to After Hell, a thrilling 8-bit top-down shooter game where you battle through endless waves of zombies.
+Welcome to After Hell! A thrilling 8-bit top-down shooter game where you battle through endless waves of zombies.
 
 ## Screenshots:
 ![2024-07-06 (2)](https://github.com/Santiago13225/After-Hell/assets/69102034/ed6a3da2-41ea-4c4c-abcf-92cfa7fa58f3)
