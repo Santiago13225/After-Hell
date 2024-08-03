@@ -39,3 +39,6 @@ Santiago Alvarez Bermudez
 
 ### Sound and Music:
 [Chris Jay](https://soundbetter.com/profiles/386761-chris-jay)
+
+## Copyright © 2023 Red Shift Studios
+![Red-Shift-Studios-Logo](https://github.com/user-attachments/assets/a64658e4-b095-4ef3-8bf7-1090815cc1f5)
