@@ -39,5 +39,3 @@ Santiago Alvarez Bermudez
 
 ### Sound and Music:
 [Chris Jay](https://soundbetter.com/profiles/386761-chris-jay)
-
-Special thanks to all who contributed and provided feedback during development.
