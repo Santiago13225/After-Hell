@@ -92,7 +92,7 @@ if accept_key{
 	{
 		case 0:
 			instance_deactivate_object(oPlayer);
-			TransitionStart(rm_title_screen, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 			game_restart();//Reset wave-related data.
 			//audio_pause_sound(sndLaugh);
 			break;

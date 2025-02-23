@@ -150,7 +150,7 @@ if accept_key{
 						instance_deactivate_object(oSpawner);
 					}*/
 					//instance_deactivate_object();
-					TransitionStart(rm_title_screen, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					//TitleScreenTransition(sqSlideOut, sqSlideIn);
 					//RoomTransition(rm_title_screen, sqSlideOut, sqSlideIn);
 					//TransitionStart(rm_title_screen, sqSlideOutDiagonal, sqFadeIn);

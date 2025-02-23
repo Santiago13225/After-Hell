@@ -129,7 +129,7 @@ if accept_key{
 				case 2:
 					oHUD.playerScore = 500;
 					instance_deactivate_object(oPlayer);
-					TransitionStart(rm_title_screen, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					clear_weapons();
 					break;
 			}

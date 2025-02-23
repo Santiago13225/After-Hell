@@ -22,7 +22,7 @@ for (var i = 0; i < array_length(inv); i++){
 		selected_item = i;
 	}
 }
-if room != rm_title_screen && !instance_exists(oPauseMenu) && !instance_exists(oTitleMenu) && !instance_exists(oGameOverScreen) && !instance_exists(oVictoryScreen){
+if room != rm_Title_Screen && !instance_exists(oPauseMenu) && !instance_exists(oTitleMenu) && !instance_exists(oGameOverScreen) && !instance_exists(oVictoryScreen){
 	if selected_item != -1{
 		//Use an item
 		if mouse_check_button_pressed(mb_left){

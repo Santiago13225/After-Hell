@@ -6,6 +6,8 @@ audio_play_sound(sndMenuTheme, 8, true);//Plays music in the title screen.
 /*
 if(audio_group_is_loaded(agMusic)){
 	//if room == rm_title_screen{
-		audio_play_sound(sndMenuTheme, 8, true);//Plays music in the title screen.
+		//if!(audio_is_playing(sndMenuTheme)){
+			audio_play_sound(sndMenuTheme, 8, true);//Plays music in the title screen.
+		//}
 	//}
 }*/

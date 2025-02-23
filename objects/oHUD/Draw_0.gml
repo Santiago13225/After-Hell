@@ -167,10 +167,11 @@ if instance_exists(oServer){
 //Draw the game title
 #region
 //Draw the text
-//draw_sprite(sTitle3, 0, _hudX, _hudY);
-draw_sprite_ext(sTitle3, 0, _hudX, _hudY + camera_get_view_height(view_camera[0]) - 40, .3, .3, 0, c_white, 1);
+//draw_sprite(sTitleNew, 0, _hudX, _hudY);
+//draw_sprite_ext(sTitleNew, 0, _hudX, _hudY + camera_get_view_height(view_camera[0]) - 40, .3, .3, 0, c_white, 1);
+draw_sprite_ext(sTitleNew, 0, _hudX, _hudY + camera_get_view_height(view_camera[0]) - 35, .3, .3, 0, c_white, 1);
 //Draw the zombie head
-draw_sprite_ext(sZombieHead, 0, _hudX + 11, _hudY + camera_get_view_height(view_camera[0]) - 16, .8, .8, 0, c_white, 1);
+//draw_sprite_ext(sZombieHead, 0, _hudX + 11, _hudY + camera_get_view_height(view_camera[0]) - 16, .8, .8, 0, c_white, 1);
 #endregion
 
 //Draw the Inventory
