@@ -12,7 +12,10 @@
     "name": "Weapons",
     "path": "folders/Weapons.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oItemDraw",
+    "path": "objects/oItemDraw/oItemDraw.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

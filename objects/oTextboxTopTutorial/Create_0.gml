@@ -4,7 +4,7 @@ can interact with in game for the tutorial.*/
 //This event is responsible for setting up parameters needed for the textbox object.
 
 depth = -9999;//Sets the drawing depth for this textbox object.
-
+//global.dialog_active = true;//Disable silhouette drawing.
 //Textbox Parameters
 textbox_width = 200;//Width of the textbox.
 textbox_height = 64;//Height of the textbox.

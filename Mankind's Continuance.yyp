@@ -125,6 +125,7 @@
     {"id":{"name":"oTitle2","path":"objects/oTitle2/oTitle2.yy",},},
     {"id":{"name":"oRaygun","path":"objects/oRaygun/oRaygun.yy",},},
     {"id":{"name":"sTemplePodium","path":"sprites/sTemplePodium/sTemplePodium.yy",},},
+    {"id":{"name":"oItemDraw","path":"objects/oItemDraw/oItemDraw.yy",},},
     {"id":{"name":"rm_TM13","path":"rooms/rm_TM13/rm_TM13.yy",},},
     {"id":{"name":"oVendingMachine","path":"objects/oVendingMachine/oVendingMachine.yy",},},
     {"id":{"name":"rm_Yard_Level2","path":"rooms/rm_Yard_Level2/rm_Yard_Level2.yy",},},

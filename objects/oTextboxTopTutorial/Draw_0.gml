@@ -2,7 +2,7 @@
 /*This object creates a textbox on the top of the screen that the player
 can interact with in game for the tutorial.*/
 //This event is responsible for setting up parameters needed for the textbox object.
-
+//global.dialog_active = true;//Disable silhouette drawing.
 accept_key = keyboard_check_pressed(vk_space);//Store the space key as a variable.
 
 textbox_x = camera_get_view_x(view_camera[0]) + 180;//X-position of the textbox.

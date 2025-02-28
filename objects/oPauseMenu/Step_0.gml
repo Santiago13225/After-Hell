@@ -80,6 +80,7 @@ if accept_key{
 			{
 				//Resume
 				case 0:
+				global.dialog_active = false;
 				if room == rm_House_Level1{
 					audio_resume_sound(sndHouseTheme1);
 				}

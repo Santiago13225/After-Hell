@@ -25,6 +25,7 @@ x += hspd;
 //Pause menu
 if startKeyPressed{
 	if !instance_exists(oPauseMenu){
+		global.dialog_active = true;//Disable silhouette drawing.
 		if audio_is_playing(sndTestLevelTheme){
 			audio_pause_sound(sndTestLevelTheme);
 		}
@@ -131,8 +132,8 @@ if instance_exists(oInvisibleSpawner2){
 }
 
 //Update visuals for room warping
-if instance_exists(oWarp)
-{
+if instance_exists(oWarp){
+	global.dialog_active = true;//Disable silhouette drawing.
 	//image_index = 0;//force image index to be 0 if we wanted to
 	sprite_index = sprite[face];
 	aimDir = face * 90;

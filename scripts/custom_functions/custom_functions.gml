@@ -16,11 +16,11 @@ function draw_my_weapon(){
 	var _xOffset = lengthdir_x(weaponOffsetDist, aimDir);
 	var _yOffset = lengthdir_y(weaponOffsetDist, aimDir);
 	
-	var endX = x + lengthdir_x(600, aimDir)
+	var endX = x + lengthdir_x(600, aimDir);
 	var endY = y + lengthdir_y(600, aimDir);
 	
     //Draw the laser line
-	draw_line_width_color(x + _xOffset, centerY + _yOffset, endX, endY, 1, c_red, c_blue);
+	//draw_line_width_color(x + _xOffset, centerY + _yOffset, endX, endY, 1, c_red, c_blue);
 
 	//Flip the weapon upright
 	var _weaponYscl = 1;
@@ -29,6 +29,20 @@ function draw_my_weapon(){
 	}
 	//draw_sprite_ext(weapon.sprite, 0, x + _xOffset, centerY + _yOffset, 1, _weaponYscl, aimDir, c_white, 1);
 	draw_sprite_ext(weapon.sprite, 0, x + _xOffset, centerY + _yOffset, 1, _weaponYscl, aimDir, c_white, image_alpha);
+}
+
+//Drawing the player's weapon
+function draw_my_laser(){
+	//Draw the Weapon
+	//Get the weapon off the player's body
+	var _xOffset = lengthdir_x(weaponOffsetDist, aimDir);
+	var _yOffset = lengthdir_y(weaponOffsetDist, aimDir);
+	
+	var endX = x + lengthdir_x(600, aimDir);
+	var endY = y + lengthdir_y(600, aimDir);
+	
+    //Draw the laser line
+	draw_line_width_color(x + _xOffset, centerY + _yOffset, endX, endY, 1, c_red, c_blue);
 }
 
 //VFX

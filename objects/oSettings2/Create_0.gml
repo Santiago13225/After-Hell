@@ -6,6 +6,7 @@
 
 global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1); //Set the global fontHUD to the created sprite.
 
+global.dialog_active = false;//Init at beginning of game
 //The font is used for the heads-up display (HUD) to display scores, messages, etc.
 //The font size is set to 32 pixels.
 //The font is anti-aliased (true) for smoother text rendering.

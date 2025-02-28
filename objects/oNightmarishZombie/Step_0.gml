@@ -146,7 +146,7 @@ switch(state)
 	if xspd < 0{
 		face = -1;	
 	}*/
-	
+	image_xscale = face;
 	//Collisions
 	//Wall Collisions
 	if _wallCollisions == true
