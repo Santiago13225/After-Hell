@@ -3,14 +3,15 @@
 //This event is responsible for setting some variables for the title menu object.
 
 width = 64;
-height = 104;
+//height = 104;
+height = 32;
 
 op_border = 8;
 op_space = 16;
 
 pos = 0;
 
-//Pause Menu
+//Title Menu
 option[0, 0] = "Tutorial";
 option[0, 1] = "Survival Mode";
 option[0, 2] = "Extras";

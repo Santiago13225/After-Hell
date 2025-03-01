@@ -187,7 +187,7 @@ function get_damage(_damageObj, _iframes = false){
 }
 
 function clear_weapons(){
-	if instance_exists(oItemManager2){
+	if instance_exists(oItemManager3){
 		var weaponsToRemove = [global.WeaponList.shotgun, 
 		global.WeaponList.raygun, global.WeaponList.sniper, global.WeaponList.assault,
 	    global.WeaponList.smg, global.WeaponList.lmg, global.WeaponList.bazooka, 
@@ -209,18 +209,18 @@ function clear_weapons(){
 				
 				if (global.PlayerWeapons[j] == global.WeaponList.hpistol){
 					array_set(global.PlayerWeapons, 0, global.WeaponList.pistol);
-					array_set(oItemManager2.inv, 0, global.item_list2.pistol);
+					array_set(oItemManager3.inv, 0, global.item_list2.pistol);
 				}
 				
 				if (global.PlayerWeapons[j] == global.WeaponList.upistol){
 					array_set(global.PlayerWeapons, 0, global.WeaponList.pistol);
-					array_set(oItemManager2.inv, 0, global.item_list2.pistol);
+					array_set(oItemManager3.inv, 0, global.item_list2.pistol);
 				}
 				
 			}
 		}
-		oItemManager2.inv = [global.item_list2.pistol];
-		oHUD.playerScore = 500;
+		oItemManager3.inv = [global.item_list2.pistol];
+		oHUD2.playerScore = 500;
 	} else {
 		show_debug_message("No item manager exists?");
 	}

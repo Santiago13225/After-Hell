@@ -6,7 +6,7 @@
 path_delete(path);
 path = path_add();
 
-	if instance_exists(oPauseMenu){
+	if instance_exists(oPauseMenu2){
 		pathspeed = 0;
 	}else{
 		pathspeed = 1.4;

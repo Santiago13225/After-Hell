@@ -6,7 +6,8 @@ depth = -8000;
 
 //inv = [];
 
-global.font = font_add_sprite(sMainFont, 32, true, 1);
+//global.font = font_add_sprite(sMainFont, 32, true, 1);
+global.font = font_add_sprite(sHUDFont, 32, true, 1);
 
 //Item constructor
 function create_item(_name, _desc, _spr, _candrop, _effect, _droppedItem) constructor{

@@ -3,6 +3,6 @@
 //This event is responsible for handling item manager controller behavior.
 
 //Assuming you have access to the oItemManager2 instance
-if (instance_exists(oItemManager2)){
-    oItemManager2.selected_item = selected_item_controller;
+if (instance_exists(oItemManager3)){
+    oItemManager3.selected_item = selected_item_controller;
 }

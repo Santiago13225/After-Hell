@@ -7,7 +7,7 @@ draw_set_color(c_white);//Set text color to white.
 var drawX = x;
 var drawY = y - 10;//Adjust the Y position as needed.
 
-global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
+//global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
 draw_set_font(global.fontHUD);
 //Draw the score as text
 draw_text(drawX, drawY, "+ " + string(scoreValue));

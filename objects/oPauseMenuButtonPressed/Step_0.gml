@@ -3,7 +3,7 @@
 //This event is responsible for handling pause menu button press behavior.
 
 //Menu Sound Effect
-if instance_exists(oPauseMenu){
+if instance_exists(oPauseMenu2){
 	if keyboard_check_pressed(vk_up) == true{
 		audio_play_sound(sndClick, 10, false);	
 	}

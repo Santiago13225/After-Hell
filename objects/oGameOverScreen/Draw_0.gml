@@ -128,7 +128,7 @@ if accept_key{
 				case 0:
 					room_restart();
 					//audio_play_sound(sndBeep, 10, false);
-					instance_destroy(oPauseMenu);
+					instance_destroy(oPauseMenu2);
 					break;
 				//settings
 				case 1:

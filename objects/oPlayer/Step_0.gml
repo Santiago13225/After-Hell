@@ -24,7 +24,7 @@ x += hspd;
 */
 //Pause menu
 if startKeyPressed{
-	if !instance_exists(oPauseMenu){
+	if !instance_exists(oPauseMenu2){
 		global.dialog_active = true;//Disable silhouette drawing.
 		if audio_is_playing(sndTestLevelTheme){
 			audio_pause_sound(sndTestLevelTheme);
@@ -71,7 +71,7 @@ if startKeyPressed{
 		//audio_pause_sound(global.MUSIC);
 		//audio_pause_sound(sndUniversal);
 		audio_play_sound(sndBeep, 8, false);
-		instance_create_depth(0, 0, 0, oPauseMenu);
+		instance_create_depth(0, 0, 0, oPauseMenu2);
 	}else {
 		audio_play_sound(sndBeep, 8, false);
 		//instance_destroy(oPauseMenu);
@@ -367,11 +367,11 @@ if instance_exists(oShotgunWallbuy){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 					//_bought = true;
 					//oShotgunWallbuy.bought = true;
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oShotgun);
 			    } else {
@@ -393,9 +393,9 @@ if instance_exists(oRaygunWallbuy){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 15000;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oRaygun);
 			    } else {
@@ -417,9 +417,9 @@ if instance_exists(oSniperWallbuy){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 1500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oSniper);
 			    } else {
@@ -441,9 +441,9 @@ if instance_exists(oAssaultWallbuy){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 1800;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oAssault);
 			    } else {
@@ -465,9 +465,9 @@ if instance_exists(oBazookaWallbuy){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 18000;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oBazooka);
 			    } else {
@@ -489,9 +489,9 @@ if instance_exists(oSMGWallbuy){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 1500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oSMG);
 			    } else {
@@ -513,9 +513,9 @@ if instance_exists(oLMGWallbuy){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 2500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oLMG);
 			    } else {
@@ -537,9 +537,9 @@ if instance_exists(oMedkitWallbuy){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
 			    } else {
@@ -561,9 +561,9 @@ if instance_exists(oDebris){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_destroy();
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
@@ -586,9 +586,9 @@ if instance_exists(oArmoryAugmentor){
 			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
 				wallbuyCost = 5000;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD.playerScore >= wallbuyCost) {
+			    if (oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
-			        oHUD.playerScore -= wallbuyCost;
+			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					//instance_destroy();
 					
@@ -611,11 +611,11 @@ if instance_exists(oArmoryAugmentor){
 					
 					if oPlayer.weapon == global.WeaponList.pistol {
 						array_set(global.PlayerWeapons, 0, global.WeaponList.hpistol);
-						array_set(oItemManager2.inv, 0, global.item_list2.hpistol);
+						array_set(oItemManager3.inv, 0, global.item_list2.hpistol);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcorePistol);
 					} else if oPlayer.weapon == global.WeaponList.hpistol {
 						array_set(global.PlayerWeapons, 0, global.WeaponList.upistol);
-						array_set(oItemManager2.inv, 0, global.item_list2.upistol);
+						array_set(oItemManager3.inv, 0, global.item_list2.upistol);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcorePistol);
 					} else if oPlayer.weapon == global.WeaponList.raygun {
 						
@@ -626,12 +626,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hraygun);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.raygun;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.hraygun);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hraygun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreRaygun);
 					} else if oPlayer.weapon == global.WeaponList.sniper {
 						
@@ -642,12 +642,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hsniper);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.sniper;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.hsniper);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hsniper);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSniper);
 					} else if oPlayer.weapon == global.WeaponList.shotgun {
 						
@@ -658,12 +658,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hshotgun);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.shotgun;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.hshotgun);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hshotgun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreShotgun);
 					} else if oPlayer.weapon == global.WeaponList.assault {
 						
@@ -674,12 +674,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hassault);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.assault;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.hassault);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hassault);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreAssault);
 					} else if oPlayer.weapon == global.WeaponList.smg {
 						
@@ -690,12 +690,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hsmg);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.smg;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.hsmg);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hsmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSMG);
 					} else if oPlayer.weapon == global.WeaponList.lmg {
 						
@@ -706,12 +706,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hlmg);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.lmg;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.hlmg);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hlmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreLMG);
 					} else if oPlayer.weapon == global.WeaponList.bazooka {
 						
@@ -722,12 +722,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hbazooka);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.bazooka;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.hbazooka);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hbazooka);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreBazooka);
 					} else if oPlayer.weapon == global.WeaponList.hraygun {
 						
@@ -738,12 +738,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.uraygun);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.hraygun;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.uraygun);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.uraygun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreRaygun);
 					} else if oPlayer.weapon == global.WeaponList.hsniper {
 						
@@ -754,12 +754,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.usniper);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.hsniper;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.usniper);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.usniper);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSniper);
 					} else if oPlayer.weapon == global.WeaponList.hshotgun {
 						
@@ -770,12 +770,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ushotgun);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.hshotgun;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.ushotgun);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ushotgun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreShotgun);
 					} else if oPlayer.weapon == global.WeaponList.hassault {
 						
@@ -786,12 +786,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.uassault);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.hassault;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.uassault);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.uassault);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreAssault);
 					} else if oPlayer.weapon == global.WeaponList.hsmg {
 						
@@ -802,12 +802,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.usmg);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.hsmg;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.usmg);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.usmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSMG);
 					} else if oPlayer.weapon == global.WeaponList.hlmg {
 						
@@ -818,12 +818,12 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ulmg);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.hlmg;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.ulmg);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ulmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreLMG);
 					} else if oPlayer.weapon == global.WeaponList.hbazooka {
 						
@@ -834,15 +834,15 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ubazooka);
 						
-						var _array2 = oItemManager2.inv;
+						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
 						    return _val == global.item_list2.hbazooka;
 						}
 						var _ar_id2 = array_find_index(_array2, _predicate2);
-						array_set(oItemManager2.inv, _ar_id2, global.item_list2.ubazooka);
+						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ubazooka);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreBazooka);
 					} else {
-						oHUD.playerScore += wallbuyCost;
+						oHUD2.playerScore += wallbuyCost;
 						if !audio_is_playing(sndMax){
 							audio_play_sound(sndMax, 10, false);
 						}
@@ -866,12 +866,12 @@ if hp <= 0{
 	//Play a sound effect
 	audio_play_sound(sndGameOver, 8, false);
 	//Create the game over object
-	instance_create_depth(0, 0, -10000, oGameOverScreen);
+	instance_create_depth(0, 0, -10000, oGameOverScreen2);
 	
 	//Poof
 	//instance_create_depth(x, y, depth, oAnimatedVFX);
 	create_animated_vfx(sPoof, x, y, depth);
-	oHUD.playerScore = 500;
+	oHUD2.playerScore = 500;
 	clear_weapons();
 	instance_destroy();//Destroy Ourself.
 	//clear_weapons();

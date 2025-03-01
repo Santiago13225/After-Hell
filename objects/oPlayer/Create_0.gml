@@ -5,7 +5,7 @@
 //Avoid extra player objects
 
 if room == rm_Mission0{
-	oHUD.playerScore = 10000000;
+	oHUD2.playerScore = 10000000;
 }
 
 item = global.item_list2.pistol;
@@ -16,7 +16,8 @@ get_damage_create(100, true);//Sets player to 100 hp.
 
 lowHealth = false;
 
-global.font2 = font_add_sprite(sMainFont, 32, true, 1);
+//global.font2 = font_add_sprite(sMainFont, 32, true, 1);
+global.font2 = font_add_sprite(sHUDFont, 32, true, 1);
 
 //Variables for movement
 moveDir = 0;

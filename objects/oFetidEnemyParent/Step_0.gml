@@ -14,7 +14,7 @@ if place_meeting(x, y, oUnstableBullet) //&& !place_meeting(x, y, oEnemyParent)
 
 //death
 if hp <= 0{
-	if instance_exists(oHUD){
+	if instance_exists(oHUD2){
 		if !instance_exists(oScoreEffect){
 			/*
 			var _scoreInst = instance_create_depth(x, y, -3000, oScoreEffect);
@@ -32,7 +32,7 @@ if hp <= 0{
 			}
 			
 		}
-		oHUD.playerScore += 100;
+		oHUD2.playerScore += 100;
 	}
 	//add to the total amount of enemies killed
 	global.enemyKillCount++;

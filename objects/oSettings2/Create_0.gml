@@ -3,8 +3,7 @@
  handles the cleanup of the textboxes that will be shown in 
  game as well.*/
 //This event is responsible for loading the HUD font from a sprite.
-
-global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1); //Set the global fontHUD to the created sprite.
+global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);//Set the global fontHUD to the created sprite.
 
 global.dialog_active = false;//Init at beginning of game
 //The font is used for the heads-up display (HUD) to display scores, messages, etc.

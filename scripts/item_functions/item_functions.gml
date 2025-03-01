@@ -1,8 +1,8 @@
 function item_add(_item){
 	var _added = false;
 	
-	if array_length(oItemManager2.inv) < oItemManager2.inv_max{	
-		array_push(oItemManager2.inv, _item);
+	if array_length(oItemManager3.inv) < oItemManager3.inv_max{	
+		array_push(oItemManager3.inv, _item);
 		_added = true;
 	}
 	return _added;

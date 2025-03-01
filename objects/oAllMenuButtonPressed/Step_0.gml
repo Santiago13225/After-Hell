@@ -50,7 +50,7 @@ if instance_exists(oGameOverScreen)
 }*/
 #endregion
 
-if instance_exists(oGameOverScreen) || instance_exists(oPauseMenu) || instance_exists(oVictoryScreen){//If any of the menu instances exist...
+if instance_exists(oGameOverScreen2) || instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2){//If any of the menu instances exist...
     if (keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0, gp_padu)){//Check for button press.
         audio_play_sound(sndClick, 10, false);//Play sound effect.
     }

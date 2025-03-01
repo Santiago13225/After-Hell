@@ -120,7 +120,7 @@ if accept_key{
 					audio_resume_sound(sndTestLevelTheme);
 				}
 					oSFX.beepSnd = true;
-					instance_destroy(oPauseMenu);
+					instance_destroy(oPauseMenu2);
 					break;
 				//Settings
 				case 1:
@@ -128,7 +128,7 @@ if accept_key{
 					break;
 				//Quit Game
 				case 2:
-					oHUD.playerScore = 500;
+					oHUD2.playerScore = 500;
 					instance_deactivate_object(oPlayer);
 					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					clear_weapons();

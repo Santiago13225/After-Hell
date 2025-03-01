@@ -2,14 +2,14 @@
 /*This object represents a HUD.*/
 //This event is responsible for handling HUD drawing.
 
-var _camX = camera_get_view_x(view_camera[0]);//Get camera x coordinate.
-var _camY = camera_get_view_y(view_camera[0]);//Get camera y coordinate.
+var _camX = 0;//Get camera x coordinate.
+var _camY = 0;//Get camera y coordinate.
 
 //Central HUD coordinates
 var _border = 8;
 var _hudX = _camX + _border;
 var _hudY = _camY + _border;
-var _wx = camera_get_view_width(view_camera[0]);
+var _wx = 640;
 
 //Draw the background/box
 //draw_sprite(sWaveCountHUD, 0, _hudX, _hudY);
@@ -40,7 +40,7 @@ if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
 }
 
 if(instance_exists(oInvisibleSpawner2)){
-	global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
+	//global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
 	draw_set_font(global.fontHUD);
 	//var _scoreString = "Score: 500" + string(oInvisibleSpawner2.maxTotalEnemies - global.enemyKillCount);
 	var _waveString = "Next Wave In: " + string(oInvisibleSpawner2.waveDuration - oInvisibleSpawner2.timeSinceLastWave);//Set string.
@@ -50,7 +50,7 @@ if(instance_exists(oInvisibleSpawner2)){
 }
 
 if(instance_exists(oInvisibleSpawner2)){
-	global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
+	//global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
 	draw_set_font(global.fontHUD);
 	//draw_rectangle_color(_hudX, _hudY + 48, _hudX + box_width, _hudY + 48 + box_height, c_black, c_black, c_black, c_black, false);//Draw text background.
 	//draw_text_transformed(_hudX, _hudY + 48, "Info Panel:", 0.75, 0.75, 0);//Draw header.
@@ -63,7 +63,7 @@ if(instance_exists(oInvisibleSpawner2)){
 }
 
 if(room == rm_Mission0) && (global.controllerMode == 0){
-	global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
+	//global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
 	draw_set_font(global.fontHUD);
 	//var box_width = 112;
 	//var box_height = 96;
@@ -85,7 +85,7 @@ if(room == rm_Mission0) && (global.controllerMode == 0){
 
 //((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face4))
 if(room == rm_Mission0) && (global.controllerMode == 1){
-	global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
+	//global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
 	draw_set_font(global.fontHUD);
 	//var box_width = 112;
 	//var box_height = 96;
@@ -183,7 +183,7 @@ if instance_exists(oPlayer){//If player object exists...
 
 //Draw the score pool
 #region
-global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
+//global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
 draw_set_font(global.fontHUD);
 //var _scoreString = "Score: 500" + string(oInvisibleSpawner2.maxTotalEnemies - global.enemyKillCount);
 var _scoreString = "$" + string(playerScore);//Set string.

@@ -16,7 +16,7 @@ if place_meeting(x, y, oUnstableBullet){//If touching a bullet.
 
 //Death
 if hp <= 0{//If hp is 0 or less.
-	if instance_exists(oHUD){//If HUD exists...
+	if instance_exists(oHUD2){//If HUD exists...
 		if !instance_exists(oScoreEffect){//If score effect not already displayed...
 			zombieScoreValue = 100;//Set score to 100.
 			var _scoreInst = instance_create_depth(x, y, -3000, oScoreEffect);//Create a score effect and store it in a variable.
@@ -26,7 +26,7 @@ if hp <= 0{//If hp is 0 or less.
 			    _scoreInst.ShowEffect(zombieScoreValue, x, y);//Call the ShowEffect function.
 			}
 		}
-		oHUD.playerScore += 100;//Add to player score.
+		oHUD2.playerScore += 100;//Add to player score.
 	}
 	global.enemyKillCount++;//Add to the total amount of enemies killed.
 	oInvisibleSpawner2.zombiesKilledThisWave++;//Notify the spawner.
