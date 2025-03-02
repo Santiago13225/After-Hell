@@ -20,10 +20,8 @@ function scr_option(_option, _link_id){
 /// @function				create_textbox(_text_id);
 /// @param {string} text_id	The string used to identify which dialog to print out.
 /// description				Create the textbox to be shown in game.
-function create_textbox(_text_id)
-{
-	with(instance_create_depth(0, 0, -9999, oTextbox))
-	{//Create textbox instance at a certain depth.
+function create_textbox(_text_id){
+	with(instance_create_depth(0, 0, -9999, oTextbox2)){//Create textbox instance at a certain depth.
 		scr_game_text(_text_id);//Call the scr_game_text function.
 	}
 }

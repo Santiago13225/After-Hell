@@ -79,7 +79,11 @@ if accept_key{
 					break;
 				//Survival Mode
 				case 1:
-					menu_level = 2;
+					//menu_level = 2;
+					//Instead of switching menu pages, destroy the title menu
+					//and create the carousel menu object.
+					instance_destroy();  
+					instance_create_layer(0, 0, "Instances", oCarouselMenu);
 					break;
 				//Multiplayer Mode
 				case 2:

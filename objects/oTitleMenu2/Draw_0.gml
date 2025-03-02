@@ -103,9 +103,3 @@ for(var i = 0; i < op_length; i++){
 //width = _new_w + (op_border * 2);
 //height = op_border * 2 + string_height(option[0,0]) + (op_length + 1) * op_space;
 //height = (op_border * 2) + sprite_get_height(sMainFont) + ((op_length + 1) * op_space);
-
-//draw the text
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-draw_text(5, 330, "Demo");
-draw_text(5, 345, "Version 1.2.0");
