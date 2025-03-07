@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sCarouselMenu",
-    "path": "sprites/sCarouselMenu/sCarouselMenu.yy",
+    "name": "sCarouselMenu2",
+    "path": "sprites/sCarouselMenu2/sCarouselMenu2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

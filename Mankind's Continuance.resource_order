@@ -52,6 +52,7 @@
     {"name":"rm_TM6","order":37,"path":"rooms/rm_TM6/rm_TM6.yy",},
     {"name":"sWeaponPickup","order":2,"path":"sprites/sWeaponPickup/sWeaponPickup.yy",},
     {"name":"oIntroTM7","order":14,"path":"objects/oIntroTM7/oIntroTM7.yy",},
+    {"name":"sCarouselMenu2","order":32,"path":"sprites/sCarouselMenu2/sCarouselMenu2.yy",},
     {"name":"oComputerDesk","order":95,"path":"objects/oComputerDesk/oComputerDesk.yy",},
     {"name":"sVendingMachineSpeed","order":134,"path":"sprites/sVendingMachineSpeed/sVendingMachineSpeed.yy",},
     {"name":"sndHit","order":14,"path":"sounds/sndHit/sndHit.yy",},

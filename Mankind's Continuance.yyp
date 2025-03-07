@@ -72,6 +72,7 @@
     {"id":{"name":"rm_TM6","path":"rooms/rm_TM6/rm_TM6.yy",},},
     {"id":{"name":"sWeaponPickup","path":"sprites/sWeaponPickup/sWeaponPickup.yy",},},
     {"id":{"name":"oIntroTM7","path":"objects/oIntroTM7/oIntroTM7.yy",},},
+    {"id":{"name":"sCarouselMenu2","path":"sprites/sCarouselMenu2/sCarouselMenu2.yy",},},
     {"id":{"name":"oComputerDesk","path":"objects/oComputerDesk/oComputerDesk.yy",},},
     {"id":{"name":"sVendingMachineSpeed","path":"sprites/sVendingMachineSpeed/sVendingMachineSpeed.yy",},},
     {"id":{"name":"sndHit","path":"sounds/sndHit/sndHit.yy",},},
