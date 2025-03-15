@@ -1,15 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oStrongbox2",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "oPopup",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Wall Objects",
-    "path": "folders/Wall Objects.yy",
+    "name": "Weapons",
+    "path": "folders/Weapons.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -28,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sStrongbox2",
-    "path": "sprites/sStrongbox2/sStrongbox2.yy",
+    "name": "sInteractionHint",
+    "path": "sprites/sInteractionHint/sInteractionHint.yy",
   },
   "spriteMaskId": null,
   "visible": true,

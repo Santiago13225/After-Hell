@@ -361,24 +361,23 @@ if (lowHealth) {
 }
 
 //var _bought = false;
-if instance_exists(oShotgunWallbuy){
-	with(oShotgunWallbuy){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oShotgunWallbuy2)){
+	with(oShotgunWallbuy2){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
-					//_bought = true;
-					//oShotgunWallbuy.bought = true;
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oShotgun);
-			    } else {
+					instance_destroy(oTextbox2);
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}
 			    }
@@ -387,22 +386,23 @@ if instance_exists(oShotgunWallbuy){
 	}
 }
 
-if instance_exists(oRaygunWallbuy){
-	with(oRaygunWallbuy){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oRaygunWallbuy2)){
+	with(oRaygunWallbuy2){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 15000;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oRaygun);
-			    } else {
+					instance_destroy(oTextbox2);
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}
 			    }
@@ -411,22 +411,23 @@ if instance_exists(oRaygunWallbuy){
 	}
 }
 
-if instance_exists(oSniperWallbuy){
-	with(oSniperWallbuy){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oSniperWallbuy2)){
+	with(oSniperWallbuy2){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 1500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oSniper);
-			    } else {
+					instance_destroy(oTextbox2);
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}
 			    }
@@ -435,22 +436,23 @@ if instance_exists(oSniperWallbuy){
 	}
 }
 
-if instance_exists(oAssaultWallbuy){
-	with(oAssaultWallbuy){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oAssaultWallbuy2)){
+	with(oAssaultWallbuy2){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 1800;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oAssault);
-			    } else {
+					instance_destroy(oTextbox2);
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}
 			    }
@@ -459,22 +461,23 @@ if instance_exists(oAssaultWallbuy){
 	}
 }
 
-if instance_exists(oBazookaWallbuy){
-	with(oBazookaWallbuy){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oBazookaWallbuy2)){
+	with(oBazookaWallbuy2){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 18000;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oBazooka);
-			    } else {
+					instance_destroy(oTextbox2);
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}
 			    }
@@ -483,22 +486,23 @@ if instance_exists(oBazookaWallbuy){
 	}
 }
 
-if instance_exists(oSMGWallbuy){
-	with(oSMGWallbuy){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oSMGWallbuy2)){
+	with(oSMGWallbuy2){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 1500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oSMG);
-			    } else {
+					instance_destroy(oTextbox2);
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}
 			    }
@@ -507,22 +511,23 @@ if instance_exists(oSMGWallbuy){
 	}
 }
 
-if instance_exists(oLMGWallbuy){
-	with(oLMGWallbuy){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oLMGWallbuy2)){
+	with(oLMGWallbuy2){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 2500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oLMG);
-			    } else {
+					instance_destroy(oTextbox2);
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}
 			    }
@@ -531,22 +536,23 @@ if instance_exists(oLMGWallbuy){
 	}
 }
 
-if instance_exists(oMedkitWallbuy){
-	with(oMedkitWallbuy){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oMedkitWallbuy3)){
+	with(oMedkitWallbuy3){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
-			    } else {
+					instance_destroy(oTextbox2);
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}	
 			    }
@@ -555,23 +561,23 @@ if instance_exists(oMedkitWallbuy){
 	}
 }
 
-if instance_exists(oDebris){
+if(instance_exists(oDebris)){
 	with(oDebris){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_destroy();
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
-			    } else {
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}	
 			    }
@@ -580,13 +586,13 @@ if instance_exists(oDebris){
 	}
 }
 
-if instance_exists(oArmoryAugmentor){
-	with(oArmoryAugmentor){
-		if distance_to_object(oPlayer) < 32{
-			if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)){
+if(instance_exists(oArmoryAugmentor2)){
+	with(oArmoryAugmentor2){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
+			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 5000;
 				//Check if the player has enough points to buy the weapon
-			    if (oHUD2.playerScore >= wallbuyCost) {
+			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
@@ -609,15 +615,15 @@ if instance_exists(oArmoryAugmentor){
 					    }
 					}*/
 					
-					if oPlayer.weapon == global.WeaponList.pistol {
+					if(oPlayer.weapon == global.WeaponList.pistol) {
 						array_set(global.PlayerWeapons, 0, global.WeaponList.hpistol);
 						array_set(oItemManager3.inv, 0, global.item_list2.hpistol);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcorePistol);
-					} else if oPlayer.weapon == global.WeaponList.hpistol {
+					}else if(oPlayer.weapon == global.WeaponList.hpistol) {
 						array_set(global.PlayerWeapons, 0, global.WeaponList.upistol);
 						array_set(oItemManager3.inv, 0, global.item_list2.upistol);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcorePistol);
-					} else if oPlayer.weapon == global.WeaponList.raygun {
+					}else if(oPlayer.weapon == global.WeaponList.raygun) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -633,7 +639,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hraygun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreRaygun);
-					} else if oPlayer.weapon == global.WeaponList.sniper {
+					}else if(oPlayer.weapon == global.WeaponList.sniper) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -649,7 +655,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hsniper);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSniper);
-					} else if oPlayer.weapon == global.WeaponList.shotgun {
+					}else if(oPlayer.weapon == global.WeaponList.shotgun) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -665,7 +671,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hshotgun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreShotgun);
-					} else if oPlayer.weapon == global.WeaponList.assault {
+					}else if(oPlayer.weapon == global.WeaponList.assault) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -681,7 +687,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hassault);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreAssault);
-					} else if oPlayer.weapon == global.WeaponList.smg {
+					}else if(oPlayer.weapon == global.WeaponList.smg) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -697,7 +703,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hsmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSMG);
-					} else if oPlayer.weapon == global.WeaponList.lmg {
+					}else if(oPlayer.weapon == global.WeaponList.lmg) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -713,7 +719,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hlmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreLMG);
-					} else if oPlayer.weapon == global.WeaponList.bazooka {
+					}else if(oPlayer.weapon == global.WeaponList.bazooka) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -729,7 +735,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hbazooka);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreBazooka);
-					} else if oPlayer.weapon == global.WeaponList.hraygun {
+					}else if(oPlayer.weapon == global.WeaponList.hraygun) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -745,7 +751,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.uraygun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreRaygun);
-					} else if oPlayer.weapon == global.WeaponList.hsniper {
+					}else if(oPlayer.weapon == global.WeaponList.hsniper) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -761,7 +767,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.usniper);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSniper);
-					} else if oPlayer.weapon == global.WeaponList.hshotgun {
+					}else if(oPlayer.weapon == global.WeaponList.hshotgun) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -777,7 +783,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ushotgun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreShotgun);
-					} else if oPlayer.weapon == global.WeaponList.hassault {
+					}else if(oPlayer.weapon == global.WeaponList.hassault) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -793,7 +799,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.uassault);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreAssault);
-					} else if oPlayer.weapon == global.WeaponList.hsmg {
+					}else if(oPlayer.weapon == global.WeaponList.hsmg) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -809,7 +815,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.usmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSMG);
-					} else if oPlayer.weapon == global.WeaponList.hlmg {
+					}else if(oPlayer.weapon == global.WeaponList.hlmg) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -825,7 +831,7 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ulmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreLMG);
-					} else if oPlayer.weapon == global.WeaponList.hbazooka {
+					}else if(oPlayer.weapon == global.WeaponList.hbazooka) {
 						
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
@@ -841,17 +847,17 @@ if instance_exists(oArmoryAugmentor){
 						var _ar_id2 = array_find_index(_array2, _predicate2);
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ubazooka);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreBazooka);
-					} else {
+					}else {
 						oHUD2.playerScore += wallbuyCost;
-						if !audio_is_playing(sndMax){
+						if(!audio_is_playing(sndMax)){
 							audio_play_sound(sndMax, 10, false);
 						}
 					}
-			    } else {
+			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
-					if !audio_is_playing(sndBroke){
+					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
 					}	
 			    }
@@ -875,4 +881,27 @@ if hp <= 0{
 	clear_weapons();
 	instance_destroy();//Destroy Ourself.
 	//clear_weapons();
+}
+
+var nearWallbuy = false;
+
+//Check collision with every wallbuy object type
+if((collision_circle(x, y, 32, oShotgunWallbuy2, false, true) ||
+    collision_circle(x, y, 32, oRaygunWallbuy2, false, true) ||
+    collision_circle(x, y, 32, oSniperWallbuy2, false, true) ||
+    collision_circle(x, y, 32, oAssaultWallbuy2, false, true) ||
+    collision_circle(x, y, 32, oBazookaWallbuy2, false, true) ||
+    collision_circle(x, y, 32, oSMGWallbuy2, false, true) ||
+    collision_circle(x, y, 32, oLMGWallbuy2, false, true) ||
+    collision_circle(x, y, 32, oMedkitWallbuy3, false, true) ||
+    collision_circle(x, y, 32, oDebris, false, true) ||
+    collision_circle(x, y, 32, oArmoryAugmentor2, false, true))) && instance_exists(oTextbox2) {
+    nearWallbuy = true;
+}
+
+if(!nearWallbuy) {//Only destroy the textbox if the player isn't near any wallbuy object.
+    if(instance_exists(oTextbox2)) {
+        instance_destroy(oTextbox2);
+    }
+	//nearWallbuy = false;
 }
