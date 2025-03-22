@@ -56,43 +56,43 @@ function scr_game_text(_text_id){
 			break;
 			
 		case "ShotgunWallbuy":
-			scr_text("Press [G] to purchase Shotgun for 500\nPress [Space] to remove this message.");
+			scr_text("Press [G] to purchase Shotgun for 500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "RaygunWallbuy":
-			scr_text("Press [G] to purchase Raygun for 15000\nPress [Space] to remove this message.");
+			scr_text("Press [G] to purchase Raygun for 15000\nPress [Space] to dismiss this message");
 			break;
 			
 		case "SniperWallbuy":
-			scr_text("Press [G] to purchase Sniper for 1500\nPress [Space] to remove this message.");
+			scr_text("Press [G] to purchase Sniper for 1500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "AssaultWallbuy":
-			scr_text("Press [G] to purchase Assualt Rifle for 1800\nPress [Space] to remove this message.");
+			scr_text("Press [G] to purchase Assualt Rifle for 1800\nPress [Space] to dismiss this message");
 			break;
 		
 		case "BazookaWallbuy":
-			scr_text("Press [G] to purchase Bazooka for 18000\nPress [Space] to remove this message.");
+			scr_text("Press [G] to purchase Bazooka for 18000\nPress [Space] to dismiss this message");
 			break;
 		
 		case "SMGWallbuy":
-			scr_text("Press [G] to purchase SMG for 1500\nPress [Space] to remove this message.");
+			scr_text("Press [G] to purchase SMG for 1500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "LMGWallbuy":
-			scr_text("Press [G] to purchase LMG for 2500\nPress [Space] to remove this message.");
+			scr_text("Press [G] to purchase LMG for 2500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "MedkitWallbuy":
-			scr_text("Press [G] to purchase Medkit for 500\nPress [Space] to remove this message.");
+			scr_text("Press [G] to purchase Medkit for 500\nPress [Space] to dismiss this message.");
 			break;
 			
 		case "Debris":
-			scr_text("Press [G] to clear Debris for 500\nPress [Space] to remove this message.");
+			scr_text("Press [G] to clear Debris for 500\nPress [Space] to dismiss this message.");
 			break;
 			
 		case "Upgrade - Standard":
-			scr_text("Press [G] to upgrade weapon for 5000\nPress [Space] to remove this message.");
+			scr_text("Press [G] to upgrade weapon for 5000\nPress [Space] to dismiss this message");
 			break;
 			
 		case "ShotgunWallbuyC":

@@ -1,2 +1,2 @@
 //targetRoom = rm_Casino_Level2;
-targetObj = inst_C3477C;
+targetObj = inst_7384EDD3_2;
