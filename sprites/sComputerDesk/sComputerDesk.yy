@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f994a610-c778-497a-b3ec-e821374e563c",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7ae9b3fd-d496-42e5-a98c-7c8cd0b2ef2f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"81724e2c-8998-4b7a-90c0-a5300a3484fd",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f994a610-c778-497a-b3ec-e821374e563c","path":"sprites/sComputerDesk/sComputerDesk.yy",},},},"Disabled":false,"id":"453a7364-0e6c-4b3b-8a0c-4643f462c437","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7ae9b3fd-d496-42e5-a98c-7c8cd0b2ef2f","path":"sprites/sComputerDesk/sComputerDesk.yy",},},},"Disabled":false,"id":"5a4fec08-6965-4e8e-87ba-ede69b811ef8","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"81724e2c-8998-4b7a-90c0-a5300a3484fd","path":"sprites/sComputerDesk/sComputerDesk.yy",},},},"Disabled":false,"id":"cc093fcb-cdd9-4ebf-b19a-df473676fa9f","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
