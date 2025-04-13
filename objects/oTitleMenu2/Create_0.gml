@@ -12,7 +12,8 @@ op_space = 16;
 pos = 0;
 
 //Title Menu
-option[0, 0] = "Tutorial";
+//option[0, 0] = "Tutorial";
+option[0, 0] = "*Locked in Demo";
 option[0, 1] = "Survival Mode";
 option[0, 2] = "Extras";
 option[0, 3] = "Settings";
@@ -56,8 +57,10 @@ option[5, 1] = "Previous Page";
 option[5, 2] = "Back";
 
 //Settings Menu
-option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
-option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
+option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
 option[6, 2] = "Controls: ???";
 // Set the initial control mode based on a global variable
 if(global.controllerMode == 0) {

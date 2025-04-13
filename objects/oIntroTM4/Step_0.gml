@@ -30,5 +30,5 @@ if (keyboard_check_direct(vk_space)) xor ((global.controllerMode == 1) && gamepa
 if (holdspace > 80) || (xpos < 100) fadeout = 1;
 
 if(a == 1) && (fadeout == 1){
-	TransitionStart(rm_Overlook_Level1, sqFadeOut, sqFadeIn);
+	TransitionStart(rm_Overlook_Level4, sqFadeOut, sqFadeIn);
 }

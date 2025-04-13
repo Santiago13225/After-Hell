@@ -133,7 +133,7 @@ if instance_exists(oInvisibleSpawner2){
 
 //Update visuals for room warping
 if instance_exists(oWarp){
-	global.dialog_active = true;//Disable silhouette drawing.
+	//global.dialog_active = true;//Disable silhouette drawing.
 	//image_index = 0;//force image index to be 0 if we wanted to
 	sprite_index = sprite[face];
 	aimDir = face * 90;

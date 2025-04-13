@@ -88,4 +88,5 @@ for(var i = 0; i < array_length(introObjs); i++) {
 //Draw the Inventory
 if(instance_exists(oPlayer)){//If player object exists...
 	draw_sprite_ext(sInventory, 0, 0 + _wx - (132 * 3), 0 + _wy - (88 * 3), 3, 3, 0, c_white, 1);//Draw the inventory background.
+	draw_text_transformed(_wx - (99 * 3), _wy - (88 * 3), "Inventory", 3, 3, 0);//Draw string.
 }

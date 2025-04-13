@@ -30,11 +30,13 @@ if(menu_level == 6 && pos == 0)//Check if in the Settings menu and the first opt
 {
     if (left_key){
         global.musicvolume = max(0, global.musicvolume - 0.1);//Reduce volume by 10%
-		option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+		//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+		option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
     }
     else if (right_key){
         global.musicvolume = min(1, global.musicvolume + 0.1);//Increase volume by 10%
-		option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+		//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+		option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
     }
 }
 //Adjust sound effects volume
@@ -42,11 +44,13 @@ if(menu_level == 6 && pos == 1)//Check if in the Settings menu and the second op
 {
     if (left_key){
         global.sfxvolume = max(0, global.sfxvolume - 0.1);//Reduce volume by 10%
-		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+		//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
     }
     else if (right_key){
         global.sfxvolume = min(1, global.sfxvolume + 0.1);//Increase volume by 10%
-		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+		//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
     }
 }
 
@@ -74,7 +78,7 @@ if accept_key{
 			{
 				//Story Mode
 				case 0:
-					TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
+					//TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
 					//menu_level = 1;
 					break;
 				//Survival Mode
@@ -261,12 +265,14 @@ if accept_key{
 				//Music
 				case 0:
 					//Update the displayed volume percentage
-					option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+					//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+					option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
 					break;
 				//Sound Effects
 				case 1:
 					//Update the displayed volume percentage
-					option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+					//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+					option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
 					break;
 				//Controls
 				case 2:

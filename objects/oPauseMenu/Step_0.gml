@@ -90,7 +90,7 @@ if accept_key{
 				if room == rm_Temple_Level1{
 					audio_resume_sound(sndTempleTheme1);
 				}
-				if room == rm_Overlook_Level1{
+				if room == rm_Overlook_Level4{
 					audio_resume_sound(sndOverlookTheme1);
 				}
 				if room == rm_Labyrinth_Level{

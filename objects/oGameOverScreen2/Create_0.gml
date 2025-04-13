@@ -31,8 +31,10 @@ option[1, 0] = "Controls: Keyboard";
 option[1, 1] = "Back";
 */
 //Settings Menu
-option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
-option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+//option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
+option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
 option[1, 2] = "??? (*Locked in demo)";
 //option[1, 2] = "Controls: Keyboard";
 option[1, 3] = "Back";

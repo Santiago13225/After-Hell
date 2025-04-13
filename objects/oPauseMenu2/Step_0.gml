@@ -36,11 +36,13 @@ if(menu_level == 1 && pos == 0)//Check if in the Settings menu and the first opt
 {
     if (left_key){
         global.musicvolume = max(0, global.musicvolume - 0.1);//Reduce volume by 10%
-		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+		//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
     }
     else if (right_key){
         global.musicvolume = min(1, global.musicvolume + 0.1);//Increase volume by 10%
-		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+		//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
     }
 }
 //Adjust sound effects volume
@@ -48,11 +50,13 @@ if(menu_level == 1 && pos == 1)//Check if in the Settings menu and the second op
 {
     if (left_key){
         global.sfxvolume = max(0, global.sfxvolume - 0.1);//Reduce volume by 10%
-		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+		//option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
     }
     else if (right_key){
         global.sfxvolume = min(1, global.sfxvolume + 0.1);//Increase volume by 10%
-		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+		//option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
     }
 }
 
@@ -80,7 +84,9 @@ if accept_key{
 			{
 				//Resume
 				case 0:
-				global.dialog_active = false;
+				global.dialog_active = false;				
+/*
+#region
 				if room == rm_House_Level1{
 					audio_resume_sound(sndHouseTheme1);
 				}
@@ -90,7 +96,7 @@ if accept_key{
 				if room == rm_Temple_Level1{
 					audio_resume_sound(sndTempleTheme1);
 				}
-				if room == rm_Overlook_Level1{
+				if room == rm_Overlook_Level4{
 					audio_resume_sound(sndOverlookTheme1);
 				}
 				if room == rm_Labyrinth_Level{
@@ -119,6 +125,52 @@ if accept_key{
 				}else{
 					audio_resume_sound(sndTestLevelTheme);
 				}
+#endregion
+*/
+				//First, stop all level music so that no duplicate instances remain.
+				audio_stop_sound(sndHouseTheme1);
+				audio_stop_sound(sndFacilityTheme1);
+				audio_stop_sound(sndTempleTheme1);
+				audio_stop_sound(sndOverlookTheme1);
+				audio_stop_sound(sndLabyrinthTheme);
+				audio_stop_sound(sndCasinoTheme);
+				audio_stop_sound(sndGraveyardTheme);
+				audio_stop_sound(sndIslandTheme);
+				audio_stop_sound(sndWaterStationTheme1);
+				audio_stop_sound(sndCityBlockTheme);
+				audio_stop_sound(sndYardTheme);
+				audio_stop_sound(sndMuseumTheme);
+				audio_stop_sound(sndTestLevelTheme);
+
+				//Now, start the appropriate music based on the current room.
+				if(room == rm_House_Level1) {
+				    audio_play_sound(sndHouseTheme1, 8, true);
+				}else if(room == rm_Facility_Level) {
+				    audio_play_sound(sndFacilityTheme1, 8, true);
+				}else if(room == rm_Temple_Level1) {
+				    audio_play_sound(sndTempleTheme1, 8, true);
+				}else if(room == rm_Overlook_Level4) {
+				    audio_play_sound(sndOverlookTheme1, 8, true);
+				}else if(room == rm_Labyrinth_Level) {
+				    audio_play_sound(sndLabyrinthTheme, 8, true);
+				}else if(room == rm_Casino_Level1) {
+				    audio_play_sound(sndCasinoTheme, 8, true);
+				}else if(room == rm_Graveyard_Level) {
+				    audio_play_sound(sndGraveyardTheme, 8, true);
+				}else if(room == rm_Island_Level1) {
+				    audio_play_sound(sndIslandTheme, 8, true);
+				}else if(room == rm_WaterStation_Level1) {
+				    audio_play_sound(sndWaterStationTheme1, 8, true);
+				}else if(room == rm_CityBlock_Level1) {
+				    audio_play_sound(sndCityBlockTheme, 8, true);
+				}else if(room == rm_Yard_Level1) {
+				    audio_play_sound(sndYardTheme, 8, true);
+				}else if(room == rm_Museum_Level1) {
+				    audio_play_sound(sndMuseumTheme, 8, true);
+				}else {
+				    audio_play_sound(sndTestLevelTheme, 8, true);
+				}
+
 					oSFX.beepSnd = true;
 					instance_destroy(oPauseMenu2);
 					break;
@@ -142,11 +194,13 @@ if accept_key{
 			{
 				//Music
 				case 0:
-					option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+					//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+					option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
 					break;
 				//Sound
 				case 1:
-					option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+					//option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
+					option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
 					break;
 				//Controls
 				case 2:

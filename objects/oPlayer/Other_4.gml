@@ -13,7 +13,7 @@ if room == rm_Level1 || room == rm_Level2{
 	audio_play_sound(sndFacilityTheme1, 8, true);
 }else if (room == rm_Temple_Level1 || room == rm_Temple_Level2){
 	audio_play_sound(sndTempleTheme1, 8, true);
-}else if (room == rm_Overlook_Level1 || room == rm_Overlook_Level2 || room == rm_Overlook_Level3){
+}else if (room == rm_Overlook_Level4 || room == rm_Overlook_Level2 || room == rm_Overlook_Level3){
 	audio_play_sound(sndOverlookTheme1, 8, true);
 }else if (room == rm_Labyrinth_Level){
 	audio_play_sound(sndLabyrinthTheme, 8, true);
