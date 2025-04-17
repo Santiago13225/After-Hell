@@ -1,6 +1,6 @@
 // constructor template for weapons
 function create_weapon(_sprite = sPistol, _weaponLength = 0, _bulletObj = oBullet, _cooldown = 9, _bulletNum = 1, _spread = 0, _pickupSprite = sPistolPickup) constructor{
-
+//function create_weapon(_sprite = sPistol, _weaponLength = 0, _bulletObj = oBullet, _cooldown = 9, _bulletNum = 1, _spread = 0, _pickupSprite = sPistolPickup, _ammo = 0) constructor{
 	sprite = _sprite;
 	length = _weaponLength;
 	bulletObj = _bulletObj;
@@ -8,6 +8,7 @@ function create_weapon(_sprite = sPistol, _weaponLength = 0, _bulletObj = oBulle
 	bulletNum = _bulletNum;
 	spread = _spread;
 	pickupSprite = _pickupSprite;
+	//ammo = _ammo;//new!
 }
 
 //the player's weapon inventory

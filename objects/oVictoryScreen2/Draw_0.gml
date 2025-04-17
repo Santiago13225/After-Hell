@@ -100,9 +100,14 @@ if accept_key{
 	{
 		case 0:
 			global.dialog_active = false;
-			instance_deactivate_object(oPlayer);
-			TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
-			//game_restart();//Reset wave-related data.
+			//room_restart();
+			audio_play_sound(sndBeep, 10, false);
+			instance_destroy(oVictoryScreen2);
+
+			//instance_activate_object(oPlayer);
+			//instance_deactivate_object(oPlayer);
+			//TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+			game_restart();//Reset wave-related data.
 			//audio_pause_sound(sndLaugh);
 			break;
 	}
