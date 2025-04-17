@@ -32,7 +32,7 @@ with(oAssaultWallbuy2){
 	
 	//Draw the walls within the radar circle
 	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-		draw_sprite_ext(sAssaultWallbuy, 0, xx, yy, 1, 1 , 0, c_white, 1);
+		draw_sprite_ext(sAssaultWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 	}
 }
 
@@ -43,7 +43,7 @@ with(oBazookaWallbuy2){
 	
 	//Draw the walls within the radar circle
 	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-		draw_sprite_ext(sBazookaWallbuy, 0, xx, yy, 1, 1 , 0, c_white, 1);
+		draw_sprite_ext(sBazookaWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 	}
 }
 
@@ -54,7 +54,7 @@ with(oLMGWallbuy2){
 	
 	//Draw the walls within the radar circle
 	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-		draw_sprite_ext(sLMGWallbuy, 0, xx, yy, 1, 1 , 0, c_white, 1);
+		draw_sprite_ext(sLMGWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 	}
 }
 
@@ -65,7 +65,7 @@ with(oRaygunWallbuy2){
 	
 	//Draw the walls within the radar circle
 	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-		draw_sprite_ext(sRaygunWallbuy, 0, xx, yy, 1, 1 , 0, c_white, 1);
+		draw_sprite_ext(sRaygunWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 	}
 }
 
@@ -76,7 +76,7 @@ with(oShotgunWallbuy2){
 	
 	//Draw the walls within the radar circle
 	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-		draw_sprite_ext(sShotgunWallbuy, 0, xx, yy, 1, 1 , 0, c_white, 1);
+		draw_sprite_ext(sShotgunWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 	}
 }
 
@@ -87,7 +87,7 @@ with(oSMGWallbuy2){
 	
 	//Draw the walls within the radar circle
 	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-		draw_sprite_ext(sSMGWallbuy, 0, xx, yy, 1, 1 , 0, c_white, 1);
+		draw_sprite_ext(sSMGWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 	}
 }
 
@@ -98,7 +98,7 @@ with(oSniperWallbuy2){
 	
 	//Draw the walls within the radar circle
 	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
-		draw_sprite_ext(sSniperWallbuy, 0, xx, yy, 1, 1 , 0, c_white, 1);
+		draw_sprite_ext(sSniperWallbuy2, 0, xx, yy, 1, 1 , 0, c_white, 1);
 	}
 }
 

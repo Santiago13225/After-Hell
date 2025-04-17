@@ -13,6 +13,7 @@ next = 0;
 
 holdspace = 0;
 
+global.dialog_active = true;//Disable silhouette drawing.
 //else if (room == rm_TM1){
 	//sndUniversal = sndTestLevelTheme;
 audio_play_sound(sndAmbient, 8, true);
@@ -22,3 +23,4 @@ audio_play_sound(sndAmbient, 8, true);
 strings[0] = "- City Block -\nThe heart of the city is now a battleground. Streets echo with the moans of the undead.";
 //strings[0] = "- The Yard -\nBehind the loading dock doors, a once-quiet refuge becomes a battleground against the advancing undead.";
 //strings[1] = "- The Yard\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
+skipTimer = 30 * 60;//30 seconds

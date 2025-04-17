@@ -1,4 +1,5 @@
-draw_set_font(global.fontHUD);
+global.fontTM = font_add_sprite(sTMFont, 32, true, 1);
+draw_set_font(global.fontTM);
 
 var _new_w = 0;
 for(var i = 0; i < op_length; i++){

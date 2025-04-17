@@ -13,6 +13,7 @@ next = 0;
 
 holdspace = 0;
 
+global.dialog_active = true;//Disable silhouette drawing.
 //else if (room == rm_TM1){
 	//sndUniversal = sndTestLevelTheme;
 audio_play_sound(sndAmbient, 8, true);
@@ -21,3 +22,4 @@ audio_play_sound(sndAmbient, 8, true);
 
 strings[0] = "- Facility -\nAn abandoned research facility has been overrun by zombies. Unlock its secrets to survive.";
 //strings[1] = "- Facility -\nTheir quest for safety leads them to an abandoned facility, once a hub of research and innovation.";
+skipTimer = 30 * 60;//30 seconds

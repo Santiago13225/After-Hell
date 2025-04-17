@@ -13,6 +13,7 @@ next = 0;
 
 holdspace = 0;
 
+global.dialog_active = true;//Disable silhouette drawing.
 //else if (room == rm_TM1){
 	//sndUniversal = sndTestLevelTheme;
 audio_play_sound(sndAmbient, 8, true);
@@ -22,3 +23,4 @@ audio_play_sound(sndAmbient, 8, true);
 strings[0] = "- Museum -\nAncient artifacts and undead foes fill the halls of the museum. Unearth its secrets to stay alive.";
 //strings[0] = "- Water Station -\nDefend a crucial water station against waves of zombies. Water is life, and so is survival.";
 //strings[1] = "- Water Station -\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
+skipTimer = 30 * 60;//30 seconds

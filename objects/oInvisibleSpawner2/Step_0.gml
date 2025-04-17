@@ -64,7 +64,7 @@ if waveInProgress{
         currentWave++;//Increment the current wave.
 		//waveStartMessageShown = true;
 		//Increase activeEnemyMax based on your desired logic.
-        activeEnemyMax += 2;//Increase activeEnemyMax by 2.
+        activeEnemyMax *= 2;//Increase activeEnemyMax by double.
 		
 		if(activeEnemyMax > maxActiveEnemyMax){
 			activeEnemyMax = maxActiveEnemyMax;

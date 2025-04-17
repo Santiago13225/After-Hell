@@ -2,7 +2,7 @@ if(global.dialog_active == false) {
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha);
 	gpu_set_alphatestenable(true);
 
-		//Draw Player Silhouette
+	//Draw Player Silhouette
 	gpu_set_fog(true, c_blue, 0, 1);
 	//gpu_set_fog(true, c_blue, 0, 1);
 	draw_self();

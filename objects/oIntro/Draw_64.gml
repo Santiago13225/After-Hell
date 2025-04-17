@@ -21,4 +21,10 @@ if(holdspace > 0){
 	draw_set_alpha(1);
 }
 
+//Calculate seconds remaining (using ceil to round up)
+var seconds_left = ceil(skipTimer / 60);
+
+//Draw the countdown text at the bottom of the screen (adjust x, y as needed)
+draw_text_transformed(960, 200, "Match Starts In: " + string(seconds_left) + "s", 2.5, 2.5, 0);
+
 draw_sprite_ext(sPixel, 0, 0, 0, 5000, 5000, 0, c_black, a);

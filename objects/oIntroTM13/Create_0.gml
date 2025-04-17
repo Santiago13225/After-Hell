@@ -13,6 +13,7 @@ next = 0;
 
 holdspace = 0;
 
+global.dialog_active = true;//Disable silhouette drawing.
 //else if (room == rm_TM1){
 	//sndUniversal = sndTestLevelTheme;
 audio_play_sound(sndAmbient, 8, true);
@@ -21,3 +22,4 @@ audio_play_sound(sndAmbient, 8, true);
 
 strings[0] = "- Test_Level -\nEnter a simulated environment designed to push your survival skills to the limit. No room for error.";
 //strings[1] = "- Test_Level -\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
+skipTimer = 30 * 60;//30 seconds

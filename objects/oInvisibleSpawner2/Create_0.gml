@@ -16,7 +16,7 @@ timeSinceLastWave = 0;//Keep track of the time passed since the last wave.
 //waveIncrementTimer = 0;//Keep track of the time passed since the last wave increment.
 maxTotalEnemies = 999999;//Set your desired maximum total enemies here.
 //maxTotalEnemies = 1;//Set your desired maximum total enemies here.
-activeEnemyMax = 5;//Starting value for the maximum active enemies.
+activeEnemyMax = 7;//Starting value for the maximum active enemies.
 currentWave = 1;//Starting wave number.
 
 maxActiveEnemyMax = 512;//Set your desired maximum value here.

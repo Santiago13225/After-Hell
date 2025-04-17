@@ -1,6 +1,14 @@
 ///oIntro Step Event
 /*This object represents an intro object.*/
 //This event is responsible for handling intro object behavior.
+
+if(skipTimer > 0) {
+    skipTimer -= 1;
+}else {
+    //If 30 seconds have elapsed, automatically trigger skip.
+    fadeout = 1;
+}
+
 camera_set_view_pos(view_camera[1], xpos, 360);
 xpos = max(xpos - 0.3, 0);
 
@@ -31,5 +39,6 @@ if (keyboard_check_direct(vk_space)) xor ((global.controllerMode == 1) && gamepa
 if (holdspace > 80) || (xpos < 100) fadeout = 1;
 
 if(a == 1) && (fadeout == 1){
+	global.dialog_active = false;//Disable silhouette drawing.
 	TransitionStart(rm_House_Level1, sqFadeOut, sqFadeIn);
 }

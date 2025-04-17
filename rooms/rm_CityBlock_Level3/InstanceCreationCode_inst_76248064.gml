@@ -1,2 +1,0 @@
-targetRoom = rm_CityBlock_Level1;
-targetObj = inst_44820312;

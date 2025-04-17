@@ -1,7 +1,15 @@
 ///oIntroTM2 Step Event
 /*This object represents an introTM2 object.*/
 //This event is responsible for handling introTM2 object behavior.
-camera_set_view_pos(view_camera[1], xpos, 0);
+
+if(skipTimer > 0) {
+    skipTimer -= 1;
+}else {
+    //If 30 seconds have elapsed, automatically trigger skip.
+    fadeout = 1;
+}
+
+camera_set_view_pos(view_camera[1], xpos, 752);
 xpos = max(xpos - 0.3, 0);
 
 if(!fadeout){
@@ -30,5 +38,6 @@ if (keyboard_check_direct(vk_space)) xor ((global.controllerMode == 1) && gamepa
 if (holdspace > 80) || (xpos < 100) fadeout = 1;
 
 if(a == 1) && (fadeout == 1){
+	global.dialog_active = false;//Disable silhouette drawing.
 	TransitionStart(rm_Overlook_Level4, sqFadeOut, sqFadeIn);
 }
