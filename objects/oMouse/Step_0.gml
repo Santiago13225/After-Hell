@@ -6,6 +6,9 @@ if(room == rm_Casino_Level1 || room == rm_CityBlock_Level1 || room == rm_Facilit
 	visible = true;
 	cursor_sprite = sUICursor2;
 	window_set_cursor(cr_none);
+}else if(room == rm_Title_Screen || room == rm_Trademark_Screen || room == rm_Disclaimer_Screen || room == rm_GM_Screen || room == rm_Logo_Screen){
+	visible = false;
+    window_set_cursor(cr_none);
 }else {
 	visible = false;
     window_set_cursor(cr_none);

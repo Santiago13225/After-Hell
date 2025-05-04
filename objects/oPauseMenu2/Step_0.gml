@@ -185,6 +185,8 @@ if accept_key{
 					instance_deactivate_object(oPlayer);
 					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					clear_weapons();
+					array_resize(global.PlayerAmmo, 1);
+					//global.PlayerAmmo = [];//Completely reset the ammo array.
 					break;
 			}
 			break;

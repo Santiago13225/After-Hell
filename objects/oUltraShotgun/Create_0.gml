@@ -8,3 +8,5 @@ item = global.item_list2.ushotgun
 //Floating
 floatDir = 0;
 floatSpd = 6;
+
+ammoAdd = 80;

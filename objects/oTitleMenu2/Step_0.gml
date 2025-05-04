@@ -78,7 +78,7 @@ if accept_key{
 			{
 				//Story Mode
 				case 0:
-					//TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
 					//menu_level = 1;
 					break;
 				//Survival Mode

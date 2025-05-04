@@ -5,9 +5,11 @@
 var _wx = display_get_gui_width();
 var _wy = display_get_gui_height();
 
-draw_set_font(fnt8Bit);//Should be 8-bit, see part 10 on the YouTube series?
+draw_set_font(global.fontHUD);
+//draw_set_font(fnt8Bit);//Should be 8-bit, see part 10 on the YouTube series?
 
 if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
+	draw_set_font(fnt8Bit);//Should be 8-bit, see part 10 on the YouTube series?
 	var _enemyCountOffset = 24 * 3;
 	var _ecHudX = 8 * 3;
 	var _ecHudY = (8 * 3) + _enemyCountOffset;
@@ -34,7 +36,15 @@ if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
 	draw_text_transformed(8 * 3, (8 * 3) + (64 * 3), _timeString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
 	var _actString = "Wave Zombie Limit: " + string(oInvisibleSpawner2.activeEnemyMax);//Set string.
 	draw_text_transformed(8 * 3, (8 * 3) + (80 * 3), _actString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
+
 }
+
+//Ammo count
+/*
+var _playerAmmo = global.PlayerAmmo;
+for(var i = 0; i < array_length(_playerAmmo); i++){
+	draw_text_transformed(8 * 3, (8 * 3) + (96 * 3) + ((16* 3) * i), string(_playerAmmo[i]), 0.75 * 3, 0.75 * 3, 0);//Draw string.
+}*/
 
 draw_set_font(global.fontHUD);
 
@@ -86,7 +96,8 @@ for(var i = 0; i < array_length(introObjs); i++) {
 //}*/
 
 //Draw the Inventory
+/*
 if(instance_exists(oPlayer)){//If player object exists...
 	draw_sprite_ext(sInventory, 0, 0 + _wx - (132 * 3), 0 + _wy - (88 * 3), 3, 3, 0, c_white, 1);//Draw the inventory background.
 	draw_text_transformed(_wx - (99 * 3), _wy - (88 * 3), "Inventory", 3, 3, 0);//Draw string.
-}
+}*/

@@ -277,7 +277,14 @@ weapon = _playerWeapons[selectedWeapon];//For manual weapon pickup but less opti
 if shootTimer > 0 {
 	shootTimer--;
 }
-if shootKey && shootTimer <= 0{
+
+if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weapon == global.WeaponList.pistol){
+	
+	//subtract ammo
+	if(weapon != global.WeaponList.pistol && weapon != global.WeaponList.hpistol && weapon != global.WeaponList.upistol){
+		global.PlayerAmmo[selectedWeapon]--;
+	}
+	
 	//Reset the timer
 	//shootTimer = shootCooldown;
 	shootTimer = weapon.cooldown;
@@ -333,6 +340,11 @@ if shootKey && shootTimer <= 0{
 	//create_screen_pause(2);//use if you want to slow down time when shooting
 }
 
+if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0){
+	shootTimer = weapon.cooldown;
+	audio_play_sound(sndEmpty, 6, false);	
+}
+
 //Check for low health condition (adjust the threshold as needed)
 var lowHealthThreshold = 30;//Set the desired low health threshold here
 if (hp <= lowHealthThreshold && !lowHealth) {
@@ -340,6 +352,7 @@ if (hp <= lowHealthThreshold && !lowHealth) {
 	//audio_loop_sound
 	audio_play_sound(sndLowHealth, 9, true);
 	//audio_play_music(sndLowHealth);
+	instance_create_depth(x, y, -8000, oLowHealthScreen);
     //audio_loop_sound(sndLowHealth);//Replace sndLowHealth with the sound you want to play
 }
 
@@ -360,20 +373,140 @@ if (lowHealth) {
 	image_blend = c_white;
 }
 
-//var _bought = false;
+with(oShotgunWallbuy2) {
+    scr_HandleWallbuy(500, 120, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
+}
+
+with(oRaygunWallbuy2) {
+    scr_HandleWallbuy(
+        15000,                                      // cost
+        40,                                         // ammoAdd
+        global.WeaponList.raygun,                   // base
+        global.WeaponList.hraygun,                  // hardcore
+        global.WeaponList.uraygun,                  // ultra
+        oRaygun                                     // object to create
+    );
+}
+
+with(oSniperWallbuy2) {
+    scr_HandleWallbuy(
+        1500,                                       // cost
+        25,                                         // ammoAdd
+        global.WeaponList.sniper,                   // base
+        global.WeaponList.hsniper,                  // hardcore
+        global.WeaponList.usniper,                  // ultra
+        oSniper                                     // object to create
+    );
+}
+
+with(oAssaultWallbuy2) {
+    scr_HandleWallbuy(
+        1800,                                       // cost
+        120,                                        // ammoAdd
+        global.WeaponList.assault,                  // base
+        global.WeaponList.hassault,                 // hardcore
+        global.WeaponList.uassault,                 // ultra
+        oAssault                                    // object to create
+    );
+}
+
+with(oBazookaWallbuy2) {
+    scr_HandleWallbuy(
+        18000,                                      // cost
+        10,                                         // ammoAdd
+        global.WeaponList.bazooka,                  // base
+        global.WeaponList.hbazooka,                 // hardcore
+        global.WeaponList.ubazooka,                 // ultra
+        oBazooka                                    // object to create
+    );
+}
+
+with(oSMGWallbuy2) {
+    scr_HandleWallbuy(
+        1500,                                       // cost
+        150,                                        // ammoAdd
+        global.WeaponList.smg,                      // base
+        global.WeaponList.hsmg,                     // hardcore
+        global.WeaponList.usmg,                     // ultra
+        oSMG                                        // object to create
+    );
+}
+
+with(oLMGWallbuy2) {
+    scr_HandleWallbuy(
+        2500,                                       // cost
+        200,                                        // ammoAdd
+        global.WeaponList.lmg,                      // base
+        global.WeaponList.hlmg,                     // hardcore
+        global.WeaponList.ulmg,                     // ultra
+        oLMG                                        // object to create
+    );
+}
+
+#region
+/*
 if(instance_exists(oShotgunWallbuy2)){
 	with(oShotgunWallbuy2){
 		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
 			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
+				ammoAdd = 120;
 				//Check if the player has enough points to buy the weapon
-			    if(oHUD2.playerScore >= wallbuyCost) {
+			    if((oHUD2.playerScore >= wallbuyCost) && (!array_contains(global.PlayerWeapons, global.WeaponList.shotgun)) && (!array_contains(global.PlayerWeapons, global.WeaponList.hshotgun)) && (!array_contains(global.PlayerWeapons, global.WeaponList.ushotgun))){
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_create_depth(oPlayer.x, oPlayer.y, -y, oShotgun);
 					instance_destroy(oTextbox2);
-			    }else {
+			    }else if((oHUD2.playerScore >= wallbuyCost) && (array_contains(global.PlayerWeapons, global.WeaponList.shotgun))){
+					//find shotgun in inventory
+					var hasShotgun = false;
+					var slot = -1;
+					var cnt = array_length(global.PlayerWeapons);//get array length 
+					for(var i = 0; i < cnt; i++){
+						if(global.PlayerWeapons[i] == global.WeaponList.shotgun){
+							hasShotgun = true;
+							slot = i;
+							break;//exit early 
+						}
+					}
+					// ——— already owned: give ammo instead ———
+                    audio_play_sound(sndBuy, 8, false);
+                    global.PlayerAmmo[slot] += ammoAdd;//ammoAdd defined in your weapon object
+                    instance_destroy(oTextbox2);
+				}else if((oHUD2.playerScore >= wallbuyCost) && (array_contains(global.PlayerWeapons, global.WeaponList.hshotgun))){
+					//find shotgun in inventory
+					var hasShotgun = false;
+					var slot = -1;
+					var cnt = array_length(global.PlayerWeapons);//get array length 
+					for(var i = 0; i < cnt; i++){
+						if(global.PlayerWeapons[i] == global.WeaponList.hshotgun){
+							hasShotgun = true;
+							slot = i;
+							break;//exit early 
+						}
+					}
+					// ——— already owned: give ammo instead ———
+                    audio_play_sound(sndBuy, 8, false);
+                    global.PlayerAmmo[slot] += ammoAdd;//ammoAdd defined in your weapon object
+                    instance_destroy(oTextbox2);
+				}else if((oHUD2.playerScore >= wallbuyCost) && (array_contains(global.PlayerWeapons, global.WeaponList.ushotgun))){
+					//find shotgun in inventory
+					var hasShotgun = false;
+					var slot = -1;
+					var cnt = array_length(global.PlayerWeapons);//get array length 
+					for(var i = 0; i < cnt; i++){
+						if(global.PlayerWeapons[i] == global.WeaponList.ushotgun){
+							hasShotgun = true;
+							slot = i;
+							break;//exit early 
+						}
+					}
+					// ——— already owned: give ammo instead ———
+                    audio_play_sound(sndBuy, 8, false);
+                    global.PlayerAmmo[slot] += ammoAdd;//ammoAdd defined in your weapon object
+                    instance_destroy(oTextbox2);
+				}else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here
 					audio_play_sound(sndNoMoney, 8, false);
@@ -535,6 +668,8 @@ if(instance_exists(oLMGWallbuy2)){
 		}
 	}
 }
+*/
+#endregion
 
 if(instance_exists(oMedkitWallbuy3)){
 	with(oMedkitWallbuy3){
@@ -631,6 +766,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hraygun);
+						global.PlayerAmmo[_ar_id1] += 60;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -647,6 +783,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hsniper);
+						global.PlayerAmmo[_ar_id1] += 35;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -663,6 +800,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hshotgun);
+						global.PlayerAmmo[_ar_id1] += 60;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -679,6 +817,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hassault);
+						global.PlayerAmmo[_ar_id1] += 150;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -695,6 +834,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hsmg);
+						global.PlayerAmmo[_ar_id1] += 180;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -711,6 +851,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hlmg);
+						global.PlayerAmmo[_ar_id1] += 300;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -727,6 +868,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.hbazooka);
+						global.PlayerAmmo[_ar_id1] += 20;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -743,6 +885,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.uraygun);
+						global.PlayerAmmo[_ar_id1] += 80;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -759,6 +902,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.usniper);
+						global.PlayerAmmo[_ar_id1] += 45;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -775,6 +919,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ushotgun);
+						global.PlayerAmmo[_ar_id1] += 80;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -791,6 +936,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.uassault);
+						global.PlayerAmmo[_ar_id1] += 180;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -807,6 +953,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.usmg);
+						global.PlayerAmmo[_ar_id1] += 210;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -823,6 +970,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ulmg);
+						global.PlayerAmmo[_ar_id1] += 400;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -839,6 +987,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						}
 						var _ar_id1 = array_find_index(_array1, _predicate1);
 						array_set(global.PlayerWeapons, _ar_id1, global.WeaponList.ubazooka);
+						global.PlayerAmmo[_ar_id1] += 30;//add ammo
 						
 						var _array2 = oItemManager3.inv;
 						var _predicate2 = function(_val, _index){
@@ -879,6 +1028,8 @@ if hp <= 0{
 	create_animated_vfx(sPoof, x, y, depth);
 	oHUD2.playerScore = 500;
 	clear_weapons();
+	array_resize(global.PlayerAmmo, 1);
+	//global.PlayerAmmo = [];//Completely reset the ammo array.
 	instance_destroy();//Destroy Ourself.
 	//clear_weapons();
 }

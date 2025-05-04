@@ -12,25 +12,25 @@ y = ystart + lengthdir_y(2, floatDir);
 //y = ystart + dsin(floatDir)*2;//alternative to line above
 
 #region
-/*
+
 //get collected by the player
-if place_meeting(x, y, oPlayer)
-{
+if place_meeting(x, y, oPlayer){
 	//heal the player
-	oPlayer.hp += heal;
-	instance_create_depth(x, y, -8000, oHealEffect);
-	instance_create_depth(x, y, -8000, oHealScreen);
-	//play a sound effect
-	//audio_play_sound(sndPickup, 8, false);
-	oSFX.pickupSnd = true;
-	
-	//destroy self
-	instance_destroy();
-}*/
+	if(oPlayer.hp < 100){
+		oPlayer.hp += heal;
+		instance_create_depth(x, y, -8000, oHealEffect);
+		//instance_create_depth(x, y, -8000, oHealScreen);
+		//play a sound effect
+		//audio_play_sound(sndPickup, 8, false);
+		oSFX.pickupSnd = true;
+
+		instance_destroy();//destroy self
+	}
+}
 #endregion
 
-sprite_index = item.sprite;
-
+//sprite_index = item.sprite;
+/*
 if place_meeting(x, y, oPlayer){//If it touches the player...
 	if item_add(item) == true {//If it can be added to the inventory...
 		oSFX.pickupSnd = true;//Play the pickup sound effect.
@@ -38,4 +38,4 @@ if place_meeting(x, y, oPlayer){//If it touches the player...
 		//item = global.item_list.medkit;
 		instance_destroy();//Destroy the medkit.
 	}
-}
+}*/

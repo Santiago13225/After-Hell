@@ -5,6 +5,41 @@ var _wx = display_get_gui_width();
 var _wy = display_get_gui_height();
 
 draw_set_font(global.font);
+
+if instance_exists(oPlayer) {
+    with (oPlayer) {
+        // 1) pickupSprite holds the small, crisp icon for HUD
+        var icon = weapon.pickupSprite;    // your create_weapon’s last arg :contentReference[oaicite:3]{index=3}
+        
+        // 2) compute where to draw (bottom-right corner, 3× scale)
+        var pad = 16 * 3;         // reuse your screen_bord, scaled by 3
+        var drawX = _wx - (96*3) - pad + 200;//match “96*3” width of inventory icons
+        var drawY = _wy - (96*3) - pad + 280;//same for height
+        
+        // 3) draw crisp 3× icon
+        draw_sprite_ext(
+            icon, 0,
+            drawX, drawY,
+            3, 3,                            // scale exactly 3× :contentReference[oaicite:4]{index=4}
+            0, c_white, 1
+        );
+
+		// 4) draw the ammo count underneath
+		var ammo = (global.PlayerAmmo[oPlayer.selectedWeapon]);
+
+		//draw_set_font(global.font);
+		draw_set_halign(fa_center);
+		//draw_set_valign(fa_middle);
+		//draw_set_color(c_white);
+
+		var text_x = drawX + (0 * 3);
+		var text_y = drawY + (5 * 3);
+
+		draw_text_transformed(text_x, text_y, "Ammo: " + string(ammo), 2.5, 2.5, 0);	
+    }
+}
+
+/*
 if(instance_exists(oPlayer)){
 	for(var i = 0; i < array_length(inv); i++){
 		var _sep = (sep * 3);
@@ -51,4 +86,5 @@ if(instance_exists(oPlayer)){
 
 		draw_set_color(c_white);//Reset color to white.
 	}
-}
+}*/
+draw_set_halign(fa_left);

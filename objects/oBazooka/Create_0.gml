@@ -8,3 +8,5 @@ item = global.item_list2.bazooka
 //Floating
 floatDir = 0;
 floatSpd = 6;
+
+ammoAdd = 10;

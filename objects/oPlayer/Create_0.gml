@@ -54,7 +54,8 @@ if !array_contains(global.PlayerWeapons, global.WeaponList.pistol){
 if !array_contains(global.PlayerWeapons, global.WeaponList.pistol){
     if item_add(item) == true{
         //Add the weapon to global.PlayerWeapons
-		array_push(global.PlayerWeapons,  global.WeaponList.pistol);
+		array_push(global.PlayerWeapons, global.WeaponList.pistol);
+		array_push(global.PlayerAmmo, 999);
     }	
 }
 

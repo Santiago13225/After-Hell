@@ -56,31 +56,31 @@ function scr_game_text(_text_id){
 			break;
 			
 		case "ShotgunWallbuy":
-			scr_text("Press [G] to purchase Shotgun for 500\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase Shotgun/Ammo for 500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "RaygunWallbuy":
-			scr_text("Press [G] to purchase Raygun for 15000\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase Raygun/Ammo for 15000\nPress [Space] to dismiss this message");
 			break;
 			
 		case "SniperWallbuy":
-			scr_text("Press [G] to purchase Sniper for 1500\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase Sniper/Ammo for 1500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "AssaultWallbuy":
-			scr_text("Press [G] to purchase Assualt Rifle for 1800\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase AR/Ammo for 1800\nPress [Space] to dismiss this message");
 			break;
 		
 		case "BazookaWallbuy":
-			scr_text("Press [G] to purchase Bazooka for 18000\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase Bazooka/Ammo for 18000\nPress [Space] to dismiss this message");
 			break;
 		
 		case "SMGWallbuy":
-			scr_text("Press [G] to purchase SMG for 1500\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase SMG/Ammo for 1500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "LMGWallbuy":
-			scr_text("Press [G] to purchase LMG for 2500\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase LMG/Ammo for 2500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "MedkitWallbuy":
@@ -96,31 +96,31 @@ function scr_game_text(_text_id){
 			break;
 			
 		case "ShotgunWallbuyC":
-			scr_text("Press left face button to purchase Shotgun for 500\nPress upper face button to remove this message.");
+			scr_text("Press left face button to purchase Shotgun/Ammo for 500\nPress upper face button to remove this message.");
 			break;
 			
 		case "RaygunWallbuyC":
-			scr_text("Press left face button to purchase Raygun for 15000\nPress upper face button to remove this message.");
+			scr_text("Press left face button to purchase Raygun/Ammo for 15000\nPress upper face button to remove this message.");
 			break;
 			
 		case "SniperWallbuyC":
-			scr_text("Press left face button to purchase Sniper for 1500\nPress upper face button to remove this message.");
+			scr_text("Press left face button to purchase Sniper/Ammo for 1500\nPress upper face button to remove this message.");
 			break;
 
 		case "AssaultWallbuyC":
-			scr_text("Press left face button to purchase Assualt Rifle for 1800\nPress upper face button to remove this message.");
+			scr_text("Press left face button to purchase AR/Ammo for 1800\nPress upper face button to remove this message.");
 			break;
 			
 		case "BazookaWallbuyC":
-			scr_text("Press left face button to purchase Bazooka for 18000\nPress upper face button to remove this message.");
+			scr_text("Press left face button to purchase Bazooka/Ammo for 18000\nPress upper face button to remove this message.");
 			break;
 			
 		case "SMGWallbuyC":
-			scr_text("Press left face button to purchase SMG for 1500\nPress upper face button to remove this message.");
+			scr_text("Press left face button to purchase SMG/Ammo for 1500\nPress upper face button to remove this message.");
 			break;
 			
 		case "LMGWallbuyC":
-			scr_text("Press left face button to purchase LMG for 2500\nPress upper face button to remove this message.");
+			scr_text("Press left face button to purchase LMG/Ammo for 2500\nPress upper face button to remove this message.");
 			break;
 		
 		case "MedkitWallbuyC":

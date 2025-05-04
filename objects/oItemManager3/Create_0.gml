@@ -98,7 +98,7 @@ global.item_list2 = {
 	),*/
 	
 	//Create the items
-	medkit : new create_item
+	/*medkit : new create_item
 	(
 	"Medkit",
 	"It's a medkit! Recovers HP.\nEffects: +40 hp\n",
@@ -113,7 +113,7 @@ global.item_list2 = {
 		array_delete(oItemManager3.inv, selected_item, 1);//Get rid of the item.
 	},
 	oMedkit
-	),
+	),*/
 
 	pistol : new create_item
 	(
@@ -434,7 +434,7 @@ global.item_list2 = {
 //Create the inventory
 inv = array_create(0);
 
-inv_max = 4;
+inv_max = 8;
 selected_item = -1;
 selected_item_controller = -1;
 

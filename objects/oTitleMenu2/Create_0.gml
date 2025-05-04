@@ -12,8 +12,8 @@ op_space = 16;
 pos = 0;
 
 //Title Menu
-//option[0, 0] = "Tutorial";
-option[0, 0] = "*Locked in Demo";
+option[0, 0] = "Tutorial";
+//option[0, 0] = "*Locked in Demo";
 option[0, 1] = "Survival Mode";
 option[0, 2] = "Extras";
 option[0, 3] = "Settings";

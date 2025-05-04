@@ -4,7 +4,7 @@
 
 //Get the selected item
 selected_item = -1;
-
+/*
 if(global.controllerMode == 0) {
 
 for (var i = 0; i < array_length(inv); i++){
@@ -35,7 +35,7 @@ if room != rm_Title_Screen && !instance_exists(oPauseMenu2) && !instance_exists(
 			//get rid of the item
 			array_delete(inv, selected_item, 1);
 		}*/
-		
+/*		
 		if mouse_check_button_pressed(mb_right) && inv[selected_item].can_drop == true{
 			//remove from inventory
 		    var droppedItem = instance_create_depth(oPlayer.x - 1, oPlayer.y + 16, -y, inv[selected_item].droppedItem);
@@ -269,4 +269,4 @@ selected_item = selected_item_controller;
 	            oSFX.beepSnd = true;
 	        }
 	}
-}
+}*/

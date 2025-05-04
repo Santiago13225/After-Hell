@@ -4,9 +4,9 @@
 
 depth = -y;//Set depth to its negative y position.
 
-item = global.item_list2.medkit;//Add medkit to inventory.
+//item = global.item_list2.medkit;//Add medkit to inventory.
 
-heal = 4;//Set amount to heal player by.
+heal = 40;//Set amount to heal player by.
 
 //Floating
 floatDir = 0;

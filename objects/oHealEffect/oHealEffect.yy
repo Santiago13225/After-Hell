@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sHealEffect",
-    "path": "sprites/sHealEffect/sHealEffect.yy",
+    "name": "sHealScreen",
+    "path": "sprites/sHealScreen/sHealScreen.yy",
   },
   "spriteMaskId": null,
   "visible": true,
