@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "sTilesOutside",
+  "name": "sTilesTutorial",
   "bbox_bottom": 191,
   "bbox_left": 0,
-  "bbox_right": 143,
+  "bbox_right": 191,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "sTilesOutside",
+    "name": "sTilesTutorial",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"70a61898-72d7-4998-96f5-25572b3321ad","path":"sprites/sTilesOutside/sTilesOutside.yy",},},},"Disabled":false,"id":"1ad97221-8f94-4a5d-bb66-4df2ac1cfdc4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"70a61898-72d7-4998-96f5-25572b3321ad","path":"sprites/sTilesTutorial/sTilesTutorial.yy",},},},"Disabled":false,"id":"259c9533-2218-44fa-b37b-c065047eb86e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 144,
+  "width": 192,
 }
