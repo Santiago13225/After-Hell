@@ -1,6 +1,6 @@
-///oSMGWallbuy Step Event
-/*This object represents the smg wallbuy object.*/
-//This event is responsible for handling smg wallbuy behavior.
+///oAssaultWallbuy Step Event
+/*This object represents the assault wallbuy object.*/
+//This event is responsible for handling assault wallbuy behavior.
 if(!has_been_interacted){//If we have not interacted with anything yet
 	if(collision_circle(x, y, radius, oPlayer, false, true)){//If player is inside circle
 		has_been_interacted = true;

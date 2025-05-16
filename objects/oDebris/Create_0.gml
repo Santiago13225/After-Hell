@@ -7,4 +7,8 @@ if(global.controllerMode == 0){
 }else {
 	text_id = "DebrisC";
 }
+
+radius = 32;
+has_been_interacted = false;//We have not interacted with anything yet
+
 created = false;//Variable used for textbox creation.

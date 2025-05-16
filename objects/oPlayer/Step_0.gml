@@ -67,6 +67,9 @@ if startKeyPressed{
 		if audio_is_playing(sndMuseumTheme){
 			audio_pause_sound(sndMuseumTheme);
 		}
+		if audio_is_playing(sndTutorialTheme){
+			audio_pause_sound(sndTutorialTheme);
+		}
 		//audio_pause_sound(sndTestLevelTheme);
 		//audio_pause_sound(global.MUSIC);
 		//audio_pause_sound(sndUniversal);
@@ -119,6 +122,9 @@ if instance_exists(oInvisibleSpawner2){
 		}
 		if audio_is_playing(sndMuseumTheme){
 			audio_pause_sound(sndMuseumTheme);
+		}
+		if audio_is_playing(sndTutorialTheme){
+			audio_pause_sound(sndTutorialTheme);
 		}
 		else {
 			audio_pause_sound(sndFacilityTheme1);
@@ -707,7 +713,7 @@ if(instance_exists(oDebris)){
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
 					instance_destroy();
-					instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
+					//instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
 			    }else {
 			        //Play a sound or show a message indicating insufficient points
 			        //Add your insufficient points logic here

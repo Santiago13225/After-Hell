@@ -324,6 +324,7 @@
     {"name":"sHardcoreShotgunPickup","order":53,"path":"sprites/sHardcoreShotgunPickup/sHardcoreShotgunPickup.yy",},
     {"name":"rm_TM2_2","order":51,"path":"rooms/rm_TM2_2/rm_TM2_2.yy",},
     {"name":"oRaygunWallbuy","order":106,"path":"objects/oRaygunWallbuy/oRaygunWallbuy.yy",},
+    {"name":"sndTutorialTheme","order":96,"path":"sounds/sndTutorialTheme/sndTutorialTheme.yy",},
     {"name":"sndOverlookTheme1","order":34,"path":"sounds/sndOverlookTheme1/sndOverlookTheme1.yy",},
     {"name":"oCrapsTableHorizontal","order":59,"path":"objects/oCrapsTableHorizontal/oCrapsTableHorizontal.yy",},
     {"name":"sMetalBox","order":98,"path":"sprites/sMetalBox/sMetalBox.yy",},

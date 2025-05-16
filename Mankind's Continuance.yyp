@@ -352,6 +352,7 @@
     {"id":{"name":"sHardcoreShotgunPickup","path":"sprites/sHardcoreShotgunPickup/sHardcoreShotgunPickup.yy",},},
     {"id":{"name":"rm_TM2_2","path":"rooms/rm_TM2_2/rm_TM2_2.yy",},},
     {"id":{"name":"oRaygunWallbuy","path":"objects/oRaygunWallbuy/oRaygunWallbuy.yy",},},
+    {"id":{"name":"sndTutorialTheme","path":"sounds/sndTutorialTheme/sndTutorialTheme.yy",},},
     {"id":{"name":"sndOverlookTheme1","path":"sounds/sndOverlookTheme1/sndOverlookTheme1.yy",},},
     {"id":{"name":"oCrapsTableHorizontal","path":"objects/oCrapsTableHorizontal/oCrapsTableHorizontal.yy",},},
     {"id":{"name":"sMetalBox","path":"sprites/sMetalBox/sMetalBox.yy",},},

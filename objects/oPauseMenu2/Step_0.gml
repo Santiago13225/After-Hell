@@ -141,6 +141,7 @@ if accept_key{
 				audio_stop_sound(sndYardTheme);
 				audio_stop_sound(sndMuseumTheme);
 				audio_stop_sound(sndTestLevelTheme);
+				audio_stop_sound(sndTutorialTheme);
 
 				//Now, start the appropriate music based on the current room.
 				if(room == rm_House_Level1) {
@@ -167,6 +168,8 @@ if accept_key{
 				    audio_play_sound(sndYardTheme, 8, true);
 				}else if(room == rm_Museum_Level1) {
 				    audio_play_sound(sndMuseumTheme, 8, true);
+				}else if(room == rm_Tutorial_Level) {
+				    audio_play_sound(sndTutorialTheme, 8, true);
 				}else {
 				    audio_play_sound(sndTestLevelTheme, 8, true);
 				}

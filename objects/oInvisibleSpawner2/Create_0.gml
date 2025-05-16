@@ -14,7 +14,12 @@ waveDuration = 120;//Adjust this value to control the duration of each wave inte
 timeSinceLastWave = 0;//Keep track of the time passed since the last wave.
 //waveIncrementTime = 600;//Adjust this value to control the time between each wave increment.
 //waveIncrementTimer = 0;//Keep track of the time passed since the last wave increment.
-maxTotalEnemies = 999999;//Set your desired maximum total enemies here.
+//maxTotalEnemies = 999999;//Set your desired maximum total enemies here.
+if(room == rm_Tutorial_Level){
+	maxTotalEnemies = 6;
+}else{
+	maxTotalEnemies = 999999;
+}
 //maxTotalEnemies = 1;//Set your desired maximum total enemies here.
 activeEnemyMax = 7;//Starting value for the maximum active enemies.
 currentWave = 1;//Starting wave number.
