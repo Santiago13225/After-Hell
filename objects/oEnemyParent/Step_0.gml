@@ -49,30 +49,53 @@ if hp <= 0{//If hp is 0 or less.
 	var _chance = irandom(100);//Random variable used to determine if we should drop an item.
 	
 	//if global.enemyKillCount mod 5 == 0//drop every 5 kills 
-	if _chance < 20{//% chance of drop.
-		instance_create_depth(x, y, depth, oMedkit);//Create medkit.
-	}
-	if _chance > 20 && _chance < 40{//% chance of drop
+	if _chance <= 5{//% chance of drop.
 		instance_create_depth(x, y, depth, oGreenbacks);//Create greenbacks.
 	}
-	if _chance > 40 && _chance < 50{//% chance of drop
+	if _chance > 5 && _chance <= 10{//% chance of drop
 		instance_create_depth(x, y, depth, oBluebacks);//Create bluebacks.
 	}
-	if _chance > 50 && _chance < 60{//% chance of drop
+	if _chance > 10 && _chance <= 15{//% chance of drop
 		instance_create_depth(x, y, depth, oRedbacks);//Create redbacks.
 	}
-	if _chance > 60 && _chance < 70{//% chance of drop
-		instance_create_depth(x, y, depth, oBronzebacks);//Create bronzebacks.
+	if _chance > 15 && _chance <= 20{//% chance of drop
+		instance_create_depth(x, y, depth, oBronzebacks);//Create .
 	}
-	if _chance > 70 && _chance < 80{//% chance of drop
-		instance_create_depth(x, y, depth, oSilverbacks);//Create silverbacks.
+	if _chance > 20 && _chance <= 25{//% chance of drop
+		instance_create_depth(x, y, depth, oSilverbacks);//Create .
 	}
-	if _chance > 80 && _chance < 90{//% chance of drop
-		instance_create_depth(x, y, depth, oGoldbacks);//Create goldbacks.
+	if _chance > 25 && _chance <= 30{//% chance of drop
+		instance_create_depth(x, y, depth, oGoldbacks);//Create .
 	}
-	if _chance > 90{//% chance of drop
-		instance_create_depth(x, y, depth, oBlackbacks);//Create blackbacks.
+	if _chance > 30 && _chance <= 35{//% chance of drop
+		instance_create_depth(x, y, depth, oBlackbacks);//Create .
 	}
+	if _chance > 35 && _chance <= 40{//% chance of drop
+		instance_create_depth(x, y, depth, oLightAmmo);//Create .
+	}
+	if _chance > 40 && _chance <= 45{//% chance of drop
+		instance_create_depth(x, y, depth, oShellAmmo);//Create .
+	}
+	if _chance > 45 && _chance <= 50{//% chance of drop
+		instance_create_depth(x, y, depth, oRifleAmmo);//Create .
+	}
+	if _chance > 50 && _chance <= 55{//% chance of drop
+		instance_create_depth(x, y, depth, oSniperAmmo);//Create .
+	}
+	if _chance > 55 && _chance <= 60{//% chance of drop
+		instance_create_depth(x, y, depth, oHeavyAmmo);//Create .
+	}
+	if _chance > 60 && _chance <= 65{//% chance of drop
+		instance_create_depth(x, y, depth, oRocketAmmo);//Create .
+	}
+	if _chance > 65 && _chance <= 70{//% chance of drop
+		instance_create_depth(x, y, depth, oColdCellAmmo);//Create .
+	}
+	/*
+	if _chance > 70{//% chance of drop
+		audio_play_sound(sndExplosion, 8, false);//Play explosion sound effect.
+		instance_create_depth(x, y, depth, oExplosion);//Create .
+	}*/
 	
 	audio_play_sound(sndSplatter, 8, false);//Play a sound effect.
 	

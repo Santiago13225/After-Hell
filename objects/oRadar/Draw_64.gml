@@ -124,4 +124,162 @@ with(oArmoryAugmentor2){
 	}
 }
 
+#region
+/*
+with(oGreenbacks){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sGreenbacks, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oBluebacks){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sBluebacks, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oRedbacks){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sRedbacks, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oBronzebacks){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sBronzebacks, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oSilverbacks){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sSilverbacks, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oGoldbacks){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sGoldbacks, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oBlackbacks){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sBlackbacks, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oLightAmmo){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sLightAmmo, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oShellAmmo){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sShellAmmo, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oRifleAmmo){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sRifleAmmo, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oSniperAmmo){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sSniperAmmo, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oHeavyAmmo){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sHeavyAmmo, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oRocketAmmo){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sRocketAmmo, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+
+with(oColdCellAmmo){
+	//Get the wall position to draw on the radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x/room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y/room_height * _guiheight);
+	
+	//Draw the walls within the radar circle
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_sprite_ext(sColdCellAmmo, 0, xx, yy, 1, 1 , 0, c_white, 1);
+	}
+}
+*/
+#endregion
+
 }

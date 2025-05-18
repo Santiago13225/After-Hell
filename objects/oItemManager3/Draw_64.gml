@@ -35,7 +35,15 @@ if instance_exists(oPlayer) {
 		var text_x = drawX + (0 * 3);
 		var text_y = drawY + (5 * 3);
 
-		draw_text_transformed(text_x, text_y, "Ammo: " + string(ammo), 2.5, 2.5, 0);	
+		var _color = c_white;
+		if(global.PlayerAmmo[oPlayer.selectedWeapon] == 0){
+			_color = c_red;
+		}else{
+			_color = c_white;
+		}
+
+		draw_text_transformed_color(text_x, text_y, "Ammo: " + string(ammo), 2.5, 2.5, 0, _color, _color, _color, _color, 1);
+		//draw_text_transformed(text_x, text_y, "Ammo: " + string(ammo), 2.5, 2.5, 0);	
     }
 }
 

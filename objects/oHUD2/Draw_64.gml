@@ -29,14 +29,17 @@ if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
 	draw_set_font(global.fontHUD);
 	var _waveString = "Next Wave In: " + string(oInvisibleSpawner2.waveDuration - oInvisibleSpawner2.timeSinceLastWave);//Set string.
 	//draw_text_transformed((_wx/2) - ((string_width(_waveString) * 3)/2), 8, _waveString, 3, 3, 0);//Draw string.
-	draw_text_transformed((_wx/2) - ((string_width(_waveString)/2) * 3), 8 * 3, _waveString, 3, 3, 0);//Draw string.
-	var _countString = "Zombies Left: " + string(oInvisibleSpawner2.maxTotalEnemies - global.enemyKillCount);//Set string.
-	draw_text_transformed(8 * 3, (8 * 3) + (48 * 3), _countString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
+	if(instance_exists(oPlayer)){
+		draw_text_transformed((_wx/2) - ((string_width(_waveString)/2) * 3), 8 * 3, _waveString, 3, 3, 0);//Draw string.
+	}
+	var _killString = "Zombies Killed: " + string(global.enemyKillCount);//Set string.
+	draw_text_transformed(8 * 3, (8 * 3) + (48 * 3), _killString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
 	var _timeString = "Zombie Spawn Clock: " + string(oInvisibleSpawner2.timer);//Set string.
 	draw_text_transformed(8 * 3, (8 * 3) + (64 * 3), _timeString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
 	var _actString = "Wave Zombie Limit: " + string(oInvisibleSpawner2.activeEnemyMax);//Set string.
 	draw_text_transformed(8 * 3, (8 * 3) + (80 * 3), _actString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
-
+	//var _countString = "Zombies Left: " + string(oInvisibleSpawner2.maxTotalEnemies - global.enemyKillCount);//Set string.
+	//draw_text_transformed(8 * 3, (8 * 3) + (96 * 3), _countString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
 }
 
 //Ammo count
