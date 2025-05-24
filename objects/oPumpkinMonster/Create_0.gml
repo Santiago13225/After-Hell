@@ -10,6 +10,12 @@ sprite[2] = sPumpkinMonsterLeft;
 sprite[3] = sPumpkinMonsterDown;
 face = 3;
 
+attackFrame = 11;
+holdFrame = 12;
+holdTime = 60;
+holdTimer = holdTime;
+attackTriggered = false;
+
 //Movement Variables
 spd = 0;//Zombie's initial speed.
 chaseSpd = .5;//Speed used when chasing a target.

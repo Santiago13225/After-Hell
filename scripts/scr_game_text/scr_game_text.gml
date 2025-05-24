@@ -84,11 +84,11 @@ function scr_game_text(_text_id){
 			break;
 		
 		case "MedkitWallbuy":
-			scr_text("Press [G] to purchase Medkit for 500\nPress [Space] to dismiss this message.");
+			scr_text("Press [G] to purchase Medkit for 500\nPress [Space] to dismiss this message");
 			break;
 			
 		case "Debris":
-			scr_text("Press [G] to clear Debris for 500\nPress [Space] to dismiss this message.");
+			scr_text("Press [G] to clear Debris for 500\nPress [Space] to dismiss this message");
 			break;
 			
 		case "Upgrade - Standard":

@@ -17,30 +17,26 @@ if instance_exists(oScreenPause)
 //Code Commands
 var _wallCollisions = true;//Set wall collisions to true.
 var _getDamage = true;//Set get damage to true.
+var _autoSprites = true;
 
 //State Machine
-switch(state)
-{
+switch(state){
 	case -1://Spawn in from spawn object.
 	
-	if place_meeting(x, y, oInvisibleSpawner2)
-	{//If the zombie is in contact with the spawner object.
-		if image_alpha >= 1
-		{//Walk Out
+	if place_meeting(x, y, oInvisibleSpawner2){//If the zombie is in contact with the spawner object.
+		if image_alpha >= 1{//Walk Out
 			spd = emergeSpd;//Set the right speed.
 			dir = 270;//Set the direction.
 		}
 		image_alpha = 1;//Make the zombie fully visable.
 
-		if !place_meeting(x, y, oInvisibleSpawner2)
-		{//Switch to the chasing state after out of the spawner object.
+		if !place_meeting(x, y, oInvisibleSpawner2){//Switch to the chasing state after out of the spawner object.
 			state = 0;
 		}
 	}
 	
 	//Fade In
-	if image_alpha < 1
-	{
+	if image_alpha < 1{
 		spd = 0;//Don't walk while fading in.
 		image_alpha += fadeSpd;//Fade in using the fade speed variable.
 	}
@@ -48,8 +44,7 @@ switch(state)
 	//Walk Out
 	_wallCollisions = false;//Set wall collisions to false.
 	_getDamage = false;//Set get damage to false.
-	if image_alpha >= 1
-	{//If completely visible.
+	if image_alpha >= 1{//If completely visible.
 		spd = emergeSpd;//Set the right speed.
 		dir = 270;//Set the direction.
 	}
@@ -66,7 +61,7 @@ switch(state)
 		}
 		spd = chaseSpd;//Set the chasing speed.
 
-	/*
+	
 	//transition to shooting state
 	var _camLeft = camera_get_view_x(view_camera[0]);
 	var _camRight = _camLeft + camera_get_view_width(view_camera[0]);
@@ -85,7 +80,7 @@ switch(state)
 		state = 1;
 		//reset timer so the shooting state can use it too
 		shootTimer = 0;
-	}*/
+	}
 	break;
 	//Pause and Shoot State
 	#region
@@ -98,6 +93,47 @@ switch(state)
 	//set the correct speed
 	spd = 0;
 	
+	//start the attack animation
+	_autoSprites = false;
+	if(sprite_index != sPumpkinMonsterAttack){
+		sprite_index = sPumpkinMonsterAttack;
+		image_index = 0;
+	}
+	
+	if(sprite_index == sPumpkinMonsterAttack && floor(image_index) == attackFrame && !attackTriggered){
+		attackTriggered = true;
+		
+		var _attackDist = 200;
+		var _attackSep = 20;
+		var _attackNum = round(_attackDist/_attackSep);
+		var _attackDirSep = 10;
+		
+		for(var ds = 0; ds < 3; ds++){
+			var _dir = dir - _attackDirSep + _attackDirSep * ds;
+			for(var i = 1; i < _attackNum; i++){
+
+				var _xx = x + lengthdir_x(_attackSep * i, _dir);
+				var _yy = y + lengthdir_y(_attackSep * i, _dir);
+			
+				if(!position_meeting(_xx, _yy, oWall)) {
+					var _inst = instance_create_depth(_xx, _yy, depth, oVine);
+					_inst.delay = i * 4;
+				}else {
+					i += 99;
+				}
+			}
+		}
+	}
+	
+	//holding the animation
+	if(sprite_index == sPumpkinMonsterAttack && floor(image_index) == holdFrame) {
+		holdTimer--;
+		if(holdTimer > 0) {
+			image_index = holdFrame;
+		}
+	}
+	
+/*
 	//stop animating / manually set the image index
 	image_index = 0;
 	
@@ -130,12 +166,14 @@ switch(state)
 		
 		//reset the timer so that we can use it again
 		shootTimer = 0;
-	}
-	
+	}*/
 	break;
 	
 	#endregion
 }
+
+//reset the attack variables
+if sprite_index != sPumpkinMonsterAttack { attackTriggered = false; holdTimer = holdTime; };
 
 	//Chase the Player
 	if screen_pause() {
@@ -148,10 +186,13 @@ switch(state)
 		yspd = lengthdir_y(spd, dir);//Get the y speed.
 	}
 	
-	//Get the correct face
-	face = round(dir/90);
-	if(face == 4){face = 0;};
-	sprite_index = sprite[face];
+	//Get the correct sprite
+	if _autoSprites {
+		face = round(dir/90);
+		if(face == 4){face = 0;};
+		sprite_index = sprite[face];
+		mask_index = sprite[3];
+	}
 	
 	/*if xspd > 0{
 		face = 1;	
@@ -159,7 +200,7 @@ switch(state)
 	if xspd < 0{
 		face = -1;	
 	}*/
-	image_xscale = face;
+	//image_xscale = face;
 	//Collisions
 	//Wall collisions
 	if _wallCollisions == true

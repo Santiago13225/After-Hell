@@ -32,7 +32,8 @@ zombieTypes = [
 	{type: oPurpleEyedZombie, probability: 3},//oPurpleEyedZombie with a 3% chance.
 	{type: oRedEyedZombie, probability: 3},//oRedEyedZombie with a 3% chance.
     {type: oBlueEyedZombie, probability: 5},//oBlueEyedZombie with a 5% chance.
-	{type: oHellHound, probability: 5},//oHellHound with a 5% chance.
+	{type: oHellHound, probability: 1},//oHellHound with a 5% chance.
+	{type: oPumpkinMonster, probability: 4},
 	
 	{type: oFetidZombie, probability: 5},//oFetidZombie with a 5% chance.
     {type: oFetidPurpleEyedZombie, probability: 5},//oFetidPurpleEyedZombie with a 5% chance.
