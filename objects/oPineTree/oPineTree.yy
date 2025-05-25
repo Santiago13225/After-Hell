@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPineTree",
-    "path": "sprites/sPineTree/sPineTree.yy",
+    "name": "sPineTree2",
+    "path": "sprites/sPineTree2/sPineTree2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

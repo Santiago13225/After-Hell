@@ -14,7 +14,7 @@ option[0, 0] = "Trademark and Copyright Notice\n" +
 "mechanics, are protected by copyright law. Unauthorized reproduction, distribution, or \n" +
 "modification of this game is strictly prohibited and may result in legal action.\n\n" +
 "Copyright @ 2025 Red Shift Studios. All rights reserved.\n\n" +
-"Press [Space] to continue";
+"Press [Space] to Continue";
 
 op_length = 0;
 menu_level = 0;
