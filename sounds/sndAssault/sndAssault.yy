@@ -10,14 +10,14 @@
   "bitRate": 8,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 2.04,
+  "duration": 0.308141,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 5512,
-  "soundFile": "sndAssault.mp3",
+  "soundFile": "sndAssault.wav",
   "type": 0,
-  "volume": 0.5,
+  "volume": 1.0,
 }

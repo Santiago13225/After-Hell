@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 1.07102,
+  "duration": 0.123583,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "snd8BitExplosion2.mp3",
+  "soundFile": "snd8BitExplosion2.wav",
   "type": 0,
-  "volume": 0.75,
+  "volume": 1.0,
 }

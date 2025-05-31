@@ -20,7 +20,6 @@ if (accept_key){
 	var _sml = menu_level;
 
 	switch(menu_level){
-		
 		//menu
 		case 0:
 		switch(pos){

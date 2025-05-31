@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 48.0,
+  "duration": 137.14282,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sndTutorialTheme.ogg",
+  "soundFile": "sndTutorialTheme.mp3",
   "type": 0,
   "volume": 1.0,
 }

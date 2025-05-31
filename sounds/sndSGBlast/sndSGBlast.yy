@@ -10,14 +10,14 @@
   "bitRate": 8,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 2.037551,
+  "duration": 0.679206,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 5512,
-  "soundFile": "sndSGBlast.mp3",
+  "soundFile": "sndSGBlast.wav",
   "type": 0,
-  "volume": 0.6,
+  "volume": 1.0,
 }
