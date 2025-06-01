@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 449.90692,
+  "duration": 1.519274,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sndSlotMachine.mp3",
+  "soundFile": "sndSlotMachine.wav",
   "type": 0,
   "volume": 1.0,
 }

@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 1.697959,
+  "duration": 0.123583,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sndMoney.mp3",
+  "soundFile": "sndMoney.wav",
   "type": 0,
   "volume": 1.0,
 }

@@ -10,14 +10,14 @@
   "bitRate": 8,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 4.493061,
+  "duration": 2.011542,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 5512,
-  "soundFile": "sndRocket.mp3",
+  "soundFile": "sndRocket.wav",
   "type": 0,
   "volume": 1.0,
 }

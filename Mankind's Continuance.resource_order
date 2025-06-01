@@ -586,6 +586,7 @@
     {"name":"oEvolvedZombie","order":97,"path":"objects/oEvolvedZombie/oEvolvedZombie.yy",},
     {"name":"sSpeakBlock","order":3,"path":"sprites/sSpeakBlock/sSpeakBlock.yy",},
     {"name":"oTitle","order":6,"path":"objects/oTitle/oTitle.yy",},
+    {"name":"sCarouselMenu3","order":34,"path":"sprites/sCarouselMenu3/sCarouselMenu3.yy",},
     {"name":"oHardcoreRocket","order":118,"path":"objects/oHardcoreRocket/oHardcoreRocket.yy",},
     {"name":"oLowHealthScreen","order":21,"path":"objects/oLowHealthScreen/oLowHealthScreen.yy",},
     {"name":"sndSplatter","order":6,"path":"sounds/sndSplatter/sndSplatter.yy",},

@@ -615,6 +615,7 @@
     {"id":{"name":"oEvolvedZombie","path":"objects/oEvolvedZombie/oEvolvedZombie.yy",},},
     {"id":{"name":"sSpeakBlock","path":"sprites/sSpeakBlock/sSpeakBlock.yy",},},
     {"id":{"name":"oTitle","path":"objects/oTitle/oTitle.yy",},},
+    {"id":{"name":"sCarouselMenu3","path":"sprites/sCarouselMenu3/sCarouselMenu3.yy",},},
     {"id":{"name":"oHardcoreRocket","path":"objects/oHardcoreRocket/oHardcoreRocket.yy",},},
     {"id":{"name":"oLowHealthScreen","path":"objects/oLowHealthScreen/oLowHealthScreen.yy",},},
     {"id":{"name":"sndSplatter","path":"sounds/sndSplatter/sndSplatter.yy",},},
