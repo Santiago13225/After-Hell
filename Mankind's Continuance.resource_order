@@ -545,6 +545,7 @@
     {"name":"oAssaultWallbuy2","order":152,"path":"objects/oAssaultWallbuy2/oAssaultWallbuy2.yy",},
     {"name":"oPillar","order":74,"path":"objects/oPillar/oPillar.yy",},
     {"name":"oUltraPistol","order":126,"path":"objects/oUltraPistol/oUltraPistol.yy",},
+    {"name":"sndEarthquake","order":97,"path":"sounds/sndEarthquake/sndEarthquake.yy",},
     {"name":"oWarpBlock","order":13,"path":"objects/oWarpBlock/oWarpBlock.yy",},
     {"name":"sFetidPurpleEyedZombie2","order":41,"path":"sprites/sFetidPurpleEyedZombie2/sFetidPurpleEyedZombie2.yy",},
     {"name":"oInput","order":5,"path":"objects/oInput/oInput.yy",},

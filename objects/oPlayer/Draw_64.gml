@@ -32,13 +32,31 @@ if!(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance
 	var _ammoX = _wx/2 + (dx * 3);
 	var _ammoY= _wy/2 + (dy * 3) + (3 * 3);
 	var _color = c_white;
+	
+	/*
 	if(global.PlayerAmmo[oPlayer.selectedWeapon] == 0){
 		_color = c_red;
 	}else{
 		_color = c_white;
 	}
-	
 	draw_text_transformed_color(_ammoX, _ammoY, "Ammo: " + string(global.PlayerAmmo[oPlayer.selectedWeapon]), 2, 2, 0, _color, _color, _color, _color, 1);
+	*/
+	
+	if(oPlayer.selectedWeapon == 0) {
+		//Any pistol variant will be at index 0 → unlimited ammo
+		ammoText = "Ammo: Unlimited";
+	}else {
+	    //Non‐pistol weapons → show actual ammo
+	    var ammoCount = global.PlayerAmmo[oPlayer.selectedWeapon];
+	    if(ammoCount == 0) {
+	        _color = c_red;
+	    }
+	    ammoText = "Ammo: " + string(ammoCount);
+	}
+
+	draw_text_transformed_color(_ammoX, _ammoY, ammoText, 2, 2, 0, _color, _color, _color, _color, 1);
+	
+	//draw_text_transformed_color(_ammoX, _ammoY, "Ammo: " + string(global.PlayerAmmo[oPlayer.selectedWeapon]), 2, 2, 0, _color, _color, _color, _color, 1);
 	//draw_text_transformed(_ammoX, _ammoY, "Ammo: " + string(global.PlayerAmmo[oPlayer.selectedWeapon]), 2, 2, 0);
 	draw_set_halign(fa_left);
 }

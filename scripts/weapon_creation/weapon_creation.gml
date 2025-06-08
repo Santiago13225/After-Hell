@@ -1,6 +1,7 @@
 // constructor template for weapons
 //function create_weapon(_sprite = sPistol, _weaponLength = 0, _bulletObj = oBullet, _cooldown = 9, _bulletNum = 1, _spread = 0, _pickupSprite = sPistolPickup) constructor{
-function create_weapon(_sprite = sPistol, _weaponLength = 0, _bulletObj = oBullet, _cooldown = 9, _bulletNum = 1, _spread = 0, _pickupSprite = sPistolPickup, _ammo = 0) constructor{
+function create_weapon(_name = "Unknown", _sprite = sPistol, _weaponLength = 0, _bulletObj = oBullet, _cooldown = 9, _bulletNum = 1, _spread = 0, _pickupSprite = sPistolPickup, _ammo = 0) constructor{
+	name = _name;//<-- add this
 	sprite = _sprite;
 	length = _weaponLength;
 	bulletObj = _bulletObj;
@@ -18,6 +19,7 @@ global.PlayerAmmo = array_create(0);
 //the weapons
 global.WeaponList = {
 	pistol : new create_weapon(
+		"Pistol",//<- name
 		sPistol,
 		sprite_get_bbox_right(sPistol) - sprite_get_xoffset(sPistol),
 		oBullet,
@@ -27,6 +29,7 @@ global.WeaponList = {
 		sPistolPickup
 	),
 	raygun : new create_weapon(
+		"Raygun",//<- name
 		sRaygun,
 		sprite_get_bbox_right(sRaygun) - sprite_get_xoffset(sRaygun),
 		oRayGunBlast,
@@ -36,6 +39,7 @@ global.WeaponList = {
 		sRaygunPickup
 	),
 	sniper : new create_weapon(
+		"Sniper",//<- name
 		sSniper,
 		sprite_get_bbox_right(sSniper) - sprite_get_xoffset(sSniper),
 		oSniperBullet,
@@ -45,6 +49,7 @@ global.WeaponList = {
 		sSniperPickup
 	),
 	shotgun : new create_weapon(
+		"Shotgun",//<- name
 		sShotgun,
 		sprite_get_bbox_right(sShotgun) - sprite_get_xoffset(sShotgun),
 		oShotGunBullet,
@@ -54,6 +59,7 @@ global.WeaponList = {
 		sShotgunPickup
 	),
 	assault : new create_weapon(
+		"AR",//<- name
 		sAssault,
 		sprite_get_bbox_right(sAssault) - sprite_get_xoffset(sAssault),
 		oBullet,
@@ -63,6 +69,7 @@ global.WeaponList = {
 		sAssaultPickup
 	),
 	smg : new create_weapon(
+		"SMG",//<- name
 		sSMG,
 		sprite_get_bbox_right(sSMG) - sprite_get_xoffset(sSMG),
 		oBullet,
@@ -72,6 +79,7 @@ global.WeaponList = {
 		sSMGPickup
 	),
 	lmg : new create_weapon(
+		"LMG",//<- name
 		sLMG,
 		sprite_get_bbox_right(sLMG) - sprite_get_xoffset(sLMG),
 		oBullet,
@@ -81,6 +89,7 @@ global.WeaponList = {
 		sLMGPickup
 	),
 	bazooka : new create_weapon(
+		"Bazooka",//<- name
 		sBazooka,
 		sprite_get_bbox_right(sBazooka) - sprite_get_xoffset(sBazooka),
 		oRocket,
@@ -90,6 +99,7 @@ global.WeaponList = {
 		sBazookaPickup
 	),
 	hpistol : new create_weapon(
+		"Pistol - MK.II",//<- name
 		sHardcorePistol,
 		sprite_get_bbox_right(sHardcorePistol) - sprite_get_xoffset(sHardcorePistol),
 		oHardcoreBullet,
@@ -99,6 +109,7 @@ global.WeaponList = {
 		sHardcorePistolPickup
 	),
 	hraygun : new create_weapon(
+		"Raygun - MK.II",//<- name
 		sHardcoreRaygun,
 		sprite_get_bbox_right(sHardcoreRaygun) - sprite_get_xoffset(sHardcoreRaygun),
 		oHardcoreRayGunBlast,
@@ -108,6 +119,7 @@ global.WeaponList = {
 		sHardcoreRaygunPickup
 	),
 	hsniper : new create_weapon(
+		"Sniper - MK.II",//<- name
 		sHardcoreSniper,
 		sprite_get_bbox_right(sHardcoreSniper) - sprite_get_xoffset(sHardcoreSniper),
 		oHardcoreSniperBullet,
@@ -117,6 +129,7 @@ global.WeaponList = {
 		sHardcoreSniperPickup
 	),
 	hshotgun : new create_weapon(
+		"Shotgun - MK.II",//<- name
 		sHardcoreShotgun,
 		sprite_get_bbox_right(sHardcoreShotgun) - sprite_get_xoffset(sHardcoreShotgun),
 		oHardcoreShotGunBullet,
@@ -126,6 +139,7 @@ global.WeaponList = {
 		sHardcoreShotgunPickup
 	),
 	hassault : new create_weapon(
+		"AR - MK.II",//<- name
 		sHardcoreAssault,
 		sprite_get_bbox_right(sHardcoreAssault) - sprite_get_xoffset(sHardcoreAssault),
 		oHardcoreBullet,
@@ -135,6 +149,7 @@ global.WeaponList = {
 		sHardcoreAssaultPickup
 	),
 	hsmg : new create_weapon(
+		"SMG - MK.II",//<- name
 		sHardcoreSMG,
 		sprite_get_bbox_right(sHardcoreSMG) - sprite_get_xoffset(sHardcoreSMG),
 		oHardcoreBullet,
@@ -144,6 +159,7 @@ global.WeaponList = {
 		sHardcoreSMGPickup
 	),
 	hlmg : new create_weapon(
+		"LMG - MK.II",//<- name
 		sHardcoreLMG,
 		sprite_get_bbox_right(sHardcoreLMG) - sprite_get_xoffset(sHardcoreLMG),
 		oHardcoreBullet,
@@ -153,6 +169,7 @@ global.WeaponList = {
 		sHardcoreLMGPickup
 	),
 	hbazooka : new create_weapon(
+		"Bazooka - MK.II",//<- name
 		sHardcoreBazooka,
 		sprite_get_bbox_right(sHardcoreBazooka) - sprite_get_xoffset(sHardcoreBazooka),
 		oHardcoreRocket,
@@ -162,6 +179,7 @@ global.WeaponList = {
 		sHardcoreBazookaPickup
 	),
 	upistol : new create_weapon(
+		"Pistol - MK.III",//<- name
 		sUltraPistol,
 		sprite_get_bbox_right(sUltraPistol) - sprite_get_xoffset(sUltraPistol),
 		oUltraBullet,
@@ -171,6 +189,7 @@ global.WeaponList = {
 		sUltraPistolPickup
 	),
 	uraygun : new create_weapon(
+		"Raygun - MK.III",//<- name
 		sUltraRaygun,
 		sprite_get_bbox_right(sUltraRaygun) - sprite_get_xoffset(sUltraRaygun),
 		oUltraRayGunBlast,
@@ -180,6 +199,7 @@ global.WeaponList = {
 		sUltraRaygunPickup
 	),
 	usniper : new create_weapon(
+		"Sniper - MK.III",//<- name
 		sUltraSniper,
 		sprite_get_bbox_right(sUltraSniper) - sprite_get_xoffset(sUltraSniper),
 		oUltraSniperBullet,
@@ -189,6 +209,7 @@ global.WeaponList = {
 		sUltraSniperPickup
 	),
 	ushotgun : new create_weapon(
+		"Shotgun - MK.III",//<- name
 		sUltraShotgun,
 		sprite_get_bbox_right(sUltraShotgun) - sprite_get_xoffset(sUltraShotgun),
 		oUltraShotGunBullet,
@@ -198,6 +219,7 @@ global.WeaponList = {
 		sUltraShotgunPickup
 	),
 	uassault : new create_weapon(
+		"AR - MK.III",//<- name
 		sUltraAssault,
 		sprite_get_bbox_right(sUltraAssault) - sprite_get_xoffset(sUltraAssault),
 		oUltraBullet,
@@ -207,6 +229,7 @@ global.WeaponList = {
 		sUltraAssaultPickup
 	),
 	usmg : new create_weapon(
+		"SMG - MK.III",//<- name
 		sUltraSMG,
 		sprite_get_bbox_right(sUltraSMG) - sprite_get_xoffset(sUltraSMG),
 		oUltraBullet,
@@ -216,6 +239,7 @@ global.WeaponList = {
 		sUltraSMGPickup
 	),
 	ulmg : new create_weapon(
+		"LMG - MK.III",//<- name
 		sUltraLMG,
 		sprite_get_bbox_right(sUltraLMG) - sprite_get_xoffset(sUltraLMG),
 		oUltraBullet,
@@ -225,6 +249,7 @@ global.WeaponList = {
 		sUltraLMGPickup
 	),
 	ubazooka : new create_weapon(
+		"Bazooka - MK.III",//<- name
 		sUltraBazooka,
 		sprite_get_bbox_right(sUltraBazooka) - sprite_get_xoffset(sUltraBazooka),
 		oUltraRocket,

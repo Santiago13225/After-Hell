@@ -25,7 +25,7 @@ if instance_exists(oPlayer) {
         );
 
 		// 4) draw the ammo count underneath
-		var ammo = (global.PlayerAmmo[oPlayer.selectedWeapon]);
+		//var ammo = (global.PlayerAmmo[oPlayer.selectedWeapon]);
 
 		//draw_set_font(global.font);
 		draw_set_halign(fa_center);
@@ -36,15 +36,27 @@ if instance_exists(oPlayer) {
 		var text_y = drawY + (5 * 3);
 
 		var _color = c_white;
-		if(global.PlayerAmmo[oPlayer.selectedWeapon] == 0){
+		
+		/*if(global.PlayerAmmo[oPlayer.selectedWeapon] == 0){
 			_color = c_red;
 		}else{
 			_color = c_white;
 		}
 
 		draw_text_transformed_color(text_x, text_y, "Ammo: " + string(ammo), 2.5, 2.5, 0, _color, _color, _color, _color, 1);
+		*/
 		//draw_text_transformed(text_x, text_y, "Ammo: " + string(ammo), 2.5, 2.5, 0);	
-    }
+		
+		// 5) draw the weapon name underneath
+		var weapon_name = weapon.name;// ← guaranteed to exist
+		draw_text_transformed_color(
+			drawX, drawY + (5 * 3),
+			weapon_name,
+			2.5, 2.5, 0,
+			c_white, c_white, c_white, c_white, 1
+		);
+
+}
 }
 
 /*

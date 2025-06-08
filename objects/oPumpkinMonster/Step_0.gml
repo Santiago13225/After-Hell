@@ -103,7 +103,10 @@ switch(state){
 	if(sprite_index == sPumpkinMonsterAttack && floor(image_index) == attackFrame && !attackTriggered){
 		attackTriggered = true;
 		
-		var _attackDist = 200;
+		audio_play_sound(sndEarthquake, 8, false);//Play explosion sound effect.
+		screen_shake(8);//Screen shake.
+		
+		var _attackDist = 300;
 		var _attackSep = 20;
 		var _attackNum = round(_attackDist/_attackSep);
 		var _attackDirSep = 10;

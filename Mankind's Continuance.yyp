@@ -574,6 +574,7 @@
     {"id":{"name":"oAssaultWallbuy2","path":"objects/oAssaultWallbuy2/oAssaultWallbuy2.yy",},},
     {"id":{"name":"oPillar","path":"objects/oPillar/oPillar.yy",},},
     {"id":{"name":"oUltraPistol","path":"objects/oUltraPistol/oUltraPistol.yy",},},
+    {"id":{"name":"sndEarthquake","path":"sounds/sndEarthquake/sndEarthquake.yy",},},
     {"id":{"name":"oWarpBlock","path":"objects/oWarpBlock/oWarpBlock.yy",},},
     {"id":{"name":"sFetidPurpleEyedZombie2","path":"sprites/sFetidPurpleEyedZombie2/sFetidPurpleEyedZombie2.yy",},},
     {"id":{"name":"oInput","path":"objects/oInput/oInput.yy",},},

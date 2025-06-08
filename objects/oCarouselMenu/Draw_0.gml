@@ -63,7 +63,7 @@ switch(item){
 	case 10: text = "City Block" break;
 	case 11: text = "The Yard" break;
 	case 12: text = "Test_Level" break;
-	default: text = "Help!" break;
+	default: text = "???" break;
 }
 
 draw_set_valign(fa_middle);

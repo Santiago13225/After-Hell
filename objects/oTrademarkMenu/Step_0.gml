@@ -27,8 +27,8 @@ if (accept_key){
 			case 0:
 				audio_play_sound(sndBeep, 10, false);//Play sound effect.
 				//room_goto(rm_Main);
-				TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
-				//TransitionStart(rm_Disclaimer_Screen, sqFadeOut, sqFadeIn);
+				//TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+				TransitionStart(rm_Disclaimer_Screen, sqFadeOut, sqFadeIn);
 				break;
 		}
 		break;
