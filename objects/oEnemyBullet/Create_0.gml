@@ -19,3 +19,7 @@ state = 0;//State variable.
 //Cleanup
 destroy = false;
 playerDestroy = true;
+
+//New: Lifetime control
+lifetime = 60 * 30; //30 seconds
+timer = 0;

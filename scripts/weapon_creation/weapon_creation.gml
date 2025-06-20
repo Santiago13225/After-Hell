@@ -19,7 +19,7 @@ global.PlayerAmmo = array_create(0);
 //the weapons
 global.WeaponList = {
 	pistol : new create_weapon(
-		"Pistol",//<- name
+		"Pistol - MK.I",//<- name
 		sPistol,
 		sprite_get_bbox_right(sPistol) - sprite_get_xoffset(sPistol),
 		oBullet,
@@ -29,7 +29,7 @@ global.WeaponList = {
 		sPistolPickup
 	),
 	raygun : new create_weapon(
-		"Raygun",//<- name
+		"Raygun - MK.I",//<- name
 		sRaygun,
 		sprite_get_bbox_right(sRaygun) - sprite_get_xoffset(sRaygun),
 		oRayGunBlast,
@@ -39,7 +39,7 @@ global.WeaponList = {
 		sRaygunPickup
 	),
 	sniper : new create_weapon(
-		"Sniper",//<- name
+		"Sniper - MK.I",//<- name
 		sSniper,
 		sprite_get_bbox_right(sSniper) - sprite_get_xoffset(sSniper),
 		oSniperBullet,
@@ -49,7 +49,7 @@ global.WeaponList = {
 		sSniperPickup
 	),
 	shotgun : new create_weapon(
-		"Shotgun",//<- name
+		"Shotgun - MK.I",//<- name
 		sShotgun,
 		sprite_get_bbox_right(sShotgun) - sprite_get_xoffset(sShotgun),
 		oShotGunBullet,
@@ -59,7 +59,7 @@ global.WeaponList = {
 		sShotgunPickup
 	),
 	assault : new create_weapon(
-		"AR",//<- name
+		"AR - MK.I",//<- name
 		sAssault,
 		sprite_get_bbox_right(sAssault) - sprite_get_xoffset(sAssault),
 		oBullet,
@@ -69,7 +69,7 @@ global.WeaponList = {
 		sAssaultPickup
 	),
 	smg : new create_weapon(
-		"SMG",//<- name
+		"SMG - MK.I",//<- name
 		sSMG,
 		sprite_get_bbox_right(sSMG) - sprite_get_xoffset(sSMG),
 		oBullet,
@@ -79,7 +79,7 @@ global.WeaponList = {
 		sSMGPickup
 	),
 	lmg : new create_weapon(
-		"LMG",//<- name
+		"LMG - MK.I",//<- name
 		sLMG,
 		sprite_get_bbox_right(sLMG) - sprite_get_xoffset(sLMG),
 		oBullet,
@@ -89,7 +89,7 @@ global.WeaponList = {
 		sLMGPickup
 	),
 	bazooka : new create_weapon(
-		"Bazooka",//<- name
+		"Bazooka - MK.I",//<- name
 		sBazooka,
 		sprite_get_bbox_right(sBazooka) - sprite_get_xoffset(sBazooka),
 		oRocket,

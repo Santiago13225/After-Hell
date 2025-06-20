@@ -10,14 +10,14 @@
   "bitRate": 8,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 1.121814,
+  "duration": 3.936,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 5512,
-  "soundFile": "sndSniperBlast.wav",
+  "soundFile": "sndSniperBlast.mp3",
   "type": 0,
   "volume": 1.0,
 }

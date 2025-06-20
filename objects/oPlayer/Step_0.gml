@@ -380,12 +380,12 @@ if (lowHealth) {
 }
 
 with(oShotgunWallbuy2) {
-    scr_HandleWallbuy(500, 120, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
+    scr_HandleWallbuy(500, 40, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
 }
 
 with(oRaygunWallbuy2) {
     scr_HandleWallbuy(
-        15000,                                      // cost
+        5000,                                      // cost
         40,                                         // ammoAdd
         global.WeaponList.raygun,                   // base
         global.WeaponList.hraygun,                  // hardcore
@@ -407,7 +407,7 @@ with(oSniperWallbuy2) {
 
 with(oAssaultWallbuy2) {
     scr_HandleWallbuy(
-        1800,                                       // cost
+        1500,                                       // cost
         120,                                        // ammoAdd
         global.WeaponList.assault,                  // base
         global.WeaponList.hassault,                 // hardcore
@@ -418,7 +418,7 @@ with(oAssaultWallbuy2) {
 
 with(oBazookaWallbuy2) {
     scr_HandleWallbuy(
-        18000,                                      // cost
+        6000,                                      // cost
         10,                                         // ammoAdd
         global.WeaponList.bazooka,                  // base
         global.WeaponList.hbazooka,                 // hardcore
@@ -429,7 +429,7 @@ with(oBazookaWallbuy2) {
 
 with(oSMGWallbuy2) {
     scr_HandleWallbuy(
-        1500,                                       // cost
+        1300,                                       // cost
         150,                                        // ammoAdd
         global.WeaponList.smg,                      // base
         global.WeaponList.hsmg,                     // hardcore

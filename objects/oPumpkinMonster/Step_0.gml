@@ -69,13 +69,11 @@ switch(state){
 	var _camBottom = _camTop + camera_get_view_height(view_camera[0]);
 	
 	//only add to timer if on screen
-	if bbox_right > _camLeft && bbox_left < _camRight && bbox_bottom > _camTop && bbox_top < _camBottom
-	{
+	if bbox_right > _camLeft && bbox_left < _camRight && bbox_bottom > _camTop && bbox_top < _camBottom{
 		shootTimer++;
 	}
 	
-	if shootTimer > cooldownTime
-	{
+	if shootTimer > cooldownTime{
 		//go to shoot state
 		state = 1;
 		//reset timer so the shooting state can use it too
@@ -106,7 +104,7 @@ switch(state){
 		audio_play_sound(sndEarthquake, 8, false);//Play explosion sound effect.
 		screen_shake(8);//Screen shake.
 		
-		var _attackDist = 300;
+		var _attackDist = 400;
 		var _attackSep = 20;
 		var _attackNum = round(_attackDist/_attackSep);
 		var _attackDirSep = 10;

@@ -6,6 +6,12 @@ if screen_pause(){//Pause Self
 	exit;
 }
 
+//Lifetime countdown
+timer++;
+if timer >= lifetime {
+	destroy = true;
+}
+
 //State Machine
 switch(state){
 	case 0://Wait for the enemy to shoot state.

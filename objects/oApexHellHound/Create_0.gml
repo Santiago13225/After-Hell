@@ -8,3 +8,6 @@ pathspeed = 1.9;
 
 //Movement Variables
 chaseSpd = 1.9;//Speed used when chasing a target.
+
+trapTimer = 0;
+cooldownTime = 60 * 5;//Adjust as needed for how frequently traps are dropped

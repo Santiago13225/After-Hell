@@ -10,14 +10,14 @@
   "bitRate": 8,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 0.303946,
+  "duration": 3.787755,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 5512,
-  "soundFile": "sndShot.wav",
+  "soundFile": "sndShot.mp3",
   "type": 0,
   "volume": 1.0,
 }

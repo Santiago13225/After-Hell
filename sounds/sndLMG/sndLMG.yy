@@ -10,14 +10,14 @@
   "bitRate": 8,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 0.132971,
+  "duration": 4.344,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 5512,
-  "soundFile": "sndLMG.wav",
+  "soundFile": "sndLMG.mp3",
   "type": 0,
   "volume": 1.0,
 }

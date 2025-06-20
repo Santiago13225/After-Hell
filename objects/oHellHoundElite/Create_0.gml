@@ -22,16 +22,6 @@ state = 0;//Zombie's current state.
 fadeSpd = 1/15;//Speed at which the zombie fades in.
 emergeSpd = .25;//Speed at which the zombie emerges.
 
-//Shooting State
-cooldownTime = 4*60;//Cooldown time between shots (*in frames).
-shootTimer = irandom(cooldownTime);//Initial shoot timer.
-windupTime = 60;//Time taken for weapon windup.
-recoverTime = 45;//Time taken to recover after shooting.
-bulletInst = noone;//Reference to the bullet instance.
-
-bulletXoff = 5;//Bullet's horizontal offset from the zombie.
-bulletYoff = -8;//Bullet's vertical offset from the zombie.
-
 path = path_add();//Initialize a path for the zombie.
 
 if instance_exists(oPlayer){//If the player exists.
@@ -40,3 +30,6 @@ if instance_exists(oPlayer){//If the player exists.
 }
 
 alarm[0] = 1;//Set Alarm 0 to true, which triggers it almost immediately.
+
+trapTimer = 0;
+cooldownTime = 60 * 5;//Adjust as needed for how frequently traps are dropped

@@ -27,7 +27,7 @@ function scr_game_text(_text_id){
 			break;
 		
 		case "RaygunWallbuy":
-			scr_text("Press [G] to purchase Raygun/Ammo for 15000\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase Raygun/Ammo for 5000\nPress [Space] to dismiss this message");
 			break;
 			
 		case "SniperWallbuy":
@@ -35,15 +35,15 @@ function scr_game_text(_text_id){
 			break;
 		
 		case "AssaultWallbuy":
-			scr_text("Press [G] to purchase AR/Ammo for 1800\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase AR/Ammo for 1500\nPress [Space] to dismiss this message");
 			break;
 		
 		case "BazookaWallbuy":
-			scr_text("Press [G] to purchase Bazooka/Ammo for 18000\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase Bazooka/Ammo for 6000\nPress [Space] to dismiss this message");
 			break;
 		
 		case "SMGWallbuy":
-			scr_text("Press [G] to purchase SMG/Ammo for 1500\nPress [Space] to dismiss this message");
+			scr_text("Press [G] to purchase SMG/Ammo for 1300\nPress [Space] to dismiss this message");
 			break;
 		
 		case "LMGWallbuy":

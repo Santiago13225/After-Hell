@@ -71,25 +71,42 @@ if hp <= 0{//If hp is 0 or less.
 		instance_create_depth(x, y, depth, oBlackbacks);//Create .
 	}
 	if _chance > 35 && _chance <= 40{//% chance of drop
-		instance_create_depth(x, y, depth, oLightAmmo);//Create .
+		if(array_contains(global.PlayerWeapons, global.WeaponList.smg) || array_contains(global.PlayerWeapons, global.WeaponList.hsmg) || array_contains(global.PlayerWeapons, global.WeaponList.usmg)){
+			instance_create_depth(x, y, depth, oLightAmmo);//Create .
+		}
 	}
 	if _chance > 40 && _chance <= 45{//% chance of drop
-		instance_create_depth(x, y, depth, oShellAmmo);//Create .
+		if(array_contains(global.PlayerWeapons, global.WeaponList.shotgun) || array_contains(global.PlayerWeapons, global.WeaponList.hshotgun) || array_contains(global.PlayerWeapons, global.WeaponList.ushotgun)){
+			instance_create_depth(x, y, depth, oShellAmmo);//Create .
+		}
 	}
 	if _chance > 45 && _chance <= 50{//% chance of drop
-		instance_create_depth(x, y, depth, oRifleAmmo);//Create .
+		if(array_contains(global.PlayerWeapons, global.WeaponList.assault) || array_contains(global.PlayerWeapons, global.WeaponList.hassault) || array_contains(global.PlayerWeapons, global.WeaponList.uassault)){
+			instance_create_depth(x, y, depth, oRifleAmmo);//Create .
+		}
 	}
 	if _chance > 50 && _chance <= 55{//% chance of drop
-		instance_create_depth(x, y, depth, oSniperAmmo);//Create .
+		if(array_contains(global.PlayerWeapons, global.WeaponList.sniper) || array_contains(global.PlayerWeapons, global.WeaponList.hsniper) || array_contains(global.PlayerWeapons, global.WeaponList.usniper)){
+			instance_create_depth(x, y, depth, oSniperAmmo);//Create .
+		}
 	}
 	if _chance > 55 && _chance <= 60{//% chance of drop
-		instance_create_depth(x, y, depth, oHeavyAmmo);//Create .
+		if(array_contains(global.PlayerWeapons, global.WeaponList.lmg) || array_contains(global.PlayerWeapons, global.WeaponList.hlmg) || array_contains(global.PlayerWeapons, global.WeaponList.ulmg)){
+			instance_create_depth(x, y, depth, oHeavyAmmo);//Create .
+		}
 	}
 	if _chance > 60 && _chance <= 65{//% chance of drop
-		instance_create_depth(x, y, depth, oRocketAmmo);//Create .
+		if(array_contains(global.PlayerWeapons, global.WeaponList.bazooka) || array_contains(global.PlayerWeapons, global.WeaponList.hbazooka) || array_contains(global.PlayerWeapons, global.WeaponList.ubazooka)){
+			instance_create_depth(x, y, depth, oRocketAmmo);//Create .
+		}
 	}
 	if _chance > 65 && _chance <= 70{//% chance of drop
-		instance_create_depth(x, y, depth, oColdCellAmmo);//Create .
+		if(array_contains(global.PlayerWeapons, global.WeaponList.raygun) || array_contains(global.PlayerWeapons, global.WeaponList.hraygun) || array_contains(global.PlayerWeapons, global.WeaponList.uraygun)){
+			instance_create_depth(x, y, depth, oColdCellAmmo);//Create .
+		}
+	}
+	if _chance > 70 && _chance <= 75{//% chance of drop
+		instance_create_depth(x, y, depth, oMedkit);//Create .
 	}
 	/*
 	if _chance > 70{//% chance of drop

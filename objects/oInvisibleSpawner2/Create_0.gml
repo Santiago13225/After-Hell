@@ -26,6 +26,12 @@ currentWave = 1;//Starting wave number.
 
 maxActiveEnemyMax = 512;//Set your desired maximum value here.
 
+if(room == rm_Tutorial_Level){
+	//Array of different zombie types with corresponding spawn probabilities.
+	zombieTypes = [
+	    {type: oZombie, probability: 100},//oBlueEyedZombie with a 5% chance.
+	];
+}else{
 //Array of different zombie types with corresponding spawn probabilities.
 zombieTypes = [
     {type: oZombie, probability: 3},//oZombie with a 3% chance.
@@ -58,6 +64,7 @@ zombieTypes = [
 	{type: oNightmarishZombie, probability: 2}//oNightmarishZombie with a 2% chance.
 	// Add more zombie types with their probabilities here
 ];
+}
 
 //Function to perform weighted random selection based on probabilities.
 function chooseZombieType() {// Returns the chosen zombie type.

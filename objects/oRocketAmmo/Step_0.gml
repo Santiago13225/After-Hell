@@ -69,7 +69,7 @@ if place_meeting(x, y, oPlayer) {
 
     //2)If found, give ammo and destroy
     if(hasBazooka){
-        oSFX.pickupSnd = true;
+		audio_play_sound(sndAmmo, 8, false);//Play sound effect.
         global.PlayerAmmo[pos] += ammoAdd;
         instance_destroy();
     }
