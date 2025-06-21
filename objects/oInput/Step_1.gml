@@ -14,6 +14,8 @@ if global.controllerMode == 0{//If set to keyboard and mouse mode.
 
 	global.shootKey = mouse_check_button(mb_left);
 	global.swapKeyPressed = mouse_check_button_pressed(mb_right);
+	global.upSwapKeyPressed = mouse_wheel_up();
+	global.downSwapKeyPressed = mouse_wheel_down();
 
 	global.startKeyPressed = keyboard_check_pressed(vk_enter);
 }

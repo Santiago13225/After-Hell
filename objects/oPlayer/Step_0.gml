@@ -10,6 +10,8 @@ upKey = global.upKey;
 downKey = global.downKey;
 shootKey = global.shootKey;
 swapKeyPressed = global.swapKeyPressed;
+upSwapKeyPressed = global.upSwapKeyPressed;
+downSwapKeyPressed = global.downSwapKeyPressed;
 startKeyPressed = global.startKeyPressed;
 
 #endregion
@@ -268,6 +270,44 @@ if swapKeyPressed{
 	selectedWeapon++;
 	if selectedWeapon >= array_length(_playerWeapons){
 		selectedWeapon = 0;	
+	}
+
+	//Set the new weapon
+	//weapon = _playerWeapons[selectedWeapon];//optimal
+}
+
+//Cycle through weapons
+if upSwapKeyPressed{
+	//Change the selection and wrap around
+	if array_length(_playerWeapons) > 1{
+		//Play a sound effect
+		audio_play_sound(sndCock, 8, false);
+	} else{
+		//Play a sound effect
+		audio_play_sound(sndBeep, 8, false);
+	}
+	selectedWeapon++;
+	if selectedWeapon >= array_length(_playerWeapons){
+		selectedWeapon = 0;	
+	}
+
+	//Set the new weapon
+	//weapon = _playerWeapons[selectedWeapon];//optimal
+}
+
+//Cycle through weapons
+if downSwapKeyPressed{
+	//Change the selection and wrap around
+	if array_length(_playerWeapons) > 1{
+		//Play a sound effect
+		audio_play_sound(sndCock, 8, false);
+	} else{
+		//Play a sound effect
+		audio_play_sound(sndBeep, 8, false);
+	}
+	selectedWeapon--;
+	if selectedWeapon < 0{
+		selectedWeapon = array_length(_playerWeapons) - 1;	
 	}
 
 	//Set the new weapon
@@ -1035,9 +1075,9 @@ if hp <= 0{
 	oHUD2.playerScore = 500;
 	clear_weapons();
 	array_resize(global.PlayerAmmo, 1);
+	array_resize(global.PlayerWeapons, 1);
 	//global.PlayerAmmo = [];//Completely reset the ammo array.
 	instance_destroy();//Destroy Ourself.
-	//clear_weapons();
 }
 
 var nearWallbuy = false;

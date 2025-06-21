@@ -15,6 +15,8 @@ global.yaxisRight = 0;
 
 global.shootKey = 0;
 global.swapKeyPressed = 0;
+global.upSwapKeyPressed = 0;
+global.downSwapKeyPressed = 0;
 
 global.startKeyPressed = 0;
 

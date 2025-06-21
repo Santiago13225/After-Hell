@@ -96,8 +96,7 @@ if pos < 0{
 //Using the options
 if accept_key{
 	//Pause menu
-	switch(pos)
-	{
+	switch(pos){
 		case 0:
 			global.dialog_active = false;
 			//room_restart();
@@ -107,6 +106,12 @@ if accept_key{
 			//instance_activate_object(oPlayer);
 			//instance_deactivate_object(oPlayer);
 			//TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+			
+			clear_weapons();
+			array_resize(global.PlayerAmmo, 1);
+			array_resize(global.PlayerWeapons, 1);
+			instance_deactivate_object(oPlayer);
+			
 			game_restart();//Reset wave-related data.
 			//audio_pause_sound(sndLaugh);
 			break;

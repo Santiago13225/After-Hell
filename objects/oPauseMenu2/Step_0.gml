@@ -189,6 +189,7 @@ if accept_key{
 					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					clear_weapons();
 					array_resize(global.PlayerAmmo, 1);
+					array_resize(global.PlayerWeapons, 1);
 					//global.PlayerAmmo = [];//Completely reset the ammo array.
 					break;
 			}
