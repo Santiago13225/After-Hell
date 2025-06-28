@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sFetidZombie2",
-    "path": "sprites/sFetidZombie2/sFetidZombie2.yy",
+    "name": "sZombie2",
+    "path": "sprites/sZombie2/sZombie2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

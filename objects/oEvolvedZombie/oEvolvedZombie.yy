@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sEvolvedZombie3",
-    "path": "sprites/sEvolvedZombie3/sEvolvedZombie3.yy",
+    "name": "sWraith",
+    "path": "sprites/sWraith/sWraith.yy",
   },
   "spriteMaskId": null,
   "visible": true,

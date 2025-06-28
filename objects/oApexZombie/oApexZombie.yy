@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sApexZombie4",
-    "path": "sprites/sApexZombie4/sApexZombie4.yy",
+    "name": "sDemon",
+    "path": "sprites/sDemon/sDemon.yy",
   },
   "spriteMaskId": null,
   "visible": true,

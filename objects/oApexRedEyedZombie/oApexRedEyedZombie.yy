@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sApexRedEyedZombie4",
-    "path": "sprites/sApexRedEyedZombie4/sApexRedEyedZombie4.yy",
+    "name": "sRedEyedDemon",
+    "path": "sprites/sRedEyedDemon/sRedEyedDemon.yy",
   },
   "spriteMaskId": null,
   "visible": true,

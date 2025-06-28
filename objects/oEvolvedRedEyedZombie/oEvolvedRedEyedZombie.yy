@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sEvolvedRedEyedZombie3",
-    "path": "sprites/sEvolvedRedEyedZombie3/sEvolvedRedEyedZombie3.yy",
+    "name": "sRedEyedWraith",
+    "path": "sprites/sRedEyedWraith/sRedEyedWraith.yy",
   },
   "spriteMaskId": null,
   "visible": true,
