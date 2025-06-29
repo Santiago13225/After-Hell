@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sFetidEnemyBullet",
-    "path": "sprites/sFetidEnemyBullet/sFetidEnemyBullet.yy",
+    "name": "sFetidEnemyBullet2",
+    "path": "sprites/sFetidEnemyBullet2/sFetidEnemyBullet2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

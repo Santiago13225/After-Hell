@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sEvolvedEnemyBullet",
-    "path": "sprites/sEvolvedEnemyBullet/sEvolvedEnemyBullet.yy",
+    "name": "sEvolvedEnemyBullet2",
+    "path": "sprites/sEvolvedEnemyBullet2/sEvolvedEnemyBullet2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

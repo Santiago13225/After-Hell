@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sEnemyBullet",
-    "path": "sprites/sEnemyBullet/sEnemyBullet.yy",
+    "name": "sEnemyBullet2",
+    "path": "sprites/sEnemyBullet2/sEnemyBullet2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

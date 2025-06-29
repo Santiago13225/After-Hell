@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sApexHellHound",
-    "path": "sprites/sApexHellHound/sApexHellHound.yy",
+    "name": "sDemonHellHound",
+    "path": "sprites/sDemonHellHound/sDemonHellHound.yy",
   },
   "spriteMaskId": null,
   "visible": true,

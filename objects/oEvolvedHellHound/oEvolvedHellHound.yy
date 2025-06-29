@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sEvolvedHellHound",
-    "path": "sprites/sEvolvedHellHound/sEvolvedHellHound.yy",
+    "name": "sWraithHellHound",
+    "path": "sprites/sWraithHellHound/sWraithHellHound.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 9.473696,
+  "duration": 12.9488,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sndGameOver.wav",
+  "soundFile": "sndGameOver.mp3",
   "type": 0,
   "volume": 1.0,
 }
