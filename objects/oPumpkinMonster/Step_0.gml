@@ -93,12 +93,12 @@ switch(state){
 	
 	//start the attack animation
 	_autoSprites = false;
-	if(sprite_index != sPumpkinMonsterAttack){
-		sprite_index = sPumpkinMonsterAttack;
+	if(sprite_index != sLostSoulAttack){
+		sprite_index = sLostSoulAttack;
 		image_index = 0;
 	}
 	
-	if(sprite_index == sPumpkinMonsterAttack && floor(image_index) == attackFrame && !attackTriggered){
+	if(sprite_index == sLostSoulAttack && floor(image_index) == attackFrame && !attackTriggered){
 		attackTriggered = true;
 		
 		audio_play_sound(sndEarthquake, 8, false);//Play explosion sound effect.
@@ -127,7 +127,7 @@ switch(state){
 	}
 	
 	//holding the animation
-	if(sprite_index == sPumpkinMonsterAttack && floor(image_index) == holdFrame) {
+	if(sprite_index == sLostSoulAttack && floor(image_index) == holdFrame) {
 		holdTimer--;
 		if(holdTimer > 0) {
 			image_index = holdFrame;
@@ -174,7 +174,7 @@ switch(state){
 }
 
 //reset the attack variables
-if sprite_index != sPumpkinMonsterAttack { attackTriggered = false; holdTimer = holdTime; };
+if sprite_index != sLostSoulAttack { attackTriggered = false; holdTimer = holdTime; };
 
 	//Chase the Player
 	if screen_pause() {

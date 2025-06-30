@@ -4,10 +4,10 @@
 
 event_inherited();//Inherit the parent event.
 
-sprite[0] = sPumpkinMonsterRight;
-sprite[1] = sPumpkinMonsterUp;
-sprite[2] = sPumpkinMonsterLeft;
-sprite[3] = sPumpkinMonsterDown;
+sprite[0] = sLostSoulRight;
+sprite[1] = sLostSoulUp;
+sprite[2] = sLostSoulLeft;
+sprite[3] = sLostSoulDown;
 face = 3;
 
 attackFrame = 11;

@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sVine",
-    "path": "sprites/sVine/sVine.yy",
+    "name": "sVine2",
+    "path": "sprites/sVine2/sVine2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

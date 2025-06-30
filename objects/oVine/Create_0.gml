@@ -6,4 +6,4 @@ holdTime = 10;
 
 delay = 0;
 
-damage = 4;
+damage = 16;

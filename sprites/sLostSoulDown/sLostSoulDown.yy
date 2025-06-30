@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8b9de6a0-3c30-40ee-997d-3b70d5e8b26a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e16fcafc-5071-4a6f-8f2f-5fae25c4fb81",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c05e33a6-ad47-4eec-9605-3f777fd2efcc",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dd82716a-2938-4b4c-ac0d-643fa344eadc",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c9099516-01e4-40b6-8831-b0cd0643a47d",},
@@ -57,7 +57,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8b9de6a0-3c30-40ee-997d-3b70d5e8b26a","path":"sprites/sLostSoulDown/sLostSoulDown.yy",},},},"Disabled":false,"id":"564c55e6-4d95-4a47-bc45-44f4310f211d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e16fcafc-5071-4a6f-8f2f-5fae25c4fb81","path":"sprites/sLostSoulDown/sLostSoulDown.yy",},},},"Disabled":false,"id":"9c4b074b-2641-4f49-9b73-3de1874b2ef1","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c05e33a6-ad47-4eec-9605-3f777fd2efcc","path":"sprites/sLostSoulDown/sLostSoulDown.yy",},},},"Disabled":false,"id":"2d61a7e1-d807-4d24-bf3a-67ca591567bd","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dd82716a-2938-4b4c-ac0d-643fa344eadc","path":"sprites/sLostSoulDown/sLostSoulDown.yy",},},},"Disabled":false,"id":"c9568651-ef8a-4ecd-81eb-e336f3608a5c","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c9099516-01e4-40b6-8831-b0cd0643a47d","path":"sprites/sLostSoulDown/sLostSoulDown.yy",},},},"Disabled":false,"id":"0967d0b0-c8e8-4ecf-8782-fe558ee540f0","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},

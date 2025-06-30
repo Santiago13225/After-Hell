@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPumpkinMonsterBomb",
-    "path": "sprites/sPumpkinMonsterBomb/sPumpkinMonsterBomb.yy",
+    "name": "sLostSoulBomb",
+    "path": "sprites/sLostSoulBomb/sLostSoulBomb.yy",
   },
   "spriteMaskId": null,
   "visible": true,

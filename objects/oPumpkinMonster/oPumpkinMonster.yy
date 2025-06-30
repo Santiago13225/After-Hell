@@ -18,8 +18,8 @@
     "path": "folders/Enemies.yy",
   },
   "parentObjectId": {
-    "name": "oEnemyParent",
-    "path": "objects/oEnemyParent/oEnemyParent.yy",
+    "name": "oEliteEnemyParent2",
+    "path": "objects/oEliteEnemyParent2/oEliteEnemyParent2.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -37,8 +37,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPumpkinMonsterDown",
-    "path": "sprites/sPumpkinMonsterDown/sPumpkinMonsterDown.yy",
+    "name": "sLostSoulDown",
+    "path": "sprites/sLostSoulDown/sLostSoulDown.yy",
   },
   "spriteMaskId": null,
   "visible": true,

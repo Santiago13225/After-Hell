@@ -100,6 +100,7 @@ switch(state)
 	
 	shootTimer++;//Shoot a bullet.
 	
+	//old shooting code
 	if shootTimer == 1{//Create the bullet.
 		bulletInst = instance_create_depth(x + bulletXoff*face, y + bulletYoff, depth, oApexEnemyBullet);
 	}
@@ -110,8 +111,24 @@ switch(state)
 	}
 
 	if shootTimer == windupTime && instance_exists(bulletInst){//Shoot bullet after the windup time is over.
-		audio_play_sound(sndThrow, 8, false);//Play a sound effect.
+		//audio_play_sound(sndThrow, 8, false);//Play a sound effect.
+		//bulletInst.state = 1;//Set our bullet's state to the movement state.
+	
+		//fire three bullets in a -15°, 0°, +15° arc
+        var spread = 15;
+        var base_x = x + bulletXoff*face;
+        var base_y = y + bulletYoff;
+        for (var i = -1; i <= 1; i++) {
+            var b = instance_create_depth(base_x, base_y, depth, oApexEnemyBullet);
+            b.dir   = dir + i * spread;
+            b.state = 1;
+        }
+        audio_play_sound(sndThrow, 8, false);
 		bulletInst.state = 1;//Set our bullet's state to the movement state.
+
+        //destroy the “held” one if you spawned it earlier
+        if (instance_exists(bulletInst)) instance_destroy(bulletInst);
+	
 	}
 	
 	if shootTimer > windupTime + recoverTime{//Recover and return to chasing the player.
