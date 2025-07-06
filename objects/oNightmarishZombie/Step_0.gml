@@ -110,8 +110,21 @@ switch(state)
 	}
 
 	if shootTimer == windupTime && instance_exists(bulletInst){//Shoot bullet after the windup time is over.
-		audio_play_sound(sndThrow, 8, false);//Play a sound effect.
+		//audio_play_sound(sndThrow, 8, false);//Play a sound effect.
+		//bulletInst.state = 1;//Set our bullet's state to the movement state.
+	
+		var base_x = x + bulletXoff * face;
+        var base_y = y + bulletYoff;
+        var count = 20;
+        var step  = 360 / count;
+        for (var i = 0; i < count; i++) {
+            var b = instance_create_depth(base_x, base_y, depth, oApexEnemyBullet);
+            b.dir   = i * step;
+            b.state = 1;
+        }
+        audio_play_sound(sndThrow, 8, false);
 		bulletInst.state = 1;//Set our bullet's state to the movement state.
+        if (instance_exists(bulletInst)) instance_destroy(bulletInst);
 	}
 	
 	if shootTimer > windupTime + recoverTime{//Recover and return to chasing the player.

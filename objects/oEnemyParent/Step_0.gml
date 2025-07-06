@@ -122,3 +122,36 @@ if hp <= 0{//If hp is 0 or less.
 
 	instance_destroy();//Destroy Self.
 }
+
+//Track zombie’s current area
+if(instance_exists(oAreaMarker)){
+	if(place_meeting(x, y, oAreaMarker)) {
+	    var inst = instance_place(x, y, oAreaMarker);
+	    if(instance_exists(inst)) {
+	        areaID = inst.areaID;
+	    }
+	}
+
+	if(areaID != global.playerAreaID) {
+	    var closestSpawn = noone;
+	    var shortestDist = 999999;
+
+	    //Loop through all spawn points
+	    with(oZombieAreaSpawn) {
+	        if(areaID == global.playerAreaID) {
+	            var distToPlayer = point_distance(x, y, oPlayer.x, oPlayer.y);
+	            if(distToPlayer < shortestDist) {
+	                closestSpawn = id;
+	                shortestDist = distToPlayer;
+	            }
+	        }
+	    }
+
+	    //Warp zombie to the closest spawn
+	    if(instance_exists(closestSpawn)) {
+	        x = closestSpawn.x;
+	        y = closestSpawn.y;
+	        areaID = global.playerAreaID;
+	    }
+	}
+}

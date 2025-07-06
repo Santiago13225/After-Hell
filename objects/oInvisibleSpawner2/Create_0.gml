@@ -29,7 +29,7 @@ maxActiveEnemyMax = 512;//Set your desired maximum value here.
 if(room == rm_Tutorial_Level){
 	//Array of different zombie types with corresponding spawn probabilities.
 	zombieTypes = [
-	    {type: oApexPurpleEyedZombie, probability: 100},//oBlueEyedZombie with a 5% chance.
+	    {type: oNightmarishZombie, probability: 100},//oBlueEyedZombie with a 5% chance.
 	];
 }else{
 //Array of different zombie types with corresponding spawn probabilities.

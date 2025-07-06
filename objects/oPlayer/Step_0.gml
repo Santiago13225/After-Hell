@@ -1102,3 +1102,13 @@ if(!nearWallbuy) {//Only destroy the textbox if the player isn't near any wallbu
     }
 	//nearWallbuy = false;
 }
+
+//Check which area the player is in
+if(instance_exists(oAreaMarker)){
+	if(place_meeting(x, y, oAreaMarker)) {
+	    var inst = instance_place(x, y, oAreaMarker);
+	    if(instance_exists(inst)) {
+	        global.playerAreaID = inst.areaID;
+	    }
+	}
+}
