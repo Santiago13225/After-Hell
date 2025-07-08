@@ -3,8 +3,7 @@
 //This event is resposible for handling zombie behavior.
 
 //Pause Self
-if screen_pause()
-{
+if screen_pause(){
 	exit;
 }
 /*
@@ -21,28 +20,23 @@ var _wallCollisions = true;//Set wall collisions to true.
 var _getDamage = true;//Set get damage to true.
 
 //State Machine
-switch(state)
-{
+switch(state){
 	case -1://Spawn in from spawn object.
 	
-	if place_meeting(x, y, oInvisibleSpawner2)
-	{//If the zombie is in contact with the spawner object.
-		if image_alpha >= 1
-		{//Walk Out
+	if place_meeting(x, y, oInvisibleSpawner2){//If the zombie is in contact with the spawner object.
+		if image_alpha >= 1{//Walk Out
 			spd = emergeSpd;//Set the right speed.
 			dir = 270;//Set the direction.
 		}
 		image_alpha = 1;//Make the zombie fully visable.
 
-		if !place_meeting(x, y, oInvisibleSpawner2)
-		{//Switch to the chasing state after out of the spawner object.
+		if !place_meeting(x, y, oInvisibleSpawner2){//Switch to the chasing state after out of the spawner object.
 			state = 0;
 		}
 	}
 	
 	//Fade In
-	if image_alpha < 1
-	{
+	if image_alpha < 1{
 		spd = 0;//Don't walk while fading in.
 		image_alpha += fadeSpd;//Fade in using the fade speed variable.
 	}
@@ -50,8 +44,7 @@ switch(state)
 	//Walk Out
 	_wallCollisions = false;//Set wall collisions to false.
 	_getDamage = false;//Set get damage to false.
-	if image_alpha >= 1
-	{//If completely visible.
+	if image_alpha >= 1{//If completely visible.
 		spd = emergeSpd;//Set the right speed.
 		dir = 270;//Set the direction.
 	}
@@ -75,13 +68,11 @@ switch(state)
 	var _camTop = camera_get_view_y(view_camera[0]);//Top of camera variable.
 	var _camBottom = _camTop + camera_get_view_height(view_camera[0]);//Bottom of camera variable.
 	
-	if bbox_right > _camLeft && bbox_left < _camRight && bbox_bottom > _camTop && bbox_top < _camBottom
-	{//If on screen...
+	if bbox_right > _camLeft && bbox_left < _camRight && bbox_bottom > _camTop && bbox_top < _camBottom{//If on screen...
 		shootTimer++;//Add to timer.
 	}
 	
-	if shootTimer > cooldownTime
-	{//If shoot timer is greater than the cooldown time...
+	if shootTimer > cooldownTime{//If shoot timer is greater than the cooldown time...
 		state = 1;//Go to the shoot state.
 		shootTimer = 0;//Reset the timer so the shooting state can use it too.
 	}
@@ -151,10 +142,9 @@ switch(state)
 		yspd = lengthdir_y(spd, dir);//Get the y speed.
 	}
 
-	if dir > 90 && dir < 270
-	{//Get the correct face.
+	if dir > 90 && dir < 270{//Get the correct face.
 		face = -1;
-	} else{
+	}else{
 		face = 1;
 	}
 	/*if xspd > 0{
@@ -166,24 +156,19 @@ switch(state)
 	
 	//Collisions
 	//Wall Collisions
-	if _wallCollisions == true
-	{//If zombie can collide with walls
-		if place_meeting(x + xspd, y, oWall)
-		{//If zombie meets with wall horizontally.
+	if _wallCollisions == true{//If zombie can collide with walls
+		if place_meeting(x + xspd, y, oWall){//If zombie meets with wall horizontally.
 			xspd = 0;//Set horizontal speed to 0.
 		}
-		if place_meeting(x, y + yspd, oWall)
-		{//If zombie meets with wall vertically.
+		if place_meeting(x, y + yspd, oWall){//If zombie meets with wall vertically.
 			yspd = 0;//Set vertical speed to 0.
 		}
 	}
 	//Enemy Collisions
-		if place_meeting(x + xspd, y, oEnemyParent)
-		{//If zombie meets with other zombie horizontally.
+		if place_meeting(x + xspd, y, oEnemyParent){//If zombie meets with other zombie horizontally.
 			xspd = 0;//Set horizontal speed to 0.
 		}
-		if place_meeting(x, y + yspd, oEnemyParent)
-		{//If zombie meets with other zombie vertically.
+		if place_meeting(x, y + yspd, oEnemyParent){//If zombie meets with other zombie vertically.
 			yspd = 0;//Set vertical speed to 0.
 		}
 
@@ -194,7 +179,6 @@ switch(state)
 	depth = -y;//Set the depth.
 
 //Inherit the parent event
-if _getDamage == true
-{//If zombie can get damaged...
+if _getDamage == true{//If zombie can get damaged...
 	event_inherited();//Inherit getting damaged and dying behavior.
 }

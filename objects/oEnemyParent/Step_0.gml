@@ -123,6 +123,8 @@ if hp <= 0{//If hp is 0 or less.
 	instance_destroy();//Destroy Self.
 }
 
+#region
+/*
 //Track zombie’s current area
 if(instance_exists(oAreaMarker)){
 	if(place_meeting(x, y, oAreaMarker)) {
@@ -154,4 +156,38 @@ if(instance_exists(oAreaMarker)){
 	        areaID = global.playerAreaID;
 	    }
 	}
+}*/
+#endregion
+
+//Track zombie’s current area
+if(instance_exists(oAreaMarker)) {
+    if(place_meeting(x, y, oAreaMarker)) {
+        var inst = instance_place(x, y, oAreaMarker);
+        if(instance_exists(inst)) {
+            areaID = inst.areaID;
+        }
+    }
+
+    //If zombie is in a different area than the player
+    if(areaID != global.playerAreaID) {
+        var spawnList = [];
+
+        //Collect all spawn points in the player's area
+        with(oZombieAreaSpawn) {
+            if(areaID == global.playerAreaID) {
+                array_push(spawnList, id);
+            }
+        }
+
+        //Pick a random one and teleport the zombie
+        if(array_length(spawnList) > 0) {
+            var randomSpawn = spawnList[irandom(array_length(spawnList) - 1)];
+
+            //Warp to the new location
+            x = randomSpawn.x;
+            y = randomSpawn.y;
+            areaID = global.playerAreaID;
+			create_animated_vfx(sPoof, x, y, depth - 50);
+        }
+    }
 }

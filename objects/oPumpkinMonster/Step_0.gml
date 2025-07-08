@@ -204,24 +204,19 @@ if sprite_index != sLostSoulAttack { attackTriggered = false; holdTimer = holdTi
 	//image_xscale = face;
 	//Collisions
 	//Wall collisions
-	if _wallCollisions == true
-	{//If zombie can collide with walls
-		if place_meeting(x + xspd, y, oWall)
-		{//If zombie meets with wall horizontally.
+	if _wallCollisions == true{//If zombie can collide with walls
+		if place_meeting(x + xspd, y, oWall){//If zombie meets with wall horizontally.
 			xspd = 0;//Set horizontal speed to 0.
 		}
-		if place_meeting(x, y + yspd, oWall)
-		{//If zombie meets with wall vertically.
+		if place_meeting(x, y + yspd, oWall){//If zombie meets with wall vertically.
 			yspd = 0;//Set vertical speed to 0.
 		}
 	}
 	//Enemy Collisions
-		if place_meeting(x + xspd, y, oEnemyParent)
-		{//If zombie meets with other zombie horizontally.
+		if place_meeting(x + xspd, y, oEnemyParent){//If zombie meets with other zombie horizontally.
 			xspd = 0;//Set horizontal speed to 0.
 		}
-		if place_meeting(x, y + yspd, oEnemyParent)
-		{//If zombie meets with other zombie vertically.
+		if place_meeting(x, y + yspd, oEnemyParent){//If zombie meets with other zombie vertically.
 			yspd = 0;//Set vertical speed to 0.
 		}
 
@@ -232,7 +227,6 @@ if sprite_index != sLostSoulAttack { attackTriggered = false; holdTimer = holdTi
 	depth = -y;//Set the depth.
 
 //Inherit the parent event
-if _getDamage == true
-{//If zombie can get damaged.
+if _getDamage == true{//If zombie can get damaged.
 	event_inherited();//Inherit getting damaged and dying behavior.
 }
