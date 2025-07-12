@@ -53,11 +53,11 @@ zombieTypes = [
     {type: oEvolvedBlueEyedZombie, probability: 5},//oEvolvedBlueEyedZombie with a 5% chance.
 	{type: oEvolvedHellHound, probability: 5},//oEvolvedHellHound with a 5% chance.
 	
-	{type: oApexZombie, probability: 5},//oApexZombie with a 5% chance.
-    {type: oApexPurpleEyedZombie, probability: 5},//oApexPurpleEyedZombie with a 5% chance.
-	{type: oApexRedEyedZombie, probability: 5},//oApexRedEyedZombie with a 5% chance.
-    {type: oApexBlueEyedZombie, probability: 5},//oApexBlueEyedZombie with a 5% chance.
-	{type: oApexHellHound, probability: 5},//oApexHellHound with a 5% chance.
+	{type: oApexZombie2, probability: 5},//oApexZombie with a 5% chance.
+    {type: oApexPurpleEyedZombie2, probability: 5},//oApexPurpleEyedZombie with a 5% chance.
+	{type: oApexRedEyedZombie2, probability: 5},//oApexRedEyedZombie with a 5% chance.
+    {type: oApexBlueEyedZombie2, probability: 5},//oApexBlueEyedZombie with a 5% chance.
+	{type: oApexHellHound2, probability: 5},//oApexHellHound with a 5% chance.
 	
 	{type: oDarkMinionZombie, probability: 2},//oDarkMinionZombie with a 2% chance.
     {type: oHellHoundElite, probability: 2},//oHellHoundElite with a 2% chance.

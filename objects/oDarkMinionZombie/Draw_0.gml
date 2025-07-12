@@ -23,3 +23,11 @@ draw_rectangle(x1, y1, x1 + sprite_width, y1 + sprite_height, false);
 draw_set_alpha(1);
 gpu_set_colorwriteenable(true, true, true, true);
 gpu_set_blendenable(true);
+//draw_text(x, y - 48, string(usingPathfinding));
+
+if(!usingPathfinding) {//Draw a red circle below the zombie if it's not using pathfinding
+	draw_set_color(c_red);
+    draw_circle(x, y + 6, 4, false);//small red circle under the feet
+	draw_set_color(c_white);
+	draw_circle(x, y + 6, 4, true);//small red circle under the feet
+}

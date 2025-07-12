@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oApexRedEyedZombie",
+  "name": "oApexRedEyedZombie2",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -12,8 +12,8 @@
     "path": "folders/Enemies.yy",
   },
   "parentObjectId": {
-    "name": "oApexZombie",
-    "path": "objects/oApexZombie/oApexZombie.yy",
+    "name": "oApexZombie2",
+    "path": "objects/oApexZombie2/oApexZombie2.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

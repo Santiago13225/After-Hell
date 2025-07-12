@@ -1,11 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oApexBlueEyedZombie",
+  "name": "oApexPurpleEyedZombie2",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -14,8 +13,8 @@
     "path": "folders/Enemies.yy",
   },
   "parentObjectId": {
-    "name": "oApexZombie",
-    "path": "objects/oApexZombie/oApexZombie.yy",
+    "name": "oApexZombie2",
+    "path": "objects/oApexZombie2/oApexZombie2.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -33,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sBlueEyedDemon",
-    "path": "sprites/sBlueEyedDemon/sBlueEyedDemon.yy",
+    "name": "sPurpleEyedDemon",
+    "path": "sprites/sPurpleEyedDemon/sPurpleEyedDemon.yy",
   },
   "spriteMaskId": null,
   "visible": true,

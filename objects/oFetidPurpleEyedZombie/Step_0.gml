@@ -113,17 +113,37 @@ switch(state){
 	break;
 	#endregion
 }
-
+/*
 	//Chase the Player
 	if screen_pause() {
-		//path_delete(path);
-		xspd = 0;
-		yspd = 0;
-	}else{
-		//path = path_add();
-		xspd = lengthdir_x(spd, dir);//Get the x speed.
-		yspd = lengthdir_y(spd, dir);//Get the y speed.
+	    //If paused, don't move at all
+	    xspd = 0;
+	    yspd = 0;
+	}else {
+	    //Zombie movement
+	    if usingPathfinding {
+	        xspd = 0;
+	        yspd = 0;
+	    }else {
+			if(instance_exists(oPlayer)) {
+		        dir = point_direction(x, y, oPlayer.x, oPlayer.y);//update direction
+		    }
+	        xspd = lengthdir_x(spd, dir);
+	        yspd = lengthdir_y(spd, dir);
+	    }
+	}*/
+	
+	if screen_pause() {
+	    xspd = 0;
+	    yspd = 0;
+	}else {
+	    xspd = lengthdir_x(spd, dir);
+	    yspd = lengthdir_y(spd, dir);
 	}
+
+	//Apply movement (outside pause check!)
+	//x += xspd;
+	//y += yspd;
 
 	if dir > 90 && dir < 270{//Get the correct face.
 		face = -1;

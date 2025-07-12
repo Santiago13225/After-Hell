@@ -33,3 +33,4 @@ alarm[0] = 1;//Set Alarm 0 to true, which triggers it almost immediately.
 
 trapTimer = 0;
 cooldownTime = 60 * 5;//Adjust as needed for how frequently traps are dropped
+usingPathfinding = false;

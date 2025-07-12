@@ -12,7 +12,8 @@ path = path_add();
 		pathspeed = 0.5;
 	}
 
-	if instance_exists(oPlayer){//Check if the player object exists in the game.
+#region
+	/*if instance_exists(oPlayer){//Check if the player object exists in the game.
 		//path_delete(path);
 		//path = path_add();
 		
@@ -24,4 +25,23 @@ path = path_add();
 		path_start(path, pathspeed, path_action_stop, true);//Start following the calculated path with a speed of 0.5 pixels per step.
 
 		alarm_set(0, 120);//Set an alarm (Alarm 0) to 120 steps to periodically recalculate the path.
-	}
+	}*/
+#endregion
+
+if instance_exists(oPlayer) {
+    target_x = oPlayer.x;
+    target_y = oPlayer.y;
+
+    //Attempt to find path using grid
+    if mp_grid_path(oSetupPathway.grid, path, x, y, target_x, target_y, true) {
+        path_start(path, pathspeed, path_action_stop, true);
+        usingPathfinding = true;
+		alarm_set(0, 120); // Retry later to keep updating the path
+    }else {
+        usingPathfinding = false;
+		alarm_set(0, 15); // Retry in 15 steps (~0.25 seconds)
+        //Optional: Log if path fails
+        //show_debug_message("Zombie failed to find path at: " + string(x) + "," + string(y));
+    }
+
+}

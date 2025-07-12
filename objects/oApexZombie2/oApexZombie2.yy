@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oApexZombie",
+  "name": "oApexZombie2",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -17,8 +17,8 @@
     "path": "folders/Enemies.yy",
   },
   "parentObjectId": {
-    "name": "oApexEnemyParent2",
-    "path": "objects/oApexEnemyParent2/oApexEnemyParent2.yy",
+    "name": "oApexEnemyParent",
+    "path": "objects/oApexEnemyParent/oApexEnemyParent.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

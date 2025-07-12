@@ -40,3 +40,4 @@ if instance_exists(oPlayer){//If the player exists.
 }
 
 alarm[0] = 1;//Set Alarm 0 to true, which triggers it almost immediately.
+usingPathfinding = false;

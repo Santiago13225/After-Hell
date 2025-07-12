@@ -91,7 +91,6 @@ switch(state){
 	
 	shootTimer++;//Shoot a bullet.
 	
-	//old shooting code
 	if shootTimer == 1{//Create the bullet.
 		bulletInst = instance_create_depth(x + bulletXoff*face, y + bulletYoff, depth, oApexEnemyBullet);
 	}
@@ -104,7 +103,7 @@ switch(state){
 	if shootTimer == windupTime && instance_exists(bulletInst){//Shoot bullet after the windup time is over.
 		//audio_play_sound(sndThrow, 8, false);//Play a sound effect.
 		//bulletInst.state = 1;//Set our bullet's state to the movement state.
-	
+		
 		//fire three bullets in a -15°, 0°, +15° arc
         var spread = 15;
         var base_x = x + bulletXoff*face;
@@ -119,7 +118,6 @@ switch(state){
 
         //destroy the “held” one if you spawned it earlier
         if (instance_exists(bulletInst)) instance_destroy(bulletInst);
-	
 	}
 	
 	if shootTimer > windupTime + recoverTime{//Recover and return to chasing the player.
@@ -130,17 +128,37 @@ switch(state){
 	break;
 	#endregion
 }
-
+/*
 	//Chase the Player
 	if screen_pause() {
-		//path_delete(path);
-		xspd = 0;
-		yspd = 0;
-	}else{
-		//path = path_add();
-		xspd = lengthdir_x(spd, dir);//Get the x speed.
-		yspd = lengthdir_y(spd, dir);//Get the y speed.
+	    //If paused, don't move at all
+	    xspd = 0;
+	    yspd = 0;
+	}else {
+	    //Zombie movement
+	    if usingPathfinding {
+	        xspd = 0;
+	        yspd = 0;
+	    }else {
+			if(instance_exists(oPlayer)) {
+		        dir = point_direction(x, y, oPlayer.x, oPlayer.y);//update direction
+		    }
+	        xspd = lengthdir_x(spd, dir);
+	        yspd = lengthdir_y(spd, dir);
+	    }
+	}*/
+	
+	if screen_pause() {
+	    xspd = 0;
+	    yspd = 0;
+	}else {
+	    xspd = lengthdir_x(spd, dir);
+	    yspd = lengthdir_y(spd, dir);
 	}
+
+	//Apply movement (outside pause check!)
+	//x += xspd;
+	//y += yspd;
 
 	if dir > 90 && dir < 270{//Get the correct face.
 		face = -1;
