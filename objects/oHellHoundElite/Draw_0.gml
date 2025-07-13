@@ -10,9 +10,11 @@ var _hpImage = _healthPercent * (sprite_get_number(sEnemyHealth) - 1);//Grab hea
 draw_sprite_ext(sEnemyHealth, _hpImage, x, y - sprite_height - 1, image_xscale, image_yscale, image_angle, image_blend, image_alpha);//Draw health bar based on zombie health.
 
 //draw_text(x, y, string(hp));//Draw zombie HP as text.
-if instance_exists(path){
+//if instance_exists(path){
+if path != -1 {
 	draw_path(path, x, y, 1);//Draw zombie path.
 }
+//}
 
 gpu_set_blendenable(false);
 gpu_set_colorwriteenable(false, false, false, true);

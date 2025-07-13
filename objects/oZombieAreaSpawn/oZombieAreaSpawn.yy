@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sZombieHead2",
-    "path": "sprites/sZombieHead2/sZombieHead2.yy",
+    "name": "sDemonSpawn2",
+    "path": "sprites/sDemonSpawn2/sDemonSpawn2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

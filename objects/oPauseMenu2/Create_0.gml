@@ -9,6 +9,15 @@ depth = -8500;//Let's you see the health and enemy count.
 
 global.dialog_active = true;//Disable silhouette drawing.
 
+with(oEnemyParent) {//Force all zombies to stop pathfinding and switch to dumb chase mode
+    if(path != -1) {
+        path_end();
+        path_delete(path);
+        path = -1;
+    }
+    usingPathfinding = false;//Switch to dumb chase mode
+}
+
 width = 64;
 height = 32;
 

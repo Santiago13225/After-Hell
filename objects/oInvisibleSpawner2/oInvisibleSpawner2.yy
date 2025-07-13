@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sZombieHead",
-    "path": "sprites/sZombieHead/sZombieHead.yy",
+    "name": "sDemonSpawn",
+    "path": "sprites/sDemonSpawn/sDemonSpawn.yy",
   },
   "spriteMaskId": null,
   "visible": true,

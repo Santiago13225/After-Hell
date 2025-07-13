@@ -2,8 +2,15 @@
 /*This object represents an Fetid Hell Hound.*/
 //This event is responsible for creating some variables for the zombie specified.
 
+//if screen_pause() {
+if(instance_exists(oPauseMenu2)){	
+    exit;
+}
+
 //Reset the current path by deleting the previous one and creating a new path.
-path_delete(path);
+if path_exists(path) {
+	path_delete(path);
+}
 path = path_add();
 
 	if instance_exists(oPauseMenu2){
