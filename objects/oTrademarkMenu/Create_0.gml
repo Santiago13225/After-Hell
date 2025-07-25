@@ -18,3 +18,11 @@ option[0, 0] = "Trademark and Copyright Notice\n" +
 
 op_length = 0;
 menu_level = 0;
+
+//Only initialize if not already set
+if(!variable_global_exists("matchPresetIndex")) {
+    global.matchPresetIndex = 0;
+}
+if(!variable_global_exists("matchPresets")) {
+    global.matchPresets = get_match_presets();//This must match your script name
+}

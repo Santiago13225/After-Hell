@@ -26,44 +26,21 @@ currentWave = 1;//Starting wave number.
 
 maxActiveEnemyMax = 512;//Set your desired maximum value here.
 
-if(room == rm_Tutorial_Level){
-	//Array of different zombie types with corresponding spawn probabilities.
+if(room == rm_Tutorial_Level) {
 	zombieTypes = [
-	    {type: oZombie, probability: 100},//oZombie with a 100% chance.
+	    {type: oZombie, probability: 100}
 	];
-}else{
-//Array of different zombie types with corresponding spawn probabilities.
-zombieTypes = [
-    {type: oZombie, probability: 3},//oZombie with a 3% chance.
-	{type: oPurpleEyedZombie, probability: 3},//oPurpleEyedZombie with a 3% chance.
-	{type: oRedEyedZombie, probability: 3},//oRedEyedZombie with a 3% chance.
-    {type: oBlueEyedZombie, probability: 5},//oBlueEyedZombie with a 5% chance.
-	{type: oHellHound, probability: 1},//oHellHound with a 5% chance.
-	{type: oPumpkinMonster, probability: 4},
-	
-	{type: oFetidZombie, probability: 5},//oFetidZombie with a 5% chance.
-    {type: oFetidPurpleEyedZombie, probability: 5},//oFetidPurpleEyedZombie with a 5% chance.
-	{type: oFetidRedEyedZombie, probability: 5},//oFetidRedEyedZombie with a 5% chance.
-    {type: oFetidBlueEyedZombie, probability: 5},//oFetidBlueEyedZombie with a 5% chance.
-	{type: oFetidHellHound, probability: 5},//oFetidHellHound with a 5% chance.
-	
-	{type: oEvolvedZombie, probability: 5},//oEvolvedZombie with a 5% chance.
-    {type: oEvolvedPurpleEyedZombie, probability: 5},//oEvolvedPurpleEyedZombie with a 5% chance.
-	{type: oEvolvedRedEyedZombie, probability: 5},//EvolvedRedEyedZombie with a 5% chance.
-    {type: oEvolvedBlueEyedZombie, probability: 5},//oEvolvedBlueEyedZombie with a 5% chance.
-	{type: oEvolvedHellHound, probability: 5},//oEvolvedHellHound with a 5% chance.
-	
-	{type: oApexZombie2, probability: 5},//oApexZombie with a 5% chance.
-    {type: oApexPurpleEyedZombie2, probability: 5},//oApexPurpleEyedZombie with a 5% chance.
-	{type: oApexRedEyedZombie2, probability: 5},//oApexRedEyedZombie with a 5% chance.
-    {type: oApexBlueEyedZombie2, probability: 5},//oApexBlueEyedZombie with a 5% chance.
-	{type: oApexHellHound2, probability: 5},//oApexHellHound with a 5% chance.
-	
-	{type: oDarkMinionZombie, probability: 2},//oDarkMinionZombie with a 2% chance.
-    {type: oHellHoundElite, probability: 2},//oHellHoundElite with a 2% chance.
-	{type: oNightmarishZombie, probability: 2}//oNightmarishZombie with a 2% chance.
-	// Add more zombie types with their probabilities here
-];
+}else {
+	//Use the preset selected in the match settings carousel
+	if(is_undefined(global.matchPresets)) {
+		show_debug_message("Warning: global.matchPresets undefined. Defaulting to standard zombieTypes.");
+		zombieTypes = [
+			{type: oZombie, probability: 100}
+			// Add more defaults or fallback here if needed...
+		];
+	}else {
+		zombieTypes = global.matchPresets[global.matchPresetIndex];
+	}
 }
 
 //Function to perform weighted random selection based on probabilities.

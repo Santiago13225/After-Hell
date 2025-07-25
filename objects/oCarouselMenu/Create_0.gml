@@ -11,6 +11,6 @@ menu_y = room_height/2;
 menu_width = 500;
 menu_height = 50;
 
-// Initialize these variables in the Create event if not already done:
+//Initialize these variables in the Create event if not already done:
 arrowLeftAnim = 0;
 arrowRightAnim = 0;

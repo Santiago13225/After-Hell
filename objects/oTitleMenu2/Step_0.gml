@@ -88,7 +88,8 @@ if accept_key{
 					//Instead of switching menu pages, destroy the title menu
 					//and create the carousel menu object.
 					instance_destroy();  
-					instance_create_layer(0, 0, "Instances", oCarouselMenu);
+					//instance_create_layer(0, 0, "Instances", oCarouselMenu);
+					instance_create_layer(0, 0, "Instances", oSettingsCarouselMenu);
 					break;
 				//Multiplayer Mode
 				case 2:
