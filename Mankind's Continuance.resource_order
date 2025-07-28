@@ -251,6 +251,7 @@
     {"name":"rm_Title_Screen","order":3,"path":"rooms/rm_Title_Screen/rm_Title_Screen.yy",},
     {"name":"oRubble","order":28,"path":"objects/oRubble/oRubble.yy",},
     {"name":"sInventory","order":11,"path":"sprites/sInventory/sInventory.yy",},
+    {"name":"sSettingsCarouselMenu3","order":41,"path":"sprites/sSettingsCarouselMenu3/sSettingsCarouselMenu3.yy",},
     {"name":"sTilesOverlook","order":9,"path":"sprites/sTilesOverlook/sTilesOverlook.yy",},
     {"name":"oPlantPot","order":11,"path":"objects/oPlantPot/oPlantPot.yy",},
     {"name":"sNightmarishZombie5","order":33,"path":"sprites/sNightmarishZombie5/sNightmarishZombie5.yy",},

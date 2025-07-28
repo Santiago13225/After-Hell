@@ -39,7 +39,7 @@ switch(item) {
     case 4: text = "Hell Unleashed"; break;
     case 5: text = "Wailing Shadows"; break;
 	case 6: text = "Bloodthirst"; break;
-    case 7: text = "Projectile Storm"; break;
+    case 7: text = "Arcane Onslaught"; break;
     case 8: text = "Masters of the Dead"; break;
 	case 9: text = "Hounds of Horror"; break;
     case 10: text = "Rapid Terror"; break;

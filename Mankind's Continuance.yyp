@@ -275,6 +275,7 @@
     {"id":{"name":"rm_Title_Screen","path":"rooms/rm_Title_Screen/rm_Title_Screen.yy",},},
     {"id":{"name":"oRubble","path":"objects/oRubble/oRubble.yy",},},
     {"id":{"name":"sInventory","path":"sprites/sInventory/sInventory.yy",},},
+    {"id":{"name":"sSettingsCarouselMenu3","path":"sprites/sSettingsCarouselMenu3/sSettingsCarouselMenu3.yy",},},
     {"id":{"name":"sTilesOverlook","path":"sprites/sTilesOverlook/sTilesOverlook.yy",},},
     {"id":{"name":"oPlantPot","path":"objects/oPlantPot/oPlantPot.yy",},},
     {"id":{"name":"sNightmarishZombie5","path":"sprites/sNightmarishZombie5/sNightmarishZombie5.yy",},},
