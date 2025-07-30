@@ -1,4 +1,3 @@
-if hitConfirm == true
-{
-instance_destroy();	
+if hitConfirm == true {
+	instance_destroy();	
 }

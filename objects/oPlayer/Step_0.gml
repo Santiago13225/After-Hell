@@ -165,7 +165,14 @@ moveDir = point_direction(0, 0, _horizKey, _vertKey);
 var_spd = 0;
 var _inputLevel = point_distance(0, 0, _horizKey, _vertKey);
 _inputLevel = clamp(_inputLevel, 0, 1);
-_spd = moveSpd * _inputLevel;
+
+//Apply speed perk boost here
+var _moveSpd = moveSpd;
+if(global.speed) {
+    _moveSpd *= 1.25;//Boost amount (adjust if needed)
+}
+
+_spd = _moveSpd * _inputLevel;
 
 xspd = lengthdir_x(_spd, moveDir);
 yspd = lengthdir_y(_spd, moveDir);
@@ -263,7 +270,7 @@ if swapKeyPressed{
 	if array_length(_playerWeapons) > 1{
 		//Play a sound effect
 		audio_play_sound(sndCock, 8, false);
-	} else{
+	}else{
 		//Play a sound effect
 		audio_play_sound(sndBeep, 8, false);
 	}
@@ -282,7 +289,7 @@ if upSwapKeyPressed{
 	if array_length(_playerWeapons) > 1{
 		//Play a sound effect
 		audio_play_sound(sndCock, 8, false);
-	} else{
+	}else{
 		//Play a sound effect
 		audio_play_sound(sndBeep, 8, false);
 	}
@@ -301,7 +308,7 @@ if downSwapKeyPressed{
 	if array_length(_playerWeapons) > 1{
 		//Play a sound effect
 		audio_play_sound(sndCock, 8, false);
-	} else{
+	}else{
 		//Play a sound effect
 		audio_play_sound(sndBeep, 8, false);
 	}
@@ -333,7 +340,17 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weap
 	
 	//Reset the timer
 	//shootTimer = shootCooldown;
-	shootTimer = weapon.cooldown;
+	//shootTimer = weapon.cooldown;//Old code
+	
+	//Modify cooldown if perk is active
+	var modifiedCooldown = weapon.cooldown;
+	if(global.firerate) {
+		modifiedCooldown = max(1, round(weapon.cooldown * 0.75));//25% faster shooting
+	}
+
+	//Reset the timer
+	shootTimer = modifiedCooldown;
+	
 	//Shooting
 	//Create the bullet
 	var _xOffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir);
@@ -387,7 +404,12 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weap
 }
 
 if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0){
-	shootTimer = weapon.cooldown;
+	//shootTimer = weapon.cooldown;//Old code
+	var modifiedCooldown = weapon.cooldown;
+	if(global.firerate) {
+		modifiedCooldown = max(1, round(weapon.cooldown * 0.75));
+	}
+	shootTimer = modifiedCooldown;
 	audio_play_sound(sndEmpty, 6, false);	
 }
 
@@ -1110,5 +1132,14 @@ if(instance_exists(oAreaMarker)){
 	    if(instance_exists(inst)) {
 	        global.playerAreaID = inst.areaID;
 	    }
+	}
+}
+
+if(global.energyshield && shield < maxShield) {
+	if(shieldRegenTimer > 0) {
+		shieldRegenTimer--;
+	}else {
+		//shield += shieldRegenRate;
+		shield = min(shield + shieldRegenRate, maxShield);
 	}
 }

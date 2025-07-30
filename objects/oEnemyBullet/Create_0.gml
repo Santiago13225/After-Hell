@@ -4,7 +4,7 @@
 
 event_inherited();//Inherit the parent event.
 
-damage = 4;//Damage dealt.
+damage = 4;//Set damage.
 
 dir = 0;//Direction.
 spd = 2;//Speed.

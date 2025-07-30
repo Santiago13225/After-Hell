@@ -13,17 +13,16 @@ function removeWeaponFromPlayer(weapon){
     var weaponFound = false;
     var weaponIndex = -1;
 
-    for (var i = 0; i < arrayLength; i++){
-        if (global.PlayerWeapons[i] == weapon){
+    for(var i = 0; i < arrayLength; i++){
+        if(global.PlayerWeapons[i] == weapon){
             weaponFound = true;
             weaponIndex = i;
             break;
         }
     }
-
-    if (weaponFound){
+    if(weaponFound){
         //Remove the weapon from the array
-        for (var j = weaponIndex; j < arrayLength - 1; j++){
+        for(var j = weaponIndex; j < arrayLength - 1; j++){
             global.PlayerWeapons[j] = global.PlayerWeapons[j + 1];
         }
         array_resize(global.PlayerWeapons, arrayLength - 1);

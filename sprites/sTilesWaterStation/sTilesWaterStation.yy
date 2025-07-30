@@ -13,7 +13,9 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"70a61898-72d7-4998-96f5-25572b3321ad",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fcf297a6-b718-464e-b6f2-862907677c64",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b1302a87-e85b-413d-90c3-69f947fb3790",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4f405f63-75f7-41fe-92dd-c227859bd268",},
   ],
   "gridX": 16,
   "gridY": 16,
@@ -43,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -54,7 +56,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"70a61898-72d7-4998-96f5-25572b3321ad","path":"sprites/sTilesWaterStation/sTilesWaterStation.yy",},},},"Disabled":false,"id":"ccf516cd-cc42-4dd3-afa7-718eaf2db170","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fcf297a6-b718-464e-b6f2-862907677c64","path":"sprites/sTilesWaterStation/sTilesWaterStation.yy",},},},"Disabled":false,"id":"b4e4da57-6a5f-4afc-b93b-8dc0d8319389","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b1302a87-e85b-413d-90c3-69f947fb3790","path":"sprites/sTilesWaterStation/sTilesWaterStation.yy",},},},"Disabled":false,"id":"839a459a-a7a0-487f-83b0-f677a781a0c4","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4f405f63-75f7-41fe-92dd-c227859bd268","path":"sprites/sTilesWaterStation/sTilesWaterStation.yy",},},},"Disabled":false,"id":"f755c584-a2e6-480b-ae93-e089f4753ffa","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

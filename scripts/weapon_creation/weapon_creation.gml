@@ -1,4 +1,4 @@
-// constructor template for weapons
+//constructor template for weapons
 //function create_weapon(_sprite = sPistol, _weaponLength = 0, _bulletObj = oBullet, _cooldown = 9, _bulletNum = 1, _spread = 0, _pickupSprite = sPistolPickup) constructor{
 function create_weapon(_name = "Unknown", _sprite = sPistol, _weaponLength = 0, _bulletObj = oBullet, _cooldown = 9, _bulletNum = 1, _spread = 0, _pickupSprite = sPistolPickup, _ammo = 0) constructor{
 	name = _name;//<-- add this

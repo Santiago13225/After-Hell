@@ -26,11 +26,23 @@ if!(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance
 	//draw_text_transformed(x, y - sprite_height - 12, string(hp), .6, .6, 0);
 	draw_text_transformed(_wx/2 + (dx * 3), _wy/2 + (dy * 3) - (sprite_height * 3) - (12 * 3), string(hp), (.6 * 3), (.6 * 3), 0);
 	//draw_set_halign(fa_left);
-	
+
+	//Draw Shield Bar (below HP bar)
+	//if(global.energyshield && maxShield > 0) {
+	if(global.energyshield && variable_instance_exists(id, "shield") && variable_instance_exists(id, "maxShield")) {
+		if(maxShield > 0) {
+			var _shieldRatio = oPlayer.shield / oPlayer.maxShield;
+			//_shieldRatio = clamp(_shieldRatio, 0, 1);
+			var _shImage = _shieldRatio * (sprite_get_number(sPlayerShield) - 1);
+			draw_sprite_ext(sPlayerShield, _shImage, _wx/2 + (dx * 3), _wy/2 + (dy * 3) + (sprite_height) - (5 * 3), image_xscale * 3, image_yscale * 3, image_angle, image_blend, image_alpha);//48 = below HP bar
+			draw_text_transformed(_wx/2 + (dx * 3), _wy/2 + (dy * 3) + (sprite_height) - (3 * 3), string(shield), (.6 * 3), (.6 * 3), 0);
+		}
+	}
+
 	//ammo for current weapon
 	draw_set_font(global.fontHUD);
 	var _ammoX = _wx/2 + (dx * 3);
-	var _ammoY= _wy/2 + (dy * 3) + (3 * 3);
+	var _ammoY= _wy/2 + (dy * 3) + (12 * 3);
 	var _color = c_white;
 	
 	/*

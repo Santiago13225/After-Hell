@@ -2,8 +2,6 @@
 /*This object represents the player object.*/
 //This event is responsible for setting some variables for the player object.
 
-//Avoid extra player objects
-
 if room == rm_Mission0{
 	oHUD2.playerScore = 10000000;
 }
@@ -13,6 +11,27 @@ item = global.item_list2.pistol;
 //Damage setup
 //get_damage_create(10, true);//Sets player to 10 hp.
 get_damage_create(100, true);//Sets player to 100 hp.
+
+//Energy Shield
+/*
+shieldMax = 100;//Maximum shield HP
+shield = shieldMax;//Current shield HP
+shieldRegenRate = 0.25;//Regen per frame (15 = full regen in 4 seconds at 60fps)
+shieldRegenCooldown = 180;//Time to wait before regen starts (3 seconds)
+shieldRegenTimer = 0;//Countdown until regen starts*/
+
+//Energy Shield Variables
+/*
+shield = 0;
+maxShield = 0;
+shieldRegenTimer = 0;
+shieldRegenDelay = 180;//Frames to wait before regen starts (e.g., 3 seconds)
+shieldRegenRate = 0.25;//Shield regen per frame (adjust as needed)
+*/
+if(global.energyshield) {
+    maxShield = 50;//Or however much you want
+    shield = maxShield;
+}
 
 lowHealth = false;
 

@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1ad64275-2089-4b96-bec8-ffbd74381a42",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0147baa4-3163-4ebf-a025-7100cc4b3134",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"44325288-30b4-4ca1-a617-f3a2b01d5e17",},
   ],
   "gridX": 16,
@@ -55,7 +55,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1ad64275-2089-4b96-bec8-ffbd74381a42","path":"sprites/sTilesIsland/sTilesIsland.yy",},},},"Disabled":false,"id":"3717d8bd-7820-4482-8646-ec184d24036a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0147baa4-3163-4ebf-a025-7100cc4b3134","path":"sprites/sTilesIsland/sTilesIsland.yy",},},},"Disabled":false,"id":"22cceb97-6c07-4abf-9cc3-db1478e69967","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"44325288-30b4-4ca1-a617-f3a2b01d5e17","path":"sprites/sTilesIsland/sTilesIsland.yy",},},},"Disabled":false,"id":"fb12930f-f2e5-4f4a-8a2d-723d2e2835ea","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

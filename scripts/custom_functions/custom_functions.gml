@@ -83,7 +83,7 @@ function create_animated_vfx(_sprite, _x, _y, _depth, _rot = 0){
 function get_damage_create(_hp = 10, _iframes = false){
 	maxHp = _hp;
 	hp = _hp;
-			
+
 	//Get the iframes
 	if _iframes == true{
 		iframeTimer = 0;
@@ -94,6 +94,23 @@ function get_damage_create(_hp = 10, _iframes = false){
 	if _iframes == false{
 		damageList = ds_list_create();
 	}
+	
+	//Optional: If this instance is the player and the energy shield is active, set shield vars
+	/*if(object_index == oPlayer && global.energyshield) {
+		maxShield = 25;
+		shield = maxShield;
+		shieldRegenCooldown = 120;
+		shieldRegenTimer = 0;
+	}*/
+	
+	if object_index == oPlayer && global.energyshield {
+		shield = 100;
+		maxShield = 100;
+		shieldRegenRate = 1;
+		shieldRegenDelay = 60 * 10;//10 seconds!
+		shieldRegenTimer = 0;
+	}
+	
 }
 	
 //Damage Clean Up Event
@@ -148,7 +165,28 @@ function get_damage(_damageObj, _iframes = false){
 				if _iframes == false{
 					ds_list_add(damageList, _inst);//Add the new damage instance to the damage list.
 				}
-				hp -= _inst.damage;//Take damage from specific instance.
+				//hp -= _inst.damage;//Take damage from specific instance.//Old code.
+				
+				if object_index == oPlayer && global.energyshield {
+					if(shield > 0) {
+						var dmgLeft = _inst.damage;
+						//Subtract from shield first
+						shield -= dmgLeft;
+						if(shield < 0) {
+							dmgLeft = -shield;//Remainder damage goes to HP
+							shield = 0;
+							hp -= dmgLeft;
+						}
+						//Reset regen timer on hit
+						shieldRegenTimer = shieldRegenDelay;
+					}else {
+						hp -= _inst.damage;
+					}
+				}else {
+					//Enemies or non-shield users take damage normally
+					hp -= _inst.damage;
+				}
+
 				_hitConfirm = true;
 				_inst.hitConfirm = true;//Tell the damage instance it has impacted.
 				//_inst.destroy = true;
@@ -182,6 +220,10 @@ function get_damage(_damageObj, _iframes = false){
 	}
 
 	hp = clamp(hp, 0, maxHp);//Clamp HP.
+
+	if(object_index == oPlayer && global.energyshield) {
+		shield = clamp(shield, 0, maxShield);
+	}
 	
 	return _hitConfirm;//Return hit control variable value.
 }
