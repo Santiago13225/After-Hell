@@ -203,6 +203,7 @@
     {"id":{"name":"sDebris","path":"sprites/sDebris/sDebris.yy",},},
     {"id":{"name":"sndExplosion","path":"sounds/sndExplosion/sndExplosion.yy",},},
     {"id":{"name":"sBanner3","path":"sprites/sBanner3/sBanner3.yy",},},
+    {"id":{"name":"sPerksCarouselMenu2","path":"sprites/sPerksCarouselMenu2/sPerksCarouselMenu2.yy",},},
     {"id":{"name":"oFire","path":"objects/oFire/oFire.yy",},},
     {"id":{"name":"sPlayerShield","path":"sprites/sPlayerShield/sPlayerShield.yy",},},
     {"id":{"name":"sWarp3","path":"sprites/sWarp3/sWarp3.yy",},},

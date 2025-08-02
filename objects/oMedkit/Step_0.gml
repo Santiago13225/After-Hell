@@ -10,13 +10,18 @@ if screen_pause(){//Pause self
 floatDir += floatSpd;
 y = ystart + lengthdir_y(2, floatDir);
 //y = ystart + dsin(floatDir)*2;//alternative to line above
-
+var hpVar;
 #region
-
+if(global.juggernaut){
+	hpVar = 200;
+}else {
+	hpVar = 100;
+}
 //get collected by the player
 if place_meeting(x, y, oPlayer){
 	//heal the player
-	if(oPlayer.hp < 100){
+	//if(oPlayer.hp < 100){
+	if(oPlayer.hp < hpVar){
 		oPlayer.hp += heal;
 		instance_create_depth(x, y, -8000, oHealEffect);
 		//instance_create_depth(x, y, -8000, oHealScreen);

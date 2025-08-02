@@ -46,8 +46,20 @@ if hp <= 0{//If hp is 0 or less.
 		//oInvisibleSpawner2.ds_list_clear(oInvisibleSpawner2.activeSpawns);
     }
 
+//Determine how many drop attempts to make
+var _dropAttempts;
+
+if(global.luck){
+	_dropAttempts = irandom_range(2, 3);
+}else{
+	_dropAttempts = 1;
+}
+
+//var _dropAttempts = global.luck ? irandom_range(2, 3) : 1;
+
+for(var i = 0; i < _dropAttempts; i++) {
 	var _chance = irandom(100);//Random variable used to determine if we should drop an item.
-	
+
 	//if global.enemyKillCount mod 5 == 0//drop every 5 kills 
 	if _chance <= 5{//% chance of drop.
 		instance_create_depth(x, y, depth, oGreenbacks);//Create greenbacks.
@@ -59,16 +71,16 @@ if hp <= 0{//If hp is 0 or less.
 		instance_create_depth(x, y, depth, oRedbacks);//Create redbacks.
 	}
 	if _chance > 15 && _chance <= 20{//% chance of drop
-		instance_create_depth(x, y, depth, oBronzebacks);//Create .
+		instance_create_depth(x, y, depth, oBronzebacks);//Create bronzebacks.
 	}
 	if _chance > 20 && _chance <= 25{//% chance of drop
-		instance_create_depth(x, y, depth, oSilverbacks);//Create .
+		instance_create_depth(x, y, depth, oSilverbacks);//Create silverbacks.
 	}
 	if _chance > 25 && _chance <= 30{//% chance of drop
-		instance_create_depth(x, y, depth, oGoldbacks);//Create .
+		instance_create_depth(x, y, depth, oGoldbacks);//Create goldbacks.
 	}
 	if _chance > 30 && _chance <= 35{//% chance of drop
-		instance_create_depth(x, y, depth, oBlackbacks);//Create .
+		instance_create_depth(x, y, depth, oBlackbacks);//Create blackbacks.
 	}
 	if _chance > 35 && _chance <= 40{//% chance of drop
 		if(array_contains(global.PlayerWeapons, global.WeaponList.smg) || array_contains(global.PlayerWeapons, global.WeaponList.hsmg) || array_contains(global.PlayerWeapons, global.WeaponList.usmg)){
@@ -108,6 +120,7 @@ if hp <= 0{//If hp is 0 or less.
 	if _chance > 70 && _chance <= 75{//% chance of drop
 		instance_create_depth(x, y, depth, oMedkit);//Create .
 	}
+}
 	/*
 	if _chance > 70{//% chance of drop
 		audio_play_sound(sndExplosion, 8, false);//Play explosion sound effect.

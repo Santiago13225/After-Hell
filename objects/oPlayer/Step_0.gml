@@ -414,7 +414,12 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0){
 }
 
 //Check for low health condition (adjust the threshold as needed)
-var lowHealthThreshold = 30;//Set the desired low health threshold here
+if(global.juggernaut) {
+	var lowHealthThreshold = 60;
+}else {
+	var lowHealthThreshold = 30;//Set the desired low health threshold here
+}
+
 if (hp <= lowHealthThreshold && !lowHealth) {
     lowHealth = true;
 	//audio_loop_sound

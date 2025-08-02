@@ -181,6 +181,7 @@
     {"name":"sDebris","order":124,"path":"sprites/sDebris/sDebris.yy",},
     {"name":"sndExplosion","order":3,"path":"sounds/sndExplosion/sndExplosion.yy",},
     {"name":"sBanner3","order":8,"path":"sprites/sBanner3/sBanner3.yy",},
+    {"name":"sPerksCarouselMenu2","order":43,"path":"sprites/sPerksCarouselMenu2/sPerksCarouselMenu2.yy",},
     {"name":"oFire","order":102,"path":"objects/oFire/oFire.yy",},
     {"name":"sPlayerShield","order":17,"path":"sprites/sPlayerShield/sPlayerShield.yy",},
     {"name":"sWarp3","order":22,"path":"sprites/sWarp3/sWarp3.yy",},

@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPerksCarouselMenu",
-    "path": "sprites/sPerksCarouselMenu/sPerksCarouselMenu.yy",
+    "name": "sPerksCarouselMenu2",
+    "path": "sprites/sPerksCarouselMenu2/sPerksCarouselMenu2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

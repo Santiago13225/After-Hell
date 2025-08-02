@@ -10,7 +10,12 @@ item = global.item_list2.pistol;
 
 //Damage setup
 //get_damage_create(10, true);//Sets player to 10 hp.
-get_damage_create(100, true);//Sets player to 100 hp.
+if(global.juggernaut){
+	get_damage_create(200, true);//Sets player to 100 hp.
+}else{
+	get_damage_create(100, true);//Sets player to 100 hp.
+}
+//get_damage_create(100, true);//Sets player to 100 hp.
 
 //Energy Shield
 /*
