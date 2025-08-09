@@ -166,7 +166,7 @@ function get_damage(_damageObj, _iframes = false){
 					ds_list_add(damageList, _inst);//Add the new damage instance to the damage list.
 				}
 				//hp -= _inst.damage;//Take damage from specific instance.//Old code.
-				
+
 				if object_index == oPlayer && global.energyshield {
 					if(shield > 0) {
 						var dmgLeft = _inst.damage;

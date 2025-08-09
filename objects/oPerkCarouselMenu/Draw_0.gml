@@ -24,15 +24,14 @@ ds_priority_destroy(pr);
 //Perk name text
 var text;
 switch(item) {
-    case 0: text = "None"; break;
-    case 1: text = "Firerate"; break;
-    case 2: text = "Energy Shield"; break;
-    case 3: text = "Juggernaut"; break;
-    case 4: text = "Speed"; break;
-    case 5: text = "Luck"; break;
-    case 6: text = "Magnet"; break;
-    case 7: text = "Flak Jacket"; break;
-    default: text = "???"; break;
+	case 0: text = "None"; break;
+	case 1: text = "Rapid Fire"; break;
+	case 2: text = "Energy Shield"; break;
+	case 3: text = "Toughness"; break;
+	case 4: text = "Lightweight"; break;
+	case 5: text = "Extra Luck"; break;
+	case 6: text = "Flak Jacket"; break;
+	default: text = "???"; break;
 }
 
 draw_set_valign(fa_middle);

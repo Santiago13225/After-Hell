@@ -51,13 +51,77 @@ var _dropAttempts;
 
 if(global.luck){
 	_dropAttempts = irandom_range(2, 3);
+	
+	var _chance = irandom(100);//Random variable used to determine if we should drop an item.
+
+	for(var i = 0; i < _dropAttempts; i++){
+		//if global.enemyKillCount mod 5 == 0//drop every 5 kills 
+		
+		var dx = random_range(-4, 4);
+		var dy = random_range(-4, 4);
+		//instance_create_depth(x + dx, y + dy, depth, oGreenbacks);
+		
+		if _chance <= 6{//% chance of drop.
+			instance_create_depth(x + dx, y + dy, depth, oGreenbacks);//Create greenbacks.
+		}
+		if _chance > 6 && _chance <= 12{//% chance of drop
+			instance_create_depth(x + dx, y + dy, depth, oBluebacks);//Create bluebacks.
+		}
+		if _chance > 12 && _chance <= 18{//% chance of drop
+			instance_create_depth(x + dx, y + dy, depth, oRedbacks);//Create redbacks.
+		}
+		if _chance > 18 && _chance <= 24{//% chance of drop
+			instance_create_depth(x + dx, y + dy, depth, oBronzebacks);//Create bronzebacks.
+		}
+		if _chance > 24 && _chance <= 30{//% chance of drop
+			instance_create_depth(x + dx, y + dy , depth, oSilverbacks);//Create silverbacks.
+		}
+		if _chance > 30 && _chance <= 36{//% chance of drop
+			instance_create_depth(x + dx, y + dy, depth, oGoldbacks);//Create goldbacks.
+		}
+		if _chance > 36 && _chance <= 42{//% chance of drop
+			instance_create_depth(x + dx, y + dy, depth, oBlackbacks);//Create blackbacks.
+		}
+		if _chance > 42 && _chance <= 49{//% chance of drop
+			if(array_contains(global.PlayerWeapons, global.WeaponList.smg) || array_contains(global.PlayerWeapons, global.WeaponList.hsmg) || array_contains(global.PlayerWeapons, global.WeaponList.usmg)){
+				instance_create_depth(x + dx, y + dy, depth, oLightAmmo);//Create .
+			}
+		}
+		if _chance > 49 && _chance <= 56{//% chance of drop
+			if(array_contains(global.PlayerWeapons, global.WeaponList.shotgun) || array_contains(global.PlayerWeapons, global.WeaponList.hshotgun) || array_contains(global.PlayerWeapons, global.WeaponList.ushotgun)){
+				instance_create_depth(x + dx, y + dy, depth, oShellAmmo);//Create .
+			}
+		}
+		if _chance > 56 && _chance <= 63{//% chance of drop
+			if(array_contains(global.PlayerWeapons, global.WeaponList.assault) || array_contains(global.PlayerWeapons, global.WeaponList.hassault) || array_contains(global.PlayerWeapons, global.WeaponList.uassault)){
+				instance_create_depth(x + dx, y + dy, depth, oRifleAmmo);//Create .
+			}
+		}
+		if _chance > 63 && _chance <= 70{//% chance of drop
+			if(array_contains(global.PlayerWeapons, global.WeaponList.sniper) || array_contains(global.PlayerWeapons, global.WeaponList.hsniper) || array_contains(global.PlayerWeapons, global.WeaponList.usniper)){
+				instance_create_depth(x + dx, y + dy, depth, oSniperAmmo);//Create .
+			}
+		}
+		if _chance > 70 && _chance <= 77{//% chance of drop
+			if(array_contains(global.PlayerWeapons, global.WeaponList.lmg) || array_contains(global.PlayerWeapons, global.WeaponList.hlmg) || array_contains(global.PlayerWeapons, global.WeaponList.ulmg)){
+				instance_create_depth(x + dx, y + dy, depth, oHeavyAmmo);//Create .
+			}
+		}
+		if _chance > 77 && _chance <= 84{//% chance of drop
+			if(array_contains(global.PlayerWeapons, global.WeaponList.bazooka) || array_contains(global.PlayerWeapons, global.WeaponList.hbazooka) || array_contains(global.PlayerWeapons, global.WeaponList.ubazooka)){
+				instance_create_depth(x + dx, y + dy, depth, oRocketAmmo);//Create .
+			}
+		}
+		if _chance > 84 && _chance <= 91{//% chance of drop
+			if(array_contains(global.PlayerWeapons, global.WeaponList.raygun) || array_contains(global.PlayerWeapons, global.WeaponList.hraygun) || array_contains(global.PlayerWeapons, global.WeaponList.uraygun)){
+				instance_create_depth(x + dx, y + dy, depth, oColdCellAmmo);//Create .
+			}
+		}
+		if _chance > 91 && _chance <= 100{//% chance of drop
+			instance_create_depth(x + dx, y + dy, depth, oMedkit);//Create .
+		}
+	}
 }else{
-	_dropAttempts = 1;
-}
-
-//var _dropAttempts = global.luck ? irandom_range(2, 3) : 1;
-
-for(var i = 0; i < _dropAttempts; i++) {
 	var _chance = irandom(100);//Random variable used to determine if we should drop an item.
 
 	//if global.enemyKillCount mod 5 == 0//drop every 5 kills 

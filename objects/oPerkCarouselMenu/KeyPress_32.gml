@@ -10,7 +10,6 @@ switch(global.perkIndex) {
 	case 3: global.juggernaut = true; break;
 	case 4: global.speed = true; break;
 	case 5: global.luck = true; break;
-	case 6: global.magnet = true; break;
-	case 7: global.flakjacket = true; break;
+	case 6: global.flakjacket = true; break;
     //future cases: global.perkShield = true, etc.
 }

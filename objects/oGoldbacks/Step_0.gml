@@ -12,9 +12,8 @@ y = ystart + lengthdir_y(2, floatDir);
 //y = ystart + dsin(floatDir)*2;//alternative to line above
 
 //sprite_index = item.sprite;
-
 if place_meeting(x, y, oPlayer){//If money touches player...
-	audio_play_sound(sndMoney, 8, false);//Play mmoney sound.
+	audio_play_sound(sndMoney, 8, false);//Play money sound.
 
 	if instance_exists(oHUD2){//If HUD exists...
 		if !instance_exists(oScoreEffect){//If score effect not shown...

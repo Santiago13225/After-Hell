@@ -9,14 +9,18 @@ if screen_pause(){//Pause self
 //Float in Place
 floatDir += floatSpd;
 y = ystart + lengthdir_y(2, floatDir);
+
 //y = ystart + dsin(floatDir)*2;//alternative to line above
-var hpVar;
+//var hpVar
+
 #region
+var hpVar;
 if(global.juggernaut){
 	hpVar = 200;
 }else {
 	hpVar = 100;
 }
+
 //get collected by the player
 if place_meeting(x, y, oPlayer){
 	//heal the player
