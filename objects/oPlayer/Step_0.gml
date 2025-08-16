@@ -170,6 +170,8 @@ _inputLevel = clamp(_inputLevel, 0, 1);
 var _moveSpd = moveSpd;
 if(global.speed) {
     _moveSpd *= 1.25;//Boost amount (adjust if needed)
+}else if(global.lowspeed){
+	_moveSpd *= 0.75;
 }
 
 _spd = _moveSpd * _inputLevel;
@@ -346,6 +348,8 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weap
 	var modifiedCooldown = weapon.cooldown;
 	if(global.firerate) {
 		modifiedCooldown = max(1, round(weapon.cooldown * 0.75));//25% faster shooting
+	}else if(global.slowfirerate){
+		modifiedCooldown = max(1, round(weapon.cooldown * 1.25));//25% slower shooting
 	}
 
 	//Reset the timer
@@ -408,6 +412,8 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0){
 	var modifiedCooldown = weapon.cooldown;
 	if(global.firerate) {
 		modifiedCooldown = max(1, round(weapon.cooldown * 0.75));
+	}else if(global.slowfirerate){
+		modifiedCooldown = max(1, round(weapon.cooldown * 1.25));
 	}
 	shootTimer = modifiedCooldown;
 	audio_play_sound(sndEmpty, 6, false);	
@@ -416,6 +422,10 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0){
 //Check for low health condition (adjust the threshold as needed)
 if(global.juggernaut) {
 	var lowHealthThreshold = 60;
+}else if(global.instakill){
+	var lowHealthThreshold = 0;
+}else if(global.weakness){
+	var lowHealthThreshold = 15;
 }else {
 	var lowHealthThreshold = 30;//Set the desired low health threshold here
 }

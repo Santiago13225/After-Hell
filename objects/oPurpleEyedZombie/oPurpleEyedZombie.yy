@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPurpleEyedSkeleton",
-    "path": "sprites/sPurpleEyedSkeleton/sPurpleEyedSkeleton.yy",
+    "name": "sPurpleEyedSkeleton2",
+    "path": "sprites/sPurpleEyedSkeleton2/sPurpleEyedSkeleton2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

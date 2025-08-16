@@ -30,8 +30,7 @@ if hp <= 0{//If hp is 0 or less.
 	}
 	global.enemyKillCount++;//Add to the total amount of enemies killed.
 	oInvisibleSpawner2.zombiesKilledThisWave++;//Notify the spawner.
-	if oInvisibleSpawner2.zombiesKilledThisWave == oInvisibleSpawner2.activeEnemyMax && !waveCompletionMessageShown
-    {//If wave completed...
+	if oInvisibleSpawner2.zombiesKilledThisWave == oInvisibleSpawner2.activeEnemyMax && !waveCompletionMessageShown{//If wave completed...
         //Display the wave completion message if zombiesKilledThisWave >= activeEnemyMax
 		audio_play_sound(sndRoundEnd1, 10, false);//Play round end sound.
 		instance_create_depth(x, y, -8000, oWaveEndScreen);//Show round end notification.
@@ -121,6 +120,8 @@ if(global.luck){
 			instance_create_depth(x + dx, y + dy, depth, oMedkit);//Create .
 		}
 	}
+}else if(global.badluck){
+	//Drop nothing.
 }else{
 	var _chance = irandom(100);//Random variable used to determine if we should drop an item.
 
@@ -182,7 +183,11 @@ if(global.luck){
 		}
 	}
 	if _chance > 70 && _chance <= 75{//% chance of drop
-		instance_create_depth(x, y, depth, oMedkit);//Create .
+		if(global.instakill || global.nomedkit){
+			instance_create_depth(x, y, depth, oGreenbacks);//Create .
+		}else {
+			instance_create_depth(x, y, depth, oMedkit);//Create .
+		}
 	}
 }
 	/*

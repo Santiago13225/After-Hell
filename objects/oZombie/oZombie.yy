@@ -36,8 +36,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sSkeleton2",
-    "path": "sprites/sSkeleton2/sSkeleton2.yy",
+    "name": "sSkeleton",
+    "path": "sprites/sSkeleton/sSkeleton.yy",
   },
   "spriteMaskId": null,
   "visible": true,

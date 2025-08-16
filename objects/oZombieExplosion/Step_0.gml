@@ -1,16 +1,13 @@
 //pause self
-if screen_pause() 
-{
+if screen_pause() {
 	exit;
 }
 
 //create damage objects
-if createdDamageObjects == false
-{
+if createdDamageObjects == false{
 	//create an object to damage enemies
 	damageInst = instance_create_depth(x, y, 0, oDamagePlayer);
-	with(damageInst)
-	{
+	with(damageInst){
 		damage = other.damage;
 		mask_index = other.sprite_index;
 		image_xscale = other.image_xscale;
@@ -22,11 +19,9 @@ if createdDamageObjects == false
 }
 
 //get rid of the damage objects once they are done
-if image_index >= 2
-{
+if image_index >= 2{
 	//destroy
-	if instance_exists(damageInst)
-	{
+	if instance_exists(damageInst){
 		instance_destroy(damageInst);
 	}
 }

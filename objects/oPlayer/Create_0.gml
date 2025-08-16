@@ -12,6 +12,10 @@ item = global.item_list2.pistol;
 //get_damage_create(10, true);//Sets player to 10 hp.
 if(global.juggernaut){
 	get_damage_create(200, true);//Sets player to 100 hp.
+}else if(global.instakill){
+	get_damage_create(1, true);
+}else if(global.weakness){
+	get_damage_create(50, true);
 }else{
 	get_damage_create(100, true);//Sets player to 100 hp.
 }

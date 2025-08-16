@@ -39,9 +39,11 @@ if place_meeting(x, y, oPlayer){
 			array_push(global.PlayerAmmo, 0);
 		}
 		
+		global.PlayerAmmo[array_length(global.PlayerAmmo) - 1] += ammoAdd;
+		
 		//Set as the player's weapon
         audio_play_sound(sndReload, 8, false);
-        oPlayer.selectedWeapon = array_length(global.PlayerWeapons) - 1;
+        oPlayer.selectedWeapon = array_length(global.PlayerWeapons) - 1;//Set as the player's weapon.
         instance_destroy();//Destroy the object.
     }
 }

@@ -9,8 +9,13 @@ if screen_pause(){
 
 //Create damage objects
 if createdDamageObjects == false{
-	//Create an object to damage enemies
-	damageInst = instance_create_depth(x, y, 0, oDamageAll);
+
+	if(global.flakjacket){
+		damageInst = instance_create_depth(x, y, 0, oDamageEnemy);//Create an object to damage enemies
+	}else {
+		damageInst = instance_create_depth(x, y, 0, oDamageAll);//Create an object to damage enemies
+	}
+	
 	with(damageInst){
 		damage = other.damage;
 		mask_index = other.sprite_index;

@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sBlueEyedSkeleton",
-    "path": "sprites/sBlueEyedSkeleton/sBlueEyedSkeleton.yy",
+    "name": "sBlueEyedSkeleton2",
+    "path": "sprites/sBlueEyedSkeleton2/sBlueEyedSkeleton2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

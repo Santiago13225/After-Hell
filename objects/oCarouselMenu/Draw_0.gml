@@ -74,6 +74,54 @@ draw_text_transformed(menu_x, menu_y + menu_height/2 + 60, "Press [Space] to Sel
 draw_text_transformed(menu_x, menu_y + menu_height/2 + 75, "Press [Backspace] to Go Back", 1, 1, 0);
 //draw_text(menu_x, menu_y + menu_height/2 + 30, text);
 
+//Draw the selected modifier label below the map selection menu
+var modifierText;
+switch(global.perkIndex) {
+    case 0: modifierText = "None"; break;
+    case 1: modifierText = "Rapid Fire"; break;
+    case 2: modifierText = "Energy Shield"; break;
+    case 3: modifierText = "Toughness"; break;
+    case 4: modifierText = "Lightweight"; break;
+    case 5: modifierText = "Extra Luck"; break;
+    case 6: modifierText = "Flak Jacket"; break;
+    case 7: modifierText = "Wild Card"; break;
+    case 8: modifierText = "Sudden Death"; break;
+    case 9: modifierText = "Bad Luck"; break;
+    case 10: modifierText = "Sluggish"; break;
+    case 11: modifierText = "Weakness"; break;
+    case 12: modifierText = "Deprivation"; break;
+    case 13: modifierText = "Heavy Trigger"; break;
+    default: modifierText = "???"; break;
+}
+
+//Draw the selected modifier label below the map menu
+draw_text_transformed(menu_x, menu_y + menu_height / 2 + 95, "Modifier: " + modifierText, 1, 1, 0);
+
+//Draw match setting label below the modifiers menu
+var matchText;
+switch(global.matchPresetIndex) {
+    case 0: matchText = "Standard Threat"; break;
+    case 1: matchText = "Elite Invasion"; break;
+    case 2: matchText = "Deadlier Forces"; break;
+    case 3: matchText = "Final Hour"; break;
+    case 4: matchText = "Hell Unleashed"; break;
+    case 5: matchText = "Wailing Shadows"; break;
+    case 6: matchText = "Bloodthirst"; break;
+    case 7: matchText = "Arcane Onslaught"; break;
+    case 8: matchText = "Masters of the Dead"; break;
+    case 9: matchText = "Hounds of Horror"; break;
+    case 10: matchText = "Rapid Terror"; break;
+    case 11: matchText = "Plague of the Dead"; break;
+    case 12: matchText = "Rattle and Bone"; break;
+    case 13: matchText = "Bare Bones"; break;
+    case 14: matchText = "Dulled Danger"; break;
+    case 15: matchText = "Beginner's Curse"; break;
+    default: matchText = "???"; break;
+}
+
+//Draw Match Setting Name Below the Menu
+draw_text_transformed(menu_x, menu_y + menu_height / 2 + 115, "Game Mode: " + matchText, 1, 1, 0);
+
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 

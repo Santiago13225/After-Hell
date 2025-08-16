@@ -78,6 +78,18 @@ if accept_key{
 			{
 				//Story Mode
 				case 0:
+					global.firerate = false;
+					global.energyshield = false;
+					global.juggernaut = false;
+					global.speed = false;
+					global.luck = false;
+					global.flakjacket = false;
+					global.instakill = false;
+					global.badluck = false;
+					global.lowspeed = false;
+					global.weakness = false;
+					global.nomedkit = false;
+					global.slowfirerate = false;
 					//TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
 					TransitionStart(rm_Tutorial_Level, sqFadeOut, sqFadeIn);
 					//menu_level = 1;

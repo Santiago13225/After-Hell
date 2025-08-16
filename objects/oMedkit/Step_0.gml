@@ -17,6 +17,8 @@ y = ystart + lengthdir_y(2, floatDir);
 var hpVar;
 if(global.juggernaut){
 	hpVar = 200;
+}else if(global.weakness){
+	hpVar = 50;
 }else {
 	hpVar = 100;
 }

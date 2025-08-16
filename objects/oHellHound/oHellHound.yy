@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sSkeletonHellHound",
-    "path": "sprites/sSkeletonHellHound/sSkeletonHellHound.yy",
+    "name": "sSkeletonHellHound2",
+    "path": "sprites/sSkeletonHellHound2/sSkeletonHellHound2.yy",
   },
   "spriteMaskId": null,
   "visible": true,
