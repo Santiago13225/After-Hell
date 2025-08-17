@@ -27,17 +27,19 @@ if(instance_exists(oInvisibleSpawner2)){//If spawner exists...
 	draw_text_transformed(_ecHudX + (20 * 3), _ecHudY + (2 * 3), string(oInvisibleSpawner2.zombiesKilledThisWave), 3, 3, 0);//Draw number of sombies killed.
 	draw_text_transformed(_ecHudX + (44 * 3), _ecHudY + (2 * 3), "/" + string(oInvisibleSpawner2.activeEnemyMax), 3, 3, 0);//Draw number of active enemies.
 	draw_set_font(global.fontHUD);
+	/*
 	var _waveString = "Next Wave In: " + string(oInvisibleSpawner2.waveDuration - oInvisibleSpawner2.timeSinceLastWave);//Set string.
 	//draw_text_transformed((_wx/2) - ((string_width(_waveString) * 3)/2), 8, _waveString, 3, 3, 0);//Draw string.
 	if(instance_exists(oPlayer)){
 		draw_text_transformed((_wx/2) - ((string_width(_waveString)/2) * 3), 8 * 3, _waveString, 3, 3, 0);//Draw string.
-	}
-	var _killString = "Zombies Killed: " + string(global.enemyKillCount);//Set string.
+	}*/
+	/*var _killString = "Zombies Killed: " + string(global.enemyKillCount);//Set string.
 	draw_text_transformed(8 * 3, (8 * 3) + (48 * 3), _killString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
 	var _timeString = "Zombie Spawn Clock: " + string(oInvisibleSpawner2.timer);//Set string.
 	draw_text_transformed(8 * 3, (8 * 3) + (64 * 3), _timeString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
 	var _actString = "Wave Zombie Limit: " + string(oInvisibleSpawner2.activeEnemyMax);//Set string.
 	draw_text_transformed(8 * 3, (8 * 3) + (80 * 3), _actString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
+	*/
 	//var _countString = "Zombies Left: " + string(oInvisibleSpawner2.maxTotalEnemies - global.enemyKillCount);//Set string.
 	//draw_text_transformed(8 * 3, (8 * 3) + (96 * 3), _countString, 0.75 * 3, 0.75 * 3, 0);//Draw string.
 }
@@ -103,4 +105,60 @@ for(var i = 0; i < array_length(introObjs); i++) {
 if(instance_exists(oPlayer)){//If player object exists...
 	draw_sprite_ext(sInventory, 0, 0 + _wx - (132 * 3), 0 + _wy - (88 * 3), 3, 3, 0, c_white, 1);//Draw the inventory background.
 	draw_text_transformed(_wx - (99 * 3), _wy - (88 * 3), "Inventory", 3, 3, 0);//Draw string.
+}*/
+
+//Draw selected modifier and match setting icons
+var iconSize = 64;//Assuming 64x64 icons
+var iconScale = 1;//Scale
+var spacing = 8;//Padding between icons
+//var hudX = display_get_gui_width();
+//var hudY = display_get_gui_height();
+
+//Draw modifier icon
+if(instance_exists(oPlayer)){
+	if(global.perkIndex != -1) {
+	    var modSprite = sPerksCarouselMenu;
+	    var modIndex = global.perkIndex;
+	    draw_sprite_ext(modSprite, modIndex, 
+	        56 + (iconSize * iconScale) + spacing, 
+	        64 + 136, 
+	        iconScale, iconScale, 0, c_white, 1);
+	}
+}
+
+//Draw match setting icon to the left of the modifier
+if(instance_exists(oPlayer)){
+	if(global.matchPresetIndex != -1) {
+	    var presetSprite = sSettingsCarouselMenu;
+	    var presetIndex = global.matchPresetIndex;
+	    draw_sprite_ext(presetSprite, presetIndex, 
+	        56, 
+	        64 + 136, 
+	        iconScale, iconScale, 0, c_white, 1);
+	}
+}
+
+/*
+//Draw modifier icon
+if(instance_exists(oPlayer)){
+	if(global.perkIndex != -1) {
+	    var modSprite = sPerksCarouselMenu;
+	    var modIndex = global.perkIndex;
+	    draw_sprite_ext(modSprite, modIndex, 
+	        hudX - (iconSize * iconScale) - spacing, 
+	        hudY - (iconSize * iconScale) - spacing, 
+	        iconScale, iconScale, 0, c_white, 1);
+	}
+}
+
+//Draw match setting icon to the left of the modifier
+if(instance_exists(oPlayer)){
+	if(global.matchPresetIndex != -1) {
+	    var presetSprite = sSettingsCarouselMenu;
+	    var presetIndex = global.matchPresetIndex;
+	    draw_sprite_ext(presetSprite, presetIndex, 
+	        hudX - (iconSize * iconScale * 2) - (spacing * 2), 
+	        hudY - (iconSize * iconScale) - spacing, 
+	        iconScale, iconScale, 0, c_white, 1);
+	}
 }*/

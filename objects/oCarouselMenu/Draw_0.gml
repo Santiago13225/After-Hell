@@ -100,7 +100,7 @@ draw_text_transformed(menu_x, menu_y + menu_height / 2 + 95, "Modifier: " + modi
 //Draw match setting label below the modifiers menu
 var matchText;
 switch(global.matchPresetIndex) {
-    case 0: matchText = "Standard Threat"; break;
+    case 0: matchText = "Standard"; break;
     case 1: matchText = "Elite Invasion"; break;
     case 2: matchText = "Deadlier Forces"; break;
     case 3: matchText = "Final Hour"; break;

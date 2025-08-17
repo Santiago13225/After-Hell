@@ -58,7 +58,7 @@ switch(item) {
     case 5: description = "Improves enemy loot drops."; break;
     case 6: description = "Gives the player complete immunity to explosive damage."; break;
     case 7: description = "Gives the player all beneficial modifiers."; break;
-    case 8: description = "Player HP set to 1. All medkits are disabled."; break;
+    case 8: description = "Player HP set to 1. One hit and it's game over."; break;
     case 9: description = "No loot drops from enemies."; break;
     case 10: description = "Reduces player movement speed by 25%."; break;
     case 11: description = "Halves player health and medkit effectiveness."; break;
@@ -73,7 +73,7 @@ draw_text_transformed(menu_x, menu_y + menu_height / 2 + 95, description, 1, 1, 
 //Draw match setting label below the modifiers menu
 var matchText;
 switch(global.matchPresetIndex) {
-    case 0: matchText = "Standard Threat"; break;
+    case 0: matchText = "Standard"; break;
     case 1: matchText = "Elite Invasion"; break;
     case 2: matchText = "Deadlier Forces"; break;
     case 3: matchText = "Final Hour"; break;

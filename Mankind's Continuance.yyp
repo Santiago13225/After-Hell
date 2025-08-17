@@ -286,6 +286,7 @@
     {"id":{"name":"sRifleAmmo","path":"sprites/sRifleAmmo/sRifleAmmo.yy",},},
     {"id":{"name":"oApexZombie2","path":"objects/oApexZombie2/oApexZombie2.yy",},},
     {"id":{"name":"sPremiumLightAmmo","path":"sprites/sPremiumLightAmmo/sPremiumLightAmmo.yy",},},
+    {"id":{"name":"oScoreboard","path":"objects/oScoreboard/oScoreboard.yy",},},
     {"id":{"name":"sPumpkinMonsterDown","path":"sprites/sPumpkinMonsterDown/sPumpkinMonsterDown.yy",},},
     {"id":{"name":"sUnstableBullet","path":"sprites/sUnstableBullet/sUnstableBullet.yy",},},
     {"id":{"name":"oUltraRayGunBlast","path":"objects/oUltraRayGunBlast/oUltraRayGunBlast.yy",},},

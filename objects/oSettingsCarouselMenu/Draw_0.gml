@@ -32,7 +32,7 @@ ds_priority_destroy(pr);
 //Draw match setting label
 var text;
 switch(item) {
-    case 0: text = "Standard Threat"; break;
+    case 0: text = "Standard"; break;
     case 1: text = "Elite Invasion"; break;
     case 2: text = "Deadlier Forces"; break;
 	case 3: text = "Final Hour"; break;

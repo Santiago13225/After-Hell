@@ -262,6 +262,7 @@
     {"name":"sRifleAmmo","order":82,"path":"sprites/sRifleAmmo/sRifleAmmo.yy",},
     {"name":"oApexZombie2","order":145,"path":"objects/oApexZombie2/oApexZombie2.yy",},
     {"name":"sPremiumLightAmmo","order":86,"path":"sprites/sPremiumLightAmmo/sPremiumLightAmmo.yy",},
+    {"name":"oScoreboard","order":31,"path":"objects/oScoreboard/oScoreboard.yy",},
     {"name":"sPumpkinMonsterDown","order":90,"path":"sprites/sPumpkinMonsterDown/sPumpkinMonsterDown.yy",},
     {"name":"sUnstableBullet","order":5,"path":"sprites/sUnstableBullet/sUnstableBullet.yy",},
     {"name":"oUltraRayGunBlast","order":129,"path":"objects/oUltraRayGunBlast/oUltraRayGunBlast.yy",},
