@@ -2,7 +2,7 @@
 /*This object represents an item manager object.*/
 //This event is responsible for setting some variables for the item manager object.
 
-depth = -8000;
+//depth = -8000;//Recent comment to test scoreboard stuff
 
 //inv = [];
 

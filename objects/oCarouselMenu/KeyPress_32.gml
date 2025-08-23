@@ -1,4 +1,8 @@
-switch(item){
+//Store the selected map sprite in a global variable for the HUD/scoreboard
+global.selectedMapSprite = item;//Use the sprite you are displaying in the carousel
+//global.selectedMapName = text;//Store the map name for text display if needed
+
+switch(global.selectedMapSprite){
 	case 0: 
 		TransitionStart(rm_TM1_2, sqFadeOut, sqFadeIn);
 		break;

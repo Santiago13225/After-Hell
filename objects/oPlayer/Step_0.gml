@@ -13,6 +13,7 @@ swapKeyPressed = global.swapKeyPressed;
 upSwapKeyPressed = global.upSwapKeyPressed;
 downSwapKeyPressed = global.downSwapKeyPressed;
 startKeyPressed = global.startKeyPressed;
+selectKeyPressed = global.selectKeyPressed;
 
 #endregion
 /*
@@ -80,6 +81,19 @@ if startKeyPressed{
 	}else {
 		audio_play_sound(sndBeep, 8, false);
 		//instance_destroy(oPauseMenu);
+	}
+}
+
+if selectKeyPressed{
+	if !instance_exists(oScoreboard){
+		global.dialog_active = true;//Disable silhouette drawing.
+		audio_play_sound(sndBeep, 8, false);
+		instance_create_depth(0, 0, 0, oScoreboard);
+		
+	}else{
+		global.dialog_active = false;//Enable silhouette drawing.
+		audio_play_sound(sndBeep, 8, false);
+		instance_destroy(oScoreboard);
 	}
 }
 

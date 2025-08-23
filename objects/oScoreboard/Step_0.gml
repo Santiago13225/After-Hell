@@ -1,30 +1,25 @@
-/// oScoreboard Step Event
+///oScoreboard Step Event
+//This object represents a scoreboard screen.
+//This event is responsible for setting some variables for the scoreboard screen.
 
-// Only update stats if scoreboard is visible
-if global.showScoreboard {
-
-    var _p = instance_find(oPlayer, 0);
-    if _p != noone {
-        kills = _p.playerKills;
-        maxMoney = _p.playerMaxMoney;
-        totalMoney = _p.playerTotalMoney;
-        wave = _p.playerWave;
-        time = _p.playerTime;
-    }
-
-    // Future multiplayer example (pseudo-code)
-    /*
-    for (var i = 0; i < 4; i++) {
-        var _player = instance_find(oPlayer, i);
-        if (_player != noone) {
-            playerStats[i] = {
-                kills: _player.playerKills,
-                maxMoney: _player.playerMaxMoney,
-                totalMoney: _player.playerTotalMoney,
-                wave: _player.playerWave,
-                time: _player.playerTime
-            };
-        }
-    }
-    */
+//If the player is gone, kill ourselves
+if(!instance_exists(oPlayer)) {
+    instance_destroy();//no player → no need for scoreboard overlay
+    exit;
 }
+
+//Screen Pause
+if screen_pause(){
+	exit;
+}
+//Fade out
+//alpha -= alphaSpd;
+//if alpha <= 0{
+//	instance_destroy();
+//}
+
+//Advance our timer
+//time += pulseSpd;
+
+//Compute alpha = (sin wave + 1)/2 scaled by pulseAmt
+//alpha = ((sin(time) + 1) / 2) * pulseAmt;

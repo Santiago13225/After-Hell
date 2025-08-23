@@ -8,23 +8,23 @@ draw_set_font(global.font);
 
 if instance_exists(oPlayer) {
     with (oPlayer) {
-        // 1) pickupSprite holds the small, crisp icon for HUD
-        var icon = weapon.pickupSprite;    // your create_weapon’s last arg :contentReference[oaicite:3]{index=3}
+        //1) pickupSprite holds the small, crisp icon for HUD
+        var icon = weapon.pickupSprite;    //your create_weapon’s last arg :contentReference[oaicite:3]{index=3}
         
-        // 2) compute where to draw (bottom-right corner, 3× scale)
-        var pad = 16 * 3;         // reuse your screen_bord, scaled by 3
+        //2) compute where to draw (bottom-right corner, 3× scale)
+        var pad = 16 * 3;         //reuse your screen_bord, scaled by 3
         var drawX = _wx - (96*3) - pad + 200;//match “96*3” width of inventory icons
         var drawY = _wy - (96*3) - pad + 280;//same for height
         
-        // 3) draw crisp 3× icon
+        //3) draw crisp 3× icon
         draw_sprite_ext(
             icon, 0,
             drawX, drawY,
-            3, 3,                            // scale exactly 3× :contentReference[oaicite:4]{index=4}
+            3, 3,                            //scale exactly 3× :contentReference[oaicite:4]{index=4}
             0, c_white, 1
         );
 
-		// 4) draw the ammo count underneath
+		//4) draw the ammo count underneath
 		//var ammo = (global.PlayerAmmo[oPlayer.selectedWeapon]);
 
 		//draw_set_font(global.font);
@@ -47,7 +47,7 @@ if instance_exists(oPlayer) {
 		*/
 		//draw_text_transformed(text_x, text_y, "Ammo: " + string(ammo), 2.5, 2.5, 0);	
 		
-		// 5) draw the weapon name underneath
+		//5) draw the weapon name underneath
 		var weapon_name = weapon.name;// ← guaranteed to exist
 		draw_text_transformed_color(
 			drawX, drawY + (5 * 3),

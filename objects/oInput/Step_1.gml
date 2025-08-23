@@ -18,10 +18,11 @@ if global.controllerMode == 0{//If set to keyboard and mouse mode.
 	global.downSwapKeyPressed = mouse_wheel_down();
 
 	global.startKeyPressed = keyboard_check_pressed(vk_enter);
-	//Toggle scoreboard with TAB
-	if(keyboard_check_pressed(ord("I"))) {
-		global.selectKeyPressed = !global.selectKeyPressed;
-	}
+	//Toggle scoreboard with I
+	global.selectKeyPressed = keyboard_check_pressed(ord("I"));
+	//if(keyboard_check_pressed(ord("I"))) {
+	//	global.selectKeyPressed = !global.selectKeyPressed;
+	//}
 }
 
 if global.controllerMode == 1{//Controller Mode
@@ -65,8 +66,9 @@ if global.controllerMode == 1{//Controller Mode
 		global.swapKeyPressed = gamepad_button_check_pressed(_gamePad, gp_shoulderlb);
 
 		global.startKeyPressed = gamepad_button_check_pressed(_gamePad, gp_start);
-		if(gamepad_button_check_pressed(_gamePad, gp_select)) {
-			global.selectKeyPressed = !global.selectKeyPressed;
-		}
+		global.selectKeyPressed = gamepad_button_check_pressed(_gamePad, gp_select);
+		//if(gamepad_button_check_pressed(_gamePad, gp_select)) {
+		//	global.selectKeyPressed = !global.selectKeyPressed;
+		//}
 	}
 }

@@ -114,18 +114,6 @@ var spacing = 8;//Padding between icons
 //var hudX = display_get_gui_width();
 //var hudY = display_get_gui_height();
 
-//Draw modifier icon
-if(instance_exists(oPlayer)){
-	if(global.perkIndex != -1) {
-	    var modSprite = sPerksCarouselMenu;
-	    var modIndex = global.perkIndex;
-	    draw_sprite_ext(modSprite, modIndex, 
-	        56 + (iconSize * iconScale) + spacing, 
-	        64 + 136, 
-	        iconScale, iconScale, 0, c_white, 1);
-	}
-}
-
 //Draw match setting icon to the left of the modifier
 if(instance_exists(oPlayer)){
 	if(global.matchPresetIndex != -1) {
@@ -133,6 +121,18 @@ if(instance_exists(oPlayer)){
 	    var presetIndex = global.matchPresetIndex;
 	    draw_sprite_ext(presetSprite, presetIndex, 
 	        56, 
+	        64 + 136, 
+	        iconScale, iconScale, 0, c_white, 1);
+	}
+}
+
+//Draw modifier icon
+if(instance_exists(oPlayer)){
+	if(global.perkIndex != -1) {
+	    var modSprite = sPerksCarouselMenu;
+	    var modIndex = global.perkIndex;
+	    draw_sprite_ext(modSprite, modIndex, 
+	        56 + (iconSize * iconScale) + spacing, 
 	        64 + 136, 
 	        iconScale, iconScale, 0, c_white, 1);
 	}

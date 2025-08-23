@@ -153,6 +153,7 @@
     {"name":"sDamagePlayer","order":7,"path":"sprites/sDamagePlayer/sDamagePlayer.yy",},
     {"name":"oPumpkinBomb","order":96,"path":"objects/oPumpkinBomb/oPumpkinBomb.yy",},
     {"name":"rm_Labyrinth_Level","order":29,"path":"rooms/rm_Labyrinth_Level/rm_Labyrinth_Level.yy",},
+    {"name":"sScoreboardScreen","order":32,"path":"sprites/sScoreboardScreen/sScoreboardScreen.yy",},
     {"name":"oInteract","order":142,"path":"objects/oInteract/oInteract.yy",},
     {"name":"rm_TM7_2","order":56,"path":"rooms/rm_TM7_2/rm_TM7_2.yy",},
     {"name":"sHardcoreLMGPickup","order":59,"path":"sprites/sHardcoreLMGPickup/sHardcoreLMGPickup.yy",},
