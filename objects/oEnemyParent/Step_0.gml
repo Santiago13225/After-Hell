@@ -27,6 +27,7 @@ if hp <= 0{//If hp is 0 or less.
 			}
 		}
 		oHUD2.playerScore += 100;//Add to player score.
+		oHUD2.playerTotalScore += 100;//Add to player's total score.
 	}
 	global.enemyKillCount++;//Add to the total amount of enemies killed.
 	oInvisibleSpawner2.zombiesKilledThisWave++;//Notify the spawner.

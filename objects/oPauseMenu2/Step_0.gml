@@ -185,6 +185,7 @@ if accept_key{
 				case 2:
 					global.dialog_active = false;
 					oHUD2.playerScore = 500;
+					oHUD2.playerTotalScore = 500;
 					instance_deactivate_object(oPlayer);
 					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					clear_weapons();

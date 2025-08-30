@@ -263,7 +263,8 @@ function clear_weapons(){
 		}
 		oItemManager3.inv = [global.item_list2.pistol];
 		oHUD2.playerScore = 500;
-	} else {
+		//oHUD2.playerTotalScore = 500;
+	}else {
 		show_debug_message("No item manager exists?");
 	}
 }

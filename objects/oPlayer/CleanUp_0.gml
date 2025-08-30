@@ -4,3 +4,5 @@
 if (font_exists(global.font2)){
     font_delete(global.font2);
 }
+
+global.playerSurvivalTime = current_time - spawnTime;

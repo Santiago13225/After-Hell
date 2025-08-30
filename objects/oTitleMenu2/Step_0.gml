@@ -78,6 +78,8 @@ if accept_key{
 			{
 				//Story Mode
 				case 0:
+					//global.matchPresetIndex = 0;
+					global.perkIndex = 0;
 					global.firerate = false;
 					global.energyshield = false;
 					global.juggernaut = false;
@@ -90,6 +92,7 @@ if accept_key{
 					global.weakness = false;
 					global.nomedkit = false;
 					global.slowfirerate = false;
+					oHUD2.playerTotalScore = 500;
 					//TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
 					TransitionStart(rm_Tutorial_Level, sqFadeOut, sqFadeIn);
 					//menu_level = 1;

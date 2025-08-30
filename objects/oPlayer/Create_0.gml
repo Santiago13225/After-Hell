@@ -91,3 +91,6 @@ if !array_contains(global.PlayerWeapons, global.WeaponList.pistol){
 _playerWeapons = global.PlayerWeapons;
 selectedWeapon = 0;
 weapon = global.PlayerWeapons[selectedWeapon];
+
+//Time tracking
+spawnTime = current_time;//milliseconds since game start

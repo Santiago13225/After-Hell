@@ -14,11 +14,16 @@ var iconSize = 64;//Assuming 64x64 icons
 var iconScale = 1;//Scale
 var spacing = 8;//Padding between icons
 
+//Ensure the variable exists for tutorial levels
+if(!variable_global_exists("selectedMapSprite")) {
+    global.selectedMapSprite = 12;//13th frame
+}
+
 draw_sprite_ext(sScoreboardScreen, 0, 0, 0, 3, 3, 0, c_white, 1);
 
 //draw_rectangle(x, y, x + width, y + height, false);
 
-draw_rectangle_color(160 * 3, 90 * 3, 480 * 3, 270 * 3, c_black, c_black, c_black, c_black, false);
+//draw_rectangle_color(160 * 3, 90 * 3, 480 * 3, 270 * 3, c_black, c_black, c_black, c_black, false);
 //draw_text_transformed(160 * 3, 90 * 3, "Scoreboard:", 3, 3, 0);
 
 //Draw the selected modifier label below the map selection menu
@@ -62,6 +67,16 @@ switch(global.matchPresetIndex) {
     case 15: matchText = "Beginner's Curse"; break;
     default: matchText = "???"; break;
 }
+
+//Ensure the variable exists for tutorial level
+if(room == rm_Tutorial_Level) {
+    mapText = "Tutorial Level";
+}
+
+if(room == rm_Mission0) {
+    mapText = "Test_Level";
+}
+
 draw_text_transformed(160 * 3, 90 * 3, mapText + " - " + matchText, 3, 3, 0);
 //draw_text_transformed(320 * 3, (90 * 3) + 30, "Game Mode: " + matchText, 3, 3, 0);
 
@@ -86,35 +101,102 @@ switch(global.perkIndex) {
 }
 draw_text_transformed(160 * 3, (90 * 3) + 30, "Modifier: " + modifierText, 3, 3, 0);
 
+if(room == rm_Tutorial_Level){
+	global.selectedMapSprite = 12;//13th frame
+}
+
+if(room == rm_Mission0){
+	global.selectedMapSprite = 12;//13th frame
+}
+
 //Draw the selected map icon
 if(global.selectedMapSprite != undefined) {
 	//draw_sprite_ext(sCarouselMenu3, global.selectedMapSprite, 160 * 3 + (32 * 3) + 30, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
-	draw_sprite_ext(sCarouselMenu3, global.selectedMapSprite, 160 * 3 + (32 * 3) + 60, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
+	draw_sprite_ext(sCarouselMenu3, global.selectedMapSprite, 160 * 3 + (32 * 3) + 60, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
 }
 
 //Draw the selected mode icon
 if(global.matchPresetIndex != undefined) {
 	//draw_sprite_ext(sSettingsCarouselMenu, global.matchPresetIndex, 320 * 3 + (32 * 3) + 30, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
-	draw_sprite_ext(sSettingsCarouselMenu, global.matchPresetIndex, 320 * 3, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
+	draw_sprite_ext(sSettingsCarouselMenu, global.matchPresetIndex, 320 * 3, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
 }
 
 //Draw the selected modifier icon
 if(global.perkIndex != undefined) {
 	//draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, 320 * 3 + (32 * 3) + 30, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
-	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, 480 * 3 - (32 * 3) - 60, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
+	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, 480 * 3 - (32 * 3) - 60, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
 }
 
 //Draw stats for single player
-draw_text_transformed(160 * 3, _wy/2, "Waves Survived: " + string(oInvisibleSpawner2.currentWave), 3, 3, 0);
-draw_text_transformed(160 * 3, _wy/2 + 30, "Time Survived: 00:00:00", 3, 3, 0);
+draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: " + string(oInvisibleSpawner2.currentWave), 3, 3, 0);
+//draw_text_transformed(160 * 3, _wy/2 + 33, "Time Survived: 00:00:00", 3, 3, 0);
+/*var _timeMS;
+if(instance_exists(oPlayer)) {
+    //Player is alive → calculate time survived dynamically
+    _timeMS = current_time - oPlayer.spawnTime;
+}else {
+    //Player dead → use stored global value
+    _timeMS = global.playerSurvivalTime;
+}
 
-draw_text_transformed(160 * 3, _wy/2 + 85, "Player:", 3, 3, 0);
+//Convert milliseconds to hh:mm:ss
+var _secondsTotal = floor(_timeMS / 1000);
+var _hours = floor(_secondsTotal / 3600);
+var _minutes = floor((_secondsTotal mod 3600) / 60);
+var _seconds = _secondsTotal mod 60;
+
+//Format string with leading zeros
+var _timeText = string_format(_hours, 2, 0) + ":" + string_format(_minutes, 2, 0) + ":" + string_format(_seconds, 2, 0);
+
+draw_text_transformed(160 * 3, _wy/2 + 33, "Time Survived: " + _timeText, 3, 3, 0);
+*/
+
+var _timeMS;
+if(instance_exists(oPlayer)) {
+    _timeMS = current_time - oPlayer.spawnTime;
+}else {
+    _timeMS = global.playerSurvivalTime;
+}
+
+var _secondsTotal = floor(_timeMS / 1000);
+
+//Cap at 99:59:59 (in seconds)
+var _maxSeconds = (99 * 3600) + (59 * 60) + 59;
+var _plus = false;
+if(_secondsTotal > _maxSeconds){
+    _secondsTotal = _maxSeconds;
+    _plus = true;
+}
+
+var _hours = floor(_secondsTotal / 3600);
+var _minutes = floor((_secondsTotal mod 3600) / 60);
+var _seconds = _secondsTotal mod 60;
+
+//Add leading zeros manually
+var _hoursStr = string(_hours);
+if(_hours < 10) _hoursStr = "0" + _hoursStr;
+
+var _minutesStr = string(_minutes);
+if(_minutes < 10) _minutesStr = "0" + _minutesStr;
+
+var _secondsStr = string(_seconds);
+if(_seconds < 10) _secondsStr = "0" + _secondsStr;
+
+var _timeText = _hoursStr + ":" + _minutesStr + ":" + _secondsStr;
+
+//Add plus if over the cap
+if(_plus) _timeText += "+";
+
+draw_text_transformed(160 * 3, _wy/2 + 33, "Time Survived: " + _timeText, 3, 3, 0);
+
+//draw_text_transformed(160 * 3, _wy/2 + 85, "Player:", 3, 3, 0);
 draw_text_transformed(260 * 3, _wy/2 + 85, "Kills:", 3, 3, 0);
 draw_text_transformed(340 * 3, _wy/2 + 85, "Score:", 3, 3, 0);
 
 draw_text_transformed(160 * 3, _wy/2 + 140, "Player 1", 3, 3, 0);
 draw_text_transformed(260 * 3, _wy/2 + 140, string(global.enemyKillCount), 3, 3, 0);
-draw_text_transformed(340 * 3, _wy/2 + 140, "500", 3, 3, 0);
+//draw_text_transformed(340 * 3, _wy/2 + 140, "500", 3, 3, 0);
+draw_text_transformed(340 * 3, _wy/2 + 140, string(oHUD2.playerTotalScore), 3, 3, 0);
 
 draw_text_transformed(160 * 3, _wy/2 + 170, "-", 3, 3, 0);
 draw_text_transformed(260 * 3, _wy/2 + 170, "-", 3, 3, 0);

@@ -25,6 +25,7 @@ if place_meeting(x, y, oPlayer){//If money touches player...
 			}
 		}
 		oHUD2.playerScore += 3;//Add to player's score.
+		oHUD2.playerTotalScore += 3;//Add to player's total score.
 	}
 	instance_destroy();//Destroy instance.
 }
