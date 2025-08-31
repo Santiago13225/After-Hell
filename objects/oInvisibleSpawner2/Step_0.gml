@@ -98,3 +98,10 @@ if waveInProgress{
 ds_list_destroy(activeSpawns);//Clear the activeSpawns list.
 
 #endregion
+
+//Copy stats before destroying the spawner
+
+if(instance_exists(oInvisibleSpawner2)) {
+    global.finalWave = oInvisibleSpawner2.currentWave;
+    //global.finalTime = global.timeSurvived;//or however you track time
+}

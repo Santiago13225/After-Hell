@@ -89,7 +89,6 @@ if selectKeyPressed{
 		global.dialog_active = true;//Disable silhouette drawing.
 		audio_play_sound(sndBeep, 8, false);
 		instance_create_depth(0, 0, 0, oScoreboard);
-		
 	}else{
 		global.dialog_active = false;//Enable silhouette drawing.
 		audio_play_sound(sndBeep, 8, false);
@@ -1172,3 +1171,5 @@ if(global.energyshield && shield < maxShield) {
 		shield = min(shield + shieldRegenRate, maxShield);
 	}
 }
+
+global.playerSurvivalTime = current_time - spawnTime;

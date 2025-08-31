@@ -13,15 +13,15 @@ var _gamePad = 0;
 var is_controller_connected = gamepad_is_connected(_gamePad);
 
 if is_controller_connected{
-    // Define the deadzone for analog stick inputs
+    //Define the deadzone for analog stick inputs
     //var deadzone = 0.2;
     
-    // Get analog stick inputs
+    //Get analog stick inputs
 	//gp_axisrv
     //var axis_vertical = gamepad_axis_value(_gamePad, gp_axisrv);
     //var axis_horizontal = gamepad_axis_value(_gamePad, gp_axislh);
     
-    // Convert analog stick inputs to up and down key presses
+    //Convert analog stick inputs to up and down key presses
     //up_key |= axis_vertical < -deadzone;
     //down_key |= axis_vertical > deadzone;
 	//gamepad_button_check(_gamePad, gp_shoulderrb);
@@ -30,9 +30,9 @@ if is_controller_connected{
 	down_key = gamepad_button_check_pressed(_gamePad, gp_padd);
     //up_key = gamepad_button_check_pressed(_gamePad, gp_shoulderlb);
 	//down_key = gamepad_button_check_pressed(_gamePad, gp_shoulderlb);
-    // Convert analog stick inputs to left and right key presses
-    // You can modify these conditions based on your controller's axis values
-    // In this example, pushing the stick left gives "A" press and pushing right gives "D" press
+    //Convert analog stick inputs to left and right key presses
+    //You can modify these conditions based on your controller's axis values
+    //In this example, pushing the stick left gives "A" press and pushing right gives "D" press
     //left_key = axis_horizontal < -deadzone;
     //right_key = axis_horizontal > deadzone;
     
