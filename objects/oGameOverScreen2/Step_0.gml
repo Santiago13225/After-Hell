@@ -4,6 +4,10 @@
 
 shootKey = global.shootKey;//Get the shoot key input.
 
+if(instance_exists(oTextbox2)){
+	instance_destroy(oTextbox2);
+}
+
 //Fade in
 alpha += alphaSpd;
 alpha = clamp(alpha, 0, 1);

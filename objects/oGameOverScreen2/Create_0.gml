@@ -12,6 +12,7 @@ depth = -8500;//Let's you see health and enemy count.
 //depth = -9500;//Does not let you see health and enemy count or HUD.
 
 global.dialog_active = true;//Disable silhouette drawing.
+global.screenShake = false;
 
 width = 64;
 height = 32;

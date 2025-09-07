@@ -26,78 +26,82 @@ hspd = walking_speed*(keys[KEY_RIGHT]-keys[KEY_LEFT]);
 x += hspd;
 */
 //Pause menu
-if startKeyPressed{
-	if !instance_exists(oPauseMenu2){
-		global.dialog_active = true;//Disable silhouette drawing.
-		if audio_is_playing(sndTestLevelTheme){
-			audio_pause_sound(sndTestLevelTheme);
+if(startKeyPressed){
+	if(!instance_exists(oScoreboard)){
+		if(!instance_exists(oPauseMenu2)){
+			global.dialog_active = true;//Disable silhouette drawing.
+			if audio_is_playing(sndTestLevelTheme){
+				audio_pause_sound(sndTestLevelTheme);
+			}
+			if audio_is_playing(sndHouseTheme1){
+			//if room == rm_House_Level1 {	
+				oSFX.houseSndloop = false;
+				//audio_pause_sound(sndHouseTheme1);
+			} 
+			if audio_is_playing(sndFacilityTheme1){
+				audio_pause_sound(sndFacilityTheme1);
+			}
+			if audio_is_playing(sndTempleTheme1){
+				audio_pause_sound(sndTempleTheme1);
+			}
+			if audio_is_playing(sndOverlookTheme1){
+				audio_pause_sound(sndOverlookTheme1);
+			}
+			if audio_is_playing(sndLabyrinthTheme){
+				audio_pause_sound(sndLabyrinthTheme);
+			}
+			if audio_is_playing(sndCasinoTheme){
+				audio_pause_sound(sndCasinoTheme);
+			}
+			if audio_is_playing(sndGraveyardTheme){
+				audio_pause_sound(sndGraveyardTheme);
+			}
+			if audio_is_playing(sndIslandTheme){
+				audio_pause_sound(sndIslandTheme);
+			}
+			if audio_is_playing(sndWaterStationTheme1){
+				audio_pause_sound(sndWaterStationTheme1);
+			}
+			if audio_is_playing(sndCityBlockTheme){
+				audio_pause_sound(sndCityBlockTheme);
+			}
+			if audio_is_playing(sndYardTheme){
+				audio_pause_sound(sndYardTheme);
+			}
+			if audio_is_playing(sndMuseumTheme){
+				audio_pause_sound(sndMuseumTheme);
+			}
+			if audio_is_playing(sndTutorialTheme){
+				audio_pause_sound(sndTutorialTheme);
+			}
+			//audio_pause_sound(sndTestLevelTheme);
+			//audio_pause_sound(global.MUSIC);
+			//audio_pause_sound(sndUniversal);
+			audio_play_sound(sndBeep, 8, false);
+			instance_create_depth(0, 0, 0, oPauseMenu2);
+		}else {
+			audio_play_sound(sndBeep, 8, false);
+			//instance_destroy(oPauseMenu);
 		}
-		if audio_is_playing(sndHouseTheme1){
-		//if room == rm_House_Level1 {	
-			oSFX.houseSndloop = false;
-			//audio_pause_sound(sndHouseTheme1);
-		} 
-		if audio_is_playing(sndFacilityTheme1){
-			audio_pause_sound(sndFacilityTheme1);
-		}
-		if audio_is_playing(sndTempleTheme1){
-			audio_pause_sound(sndTempleTheme1);
-		}
-		if audio_is_playing(sndOverlookTheme1){
-			audio_pause_sound(sndOverlookTheme1);
-		}
-		if audio_is_playing(sndLabyrinthTheme){
-			audio_pause_sound(sndLabyrinthTheme);
-		}
-		if audio_is_playing(sndCasinoTheme){
-			audio_pause_sound(sndCasinoTheme);
-		}
-		if audio_is_playing(sndGraveyardTheme){
-			audio_pause_sound(sndGraveyardTheme);
-		}
-		if audio_is_playing(sndIslandTheme){
-			audio_pause_sound(sndIslandTheme);
-		}
-		if audio_is_playing(sndWaterStationTheme1){
-			audio_pause_sound(sndWaterStationTheme1);
-		}
-		if audio_is_playing(sndCityBlockTheme){
-			audio_pause_sound(sndCityBlockTheme);
-		}
-		if audio_is_playing(sndYardTheme){
-			audio_pause_sound(sndYardTheme);
-		}
-		if audio_is_playing(sndMuseumTheme){
-			audio_pause_sound(sndMuseumTheme);
-		}
-		if audio_is_playing(sndTutorialTheme){
-			audio_pause_sound(sndTutorialTheme);
-		}
-		//audio_pause_sound(sndTestLevelTheme);
-		//audio_pause_sound(global.MUSIC);
-		//audio_pause_sound(sndUniversal);
-		audio_play_sound(sndBeep, 8, false);
-		instance_create_depth(0, 0, 0, oPauseMenu2);
-	}else {
-		audio_play_sound(sndBeep, 8, false);
-		//instance_destroy(oPauseMenu);
 	}
 }
 
-if selectKeyPressed{
-	if !instance_exists(oScoreboard){
-		global.dialog_active = true;//Disable silhouette drawing.
-		audio_play_sound(sndBeep, 8, false);
-		instance_create_depth(0, 0, 0, oScoreboard);
-	}else{
-		global.dialog_active = false;//Enable silhouette drawing.
-		audio_play_sound(sndBeep, 8, false);
-		instance_destroy(oScoreboard);
+if(selectKeyPressed){
+	if(!instance_exists(oPauseMenu2)){
+		if(!instance_exists(oScoreboard)){
+			global.dialog_active = true;//Disable silhouette drawing.
+			audio_play_sound(sndBeep, 8, false);
+			instance_create_depth(0, 0, 0, oScoreboard);
+		}else{
+			global.dialog_active = false;//Enable silhouette drawing.
+			audio_play_sound(sndBeep, 8, false);
+			instance_destroy(oScoreboard);
+		}
 	}
 }
 
-if instance_exists(oInvisibleSpawner2){
-	if global.enemyKillCount == oInvisibleSpawner2.maxTotalEnemies {
+if(instance_exists(oInvisibleSpawner2)){
+	if(global.enemyKillCount == oInvisibleSpawner2.maxTotalEnemies){
 		//audio_pause_all();
 		//audio_pause_sound(sndTestLevelTheme);
 		//audio_pause_sound(global.MUSIC);
@@ -153,7 +157,7 @@ if instance_exists(oInvisibleSpawner2){
 }
 
 //Update visuals for room warping
-if instance_exists(oWarp){
+if(instance_exists(oWarp)){
 	//global.dialog_active = true;//Disable silhouette drawing.
 	//image_index = 0;//force image index to be 0 if we wanted to
 	sprite_index = sprite[face];
@@ -162,7 +166,7 @@ if instance_exists(oWarp){
 }
 
 //Pause self
-if screen_pause(){
+if(screen_pause()){
 	exit;
 }
 
@@ -181,7 +185,7 @@ _inputLevel = clamp(_inputLevel, 0, 1);
 
 //Apply speed perk boost here
 var _moveSpd = moveSpd;
-if(global.speed) {
+if(global.speed){
     _moveSpd *= 1.25;//Boost amount (adjust if needed)
 }else if(global.lowspeed){
 	_moveSpd *= 0.75;
@@ -229,7 +233,9 @@ if get_damage(oDamagePlayer, true){
 	create_screen_pause(25);
 	
 	//Shake the screen
-	screen_shake();
+	if(global.screenShake){
+		screen_shake();
+	}
 }
 /*
 //Heal
@@ -470,73 +476,73 @@ if (lowHealth) {
 }
 
 with(oShotgunWallbuy2) {
-    scr_HandleWallbuy(500, 40, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
+	scr_HandleWallbuy(500, 40, global.WeaponList.shotgun, global.WeaponList.hshotgun, global.WeaponList.ushotgun, oShotgun);
 }
 
 with(oRaygunWallbuy2) {
-    scr_HandleWallbuy(
-        5000,                                      // cost
-        40,                                         // ammoAdd
-        global.WeaponList.raygun,                   // base
-        global.WeaponList.hraygun,                  // hardcore
-        global.WeaponList.uraygun,                  // ultra
-        oRaygun                                     // object to create
-    );
+	scr_HandleWallbuy(
+		5000,										//cost
+		40,											//ammoAdd
+		global.WeaponList.raygun,					//base
+		global.WeaponList.hraygun,					//hardcore
+		global.WeaponList.uraygun,					//ultra
+		oRaygun										//object to create
+	);
 }
 
 with(oSniperWallbuy2) {
-    scr_HandleWallbuy(
-        1500,                                       // cost
-        25,                                         // ammoAdd
-        global.WeaponList.sniper,                   // base
-        global.WeaponList.hsniper,                  // hardcore
-        global.WeaponList.usniper,                  // ultra
-        oSniper                                     // object to create
-    );
+	scr_HandleWallbuy(
+		1500,										//cost
+		25,											//ammoAdd
+		global.WeaponList.sniper,					//base
+		global.WeaponList.hsniper,					//hardcore
+		global.WeaponList.usniper,					//ultra
+		oSniper										//object to create
+	);
 }
 
 with(oAssaultWallbuy2) {
-    scr_HandleWallbuy(
-        1500,                                       // cost
-        120,                                        // ammoAdd
-        global.WeaponList.assault,                  // base
-        global.WeaponList.hassault,                 // hardcore
-        global.WeaponList.uassault,                 // ultra
-        oAssault                                    // object to create
-    );
+	scr_HandleWallbuy(
+		1500,										//cost
+		120,										//ammoAdd
+		global.WeaponList.assault,					//base
+		global.WeaponList.hassault,					//hardcore
+		global.WeaponList.uassault,					//ultra
+		oAssault									//object to create
+	);
 }
 
 with(oBazookaWallbuy2) {
-    scr_HandleWallbuy(
-        6000,                                      // cost
-        10,                                         // ammoAdd
-        global.WeaponList.bazooka,                  // base
-        global.WeaponList.hbazooka,                 // hardcore
-        global.WeaponList.ubazooka,                 // ultra
-        oBazooka                                    // object to create
-    );
+	scr_HandleWallbuy(
+		6000,										//cost
+		10,											//ammoAdd
+		global.WeaponList.bazooka,					//base
+		global.WeaponList.hbazooka,					//hardcore
+		global.WeaponList.ubazooka,					//ultra
+		oBazooka									//object to create
+	);
 }
 
 with(oSMGWallbuy2) {
-    scr_HandleWallbuy(
-        1300,                                       // cost
-        150,                                        // ammoAdd
-        global.WeaponList.smg,                      // base
-        global.WeaponList.hsmg,                     // hardcore
-        global.WeaponList.usmg,                     // ultra
-        oSMG                                        // object to create
-    );
+	scr_HandleWallbuy(
+		1300,										//cost
+		150,										//ammoAdd
+		global.WeaponList.smg,						//base
+		global.WeaponList.hsmg,						//hardcore
+		global.WeaponList.usmg,						//ultra
+		oSMG										//object to create
+	);
 }
 
 with(oLMGWallbuy2) {
-    scr_HandleWallbuy(
-        2500,                                       // cost
-        200,                                        // ammoAdd
-        global.WeaponList.lmg,                      // base
-        global.WeaponList.hlmg,                     // hardcore
-        global.WeaponList.ulmg,                     // ultra
-        oLMG                                        // object to create
-    );
+	scr_HandleWallbuy(
+		2500,										//cost
+		200,										//ammoAdd
+		global.WeaponList.lmg,						//base
+		global.WeaponList.hlmg,						//hardcore
+		global.WeaponList.ulmg,						//ultra
+		oLMG										//object to create
+	);
 }
 
 #region

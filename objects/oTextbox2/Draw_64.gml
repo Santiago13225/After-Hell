@@ -85,7 +85,7 @@ if(draw_char == text_length[page] && page == page_number - 1){//If we are at the
 			draw_sprite(sArrow, 0, _txtb_x,  _txtb_y - _op_space * option_number + _op_space * op);//Draw the arrow for the selected option.
 		}
 		//The Option Text
-		draw_text(_txtb_x + 16 + _op_bord, _txtb_y - _op_space*option_number + _op_space * op + 1, option[op]);//Draw the option text.
+		draw_text(_txtb_x + 16 + _op_bord, _txtb_y - _op_space * option_number + _op_space * op + 1, option[op]);//Draw the option text.
 	}
 }
 

@@ -20,7 +20,9 @@ if hp <= 0{//If HP is less than or equal to 0...
 	
 	create_screen_pause();//Screen pause.
 
-	screen_shake(8);//Screen shake.
-
+	if(global.screenShake){
+		screen_shake(8);//Screen shake.
+	}
+	
 	instance_destroy();//Destroy self.
 }

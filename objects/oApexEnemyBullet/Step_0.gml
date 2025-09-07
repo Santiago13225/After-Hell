@@ -47,28 +47,30 @@ if hitConfirm == true && playerDestroy == true{//If it hits the player.
 
 if place_meeting(x, y, oSolidWall){//If it hits a wall.
 	var _boomInst = instance_create_depth(x + 8, y + 8, -3000, oZombieExplosion);//Create an explosion.
-	with(_boomInst)
-	{
+	with(_boomInst){
 		image_xscale = 1;//Set x-scale of the explosion.
 		image_yscale = 1;//Set y-scale of the explosion.
 	}
 
 	audio_play_sound(sndExplosion, 8, false);//Play explosion sound effect.
 	
-	screen_shake(8);//Screen shake.
-	
+	if(global.screenShake){
+		screen_shake(8);//Screen shake.
+	}
+
 	instance_destroy();//Destroy self.
 }else if place_meeting(x, y, oPlayer){//If it hits a player.
 	var _boomInst = instance_create_depth(x + 8, y + 8, -3000, oZombieExplosion);//Create an explosion.
-	with(_boomInst)
-	{
+	with(_boomInst){
 		image_xscale = 1;//Set x-scale of the explosion.
 		image_yscale = 1;//Set y-scale of the explosion.
 	}
 	
 	audio_play_sound(sndExplosion, 8, false);//Play explosion sound effect.
 	
-	screen_shake(8);//Screen shake.
+	if(global.screenShake){
+		screen_shake(8);//Screen shake.
+	}
 	
 	instance_destroy();//Destroy self.
 }

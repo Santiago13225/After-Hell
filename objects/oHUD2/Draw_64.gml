@@ -66,6 +66,7 @@ if(instance_exists(oPlayer)){
 
 
 //((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face4))
+/*
 if(room == rm_Mission0) && (global.controllerMode == 1){
 	global.fontHUD = font_add_sprite(sHUDFont, 32, true, 1);
 	draw_set_font(global.fontHUD);
@@ -85,7 +86,7 @@ if(room == rm_Mission0) && (global.controllerMode == 1){
 	draw_text_transformed((8 * 3), (8 * 3) + 80, "- You can highlight items in the inventory with your d-pad to view their description.", 0.6, 0.6, 0);//Draw string.
 	draw_text_transformed((8 * 3), (8 * 3) + 88, "- When near a wallbuy, you can purchase an item using the left face button.", 0.6, 0.6, 0);//Draw string.
 	draw_text_transformed((8 * 3), (8 * 3) + 96, "- You can use the upper face button to progress through or close text dialog boxes.", 0.6, 0.6, 0);//Draw string.
-}
+}*/
 /*
 //Create an array of intro objects.
 var introObjs = [oIntro, oIntroTM2, oIntroTM3, oIntroTM4, oIntroTM5, oIntroTM6, oIntroTM7, oIntroTM8, oIntroTM9, oIntroTM10, oIntroTM11, oIntroTM12, oIntroTM13];
@@ -117,26 +118,30 @@ var spacing = 8;//Padding between icons
 //var hudY = display_get_gui_height();
 
 //Draw match setting icon to the left of the modifier
-if(instance_exists(oPlayer)){
-	if(global.matchPresetIndex != -1) {
-	    var presetSprite = sSettingsCarouselMenu;
-	    var presetIndex = global.matchPresetIndex;
-	    draw_sprite_ext(presetSprite, presetIndex, 
-	        56, 
-	        64 + 136, 
-	        iconScale, iconScale, 0, c_white, 1);
+if(room != rm_Mission0){
+	if(instance_exists(oPlayer)){
+		if(global.matchPresetIndex != -1) {
+		    var presetSprite = sSettingsCarouselMenu;
+		    var presetIndex = global.matchPresetIndex;
+		    draw_sprite_ext(presetSprite, presetIndex, 
+		        56, 
+		        64 + 136, 
+		        iconScale, iconScale, 0, c_white, 1);
+		}
 	}
 }
 
 //Draw modifier icon
-if(instance_exists(oPlayer)){
-	if(global.perkIndex != -1) {
-	    var modSprite = sPerksCarouselMenu;
-	    var modIndex = global.perkIndex;
-	    draw_sprite_ext(modSprite, modIndex, 
-	        56 + (iconSize * iconScale) + spacing, 
-	        64 + 136, 
-	        iconScale, iconScale, 0, c_white, 1);
+if(room != rm_Mission0){
+	if(instance_exists(oPlayer)){
+		if(global.perkIndex != -1) {
+		    var modSprite = sPerksCarouselMenu;
+		    var modIndex = global.perkIndex;
+		    draw_sprite_ext(modSprite, modIndex, 
+		        56 + (iconSize * iconScale) + spacing, 
+		        64 + 136, 
+		        iconScale, iconScale, 0, c_white, 1);
+		}
 	}
 }
 

@@ -39,14 +39,16 @@ if destroy == true{
 		//create_screen_pause();
 	
 		//Screen shake
-		screen_shake(8);
-	
+		if(global.screenShake){
+			screen_shake(8);
+		}
+		
 		//Destroy self
 		instance_destroy();
 		
 		//Play a sound effect
 		//audio_play_sound(sndExplosion, 8, false);
-	} else if place_meeting(x, y, oEnemyParent){
+	}else if place_meeting(x, y, oEnemyParent){
 		var _boomInst = instance_create_depth(x + 8, y + 8, -3000, oHardcoreExplosion);
 		with(_boomInst){
 			image_xscale = 1.25;
@@ -60,8 +62,10 @@ if destroy == true{
 		//create_screen_pause();
 	
 		//Screen shake
-		screen_shake(8);
-	
+		if(global.screenShake){
+			screen_shake(8);
+		}
+		
 		//Destroy self
 		instance_destroy();
 		//Play a sound effect
@@ -90,8 +94,10 @@ if place_meeting(x, y, oSolidWall){
 		create_screen_pause();
 	
 		//Screen shake
-		screen_shake(8);
-	
+		if(global.screenShake){
+			screen_shake(8);
+		}
+
 		//Destroy self
 		instance_destroy();
 	destroy = true;
@@ -112,8 +118,10 @@ if point_distance(xstart, ystart, x, y) > maxDist{
 		create_screen_pause();
 	
 		//Screen shake
-		screen_shake(8);
-	
+		if(global.screenShake){
+			screen_shake(8);
+		}
+		
 		//Destroy self
 		instance_destroy();
 	destroy = true;

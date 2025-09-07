@@ -7,6 +7,10 @@ if !instance_exists(oPlayer){
 	exit;
 }
 
+if(instance_exists(oTextbox2)){
+	instance_destroy(oTextbox2);
+}
+
 //Settings and quitting the game and stuff
 //Get inputs
 up_key = keyboard_check_pressed(vk_up);

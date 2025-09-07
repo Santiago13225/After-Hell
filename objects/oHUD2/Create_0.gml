@@ -8,6 +8,7 @@ playerHp = 0;
 playerMaxHp = 0;
 playerScore = 500;
 //Total score for scoreboard (cumulative money earned)
+//playerTotalScore = 10000000
 playerTotalScore = 500;
 
 global.run_once = true;

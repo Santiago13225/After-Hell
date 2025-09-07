@@ -102,8 +102,10 @@ switch(state){
 		attackTriggered = true;
 		
 		audio_play_sound(sndEarthquake, 8, false);//Play explosion sound effect.
-		screen_shake(8);//Screen shake.
-		
+		if(global.screenShake){
+			screen_shake(8);//Screen shake.
+		}
+
 		var _attackDist = 400;
 		var _attackSep = 20;
 		var _attackNum = round(_attackDist/_attackSep);

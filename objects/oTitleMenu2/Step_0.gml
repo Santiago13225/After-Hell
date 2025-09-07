@@ -93,6 +93,7 @@ if accept_key{
 					global.nomedkit = false;
 					global.slowfirerate = false;
 					oHUD2.playerTotalScore = 500;
+					global.screenShake = true;
 					//TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
 					TransitionStart(rm_Tutorial_Level, sqFadeOut, sqFadeIn);
 					//menu_level = 1;

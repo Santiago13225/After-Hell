@@ -14,7 +14,7 @@ var iconSize = 64;//Assuming 64x64 icons
 var iconScale = 1;//Scale
 var spacing = 8;//Padding between icons
 
-//Ensure the variable exists for tutorial levels
+//Ensure the map sprite icon variable exists for tutorial and sandbox levels
 if(!variable_global_exists("selectedMapSprite")) {
     global.selectedMapSprite = 12;//13th frame
 }
@@ -68,11 +68,12 @@ switch(global.matchPresetIndex) {
     default: matchText = "???"; break;
 }
 
-//Ensure the variable exists for tutorial level
+//Ensure the map text variable exists for tutorial level
 if(room == rm_Tutorial_Level) {
     mapText = "Tutorial Level";
 }
 
+//Ensure the map text variable exists for sandbox level
 if(room == rm_Mission0) {
     mapText = "Test_Level";
 }
@@ -101,10 +102,12 @@ switch(global.perkIndex) {
 }
 draw_text_transformed(160 * 3, (90 * 3) + 30, "Modifier: " + modifierText, 3, 3, 0);
 
+//Ensure the map sprite icon variable exists for tutorial level
 if(room == rm_Tutorial_Level){
 	global.selectedMapSprite = 12;//13th frame
 }
 
+//Ensure the map sprite icon variable exists for sandbox level
 if(room == rm_Mission0){
 	global.selectedMapSprite = 12;//13th frame
 }
@@ -128,7 +131,11 @@ if(global.perkIndex != undefined) {
 }
 
 //Draw stats for single player
-draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: " + string(oInvisibleSpawner2.currentWave), 3, 3, 0);
+if(room == rm_Mission0){
+	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: 0", 3, 3, 0);
+}else {
+	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: " + string(oInvisibleSpawner2.currentWave), 3, 3, 0);
+}
 //draw_text_transformed(160 * 3, _wy/2 + 33, "Time Survived: 00:00:00", 3, 3, 0);
 /*var _timeMS;
 if(instance_exists(oPlayer)) {
@@ -196,7 +203,11 @@ draw_text_transformed(340 * 3, _wy/2 + 85, "Score:", 3, 3, 0);
 draw_text_transformed(160 * 3, _wy/2 + 140, "Player 1", 3, 3, 0);
 draw_text_transformed(260 * 3, _wy/2 + 140, string(global.enemyKillCount), 3, 3, 0);
 //draw_text_transformed(340 * 3, _wy/2 + 140, "500", 3, 3, 0);
-draw_text_transformed(340 * 3, _wy/2 + 140, string(oHUD2.playerTotalScore), 3, 3, 0);
+if(room == rm_Mission0){
+	draw_text_transformed(340 * 3, _wy/2 + 140, "10000000", 3, 3, 0);
+}else {
+	draw_text_transformed(340 * 3, _wy/2 + 140, string(oHUD2.playerTotalScore), 3, 3, 0);
+}
 
 draw_text_transformed(160 * 3, _wy/2 + 170, "-", 3, 3, 0);
 draw_text_transformed(260 * 3, _wy/2 + 170, "-", 3, 3, 0);
