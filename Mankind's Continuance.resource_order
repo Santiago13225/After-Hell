@@ -703,6 +703,7 @@
     {"name":"oAllMenuButtonPressed","order":12,"path":"objects/oAllMenuButtonPressed/oAllMenuButtonPressed.yy",},
     {"name":"oFilingCabinet","order":31,"path":"objects/oFilingCabinet/oFilingCabinet.yy",},
     {"name":"rm_TM1_2","order":50,"path":"rooms/rm_TM1_2/rm_TM1_2.yy",},
+    {"name":"sInfoSign2","order":155,"path":"sprites/sInfoSign2/sInfoSign2.yy",},
     {"name":"tilesTemple","order":8,"path":"tilesets/tilesTemple/tilesTemple.yy",},
     {"name":"tilesGraveyard","order":16,"path":"tilesets/tilesGraveyard/tilesGraveyard.yy",},
     {"name":"sHardcoreSMG","order":64,"path":"sprites/sHardcoreSMG/sHardcoreSMG.yy",},

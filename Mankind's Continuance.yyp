@@ -733,6 +733,7 @@
     {"id":{"name":"oAllMenuButtonPressed","path":"objects/oAllMenuButtonPressed/oAllMenuButtonPressed.yy",},},
     {"id":{"name":"oFilingCabinet","path":"objects/oFilingCabinet/oFilingCabinet.yy",},},
     {"id":{"name":"rm_TM1_2","path":"rooms/rm_TM1_2/rm_TM1_2.yy",},},
+    {"id":{"name":"sInfoSign2","path":"sprites/sInfoSign2/sInfoSign2.yy",},},
     {"id":{"name":"tilesTemple","path":"tilesets/tilesTemple/tilesTemple.yy",},},
     {"id":{"name":"tilesGraveyard","path":"tilesets/tilesGraveyard/tilesGraveyard.yy",},},
     {"id":{"name":"sHardcoreSMG","path":"sprites/sHardcoreSMG/sHardcoreSMG.yy",},},

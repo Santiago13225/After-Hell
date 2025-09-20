@@ -1178,4 +1178,12 @@ if(global.energyshield && shield < maxShield) {
 	}
 }
 
-global.playerSurvivalTime = current_time - spawnTime;
+//global.playerSurvivalTime = current_time - spawnTime;
+
+//Only increment if NOT paused
+if(!instance_exists(oPauseMenu2)) {
+	survivalSteps++;
+}
+
+//Convert to seconds
+global.playerSurvivalTime = survivalSteps div room_speed;

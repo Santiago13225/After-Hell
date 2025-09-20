@@ -158,14 +158,19 @@ var _timeText = string_format(_hours, 2, 0) + ":" + string_format(_minutes, 2, 0
 draw_text_transformed(160 * 3, _wy/2 + 33, "Time Survived: " + _timeText, 3, 3, 0);
 */
 
-var _timeMS;
+//Time survived display
+var _secondsTotal;
+
+//var _timeMS;
 if(instance_exists(oPlayer)) {
-    _timeMS = current_time - oPlayer.spawnTime;
+    //_timeMS = current_time - oPlayer.spawnTime;
+	_secondsTotal = floor(oPlayer.survivalSteps / room_speed);
 }else {
-    _timeMS = global.playerSurvivalTime;
+	//_timeMS = global.playerSurvivalTime;
+	_secondsTotal = global.playerSurvivalTime;//backup if player is gone
 }
 
-var _secondsTotal = floor(_timeMS / 1000);
+//var _secondsTotal = floor(_timeMS / 1000);
 
 //Cap at 99:59:59 (in seconds)
 var _maxSeconds = (99 * 3600) + (59 * 60) + 59;

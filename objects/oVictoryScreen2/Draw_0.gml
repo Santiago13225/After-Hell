@@ -125,14 +125,18 @@ if(global.perkIndex != undefined) {
 draw_text_transformed(_cX + 160, _cY + _wy/2 + 1, "Waves Survived: " + string(global.finalWave), 1, 1, 0);
 //draw_text_transformed(_cX + 160, _cY + _wy/2 + 11, "Time Survived: 00:00:00", 1, 1, 0);
 
-var _timeMS;
+//var _timeMS;
+
+//Time survived display
+var _secondsTotal;
+
 if(instance_exists(oPlayer)) {
-    _timeMS = current_time - oPlayer.spawnTime;
+	_secondsTotal = floor(oPlayer.survivalSteps / room_speed);
 }else {
-    _timeMS = global.playerSurvivalTime;
+	_secondsTotal = global.playerSurvivalTime;//backup if player is gone
 }
 
-var _secondsTotal = floor(_timeMS / 1000);
+//var _secondsTotal = floor(_timeMS / 1000);
 
 //Cap at 99:59:59 (in seconds)
 var _maxSeconds = (99 * 3600) + (59 * 60) + 59;

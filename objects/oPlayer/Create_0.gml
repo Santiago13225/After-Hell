@@ -93,4 +93,7 @@ selectedWeapon = 0;
 weapon = global.PlayerWeapons[selectedWeapon];
 
 //Time tracking
-spawnTime = current_time;//milliseconds since game start
+//spawnTime = current_time;//milliseconds since game start
+
+//Survival time tracking
+survivalSteps = 0;//total steps survived
