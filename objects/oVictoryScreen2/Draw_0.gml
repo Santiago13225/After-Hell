@@ -262,12 +262,29 @@ for(var i = 0; i < op_length; i++){
 
 //Settings and quitting the game and stuff
 //Get inputs
-up_key = keyboard_check_pressed(vk_up);
-down_key = keyboard_check_pressed(vk_down);
-accept_key = keyboard_check_pressed(vk_space);
+up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
+down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
+accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter);
 
 //Store the number of options in current menu
 op_length = array_length(option[menu_level]);
+
+//Input (controller)
+var _gamePad = 0;
+if(gamepad_is_connected(_gamePad)) {
+    //D-pad
+    up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
+    down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
+
+    //Analog stick
+    var axis_vertical = gamepad_axis_value(_gamePad, gp_axislv);
+    var deadzone = 0.3;
+    if (axis_vertical < -deadzone) up_key = true;
+    if (axis_vertical > deadzone) down_key = true;
+
+    //Confirm button (A on Xbox, Cross on PlayStation)
+    accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
+}
 
 //Move through the menu
 pos += down_key - up_key;
@@ -279,7 +296,7 @@ if pos < 0{
 }
 
 //Using the options
-if accept_key{
+if(accept_key){
 	//Pause menu
 	switch(pos){
 		case 0:

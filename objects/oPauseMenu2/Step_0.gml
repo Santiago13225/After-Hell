@@ -13,37 +13,37 @@ if(instance_exists(oTextbox2)){
 
 //Settings and quitting the game and stuff
 //Get inputs
-up_key = keyboard_check_pressed(vk_up);
-down_key = keyboard_check_pressed(vk_down);
-accept_key = keyboard_check_pressed(vk_space);
+up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
+down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
+accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter);
 
 //Get inputs for volume control
-left_key = keyboard_check_pressed(vk_left);
-right_key = keyboard_check_pressed(vk_right);
+left_key = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));
+right_key = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"));
 
 //Controller inputs
 var _gamePad = 0;
 var is_controller_connected = gamepad_is_connected(_gamePad);
 
 if is_controller_connected{
-	up_key = gamepad_button_check_pressed(_gamePad, gp_padu) || keyboard_check_pressed(vk_up);
-	down_key = gamepad_button_check_pressed(_gamePad, gp_padd) || keyboard_check_pressed(vk_down);
-	left_key = gamepad_button_check_pressed(_gamePad, gp_padl) || keyboard_check_pressed(vk_left);
-	right_key = gamepad_button_check_pressed(_gamePad, gp_padr) || keyboard_check_pressed(vk_right);
+	up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
+	down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
+	left_key |= gamepad_button_check_pressed(_gamePad, gp_padl);
+	right_key |= gamepad_button_check_pressed(_gamePad, gp_padr);
     
     //Convert controller button presses to accept_key
-    accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1) || keyboard_check_pressed(vk_space);
+    accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
 }
 
 //Adjust music volume
 if(menu_level == 1 && pos == 0)//Check if in the Settings menu and the first option (music)
 {
-    if (left_key){
+    if(left_key){
         global.musicvolume = max(0, global.musicvolume - 0.1);//Reduce volume by 10%
 		//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
     }
-    else if (right_key){
+    else if(right_key){
         global.musicvolume = min(1, global.musicvolume + 0.1);//Increase volume by 10%
 		//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
@@ -52,12 +52,12 @@ if(menu_level == 1 && pos == 0)//Check if in the Settings menu and the first opt
 //Adjust sound effects volume
 if(menu_level == 1 && pos == 1)//Check if in the Settings menu and the second option (sfx)
 {
-    if (left_key){
+    if(left_key){
         global.sfxvolume = max(0, global.sfxvolume - 0.1);//Reduce volume by 10%
 		//option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
     }
-    else if (right_key){
+    else if(right_key){
         global.sfxvolume = min(1, global.sfxvolume + 0.1);//Increase volume by 10%
 		//option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);

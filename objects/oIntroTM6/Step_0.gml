@@ -31,7 +31,7 @@ if(l > string_length(str) + 100) && (next < array_length_1d(strings) - 1){
 
 str = strings[next];
 
-if (keyboard_check_direct(vk_space)) xor ((global.controllerMode == 1) && gamepad_button_check(0, gp_face3)){
+if (keyboard_check_direct(vk_space)) xor ((global.controllerMode == 1) && gamepad_button_check(0, gp_face1)){
 	holdspace++;
 }
 
@@ -40,4 +40,36 @@ if (holdspace > 80) || (xpos < 100) fadeout = 1;
 if(a == 1) && (fadeout == 1){
 	global.dialog_active = false;//Disable silhouette drawing.
 	TransitionStart(rm_Casino_Level1, sqFadeOut, sqFadeIn);
+}
+
+//Controller skip input (like Key Press Any for controller)
+if(global.controllerMode == 1 && gamepad_is_connected(0)) {
+	var anyButton =
+		gamepad_button_check_pressed(0, gp_face1) ||
+		gamepad_button_check_pressed(0, gp_face2) ||
+		gamepad_button_check_pressed(0, gp_face3) ||
+		gamepad_button_check_pressed(0, gp_face4) ||
+		gamepad_button_check_pressed(0, gp_start) ||
+		gamepad_button_check_pressed(0, gp_select) ||
+		gamepad_button_check_pressed(0, gp_shoulderlb) ||
+		gamepad_button_check_pressed(0, gp_shoulderrb) ||
+		gamepad_button_check_pressed(0, gp_shoulderl) ||
+		gamepad_button_check_pressed(0, gp_shoulderr) ||
+		gamepad_button_check_pressed(0, gp_stickl) ||
+		gamepad_button_check_pressed(0, gp_stickr) ||
+		gamepad_button_check_pressed(0, gp_padu) ||
+		gamepad_button_check_pressed(0, gp_padd) ||
+		gamepad_button_check_pressed(0, gp_padl) ||
+		gamepad_button_check_pressed(0, gp_padr);
+
+	//Analog stick movement (deadzone 0.2)
+	var lx = gamepad_axis_value(0, gp_axislh);
+	var ly = gamepad_axis_value(0, gp_axislv);
+	var rx = gamepad_axis_value(0, gp_axisrh);
+	var ry = gamepad_axis_value(0, gp_axisrv);
+	var anyStick = (abs(lx) > 0.2) || (abs(ly) > 0.2) || (abs(rx) > 0.2) || (abs(ry) > 0.2);
+
+	if(anyButton || anyStick) {
+		if(holdspace == 0) holdspace++;
+	}
 }

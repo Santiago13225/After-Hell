@@ -14,6 +14,7 @@
     {"name":"inst_6315FAA","path":"rooms/rm_Title_Screen/rm_Title_Screen.yy",},
     {"name":"inst_365FF605","path":"rooms/rm_Title_Screen/rm_Title_Screen.yy",},
     {"name":"inst_31C1DAAA","path":"rooms/rm_Title_Screen/rm_Title_Screen.yy",},
+    {"name":"inst_20723BA0","path":"rooms/rm_Title_Screen/rm_Title_Screen.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -25,6 +26,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6315FAA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oTitleMenuAudio","path":"objects/oTitleMenuAudio/oTitleMenuAudio.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":48.0,"y":0.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_365FF605","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oTitleMenu2","path":"objects/oTitleMenu2/oTitleMenu2.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":310.0,"y":170.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_31C1DAAA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oMouse","path":"objects/oMouse/oMouse.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":8.0,"y":24.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_20723BA0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oControllerIndicator","path":"objects/oControllerIndicator/oControllerIndicator.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":64.0,"y":0.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMREffectLayer","resourceVersion":"1.0","name":"Effect_1","depth":-8900,"effectEnabled":true,"effectType":"_filter_mask","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[
         {"name":"g_MaskStart","type":0,"value":"0",},

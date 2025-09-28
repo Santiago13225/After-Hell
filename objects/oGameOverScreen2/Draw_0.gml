@@ -275,13 +275,29 @@ for(var i = 0; i < op_length; i++){
 //height = (op_border * 2) + sprite_get_height(sMainFont) + ((op_length + 1) * op_space);
 //settings and quitting the game and stuff
 //get inputs
-up_key = keyboard_check_pressed(vk_up);
-down_key = keyboard_check_pressed(vk_down);
-accept_key = keyboard_check_pressed(vk_space);
-
+up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
+down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
+accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter);
 
 //store number of options in current menu
 op_length = array_length(option[menu_level]);
+
+//Input (controller)
+var _gamePad = 0;
+if(gamepad_is_connected(_gamePad)) {
+    //D-pad
+    up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
+    down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
+
+    //Analog stick
+    var axis_vertical = gamepad_axis_value(_gamePad, gp_axislv);
+    var deadzone = 0.3;
+    if (axis_vertical < -deadzone) up_key = true;
+    if (axis_vertical > deadzone) down_key = true;
+
+    //Confirm button (A on Xbox, Cross on PlayStation)
+    accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
+}
 
 //move through the menu
 pos += down_key - up_key;

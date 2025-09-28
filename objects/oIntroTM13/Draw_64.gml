@@ -16,7 +16,7 @@ if(holdspace > 0) {
 	if (global.controllerMode == 0){
 		draw_text_transformed(960, 1040, "Hold space to skip.", 2.5, 2.5, 0);
 	}else {
-		draw_text_transformed(960, 1040, "Hold left face button to skip.", 2.5, 2.5, 0);
+		draw_text_transformed(960, 1040, "Hold lower face button to skip.", 2.5, 2.5, 0);
 	}
 	draw_set_alpha(1);
 }

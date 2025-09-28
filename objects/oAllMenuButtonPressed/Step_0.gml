@@ -50,15 +50,24 @@ if instance_exists(oGameOverScreen)
 }*/
 #endregion
 
-if instance_exists(oGameOverScreen2) || instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2){//If any of the menu instances exist...
-    if (keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0, gp_padu)){//Check for button press.
+if(instance_exists(oGameOverScreen2) || instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2)){//If any of the menu instances exist...
+    if(keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")) || gamepad_button_check_pressed(0, gp_padu)){//Check for button press.
         audio_play_sound(sndClick, 10, false);//Play sound effect.
     }
-    if (keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(0, gp_padd)){//Check for button press.
+    if(keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S")) || gamepad_button_check_pressed(0, gp_padd)){//Check for button press.
         audio_play_sound(sndClick, 10, false);//Play sound effect.
     }
-//gp_face1 represents the X button on most controllers
-    if (keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1)){//Check for button press.
+	if(keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A")) || gamepad_button_check_pressed(0, gp_padl)){//Check for button press.
+        audio_play_sound(sndClick, 10, false);//Play sound effect.
+    }
+    if(keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D")) || gamepad_button_check_pressed(0, gp_padr)){//Check for button press.
+        audio_play_sound(sndClick, 10, false);//Play sound effect.
+    }
+	if(keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(0, gp_face2)){//Check for button press.
+        audio_play_sound(sndBeep, 10, false);//Play sound effect.
+    }
+	//gp_face1 represents the A button on the Xbox controllers
+    if(keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1)){//Check for button press.
 		oSFX.beepSnd = true;//Play sound effect.
         //audio_play_sound(sndBeep, 10, false);//Play sound effect.
     }

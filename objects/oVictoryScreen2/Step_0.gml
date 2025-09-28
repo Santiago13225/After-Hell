@@ -14,7 +14,7 @@ alpha += alphaSpd;
 alpha = clamp(alpha, 0, 1);
 
 //Controller inputs
-var _gamePad = 0;
+/*var _gamePad = 0;
 var is_controller_connected = gamepad_is_connected(_gamePad);
 
 if is_controller_connected{
@@ -31,8 +31,8 @@ if is_controller_connected{
     //down_key |= axis_vertical > deadzone;
 	//gamepad_button_check(_gamePad, gp_shoulderrb);
 	//gp_padu
-	up_key = gamepad_button_check_pressed(_gamePad, gp_padu);
-	down_key = gamepad_button_check_pressed(_gamePad, gp_padd);
+	up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
+	down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
     //up_key = gamepad_button_check_pressed(_gamePad, gp_shoulderlb);
 	//down_key = gamepad_button_check_pressed(_gamePad, gp_shoulderlb);
     // Convert analog stick inputs to left and right key presses
@@ -43,7 +43,7 @@ if is_controller_connected{
     
     //Convert controller button presses to accept_key
     accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
-}
+}*/
 
 //Restart
 /*

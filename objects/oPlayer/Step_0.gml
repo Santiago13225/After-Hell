@@ -286,7 +286,7 @@ if global.controllerMode == 1{
 //var _playerWeapons = global.PlayerWeapons;
 
 //Cycle through weapons
-if swapKeyPressed{
+if swapKeyPressed{//same as upswap key
 	//Change the selection and wrap around
 	if array_length(_playerWeapons) > 1{
 		//Play a sound effect
