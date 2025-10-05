@@ -94,7 +94,13 @@ draw_set_halign(fa_left);
 
 for(var i = 0; i < op_length; i++){
 	var _c = c_white;
-	if (pos == i){
+	//Make "Controls" gray if locked
+	if(menu_level == 1 && i == 2 && oControllerIndicator.controller_count == 0) {
+		if(pos == i){
+			draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5);
+		}
+		_c = c_gray;//gray
+	}else if(pos == i){
 		draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5);
 		_c = c_yellow;
 	}

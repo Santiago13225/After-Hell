@@ -2,6 +2,10 @@
 /*This object represents an intro object.*/
 //This event is responsible for handling intro object behavior.
 
+if(oControllerIndicator.controller_count == 0) {
+    global.controllerMode = 0;//force keyboard if no controller
+}
+
 if(skipTimer > 0) {
     skipTimer -= 1;
 }else {

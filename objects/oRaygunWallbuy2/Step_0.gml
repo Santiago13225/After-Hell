@@ -9,7 +9,12 @@ if(!has_been_interacted){//If we have not interacted with anything yet
 			audio_play_sound(sndRaygun15000, 10, false);
 		}
 		if(!instance_exists(oTextbox2)){
-			create_textbox(text_id);
+			if(global.controllerMode == 0){
+				create_textbox("RaygunWallbuy");
+			}else {
+				create_textbox("RaygunWallbuyC");
+			}
+			//create_textbox(text_id);
 		}
 		//popup_id.visible = true;//Make popup visible
 	}

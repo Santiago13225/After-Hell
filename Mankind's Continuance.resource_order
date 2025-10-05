@@ -299,6 +299,7 @@
     {"name":"sUltraPoof","order":5,"path":"sprites/sUltraPoof/sUltraPoof.yy",},
     {"name":"oScrollK","order":10,"path":"objects/oScrollK/oScrollK.yy",},
     {"name":"oSniperWallbuy2","order":147,"path":"objects/oSniperWallbuy2/oSniperWallbuy2.yy",},
+    {"name":"sControllerFont","order":46,"path":"sprites/sControllerFont/sControllerFont.yy",},
     {"name":"oArmoryAugmentor2","order":144,"path":"objects/oArmoryAugmentor2/oArmoryAugmentor2.yy",},
     {"name":"sSkeletonHellHound2","order":156,"path":"sprites/sSkeletonHellHound2/sSkeletonHellHound2.yy",},
     {"name":"rm_Overlook_Level4","order":49,"path":"rooms/rm_Overlook_Level4/rm_Overlook_Level4.yy",},

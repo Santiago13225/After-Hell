@@ -137,6 +137,21 @@ if pos < 0{
 	pos = op_length-1;
 }
 
+if(menu_level == 6) {
+    if(oControllerIndicator.controller_count == 0) {
+        //Lock to Keyboard
+        global.controllerMode = 0;
+        option[6, 2] = "Controls: Keyboard";
+    }else {
+        //Unlock - keep the toggleable text
+        if(global.controllerMode == 0) {
+            option[6, 2] = "Controls: Keyboard";
+        }else {
+            option[6, 2] = "Controls: Controller";
+        }
+    }
+}
+
 //Using the options
 if accept_key{
 	var _sml = menu_level;
@@ -366,12 +381,14 @@ if accept_key{
 				//Controls
 				case 2:
 					//Controller option
-					if global.controllerMode == 0{
-						option[6, 2] = "Controls: Controller";
-						global.controllerMode = 1;
-					}else{
-						option[6, 2] = "Controls: Keyboard";
-						global.controllerMode = 0;
+					if(oControllerIndicator.controller_count != 0) {//only allow toggle if unlocked
+						if global.controllerMode == 0{
+							option[6, 2] = "Controls: Controller";
+							global.controllerMode = 1;
+						}else{
+							option[6, 2] = "Controls: Keyboard";
+							global.controllerMode = 0;
+						}
 					}
 					break;
 				//Back

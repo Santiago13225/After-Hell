@@ -324,6 +324,7 @@
     {"id":{"name":"sUltraPoof","path":"sprites/sUltraPoof/sUltraPoof.yy",},},
     {"id":{"name":"oScrollK","path":"objects/oScrollK/oScrollK.yy",},},
     {"id":{"name":"oSniperWallbuy2","path":"objects/oSniperWallbuy2/oSniperWallbuy2.yy",},},
+    {"id":{"name":"sControllerFont","path":"sprites/sControllerFont/sControllerFont.yy",},},
     {"id":{"name":"oArmoryAugmentor2","path":"objects/oArmoryAugmentor2/oArmoryAugmentor2.yy",},},
     {"id":{"name":"sSkeletonHellHound2","path":"sprites/sSkeletonHellHound2/sSkeletonHellHound2.yy",},},
     {"id":{"name":"rm_Overlook_Level4","path":"rooms/rm_Overlook_Level4/rm_Overlook_Level4.yy",},},

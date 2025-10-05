@@ -2,11 +2,11 @@
 /*This object represents the assault wallbuy object.*/
 //This event is responsible for setting some variables for the assault wallbuy object.
 depth = -bbox_top;
-if(global.controllerMode == 0){
+/*if(global.controllerMode == 0){
 	text_id = "AssaultWallbuy";
 }else {
 	text_id = "AssaultWallbuyC";
-}
+}*/
 //created = false;
 
 //popup_id = instance_create_layer(x, y - 32, layer, oPopup);//Hint

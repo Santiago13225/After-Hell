@@ -272,18 +272,44 @@ op_length = array_length(option[menu_level]);
 //Input (controller)
 var _gamePad = 0;
 if(gamepad_is_connected(_gamePad)) {
-    //D-pad
-    up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
-    down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
+	//D-pad
+	up_key |= gamepad_button_check_pressed(_gamePad, gp_padu);
+	down_key |= gamepad_button_check_pressed(_gamePad, gp_padd);
+	accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);//Confirm button (A on Xbox, Cross on PlayStation)
 
-    //Analog stick
-    var axis_vertical = gamepad_axis_value(_gamePad, gp_axislv);
-    var deadzone = 0.3;
-    if (axis_vertical < -deadzone) up_key = true;
-    if (axis_vertical > deadzone) down_key = true;
+	//Stick settings
+	var deadzone = 0.5;//threshold
+	var delay_initial = 15;//delay before repeat starts
+	var delay_repeat  = 6;//faster repeat after holding
 
-    //Confirm button (A on Xbox, Cross on PlayStation)
-    accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
+	if(!variable_instance_exists(id, "stick_delay")) stick_delay = 0;
+	if(!variable_instance_exists(id, "stick_held")) stick_held = false;
+
+	//Stick input
+	var ly = gamepad_axis_value(0, gp_axislv);
+	var moved = false;
+
+	//Countdown
+	if(stick_delay > 0) stick_delay--;
+
+	//Check input
+	if(stick_delay <= 0) {
+		//if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+		//else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+		if(ly > deadzone) { down_key = true; moved = true; }
+		else if(ly < -deadzone) { up_key = true; moved = true; }
+
+		if(moved) {
+			if(!stick_held) {
+				stick_delay = delay_initial;//first delay
+				stick_held = true;
+			}else {
+				stick_delay = delay_repeat;//repeat delay
+			}
+		}else {
+			stick_held = false;//reset if neutral
+		}
+	}
 }
 
 //Move through the menu

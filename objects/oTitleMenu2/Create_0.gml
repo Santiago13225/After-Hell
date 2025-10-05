@@ -61,7 +61,7 @@ option[5, 2] = "Back";
 //option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
 option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
-option[6, 2] = "Controls: ???";
+option[6, 2] = "Controls: Keyboard";
 // Set the initial control mode based on a global variable
 if(global.controllerMode == 0) {
     option[6, 2] = "Controls: Keyboard";

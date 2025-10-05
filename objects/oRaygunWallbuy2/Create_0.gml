@@ -2,11 +2,11 @@
 /*This object represents the smg wallbuy object.*/
 //This event is responsible for setting some variables for the smg wallbuy object.
 depth = -bbox_top;
-if(global.controllerMode == 0){
+/*if(global.controllerMode == 0){
 	text_id = "RaygunWallbuy";
 }else {
 	text_id = "RaygunWallbuyC";
-}
+}*/
 //created = false;
 
 //popup_id = instance_create_layer(x, y - 32, layer, oPopup);//Hint
