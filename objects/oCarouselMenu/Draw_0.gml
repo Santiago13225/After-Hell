@@ -70,8 +70,17 @@ draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
 
 draw_text_transformed(menu_x, menu_y + menu_height/2 + 45, text, 1, 1, 0);
-draw_text_transformed(menu_x, menu_y + menu_height/2 + 60, "Press [Space] to Select", 1, 1, 0);
-draw_text_transformed(menu_x, menu_y + menu_height/2 + 75, "Press [Backspace] to Go Back", 1, 1, 0);
+
+if(global.controllerMode == 0){
+	draw_set_font(global.font_main);
+	draw_text_transformed(menu_x, menu_y + menu_height/2 + 60, "Press [Space] to Select", 1, 1, 0);
+	draw_text_transformed(menu_x, menu_y + menu_height/2 + 75, "Press [Backspace] to Go Back", 1, 1, 0);
+}else {
+	draw_set_font(global.fontController);//Controller
+	draw_text_transformed(menu_x, menu_y + menu_height/2 + 60, "Press [@] to Select", 1, 1, 0);
+	draw_text_transformed(menu_x, menu_y + menu_height/2 + 75, "Press [#] to Go Back", 1, 1, 0);
+}
+
 //draw_text(menu_x, menu_y + menu_height/2 + 30, text);
 
 //Draw the selected modifier label below the map selection menu

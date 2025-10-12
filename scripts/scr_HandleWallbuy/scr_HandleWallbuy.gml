@@ -15,8 +15,8 @@ var createObj   = argument5;
 
 //Only interact when in range and the textbox exists
 if distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2) {
-	if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)) {
-        
+	//if keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)) {
+	if keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3)) {
 		//1)If player can afford AND doesn’t own any variant → buy
 		var ownsBase     = false;
 		var ownsHardcore = false;

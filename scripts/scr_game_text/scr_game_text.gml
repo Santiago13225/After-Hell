@@ -23,65 +23,65 @@ function scr_game_text(_text_id){
 			break;
 
 		case "ShotgunWallbuy":
-			scr_text("Shotgun [Cost: 500] \nAmmo [Cost: 250] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("Shotgun [Cost: 500] \nAmmo [Cost: 250] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 		case "RaygunWallbuy":
-			scr_text("Raygun [Cost: 5000] \nAmmo [Cost: 2500] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("Raygun [Cost: 5000] \nAmmo [Cost: 2500] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 		case "SniperWallbuy":
-			scr_text("Sniper [Cost: 1500] \nAmmo [Cost: 750] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("Sniper [Cost: 1500] \nAmmo [Cost: 750] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 		case "AssaultWallbuy":
-			scr_text("AR [Cost: 1500] \nAmmo [Cost: 750] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("AR [Cost: 1500] \nAmmo [Cost: 750] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 		case "BazookaWallbuy":
-			scr_text("Bazooka [Cost: 6000] \nAmmo [Cost: 3000] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("Bazooka [Cost: 6000] \nAmmo [Cost: 3000] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 		case "SMGWallbuy":
-			scr_text("SMG [Cost: 1300] \nAmmo [Cost: 650] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("SMG [Cost: 1300] \nAmmo [Cost: 650] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 		case "LMGWallbuy":
-			scr_text("LMG [Cost: 2500] \nAmmo [Cost: 1250] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("LMG [Cost: 2500] \nAmmo [Cost: 1250] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 		case "MedkitWallbuy":
-			scr_text("Medkit [Cost: 500] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("Medkit [Cost: 500] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 		case "Debris":
-			scr_text("Debris [Cost: 500] \n[G] to Remove \n[Space] to Dismiss");
+			scr_text("Debris [Cost: 500] \n[Space] to Remove \n[E] to Dismiss");
 			break;
 		case "Upgrade - Standard":
-			scr_text("Upgrade [Cost: 5000] \n[G] to Purchase \n[Space] to Dismiss");
+			scr_text("Upgrade [Cost: 5000] \n[Space] to Purchase \n[E] to Dismiss");
 			break;
 			
 		case "ShotgunWallbuyC":
-			scr_text("Shotgun [Cost: 500] \nAmmo [Cost: 250] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("Shotgun [Cost: 500] \nAmmo [Cost: 250] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 		case "RaygunWallbuyC":
-			scr_text("Raygun [Cost: 5000] \nAmmo [Cost: 2500] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("Raygun [Cost: 5000] \nAmmo [Cost: 2500] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 		case "SniperWallbuyC":
-			scr_text("Sniper [Cost: 1500] \nAmmo [Cost: 750] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("Sniper [Cost: 1500] \nAmmo [Cost: 750] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 		case "AssaultWallbuyC":
-			scr_text("AR [Cost: 1500] \nAmmo [Cost: 750] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("AR [Cost: 1500] \nAmmo [Cost: 750] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 		case "BazookaWallbuyC":
-			scr_text("Bazooka [Cost: 6000] \nAmmo [Cost: 3000] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("Bazooka [Cost: 6000] \nAmmo [Cost: 3000] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 		case "SMGWallbuyC":
-			scr_text("SMG [Cost: 1300] \nAmmo [Cost: 650] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("SMG [Cost: 1300] \nAmmo [Cost: 650] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 		case "LMGWallbuyC":
-			scr_text("LMG [Cost: 2500] \nAmmo [Cost: 1250] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("LMG [Cost: 2500] \nAmmo [Cost: 1250] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 		case "MedkitWallbuyC":
-			scr_text("Medkit [Cost: 500] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("Medkit [Cost: 500] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 		case "DebrisC":
-			scr_text("Debris [Cost: 500] \n[Left Face Button] to Remove \n[Upper Face Button] to Dismiss");
+			scr_text("Debris [Cost: 500] \n[^] to Remove \n[#] to Dismiss");
 			break;
 		case "Upgrade - StandardC":
-			scr_text("Upgrade [Cost: 5000] \n[Left Face Button] to Purchase \n[Upper Face Button] to Dismiss");
+			scr_text("Upgrade [Cost: 5000] \n[^] to Purchase \n[#] to Dismiss");
 			break;
 	}
 }

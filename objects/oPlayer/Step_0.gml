@@ -776,7 +776,8 @@ if(instance_exists(oLMGWallbuy2)){
 if(instance_exists(oMedkitWallbuy3)){
 	with(oMedkitWallbuy3){
 		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
-			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+			//if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
 			    if(oHUD2.playerScore >= wallbuyCost) {
@@ -801,7 +802,8 @@ if(instance_exists(oMedkitWallbuy3)){
 if(instance_exists(oDebris)){
 	with(oDebris){
 		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
-			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+			//if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 500;
 				//Check if the player has enough points to buy the weapon
 			    if(oHUD2.playerScore >= wallbuyCost) {
@@ -826,7 +828,8 @@ if(instance_exists(oDebris)){
 if(instance_exists(oArmoryAugmentor2)){
 	with(oArmoryAugmentor2){
 		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)) {
-			if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+			//if(keyboard_check_pressed(ord("G")) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
 				wallbuyCost = 5000;
 				//Check if the player has enough points to buy the weapon
 			    if(oHUD2.playerScore >= wallbuyCost) {

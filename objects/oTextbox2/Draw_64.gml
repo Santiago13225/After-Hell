@@ -3,10 +3,17 @@
 can interact with in game.*/
 //This event is responsible for handling the drawing of the textbox object.
 if(global.controllerMode == 0){
-	accept_key = keyboard_check_pressed(vk_space);//Store the space key as a variable.
+	//accept_key = keyboard_check_pressed(vk_space);//Store the space key as a variable.
+	accept_key = keyboard_check_pressed(ord("E"));
 }
 if(global.controllerMode == 1){
-	accept_key = gamepad_button_check_pressed(0, gp_face4);
+	accept_key = gamepad_button_check_pressed(0, gp_face2);
+}
+
+if(global.controllerMode == 0){
+	draw_set_font(global.font_main);//Keyboard
+}else if(global.controllerMode == 1){
+	draw_set_font(global.fontController);//Controller
 }
 
 var _wx = display_get_gui_width();
@@ -19,7 +26,6 @@ textbox_y = _wy - (textbox_height * 3);//Y-position of the textbox.
 //Setup
 if(setup == false){
 	setup = true;
-	draw_set_font(global.font_main);//Set the font for drawing.
 	draw_set_valign(fa_top);//Set vertical alignment.
 	draw_set_halign(fa_left);//Set horizontal alignment.
 	
