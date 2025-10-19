@@ -20,6 +20,6 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- Temple -\nZombies advance on these jungle ruins. Something lurks in the darkness.";
+strings[0] = "- Temple -\nLost ruins whisper of ancient powers best left undisturbed. Something watches from within the shadows.";
 //strings[1] = "- Temple -\nThey stumble upon an ancient temple, hidden from the world for centuries.";
 skipTimer = 30 * 60;//30 seconds

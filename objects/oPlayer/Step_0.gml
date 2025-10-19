@@ -2,6 +2,8 @@
 /*This object represents the player object.*/
 //This event is responsible for handling player object behavior.
 
+if(pause_lock_timer > 0) pause_lock_timer--;
+
 //Get inputs
 #region
 rightKey = global.rightKey;
@@ -26,7 +28,7 @@ hspd = walking_speed*(keys[KEY_RIGHT]-keys[KEY_LEFT]);
 x += hspd;
 */
 //Pause menu
-if(startKeyPressed){
+if(startKeyPressed && pause_lock_timer <= 0){
 	if(!instance_exists(oScoreboard)){
 		if(!instance_exists(oPauseMenu2)){
 			global.dialog_active = true;//Disable silhouette drawing.
@@ -34,9 +36,8 @@ if(startKeyPressed){
 				audio_pause_sound(sndTestLevelTheme);
 			}
 			if audio_is_playing(sndHouseTheme1){
-			//if room == rm_House_Level1 {	
-				oSFX.houseSndloop = false;
-				//audio_pause_sound(sndHouseTheme1);
+				//oSFX.houseSndloop = false;
+				audio_pause_sound(sndHouseTheme1);
 			} 
 			if audio_is_playing(sndFacilityTheme1){
 				audio_pause_sound(sndFacilityTheme1);
@@ -84,6 +85,8 @@ if(startKeyPressed){
 			//instance_destroy(oPauseMenu);
 		}
 	}
+}else if(startKeyPressed && pause_lock_timer > 0){
+	audio_play_sound(sndCancel, 8, false);
 }
 
 if(selectKeyPressed){

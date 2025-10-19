@@ -20,6 +20,6 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- Casino -\nLuck won't save you as you navigate through a zombie-infested casino, where the stakes are life and death.";
+strings[0] = "- Casino -\nLuck fades fast beneath flickering lights. Every corner hides a losing hand.";
 //strings[1] = "- Casino -\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
 skipTimer = 30 * 60;//30 seconds

@@ -20,6 +20,6 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- Island -\nStranded on a mysterious island, you must fend off relentless waves of zombies to escape its perilous shores.";
+strings[0] = "- Island -\nTrapped on a forsaken island, you must endure the horrors that rise with each passing wave.";
 //strings[1] = "Narrator:\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
 skipTimer = 30 * 60;//30 seconds

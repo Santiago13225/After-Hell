@@ -20,7 +20,7 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- Water Station -\nDefend a crucial water station against waves of zombies. Water is life, and so is survival.";
+strings[0] = "- Water Station -\nDefend a crucial water station against waves of enemies. Water is life, and so is survival.";
 //strings[0] = "- City Block -\nThe heart of the city is now a battleground. Streets echo with the moans of the undead.";
 //strings[1] = "- City Block -\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
 skipTimer = 30 * 60;//30 seconds

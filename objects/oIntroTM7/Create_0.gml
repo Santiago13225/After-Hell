@@ -20,6 +20,6 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- Labyrinth -\nConfront the undead in a twisting labyrinth, where every turn brings new challenges and lurking dangers.";
+strings[0] = "- Labyrinth -\nA quiet garden maze, leading only deeper into dread. Every turn brings you closer to the unknown.";
 //strings[1] = "- Labyrinth -\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
 skipTimer = 30 * 60;//30 seconds

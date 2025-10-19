@@ -236,13 +236,23 @@ if accept_key{
 				//Quit Game
 				case 2:
 					global.dialog_active = false;
-					oHUD2.playerScore = 500;
-					oHUD2.playerTotalScore = 500;
+					if(instance_exists(oHUD2)) {//Reset HUD safely(only if exists)
+						oHUD2.playerScore = 500;
+						oHUD2.playerTotalScore = 500;
+					}
+
 					instance_deactivate_object(oPlayer);
-					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+					//TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					clear_weapons();
 					array_resize(global.PlayerAmmo, 1);
 					array_resize(global.PlayerWeapons, 1);
+					
+					//Stop all level music
+					audio_stop_all();
+
+					//Transition safely back to the title screen
+					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
+
 					//global.PlayerAmmo = [];//Completely reset the ammo array.
 					break;
 			}

@@ -20,6 +20,6 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- Overlook -\nDon't overlook the zombies that are coming to kill you.";
+strings[0] = "- Overlook -\nA snowbound hotel frozen in time. Its halls remember too much, and its silence hides a deeper madness.";
 //strings[1] = "- Overlook -\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
 skipTimer = 30 * 60;//30 seconds

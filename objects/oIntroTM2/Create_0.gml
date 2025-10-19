@@ -20,6 +20,6 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- Facility -\nAn abandoned research facility has been overrun by zombies. Unlock its secrets to survive.";
+strings[0] = "- Facility -\nAn abandoned research site hums with forgotten experiments and restless echoes. Something here still stirs.";
 //strings[1] = "- Facility -\nTheir quest for safety leads them to an abandoned facility, once a hub of research and innovation.";
 skipTimer = 30 * 60;//30 seconds

@@ -20,7 +20,7 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- Museum -\nAncient artifacts and undead foes fill the halls of the museum. Unearth its secrets to stay alive.";
+strings[0] = "- Museum -\nRelics of the past line the halls, yet something unseen moves among them. History breathes again.";
 //strings[0] = "- Water Station -\nDefend a crucial water station against waves of zombies. Water is life, and so is survival.";
 //strings[1] = "- Water Station -\nA grand, isolated structure, shrouded in a haunting history of madness and despair.";
 skipTimer = 30 * 60;//30 seconds

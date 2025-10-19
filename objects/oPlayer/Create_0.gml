@@ -2,6 +2,8 @@
 /*This object represents the player object.*/
 //This event is responsible for setting some variables for the player object.
 
+pause_lock_timer = room_speed * 5;//5 seconds in frames
+
 if room == rm_Mission0{
 	oHUD2.playerScore = 10000000;
 }
