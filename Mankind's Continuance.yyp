@@ -118,6 +118,7 @@
     {"id":{"name":"oUltraAssault","path":"objects/oUltraAssault/oUltraAssault.yy",},},
     {"id":{"name":"tilesTutorial","path":"tilesets/tilesTutorial/tilesTutorial.yy",},},
     {"id":{"name":"sBlueEyedZombie","path":"sprites/sBlueEyedZombie/sBlueEyedZombie.yy",},},
+    {"id":{"name":"sTilesSupermarket","path":"sprites/sTilesSupermarket/sTilesSupermarket.yy",},},
     {"id":{"name":"sWarpBlock","path":"sprites/sWarpBlock/sWarpBlock.yy",},},
     {"id":{"name":"sBlackJackTableDown","path":"sprites/sBlackJackTableDown/sBlackJackTableDown.yy",},},
     {"id":{"name":"sndLabyrinthTheme","path":"sounds/sndLabyrinthTheme/sndLabyrinthTheme.yy",},},

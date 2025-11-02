@@ -97,6 +97,7 @@
     {"name":"oUltraAssault","order":134,"path":"objects/oUltraAssault/oUltraAssault.yy",},
     {"name":"tilesTutorial","order":28,"path":"tilesets/tilesTutorial/tilesTutorial.yy",},
     {"name":"sBlueEyedZombie","order":24,"path":"sprites/sBlueEyedZombie/sBlueEyedZombie.yy",},
+    {"name":"sTilesSupermarket","order":29,"path":"sprites/sTilesSupermarket/sTilesSupermarket.yy",},
     {"name":"sWarpBlock","order":14,"path":"sprites/sWarpBlock/sWarpBlock.yy",},
     {"name":"sBlackJackTableDown","order":68,"path":"sprites/sBlackJackTableDown/sBlackJackTableDown.yy",},
     {"name":"sndLabyrinthTheme","order":37,"path":"sounds/sndLabyrinthTheme/sndLabyrinthTheme.yy",},
