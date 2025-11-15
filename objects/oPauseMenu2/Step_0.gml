@@ -192,6 +192,7 @@ if accept_key{
 				audio_stop_sound(sndCityBlockTheme);
 				audio_stop_sound(sndYardTheme);
 				audio_stop_sound(sndMuseumTheme);
+				audio_stop_sound(sndSupermarketTheme);
 				audio_stop_sound(sndTestLevelTheme);
 				audio_stop_sound(sndTutorialTheme);
 
@@ -220,6 +221,8 @@ if accept_key{
 				    audio_play_sound(sndYardTheme, 8, true);
 				}else if(room == rm_Museum_Level1) {
 				    audio_play_sound(sndMuseumTheme, 8, true);
+				}else if(room == rm_Supermarket_Level) {
+				    audio_play_sound(sndSupermarketTheme, 8, true);
 				}else if(room == rm_Tutorial_Level) {
 				    audio_play_sound(sndTutorialTheme, 8, true);
 				}else {

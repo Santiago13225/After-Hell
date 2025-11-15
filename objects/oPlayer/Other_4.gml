@@ -31,6 +31,8 @@ if room == rm_Level1{
 	audio_play_sound(sndYardTheme, 8, true);
 }else if (room == rm_Museum_Level1){
 	audio_play_sound(sndMuseumTheme, 8, true);
+}else if (room == rm_Supermarket_Level){
+	audio_play_sound(sndSupermarketTheme, 8, true);
 }else if (room == rm_Tutorial_Level){
 	audio_play_sound(sndTutorialTheme, 8, true);
 }else {

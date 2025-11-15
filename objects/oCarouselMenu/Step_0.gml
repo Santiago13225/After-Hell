@@ -141,6 +141,43 @@ if(accept_key){
 		case 12:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
+			TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			//TransitionStart(rm_TM13_2, sqFadeOut, sqFadeIn);
+			break;
+		case 13:
+			//global.screenShake = true;
+			//oHUD2.playerTotalScore = 500;
+			//TransitionStart(rm_TM13_2, sqFadeOut, sqFadeIn);
+			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			break;
+		case 14:
+			//global.screenShake = true;
+			//oHUD2.playerTotalScore = 500;
+			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			break;
+		case 15:
+			//global.screenShake = true;
+			//oHUD2.playerTotalScore = 500;
+			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			break;
+		case 16:
+			//global.screenShake = true;
+			//oHUD2.playerTotalScore = 500;
+			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			break;
+		case 17:
+			//global.screenShake = true;
+			//oHUD2.playerTotalScore = 500;
+			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			break;
+		case 18:
+			//global.screenShake = true;
+			//oHUD2.playerTotalScore = 500;
+			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			break;
+		case 19:
+			global.screenShake = true;
+			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM13_2, sqFadeOut, sqFadeIn);
 			break;
 	}

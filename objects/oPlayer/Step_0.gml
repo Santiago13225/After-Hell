@@ -72,6 +72,9 @@ if(startKeyPressed && pause_lock_timer <= 0){
 			if audio_is_playing(sndMuseumTheme){
 				audio_pause_sound(sndMuseumTheme);
 			}
+			if audio_is_playing(sndSupermarketTheme){
+				audio_pause_sound(sndSupermarketTheme);
+			}
 			if audio_is_playing(sndTutorialTheme){
 				audio_pause_sound(sndTutorialTheme);
 			}
@@ -144,6 +147,9 @@ if(instance_exists(oInvisibleSpawner2)){
 		}
 		if audio_is_playing(sndMuseumTheme){
 			audio_pause_sound(sndMuseumTheme);
+		}
+		if audio_is_playing(sndSupermarketTheme){
+			audio_pause_sound(sndSupermarketTheme);
 		}
 		if audio_is_playing(sndTutorialTheme){
 			audio_pause_sound(sndTutorialTheme);

@@ -55,7 +55,27 @@ if(room == rm_Yard_Level1){
 	set_song_ingame(sndYardTheme, 0, 0);
 }
 
-if(room == rm_Mission0 || room == rm_Level1){
+if(room == rm_Supermarket_Level){//14
+	set_song_ingame(sndSupermarketTheme, 0, 0);
+}
+
+//if(room == rm_Yard_Level1){//15
+//	set_song_ingame(sndYardTheme, 0, 0);
+//}
+
+//if(room == rm_Yard_Level1){//16
+//	set_song_ingame(sndYardTheme, 0, 0);
+//}
+
+//if(room == rm_Yard_Level1){//17
+//	set_song_ingame(sndYardTheme, 0, 0);
+//}
+
+//if(room == rm_Yard_Level1){//18
+//	set_song_ingame(sndYardTheme, 0, 0);
+//}
+
+if(room == rm_Mission0 || room == rm_Level1){//19
 	set_song_ingame(sndTestLevelTheme, 0, 0);
 }
 
