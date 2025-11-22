@@ -330,6 +330,7 @@
     {"id":{"name":"sPlanter","path":"sprites/sPlanter/sPlanter.yy",},},
     {"id":{"name":"sndMuseumTheme","path":"sounds/sndMuseumTheme/sndMuseumTheme.yy",},},
     {"id":{"name":"oControlSystemVertical","path":"objects/oControlSystemVertical/oControlSystemVertical.yy",},},
+    {"id":{"name":"sCarouselMenu4","path":"sprites/sCarouselMenu4/sCarouselMenu4.yy",},},
     {"id":{"name":"oShotgunWallbuy2","path":"objects/oShotgunWallbuy2/oShotgunWallbuy2.yy",},},
     {"id":{"name":"oTrueBlast","path":"objects/oTrueBlast/oTrueBlast.yy",},},
     {"id":{"name":"sEvolvedEnemyBullet2","path":"sprites/sEvolvedEnemyBullet2/sEvolvedEnemyBullet2.yy",},},
@@ -438,6 +439,7 @@
     {"id":{"name":"sTrafficBarrierHorizontal","path":"sprites/sTrafficBarrierHorizontal/sTrafficBarrierHorizontal.yy",},},
     {"id":{"name":"oBlackJackTable","path":"objects/oBlackJackTable/oBlackJackTable.yy",},},
     {"id":{"name":"rm_TM6_2","path":"rooms/rm_TM6_2/rm_TM6_2.yy",},},
+    {"id":{"name":"rm_Room","path":"rooms/rm_Room/rm_Room.yy",},},
     {"id":{"name":"sTombstone","path":"sprites/sTombstone/sTombstone.yy",},},
     {"id":{"name":"sBlueEyedWraith","path":"sprites/sBlueEyedWraith/sBlueEyedWraith.yy",},},
     {"id":{"name":"sVendingMachineMoney","path":"sprites/sVendingMachineMoney/sVendingMachineMoney.yy",},},
@@ -872,6 +874,7 @@
     {"roomId":{"name":"rm_Tutorial_Level","path":"rooms/rm_Tutorial_Level/rm_Tutorial_Level.yy",},},
     {"roomId":{"name":"rm_TM0_2","path":"rooms/rm_TM0_2/rm_TM0_2.yy",},},
     {"roomId":{"name":"rm_Supermarket_Level","path":"rooms/rm_Supermarket_Level/rm_Supermarket_Level.yy",},},
+    {"roomId":{"name":"rm_Room","path":"rooms/rm_Room/rm_Room.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
