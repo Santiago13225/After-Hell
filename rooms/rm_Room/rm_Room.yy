@@ -14,7 +14,8 @@
 -5520,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tilesSupermarket","path":"tilesets/tilesSupermarket/tilesSupermarket.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":-2000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"background_tiles","depth":-1900,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":46,"SerialiseWidth":120,"TileCompressedData":[
--5520,25,],"TileDataFormat":1,},"tilesetId":{"name":"tilesSupermarket","path":"tilesets/tilesSupermarket/tilesSupermarket.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+-121,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,
+-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-121,1,],"TileDataFormat":1,},"tilesetId":{"name":"tilesSupermarket","path":"tilesets/tilesSupermarket/tilesSupermarket.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
   ],
   "parent": {
     "name": "Rooms",

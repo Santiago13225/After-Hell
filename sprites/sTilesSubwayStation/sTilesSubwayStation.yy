@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "sTilesFacility",
+  "name": "sTilesSubwayStation",
   "bbox_bottom": 191,
   "bbox_left": 0,
   "bbox_right": 191,
@@ -13,8 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"70a61898-72d7-4998-96f5-25572b3321ad",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3e3c04dd-656b-4a28-8812-e1217b37c7ac",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"68777d4e-9b91-48a6-8e90-35934fd315e8",},
   ],
   "gridX": 16,
   "gridY": 16,
@@ -33,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "sTilesFacility",
+    "name": "sTilesSubwayStation",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -44,7 +43,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 1.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -55,8 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"70a61898-72d7-4998-96f5-25572b3321ad","path":"sprites/sTilesFacility/sTilesFacility.yy",},},},"Disabled":false,"id":"a0065e19-71e3-41b1-bad0-0d8657b37a4d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3e3c04dd-656b-4a28-8812-e1217b37c7ac","path":"sprites/sTilesFacility/sTilesFacility.yy",},},},"Disabled":false,"id":"a957baf9-7d89-4c9f-b531-2400683d23a7","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"68777d4e-9b91-48a6-8e90-35934fd315e8","path":"sprites/sTilesSubwayStation/sTilesSubwayStation.yy",},},},"Disabled":false,"id":"8cb07102-dc73-455a-b1c3-4c2439763856","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
