@@ -59,12 +59,12 @@ if(room == rm_Supermarket_Level){//14
 	set_song_ingame(sndSupermarketTheme, 0, 0);
 }
 
-//if(room == rm_Yard_Level1){//15
-//	set_song_ingame(sndYardTheme, 0, 0);
-//}
+if(room == rm_Subway_Station_Level){//15
+	set_song_ingame(sndSubwayStationTheme, 0, 0);
+}
 
-//if(room == rm_Yard_Level1){//16
-//	set_song_ingame(sndYardTheme, 0, 0);
+//if(room == rm_Gas_Station_Level){//16
+//	set_song_ingame(sndGasStationTheme, 0, 0);
 //}
 
 //if(room == rm_Yard_Level1){//17

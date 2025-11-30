@@ -15,6 +15,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"92ba5b40-c3dc-4116-a140-45cbc4985def",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"edd4c683-0406-4377-be9b-663c442e7719",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"89b85282-c5e5-4b76-aff9-a607bb7465ed",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -57,6 +58,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"92ba5b40-c3dc-4116-a140-45cbc4985def","path":"sprites/sCounter/sCounter.yy",},},},"Disabled":false,"id":"50dbb1e3-0dd1-4b11-bb71-e3e22738d226","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"edd4c683-0406-4377-be9b-663c442e7719","path":"sprites/sCounter/sCounter.yy",},},},"Disabled":false,"id":"69746468-ce08-4218-9c8d-499aceff75bd","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"89b85282-c5e5-4b76-aff9-a607bb7465ed","path":"sprites/sCounter/sCounter.yy",},},},"Disabled":false,"id":"23b63687-254e-41d5-b9b4-c9310b6818aa","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
