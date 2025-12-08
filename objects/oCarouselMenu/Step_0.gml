@@ -150,9 +150,9 @@ if(accept_key){
 			TransitionStart(rm_Subway_Station_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 14:
-			//global.screenShake = true;
-			//oHUD2.playerTotalScore = 500;
-			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			global.screenShake = true;
+			oHUD2.playerTotalScore = 500;
+			TransitionStart(rm_Gas_Station_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 15:
 			//global.screenShake = true;

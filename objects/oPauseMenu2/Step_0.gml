@@ -227,10 +227,9 @@ if accept_key{
 				    audio_play_sound(sndSupermarketTheme, 8, true);
 				}else if(room == rm_Subway_Station_Level) {
 				    audio_play_sound(sndSubwayStationTheme, 8, true);
+				}else if(room == rm_Gas_Station_Level) {
+				    audio_play_sound(sndGasStationTheme, 8, true);
 				}
-				//else if(room == rm_Gas_Station_Level) {
-				//    audio_play_sound(sndGasStationTheme, 8, true);
-				//}
 				else if(room == rm_Tutorial_Level) {
 				    audio_play_sound(sndTutorialTheme, 8, true);
 				}else {
