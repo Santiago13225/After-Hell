@@ -65,7 +65,7 @@ switch(item){
 	case 12: text = "Supermarket" break;
 	case 13: text = "Subway Station" break;
 	case 14: text = "Gas Station" break;
-	case 15: text = "???" break;
+	case 15: text = "Cathedral" break;
 	case 16: text = "???" break;
 	case 17: text = "???" break;
 	case 18: text = "Inferno" break;

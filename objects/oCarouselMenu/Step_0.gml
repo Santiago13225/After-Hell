@@ -157,7 +157,7 @@ if(accept_key){
 		case 15:
 			//global.screenShake = true;
 			//oHUD2.playerTotalScore = 500;
-			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			//TransitionStart(rm_Cathedral_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 16:
 			//global.screenShake = true;
