@@ -155,9 +155,9 @@ if(accept_key){
 			TransitionStart(rm_Gas_Station_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 15:
-			//global.screenShake = true;
-			//oHUD2.playerTotalScore = 500;
-			//TransitionStart(rm_Cathedral_Level, sqFadeOut, sqFadeIn);
+			global.screenShake = true;
+			oHUD2.playerTotalScore = 500;
+			TransitionStart(rm_Cathedral_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 16:
 			//global.screenShake = true;

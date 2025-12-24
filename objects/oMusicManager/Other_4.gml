@@ -67,9 +67,9 @@ if(room == rm_Gas_Station_Level){//16
 	set_song_ingame(sndGasStationTheme, 0, 0);
 }
 
-//if(room == rm_Cathedral_Level){//17
-//	set_song_ingame(sndCathedralTheme, 0, 0);
-//}
+if(room == rm_Cathedral_Level){//17
+	set_song_ingame(sndCathedralTheme, 0, 0);
+}
 
 //if(room == rm_Yard_Level1){//18
 //	set_song_ingame(sndYardTheme, 0, 0);

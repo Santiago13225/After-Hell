@@ -37,10 +37,9 @@ if room == rm_Level1{
 	audio_play_sound(sndSubwayStationTheme, 8, true);
 }else if (room == rm_Gas_Station_Level){
 	audio_play_sound(sndGasStationTheme, 8, true);
+}else if (room == rm_Cathedral_Level){
+	audio_play_sound(sndCathedralTheme, 8, true);
 }
-//else if (room == rm_Cathedral_Level){
-//	audio_play_sound(sndCathedralTheme, 8, true);
-//}
 //else if (room == rm_Gas_Station_Level){
 //	audio_play_sound(sndGasStationTheme, 8, true);
 //}

@@ -81,9 +81,9 @@ if(startKeyPressed && pause_lock_timer <= 0){
 			if audio_is_playing(sndGasStationTheme){
 				audio_pause_sound(sndGasStationTheme);
 			}
-			//if audio_is_playing(sndCathedralTheme){
-			//	audio_pause_sound(sndCathedralTheme);
-			//}
+			if audio_is_playing(sndCathedralTheme){
+				audio_pause_sound(sndCathedralTheme);
+			}
 			//if audio_is_playing(sndGasStationTheme){
 			//	audio_pause_sound(sndGasStationTheme);
 			//}
@@ -175,9 +175,9 @@ if(instance_exists(oInvisibleSpawner2)){
 		if audio_is_playing(sndGasStationTheme){
 			audio_pause_sound(sndGasStationTheme);
 		}
-		//if audio_is_playing(sndCathedralTheme){
-		//	audio_pause_sound(sndCathedralTheme);
-		//}
+		if audio_is_playing(sndCathedralTheme){
+			audio_pause_sound(sndCathedralTheme);
+		}
 		//if audio_is_playing(sndGasStationTheme){
 		//	audio_pause_sound(sndGasStationTheme);
 		//}
