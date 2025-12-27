@@ -71,9 +71,9 @@ if(room == rm_Cathedral_Level){//17
 	set_song_ingame(sndCathedralTheme, 0, 0);
 }
 
-//if(room == rm_Yard_Level1){//18
-//	set_song_ingame(sndYardTheme, 0, 0);
-//}
+if(room == rm_Void_Level){//18
+	set_song_ingame(sndVoidTheme, 0, 0);
+}
 
 //if(room == rm_Yard_Level1){//19
 //	set_song_ingame(sndYardTheme, 0, 0);
