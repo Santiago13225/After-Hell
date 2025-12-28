@@ -688,6 +688,7 @@
     {"id":{"name":"oApexBlueEyedZombie2","path":"objects/oApexBlueEyedZombie2/oApexBlueEyedZombie2.yy",},},
     {"id":{"name":"oTextbox","path":"objects/oTextbox/oTextbox.yy",},},
     {"id":{"name":"sSniperWallbuy","path":"sprites/sSniperWallbuy/sSniperWallbuy.yy",},},
+    {"id":{"name":"rm_Labyrinth_Level2","path":"rooms/rm_Labyrinth_Level2/rm_Labyrinth_Level2.yy",},},
     {"id":{"name":"sPalmTree","path":"sprites/sPalmTree/sPalmTree.yy",},},
     {"id":{"name":"sUICursor","path":"sprites/sUICursor/sUICursor.yy",},},
     {"id":{"name":"oEvolvedFire","path":"objects/oEvolvedFire/oEvolvedFire.yy",},},
@@ -936,6 +937,7 @@
     {"roomId":{"name":"rm_Gas_Station_Level","path":"rooms/rm_Gas_Station_Level/rm_Gas_Station_Level.yy",},},
     {"roomId":{"name":"rm_Cathedral_Level","path":"rooms/rm_Cathedral_Level/rm_Cathedral_Level.yy",},},
     {"roomId":{"name":"rm_Void_Level","path":"rooms/rm_Void_Level/rm_Void_Level.yy",},},
+    {"roomId":{"name":"rm_Labyrinth_Level2","path":"rooms/rm_Labyrinth_Level2/rm_Labyrinth_Level2.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

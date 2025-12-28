@@ -31,7 +31,7 @@ if(room == rm_Casino_Level1){
 	set_song_ingame(sndCasinoTheme, 0, 0);
 }
 
-if(room == rm_Labyrinth_Level){
+if(room == rm_Labyrinth_Level2){
 	set_song_ingame(sndLabyrinthTheme, 0, 0);
 }
 

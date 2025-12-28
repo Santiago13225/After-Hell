@@ -659,6 +659,7 @@
     {"name":"oApexBlueEyedZombie2","order":149,"path":"objects/oApexBlueEyedZombie2/oApexBlueEyedZombie2.yy",},
     {"name":"oTextbox","order":1,"path":"objects/oTextbox/oTextbox.yy",},
     {"name":"sSniperWallbuy","order":99,"path":"sprites/sSniperWallbuy/sSniperWallbuy.yy",},
+    {"name":"rm_Labyrinth_Level2","order":71,"path":"rooms/rm_Labyrinth_Level2/rm_Labyrinth_Level2.yy",},
     {"name":"sPalmTree","order":80,"path":"sprites/sPalmTree/sPalmTree.yy",},
     {"name":"sUICursor","order":4,"path":"sprites/sUICursor/sUICursor.yy",},
     {"name":"oEvolvedFire","order":107,"path":"objects/oEvolvedFire/oEvolvedFire.yy",},

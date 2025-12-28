@@ -211,7 +211,7 @@ if accept_key{
 				    audio_play_sound(sndTempleTheme1, 8, true);
 				}else if(room == rm_Overlook_Level4) {
 				    audio_play_sound(sndOverlookTheme1, 8, true);
-				}else if(room == rm_Labyrinth_Level) {
+				}else if(room == rm_Labyrinth_Level2) {
 				    audio_play_sound(sndLabyrinthTheme, 8, true);
 				}else if(room == rm_Casino_Level1) {
 				    audio_play_sound(sndCasinoTheme, 8, true);

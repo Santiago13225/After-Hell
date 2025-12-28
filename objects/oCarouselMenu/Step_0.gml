@@ -109,10 +109,11 @@ if(accept_key){
 			oHUD2.playerTotalScore = 500;
 			TransitionStart(rm_TM6_2, sqFadeOut, sqFadeIn);
 			break;
-		case 6:
+		case 6://Labyrinth
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM7_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_Labyrinth_Level2, sqFadeOut, sqFadeIn);
+			//TransitionStart(rm_TM7_2, sqFadeOut, sqFadeIn);
 			break;
 		case 7:
 			global.screenShake = true;
