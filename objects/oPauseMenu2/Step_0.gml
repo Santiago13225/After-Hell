@@ -197,7 +197,7 @@ if accept_key{
 				audio_stop_sound(sndGasStationTheme);
 				audio_stop_sound(sndCathedralTheme);
 				audio_stop_sound(sndVoidTheme);
-				//audio_stop_sound(sndCloudwalkTheme);
+				audio_stop_sound(sndCloudwalkTheme);
 				//audio_stop_sound(sndGasStationTheme);
 				audio_stop_sound(sndTestLevelTheme);
 				audio_stop_sound(sndTutorialTheme);
@@ -237,10 +237,9 @@ if accept_key{
 				    audio_play_sound(sndCathedralTheme, 8, true);
 				}else if(room == rm_Void_Level) {
 				    audio_play_sound(sndVoidTheme, 8, true);
+				}else if(room == rm_Cloudwalk_Level) {
+				    audio_play_sound(sndCloudwalkTheme, 8, true);
 				}
-				//else if(room == rm_Cloudwalk_Level) {
-				//    audio_play_sound(sndCloudwalkTheme, 8, true);
-				//}
 				//else if(room == rm_Gas_Station_Level) {
 				//    audio_play_sound(sndGasStationTheme, 8, true);
 				//}

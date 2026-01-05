@@ -41,10 +41,9 @@ if room == rm_Level1{
 	audio_play_sound(sndCathedralTheme, 8, true);
 }else if (room == rm_Void_Level){
 	audio_play_sound(sndVoidTheme, 8, true);
+}else if (room == rm_Cloudwalk_Level){
+	audio_play_sound(sndCloudwalkTheme, 8, true);
 }
-//else if (room == rm_Cloudwalk_Level){
-//	audio_play_sound(sndCloudwalkTheme, 8, true);
-//}
 //else if (room == rm_Gas_Station_Level){
 //	audio_play_sound(sndGasStationTheme, 8, true);
 //}

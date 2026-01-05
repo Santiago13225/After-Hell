@@ -75,9 +75,9 @@ if(room == rm_Void_Level){//18
 	set_song_ingame(sndVoidTheme, 0, 0);
 }
 
-//if(room == rm_Cloudwalk_Level){//19
-//	set_song_ingame(sndCloudwalkTheme, 0, 0);
-//}
+if(room == rm_Cloudwalk_Level){//19
+	set_song_ingame(sndCloudwalkTheme, 0, 0);
+}
 
 //if(room == rm_Yard_Level1){//20
 //	set_song_ingame(sndYardTheme, 0, 0);

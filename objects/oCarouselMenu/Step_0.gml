@@ -167,9 +167,9 @@ if(accept_key){
 			TransitionStart(rm_Void_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 17:
-			//global.screenShake = true;
-			//oHUD2.playerTotalScore = 500;
-			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			global.screenShake = true;
+			oHUD2.playerTotalScore = 500;
+			TransitionStart(rm_Cloudwalk_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 18:
 			//global.screenShake = true;
