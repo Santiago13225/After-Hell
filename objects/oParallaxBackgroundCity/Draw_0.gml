@@ -7,7 +7,7 @@ var _camY = camera_get_view_y(view_camera[0]);
 
 //var _p = 0.5;
 
-draw_sprite(bgCity, 0, _camX, _camY);
+draw_sprite(bgCity2, 0, _camX, _camY);
 
 //draw_sprite_tiled_ext(bgWaterStationLevel, 0, _camX * _p, _camY * _p, 1.5, 1.5, c_white, 1);
 //draw_sprite(bgWaterStationLevel1, 0, _camX * _p, _camY * _p);
