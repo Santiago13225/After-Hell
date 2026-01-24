@@ -32,6 +32,9 @@ if(startKeyPressed && pause_lock_timer <= 0){
 	if(!instance_exists(oScoreboard)){
 		if(!instance_exists(oPauseMenu2)){
 			global.dialog_active = true;//Disable silhouette drawing.
+			if audio_is_playing(sndTutorialTheme){
+				audio_pause_sound(sndTutorialTheme);
+			}
 			if audio_is_playing(sndTestLevelTheme){
 				audio_pause_sound(sndTestLevelTheme);
 			}
@@ -48,17 +51,20 @@ if(startKeyPressed && pause_lock_timer <= 0){
 			if audio_is_playing(sndOverlookTheme1){
 				audio_pause_sound(sndOverlookTheme1);
 			}
-			if audio_is_playing(sndLabyrinthTheme){
-				audio_pause_sound(sndLabyrinthTheme);
+			if audio_is_playing(sndIslandTheme){
+				audio_pause_sound(sndIslandTheme);
 			}
 			if audio_is_playing(sndCasinoTheme){
 				audio_pause_sound(sndCasinoTheme);
 			}
+			if audio_is_playing(sndLabyrinthTheme){
+				audio_pause_sound(sndLabyrinthTheme);
+			}
 			if audio_is_playing(sndGraveyardTheme){
 				audio_pause_sound(sndGraveyardTheme);
 			}
-			if audio_is_playing(sndIslandTheme){
-				audio_pause_sound(sndIslandTheme);
+			if audio_is_playing(sndMuseumTheme){
+				audio_pause_sound(sndMuseumTheme);
 			}
 			if audio_is_playing(sndWaterStationTheme1){
 				audio_pause_sound(sndWaterStationTheme1);
@@ -68,9 +74,6 @@ if(startKeyPressed && pause_lock_timer <= 0){
 			}
 			if audio_is_playing(sndYardTheme){
 				audio_pause_sound(sndYardTheme);
-			}
-			if audio_is_playing(sndMuseumTheme){
-				audio_pause_sound(sndMuseumTheme);
 			}
 			if audio_is_playing(sndSupermarketTheme){
 				audio_pause_sound(sndSupermarketTheme);
@@ -90,11 +93,8 @@ if(startKeyPressed && pause_lock_timer <= 0){
 			if audio_is_playing(sndCloudwalkTheme){
 				audio_pause_sound(sndCloudwalkTheme);
 			}
-			//if audio_is_playing(sndGasStationTheme){
-			//	audio_pause_sound(sndGasStationTheme);
-			//}
-			if audio_is_playing(sndTutorialTheme){
-				audio_pause_sound(sndTutorialTheme);
+			if audio_is_playing(sndInfernoTheme){
+				audio_pause_sound(sndInfernoTheme);
 			}
 			//audio_pause_sound(sndTestLevelTheme);
 			//audio_pause_sound(global.MUSIC);
@@ -129,12 +129,17 @@ if(instance_exists(oInvisibleSpawner2)){
 		//audio_pause_all();
 		//audio_pause_sound(sndTestLevelTheme);
 		//audio_pause_sound(global.MUSIC);
-	
+		if audio_is_playing(sndTutorialTheme){
+			audio_pause_sound(sndTutorialTheme);
+		}
 		if audio_is_playing(sndTestLevelTheme){
 			audio_pause_sound(sndTestLevelTheme);
 		} 
 		if audio_is_playing(sndHouseTheme1){
 			audio_pause_sound(sndHouseTheme1);
+		}
+		if audio_is_playing(sndFacilityTheme1){
+			audio_pause_sound(sndFacilityTheme1);
 		}
 		if audio_is_playing(sndTempleTheme1){
 			audio_pause_sound(sndTempleTheme1);
@@ -142,17 +147,20 @@ if(instance_exists(oInvisibleSpawner2)){
 		if audio_is_playing(sndOverlookTheme1){
 			audio_pause_sound(sndOverlookTheme1);
 		}
-		if audio_is_playing(sndLabyrinthTheme){
-			audio_pause_sound(sndLabyrinthTheme);
+		if audio_is_playing(sndIslandTheme){
+			audio_pause_sound(sndIslandTheme);
 		}
 		if audio_is_playing(sndCasinoTheme){
 			audio_pause_sound(sndCasinoTheme);
 		}
+		if audio_is_playing(sndLabyrinthTheme){
+			audio_pause_sound(sndLabyrinthTheme);
+		}
 		if audio_is_playing(sndGraveyardTheme){
 			audio_pause_sound(sndGraveyardTheme);
 		}
-		if audio_is_playing(sndIslandTheme){
-			audio_pause_sound(sndIslandTheme);
+		if audio_is_playing(sndMuseumTheme){
+			audio_pause_sound(sndMuseumTheme);
 		}
 		if audio_is_playing(sndWaterStationTheme1){
 			audio_pause_sound(sndWaterStationTheme1);
@@ -162,9 +170,6 @@ if(instance_exists(oInvisibleSpawner2)){
 		}
 		if audio_is_playing(sndYardTheme){
 			audio_pause_sound(sndYardTheme);
-		}
-		if audio_is_playing(sndMuseumTheme){
-			audio_pause_sound(sndMuseumTheme);
 		}
 		if audio_is_playing(sndSupermarketTheme){
 			audio_pause_sound(sndSupermarketTheme);
@@ -184,16 +189,12 @@ if(instance_exists(oInvisibleSpawner2)){
 		if audio_is_playing(sndCloudwalkTheme){
 			audio_pause_sound(sndCloudwalkTheme);
 		}
-		//if audio_is_playing(sndGasStationTheme){
-		//	audio_pause_sound(sndGasStationTheme);
+		if audio_is_playing(sndInfernoTheme){
+			audio_pause_sound(sndInfernoTheme);
+		}
+		//else {
+		//	audio_pause_sound(sndFacilityTheme1);
 		//}
-		if audio_is_playing(sndTutorialTheme){
-			audio_pause_sound(sndTutorialTheme);
-		}
-		else {
-			audio_pause_sound(sndFacilityTheme1);
-		}
-	
 		//audio_play_sound(sndLaugh, 8, false);
 		//instance_create_depth(0, 0, 0, oVictoryScreen);
 		//audio_play_sound(sndVictory, 8, false);//earrape

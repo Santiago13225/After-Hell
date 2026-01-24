@@ -7,6 +7,10 @@ if(room == rm_Tutorial_Level){
 	set_song_ingame(sndTutorialTheme, 0, 0);
 }
 
+if(room == rm_Mission0 || room == rm_Level1){
+	set_song_ingame(sndTestLevelTheme, 0, 0);
+}
+
 if(room == rm_House_Level1){
 	set_song_ingame(sndHouseTheme1, 0, 0);
 }
@@ -79,21 +83,20 @@ if(room == rm_Cloudwalk_Level){//19
 	set_song_ingame(sndCloudwalkTheme, 0, 0);
 }
 
-//if(room == rm_Yard_Level1){//20
-//	set_song_ingame(sndYardTheme, 0, 0);
-//}
-
-if(room == rm_Mission0 || room == rm_Level1){
-	set_song_ingame(sndTestLevelTheme, 0, 0);
+if(room == rm_Inferno_Level){//20
+	set_song_ingame(sndInfernoTheme, 0, 0);
 }
 
 if(room == rm_TM1_2 || room == rm_TM2_2
  || room == rm_TM3_2 || room == rm_TM4_2
  || room == rm_TM5_2 || room == rm_TM6_2
- || room == rm_TM7_2 || room == rm_TM8_2
+ || room == rm_TM7_3 || room == rm_TM8_2
  || room == rm_TM9_2 || room == rm_TM10_2
  || room == rm_TM11_2 || room == rm_TM12_2
-  || room == rm_TM13_2
+ || room == rm_TM13 || room == rm_TM14
+ || room == rm_TM15 || room == rm_TM16
+ || room == rm_TM17 || room == rm_TM18
+  || room == rm_TM20
 ){
 	set_song_ingame(sndAmbient, 0, 0);
 }

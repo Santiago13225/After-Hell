@@ -349,7 +349,7 @@ if accept_key{
 			{
 				//Test Level
 				case 0:
-					TransitionStart(rm_TM13, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_TM20, sqFadeOut, sqFadeIn);
 					//TransitionStart(rm_Level1, sqFadeOut, sqFadeIn);
 					break;
 				//Previous Page

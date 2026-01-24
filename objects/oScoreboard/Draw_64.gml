@@ -41,7 +41,14 @@ switch(global.selectedMapSprite) {
 	case 9: mapText = "Water Station"; break;
 	case 10: mapText = "City Block"; break;
 	case 11: mapText = "The Yard"; break;
-	case 12: mapText = "Test_Level"; break;
+	case 12: mapText = "Supermarket"; break;
+	case 13: mapText = "Subway Station"; break;
+	case 14: mapText = "Gas Station"; break;
+	case 15: mapText = "Cathedral"; break;
+	case 16: mapText = "Void"; break;
+	case 17: mapText = "Cloudwalk"; break;
+	case 18: mapText = "Inferno"; break;
+	case 19: mapText = "Test_Level"; break;
 	default: mapText = "???"; break;
 }
 //draw_text_transformed(160 * 3, (90 * 3) + 30, "Map: " + mapText, 3, 3, 0);

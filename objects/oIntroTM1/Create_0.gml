@@ -20,7 +20,7 @@ audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 
-strings[0] = "- House -\nA lonely house stands against the darkness. Hold your ground before the night claims it.";
+strings[0] = "- House -\nA lonely house stands against the emerging forces. Hold your ground to survive.";
 //strings[1] = "- House -\nThe once vibrant streets are now teeming with the undead, hungry for the living.";
 
 skipTimer = 30 * 60;//30 seconds

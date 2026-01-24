@@ -112,8 +112,7 @@ if(accept_key){
 		case 6://Labyrinth
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_Labyrinth_Level2, sqFadeOut, sqFadeIn);
-			//TransitionStart(rm_TM7_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM7_3, sqFadeOut, sqFadeIn);
 			break;
 		case 7:
 			global.screenShake = true;
@@ -143,43 +142,42 @@ if(accept_key){
 		case 12:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
-			//TransitionStart(rm_TM13_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM13, sqFadeOut, sqFadeIn);
 			break;
 		case 13:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_Subway_Station_Level, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM14, sqFadeOut, sqFadeIn);
 			break;
 		case 14:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_Gas_Station_Level, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM15, sqFadeOut, sqFadeIn);
 			break;
 		case 15:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_Cathedral_Level, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM16, sqFadeOut, sqFadeIn);
 			break;
 		case 16:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_Void_Level, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM17, sqFadeOut, sqFadeIn);
 			break;
 		case 17:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_Cloudwalk_Level, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM18, sqFadeOut, sqFadeIn);
 			break;
 		case 18:
 			//global.screenShake = true;
 			//oHUD2.playerTotalScore = 500;
-			//TransitionStart(rm_Supermarket_Level, sqFadeOut, sqFadeIn);
+			//TransitionStart(rm_Inferno_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 19:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM13_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM20, sqFadeOut, sqFadeIn);
 			break;
 	}
 }

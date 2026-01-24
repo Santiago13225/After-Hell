@@ -180,30 +180,35 @@ if accept_key{
 #endregion
 */
 				//First, stop all level music so that no duplicate instances remain.
+				audio_stop_sound(sndTutorialTheme);
+				audio_stop_sound(sndTestLevelTheme);
 				audio_stop_sound(sndHouseTheme1);
 				audio_stop_sound(sndFacilityTheme1);
 				audio_stop_sound(sndTempleTheme1);
 				audio_stop_sound(sndOverlookTheme1);
-				audio_stop_sound(sndLabyrinthTheme);
-				audio_stop_sound(sndCasinoTheme);
-				audio_stop_sound(sndGraveyardTheme);
 				audio_stop_sound(sndIslandTheme);
+				audio_stop_sound(sndCasinoTheme);
+				audio_stop_sound(sndLabyrinthTheme);
+				audio_stop_sound(sndGraveyardTheme);
+				audio_stop_sound(sndMuseumTheme);
 				audio_stop_sound(sndWaterStationTheme1);
 				audio_stop_sound(sndCityBlockTheme);
 				audio_stop_sound(sndYardTheme);
-				audio_stop_sound(sndMuseumTheme);
 				audio_stop_sound(sndSupermarketTheme);
 				audio_stop_sound(sndSubwayStationTheme);
 				audio_stop_sound(sndGasStationTheme);
 				audio_stop_sound(sndCathedralTheme);
 				audio_stop_sound(sndVoidTheme);
 				audio_stop_sound(sndCloudwalkTheme);
-				//audio_stop_sound(sndGasStationTheme);
-				audio_stop_sound(sndTestLevelTheme);
-				audio_stop_sound(sndTutorialTheme);
+				audio_stop_sound(sndInfernoTheme);
 
 				//Now, start the appropriate music based on the current room.
-				if(room == rm_House_Level1) {
+				
+				if(room == rm_Tutorial_Level) {
+				    audio_play_sound(sndTutorialTheme, 8, true);
+				}else if(room == rm_Level1) {
+				    audio_play_sound(sndTestLevelTheme, 8, true);
+				}else if(room == rm_House_Level1) {
 				    audio_play_sound(sndHouseTheme1, 8, true);
 				}else if(room == rm_Facility_Level) {
 				    audio_play_sound(sndFacilityTheme1, 8, true);
@@ -211,22 +216,22 @@ if accept_key{
 				    audio_play_sound(sndTempleTheme1, 8, true);
 				}else if(room == rm_Overlook_Level4) {
 				    audio_play_sound(sndOverlookTheme1, 8, true);
-				}else if(room == rm_Labyrinth_Level2) {
-				    audio_play_sound(sndLabyrinthTheme, 8, true);
-				}else if(room == rm_Casino_Level1) {
-				    audio_play_sound(sndCasinoTheme, 8, true);
-				}else if(room == rm_Graveyard_Level) {
-				    audio_play_sound(sndGraveyardTheme, 8, true);
 				}else if(room == rm_Island_Level1) {
 				    audio_play_sound(sndIslandTheme, 8, true);
+				}else if(room == rm_Casino_Level1) {
+				    audio_play_sound(sndCasinoTheme, 8, true);
+				}else if(room == rm_Labyrinth_Level2) {
+				    audio_play_sound(sndLabyrinthTheme, 8, true);
+				}else if(room == rm_Graveyard_Level) {
+				    audio_play_sound(sndGraveyardTheme, 8, true);
+				}else if(room == rm_Museum_Level1) {
+				    audio_play_sound(sndMuseumTheme, 8, true);
 				}else if(room == rm_WaterStation_Level1) {
 				    audio_play_sound(sndWaterStationTheme1, 8, true);
 				}else if(room == rm_CityBlock_Level1) {
 				    audio_play_sound(sndCityBlockTheme, 8, true);
 				}else if(room == rm_Yard_Level1) {
 				    audio_play_sound(sndYardTheme, 8, true);
-				}else if(room == rm_Museum_Level1) {
-				    audio_play_sound(sndMuseumTheme, 8, true);
 				}else if(room == rm_Supermarket_Level) {
 				    audio_play_sound(sndSupermarketTheme, 8, true);
 				}else if(room == rm_Subway_Station_Level) {
@@ -239,12 +244,8 @@ if accept_key{
 				    audio_play_sound(sndVoidTheme, 8, true);
 				}else if(room == rm_Cloudwalk_Level) {
 				    audio_play_sound(sndCloudwalkTheme, 8, true);
-				}
-				//else if(room == rm_Gas_Station_Level) {
-				//    audio_play_sound(sndGasStationTheme, 8, true);
-				//}
-				else if(room == rm_Tutorial_Level) {
-				    audio_play_sound(sndTutorialTheme, 8, true);
+				}else if(room == rm_Inferno_Level) {
+				    audio_play_sound(sndInfernoTheme, 8, true);
 				}else {
 				    audio_play_sound(sndTestLevelTheme, 8, true);
 				}
