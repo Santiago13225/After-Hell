@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "sTilesCloudwalk",
-  "bbox_bottom": 143,
+  "bbox_bottom": 111,
   "bbox_left": 0,
   "bbox_right": 143,
   "bbox_top": 0,
@@ -17,7 +17,7 @@
   ],
   "gridX": 16,
   "gridY": 16,
-  "height": 144,
+  "height": 112,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"fa5f2f79-e4ef-4160-8c23-3b94ad673874","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},

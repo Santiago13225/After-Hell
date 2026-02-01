@@ -6,16 +6,26 @@
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
-  "instanceCreationOrder": [],
+  "instanceCreationOrder": [
+    {"name":"inst_21D54AFA","path":"rooms/rm_Inferno_Level/rm_Inferno_Level.yy",},
+  ],
   "isDnd": false,
   "layers": [
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"walls","depth":-2200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":false,},
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"ground_level_2","depth":-2100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":46,"SerialiseWidth":120,"TileCompressedData":[
--5520,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tilesInferno","path":"tilesets/tilesInferno/tilesInferno.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"background_tiles","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":46,"SerialiseWidth":120,"TileCompressedData":[
--121,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,
--2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-2,1,-118,25,-121,1,],"TileDataFormat":1,},"tilesetId":{"name":"tilesInferno","path":"tilesets/tilesInferno/tilesInferno.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"ground_level_2","depth":-2100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":92,"SerialiseWidth":120,"TileCompressedData":[
+-11040,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tilesInferno","path":"tilesets/tilesInferno/tilesInferno.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_21D54AFA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":624.0,},
+      ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"background_tiles","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":92,"SerialiseWidth":120,"TileCompressedData":[
+-121,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-37,2,-36,29,-45,2,-2,1,-37,2,-37,29,-44,2,-2,1,-37,2,-38,29,-43,2,-2,1,-37,2,-39,29,-42,2,-2,1,-37,2,-16,65,-4,22,-16,65,-4,29,-41,2,-2,1,-37,2,-16,65,-4,22,-17,65,-4,29,-40,2,-2,1,-37,2,-16,65,-4,22,-18,65,-4,29,-39,2,-2,1,-37,2,-36,32,-3,65,-4,29,
+-38,2,-2,1,-37,2,-37,32,-3,65,-4,29,-37,2,-2,1,-37,2,-38,32,-2,65,-4,29,-37,2,-2,1,-37,2,-39,32,1,65,-4,29,-37,2,-2,1,-33,2,-44,32,-4,29,-37,2,-2,1,-33,2,-44,32,-4,29,-37,2,-2,1,-33,2,-44,32,-4,29,-37,2,-2,1,-33,2,-44,32,-4,29,-37,2,-2,1,-33,2,-12,32,-8,68,-4,28,-8,68,-12,32,-4,29,-37,2,-2,1,-33,2,-10,32,-2,68,-8,3,-4,28,-8,3,-2,68,-10,32,-4,29,-37,2,-2,1,
+-33,2,-9,32,1,68,-10,3,-4,28,-10,3,1,68,-9,32,-4,29,-37,2,-2,1,-33,2,-9,32,-11,3,-4,28,-11,3,-9,32,-4,29,-37,2,-2,1,-33,2,-8,32,1,68,-11,3,-4,28,-11,3,1,68,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-12,3,-4,28,-12,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-12,3,-4,28,-12,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-12,3,-4,28,-12,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,
+-10,3,-8,29,-10,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-9,3,-10,29,-9,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-8,3,-12,29,-8,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-8,3,-12,29,-8,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-8,28,-12,29,-8,28,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-8,28,-12,29,-8,28,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-8,28,-12,29,-8,28,-8,32,-4,29,-37,2,
+-2,1,-33,2,-8,32,-8,28,-12,29,-8,28,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-8,64,-12,29,-8,64,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-8,3,-12,29,-8,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-8,3,1,65,-10,29,1,65,-8,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-9,3,1,65,-8,29,1,65,-9,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-10,3,-2,65,-4,28,-2,65,-10,3,-8,32,-4,29,-37,2,
+-2,1,-33,2,-8,32,-12,3,-4,28,-12,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-12,3,-4,28,-12,3,-8,32,-4,29,-37,2,-2,1,-33,2,-8,32,-12,3,-4,28,-12,3,-8,32,-4,29,-37,2,-2,1,-33,2,-9,32,-11,3,-4,28,-11,3,-9,32,-4,29,-37,2,-2,1,-33,2,-9,32,-11,3,-4,28,-11,3,-9,32,-4,29,-37,2,-2,1,-33,2,-10,32,-10,3,-4,28,-10,3,-10,32,-4,29,-37,2,-2,1,-33,2,-12,32,-8,3,-4,28,-8,3,
+-12,32,-4,29,-37,2,-2,1,-33,2,-44,32,-4,29,-37,2,-2,1,-33,2,-44,32,-4,29,-37,2,-2,1,-33,2,-44,32,-4,29,-37,2,-2,1,-33,2,-44,32,-4,29,-37,2,-2,1,-37,2,-36,32,-45,2,-2,1,-37,2,-36,32,-45,2,-2,1,-37,2,-36,32,-45,2,-2,1,-37,2,-36,32,-45,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,
+-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-2,1,-118,2,-121,1,],"TileDataFormat":1,},"tilesetId":{"name":"tilesInferno","path":"tilesets/tilesInferno/tilesInferno.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
   ],
   "parent": {
     "name": "Rooms",
@@ -30,7 +40,7 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "roomSettings": {
-    "Height": 736,
+    "Height": 1472,
     "inheritRoomSettings": false,
     "persistent": false,
     "Width": 1920,

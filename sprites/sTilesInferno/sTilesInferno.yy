@@ -4,7 +4,7 @@
   "name": "sTilesInferno",
   "bbox_bottom": 143,
   "bbox_left": 0,
-  "bbox_right": 143,
+  "bbox_right": 191,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 144,
+  "width": 192,
 }
