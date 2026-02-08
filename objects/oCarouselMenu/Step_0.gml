@@ -170,9 +170,9 @@ if(accept_key){
 			TransitionStart(rm_TM18, sqFadeOut, sqFadeIn);
 			break;
 		case 18:
-			//global.screenShake = true;
-			//oHUD2.playerTotalScore = 500;
-			//TransitionStart(rm_Inferno_Level, sqFadeOut, sqFadeIn);
+			global.screenShake = true;
+			oHUD2.playerTotalScore = 500;
+			TransitionStart(rm_Inferno_Level, sqFadeOut, sqFadeIn);
 			break;
 		case 19:
 			global.screenShake = true;
