@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 236.658,
+  "duration": 115.2,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sndInfernoTheme.mp3",
+  "soundFile": "sndInfernoTheme.ogg",
   "type": 0,
   "volume": 1.0,
 }

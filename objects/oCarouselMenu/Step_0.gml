@@ -172,7 +172,7 @@ if(accept_key){
 		case 18:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_Inferno_Level, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM19, sqFadeOut, sqFadeIn);
 			break;
 		case 19:
 			global.screenShake = true;
