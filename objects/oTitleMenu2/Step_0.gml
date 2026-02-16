@@ -180,9 +180,8 @@ if accept_key{
 					global.slowfirerate = false;
 					oHUD2.playerTotalScore = 500;
 					global.screenShake = true;
-					//TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_Tutorial_Level, sqFadeOut, sqFadeIn);
-					TransitionStart(rm_TM0_2, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_Mission0_2, sqFadeOut, sqFadeIn);
+					//TransitionStart(rm_TM0_2, sqFadeOut, sqFadeIn);
 					//menu_level = 1;
 					break;
 				//Survival Mode
@@ -218,7 +217,7 @@ if accept_key{
 			{
 				//Tutorial
 				case 0:
-					TransitionStart(rm_Mission0, sqFadeOut, sqFadeIn);
+					TransitionStart(rm_Mission0_2, sqFadeOut, sqFadeIn);
 					break;
 				//Test Mission 1
 				case 1:

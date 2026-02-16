@@ -1,94 +1,59 @@
-///oInvisibleSpawner2 Create Event
-/*This object represents a spawner.*/
-//This event is responsible for initializing some spawner values.
-
+/// oInvisibleSpawner2 Create Event
 depth = -bbox_top;
 isActive = true;
 
-//Spawner Stuff
-timer = 0;//Set timer to 0.
-spawnTime = 3 * 60;//60 is equal to 1 second.
-//waveDuration = 2700;//Adjust this value to control the duration of each wave intermission.
-waveDuration = 120;//Adjust this value to control the duration of each wave intermission.
-//timeBetweenWaves = 60;//Adjust this value to control the time between waves.
-timeSinceLastWave = 0;//Keep track of the time passed since the last wave.
-//waveIncrementTime = 600;//Adjust this value to control the time between each wave increment.
-//waveIncrementTimer = 0;//Keep track of the time passed since the last wave increment.
-//maxTotalEnemies = 999999;//Set your desired maximum total enemies here.
-if(room == rm_Tutorial_Level){
-	maxTotalEnemies = 6;
-}else{
-	maxTotalEnemies = 999999;
-}
-//maxTotalEnemies = 1;//Set your desired maximum total enemies here.
-activeEnemyMax = 7;//Starting value for the maximum active enemies.
-currentWave = 1;//Starting wave number.
+// Spawner timer values
+timer = 0;
+spawnTime = 3 * 60; // 3 seconds
+waveDuration = 120; // Duration of intermission between waves
+timeSinceLastWave = 0;
 
-maxActiveEnemyMax = 512;//Set your desired maximum value here.
+// Wave tracking
+activeEnemyMax = 7; // Starting active enemies
+currentWave = 1;
+maxActiveEnemyMax = 512;
 
+// Total enemies spawned limit
 if(room == rm_Tutorial_Level){
-	//Array of different zombie types with corresponding spawn probabilities.
-	zombieTypes = [
-	    {type: oZombie, probability: 100},//oZombie with a 100% chance.
-	];
-}else{
-//Array of different zombie types with corresponding spawn probabilities.
-zombieTypes = [
-    {type: oZombie, probability: 5},//oZombie with a 5% chance.
-	{type: oPurpleEyedZombie, probability: 5},//oPurpleEyedZombie with a 5% chance.
-	{type: oRedEyedZombie, probability: 5},//oRedEyedZombie with a 5% chance.
-    {type: oBlueEyedZombie, probability: 5},//oBlueEyedZombie with a 5% chance.
-	{type: oHellHound, probability: 5},//oHellHound with a 5% chance.
-	
-	{type: oFetidZombie, probability: 5},//oFetidZombie with a 5% chance.
-    {type: oFetidPurpleEyedZombie, probability: 5},//oFetidPurpleEyedZombie with a 5% chance.
-	{type: oFetidRedEyedZombie, probability: 5},//oFetidRedEyedZombie with a 5% chance.
-    {type: oFetidBlueEyedZombie, probability: 5},//oFetidBlueEyedZombie with a 5% chance.
-	{type: oFetidHellHound, probability: 5},//oFetidHellHound with a 5% chance.
-	
-	{type: oEvolvedZombie, probability: 5},//oEvolvedZombie with a 5% chance.
-    {type: oEvolvedPurpleEyedZombie, probability: 5},//oEvolvedPurpleEyedZombie with a 5% chance.
-	{type: oEvolvedRedEyedZombie, probability: 5},//EvolvedRedEyedZombie with a 5% chance.
-    {type: oEvolvedBlueEyedZombie, probability: 5},//oEvolvedBlueEyedZombie with a 5% chance.
-	{type: oEvolvedHellHound, probability: 5},//oEvolvedHellHound with a 5% chance.
-	
-	{type: oApexZombie2, probability: 3},//oApexZombie with a 3% chance.
-    {type: oApexPurpleEyedZombie2, probability: 3},//oApexPurpleEyedZombie with a 3% chance.
-	{type: oApexRedEyedZombie2, probability: 3},//oApexRedEyedZombie with a 3% chance.
-    {type: oApexBlueEyedZombie2, probability: 3},//oApexBlueEyedZombie with a 3% chance.
-	{type: oApexHellHound2, probability: 3},//oApexHellHound with a 3% chance.
-	
-	{type: oDarkMinionZombie, probability: 2},//oDarkMinionZombie with a 2% chance.
-    {type: oHellHoundElite, probability: 2},//oHellHoundElite with a 2% chance.
-	{type: oNightmarishZombie, probability: 2},//oNightmarishZombie with a 2% chance.
-	{type: oPumpkinMonster, probability: 4}//oPumpkinMonster with a 4% chance.
-	//Add more zombie types with their probabilities here
-];
+    maxTotalEnemies = 6;
+} else {
+    maxTotalEnemies = 999999;
 }
 
-//Function to perform weighted random selection based on probabilities.
-function chooseZombieType() {// Returns the chosen zombie type.
+// Select zombie types
+if(room == rm_Tutorial_Level) {
+    zombieTypes = [
+        {type: oZombie, probability: 100}
+    ];
+} else {
+    if(is_undefined(global.matchPresets)) {
+        show_debug_message("Warning: global.matchPresets undefined. Defaulting to standard zombieTypes.");
+        zombieTypes = [
+            {type: oZombie, probability: 100}
+        ];
+    } else {
+        zombieTypes = global.matchPresets[global.matchPresetIndex];
+    }
+}
+
+// Weighted random selection function
+function chooseZombieType() {
     var totalProbability = 0;
-    
-    //Calculate the total probability sum.
-    for (var i = 0; i < array_length_1d(zombieTypes); i++) {
+    for(var i = 0; i < array_length_1d(zombieTypes); i++){
         totalProbability += zombieTypes[i].probability;
     }
     
-    //Randomly choose a number within the total probability range.
     var randomNumber = irandom_range(1, totalProbability);
     var currentProbability = 0;
     
-    //Iterate over zombie types and find the chosen one based on probabilities.
-    for (var j = 0; j < array_length_1d(zombieTypes); j++) {
+    for(var j = 0; j < array_length_1d(zombieTypes); j++){
         currentProbability += zombieTypes[j].probability;
-        if (randomNumber <= currentProbability) {
+        if(randomNumber <= currentProbability){
             return zombieTypes[j].type;
         }
     }
-    return oZombie;//Return a default type in case of any issues.
+    return oZombie;
 }
 
-waveInProgress = false;//Wave system variables.
-zombiesKilledThisWave = 0;//Add a new variable to track zombies killed in the current wave.
-//global.waveStartMessageShown = false;
+waveInProgress = false;
+zombiesKilledThisWave = 0;

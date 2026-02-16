@@ -1,10 +1,25 @@
 /// @function				scr_text(_text);
 /// @param {string} text	The string that will be shown in the textbox.
 /// @description            Show a text message in a textbox whenever the function is called.
-function scr_text(_text){
+/*function scr_text(_text){
 	//scr_set_defaults_for_text();
 	text[page_number] = _text;//Store the text for display.
 	page_number++;//Increment the page number for the next text.
+}*/
+
+
+/// @function scr_text(_text, [_instant])
+/// @param text
+/// @param [instant]  If true, text appears instantly
+function scr_text(_text){
+	var _instant = false;
+	if(argument_count > 1) {
+		_instant = argument[1];
+	}
+
+	text[page_number] = _text;
+	text_instant[page_number] = _instant;//NEW FLAG
+	page_number++;
 }
 
 /// @function				scr_option(_option, _link_id);

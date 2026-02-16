@@ -20,6 +20,7 @@ page = 0;//Current page of text being displayed.
 page_number = 0;//Total number of pages.
 text[0] = "";//Initialize text on the first page.
 text_length[0] = string_length(text[0]);//Store the length of the text.
+text_instant[0] = false;//New
 draw_char = 0;//Current character being drawn.
 text_spd = 1;//Text drawing speed.
 

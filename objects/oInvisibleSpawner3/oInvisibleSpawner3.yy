@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sDemonSpawn",
-    "path": "sprites/sDemonSpawn/sDemonSpawn.yy",
+    "name": "sDemonSpawn3",
+    "path": "sprites/sDemonSpawn3/sDemonSpawn3.yy",
   },
   "spriteMaskId": null,
   "visible": true,

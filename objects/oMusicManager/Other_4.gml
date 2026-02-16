@@ -7,7 +7,7 @@ if(room == rm_Tutorial_Level){
 	set_song_ingame(sndTutorialTheme, 0, 0);
 }
 
-if(room == rm_Mission0 || room == rm_Level1){
+if(room == rm_Mission0_2 || room == rm_Level1){
 	set_song_ingame(sndTestLevelTheme, 0, 0);
 }
 

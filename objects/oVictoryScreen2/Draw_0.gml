@@ -77,7 +77,7 @@ if(room == rm_Tutorial_Level) {
     mapText = "Tutorial Level";
 }
 
-if(room == rm_Mission0) {
+if(room == rm_Mission0_2) {
     mapText = "Test_Level";
 }
 
@@ -108,7 +108,7 @@ if(room == rm_Tutorial_Level){
 	global.selectedMapSprite = 12;//13th frame
 }
 
-if(room == rm_Mission0){
+if(room == rm_Mission0_2){
 	global.selectedMapSprite = 12;//13th frame
 }
 

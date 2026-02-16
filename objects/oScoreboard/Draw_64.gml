@@ -81,7 +81,7 @@ if(room == rm_Tutorial_Level) {
 }
 
 //Ensure the map text variable exists for sandbox level
-if(room == rm_Mission0) {
+if(room == rm_Mission0_2) {
     mapText = "Test_Level";
 }
 
@@ -111,12 +111,12 @@ draw_text_transformed(160 * 3, (90 * 3) + 30, "Modifier: " + modifierText, 3, 3,
 
 //Ensure the map sprite icon variable exists for tutorial level
 if(room == rm_Tutorial_Level){
-	global.selectedMapSprite = 12;//13th frame
+	global.selectedMapSprite = 19;//20th frame
 }
 
 //Ensure the map sprite icon variable exists for sandbox level
-if(room == rm_Mission0){
-	global.selectedMapSprite = 12;//13th frame
+if(room == rm_Mission0_2){
+	global.selectedMapSprite = 19;//20th frame
 }
 
 //Draw the selected map icon
@@ -138,7 +138,7 @@ if(global.perkIndex != undefined) {
 }
 
 //Draw stats for single player
-if(room == rm_Mission0){
+if(room == rm_Mission0_2){
 	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: 0", 3, 3, 0);
 }else {
 	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: " + string(oInvisibleSpawner2.currentWave), 3, 3, 0);
@@ -215,7 +215,7 @@ draw_text_transformed(340 * 3, _wy/2 + 85, "Score:", 3, 3, 0);
 draw_text_transformed(160 * 3, _wy/2 + 140, "Player 1", 3, 3, 0);
 draw_text_transformed(260 * 3, _wy/2 + 140, string(global.enemyKillCount), 3, 3, 0);
 //draw_text_transformed(340 * 3, _wy/2 + 140, "500", 3, 3, 0);
-if(room == rm_Mission0){
+if(room == rm_Mission0_2){
 	draw_text_transformed(340 * 3, _wy/2 + 140, "10000000", 3, 3, 0);
 }else {
 	draw_text_transformed(340 * 3, _wy/2 + 140, string(oHUD2.playerTotalScore), 3, 3, 0);

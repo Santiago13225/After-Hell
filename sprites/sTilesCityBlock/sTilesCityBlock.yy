@@ -14,6 +14,7 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"007b58fa-1c80-4b1d-853b-383cb1b9ee10",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"26109256-6f16-462b-a57b-cc9d95bdd2c7",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"70a61898-72d7-4998-96f5-25572b3321ad",},
   ],
   "gridX": 16,
@@ -44,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -56,7 +57,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"007b58fa-1c80-4b1d-853b-383cb1b9ee10","path":"sprites/sTilesCityBlock/sTilesCityBlock.yy",},},},"Disabled":false,"id":"9e737cc8-11ad-4307-a975-25737df5dc7d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"70a61898-72d7-4998-96f5-25572b3321ad","path":"sprites/sTilesCityBlock/sTilesCityBlock.yy",},},},"Disabled":false,"id":"9f976a0a-4b81-47f8-8466-1401193bf784","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"26109256-6f16-462b-a57b-cc9d95bdd2c7","path":"sprites/sTilesCityBlock/sTilesCityBlock.yy",},},},"Disabled":false,"id":"8245747d-5a3f-4466-83ff-9822e265b348","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"70a61898-72d7-4998-96f5-25572b3321ad","path":"sprites/sTilesCityBlock/sTilesCityBlock.yy",},},},"Disabled":false,"id":"9f976a0a-4b81-47f8-8466-1401193bf784","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

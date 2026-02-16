@@ -38,9 +38,17 @@ if(setup == false){
 }
 	
 //Typing the Text
-if(draw_char < text_length[page]){//If the current character index value is less than the "length" of the text.
+/*if(draw_char < text_length[page]){//If the current character index value is less than the "length" of the text.
 	draw_char += text_spd;//Typing animation at stored speed.
 	draw_char = clamp(draw_char, 0, text_length[page]);//Clamp the typing position.
+}*/
+
+//Typing the Text (*2nd Version)
+if(text_instant[page]) {
+	draw_char = text_length[page];
+}else if(draw_char < text_length[page]) {
+	draw_char += text_spd;
+	draw_char = clamp(draw_char, 0, text_length[page]);
 }
 
 //Flip Through Pages

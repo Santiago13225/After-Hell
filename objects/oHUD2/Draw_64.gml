@@ -118,7 +118,7 @@ var spacing = 8;//Padding between icons
 //var hudY = display_get_gui_height();
 
 //Draw match setting icon to the left of the modifier
-if(room != rm_Mission0){
+if(room != rm_Mission0_2){
 	if(instance_exists(oPlayer)){
 		if(global.matchPresetIndex != -1) {
 		    var presetSprite = sSettingsCarouselMenu;
@@ -132,7 +132,7 @@ if(room != rm_Mission0){
 }
 
 //Draw modifier icon
-if(room != rm_Mission0){
+if(room != rm_Mission0_2){
 	if(instance_exists(oPlayer)){
 		if(global.perkIndex != -1) {
 		    var modSprite = sPerksCarouselMenu;

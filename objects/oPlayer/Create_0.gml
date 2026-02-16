@@ -4,7 +4,7 @@
 
 pause_lock_timer = room_speed * 5;//5 seconds in frames
 
-if room == rm_Mission0{
+if(room == rm_Mission0_2){
 	oHUD2.playerScore = 10000000;
 }
 
