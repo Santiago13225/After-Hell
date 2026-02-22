@@ -268,3 +268,23 @@ function clear_weapons(){
 		show_debug_message("No item manager exists?");
 	}
 }
+
+/// @function reset_wave_variables()
+/// @description Resets all global wave-related variables to starting values
+function reset_wave_variables() {
+    // --- Wave number ---
+    global.currentWave = 1;
+
+    // --- Enemy limits (set this to your intended starting value) ---
+    global.activeEnemyMax = 7;      // <-- change if your wave 1 starts at a different number
+    //global.maxActiveEnemyMax = 100; // <-- only if you use this cap
+
+    // --- Wave tracking ---
+    global.zombiesKilledThisWave = 0;
+    global.zombiesSpawnedThisWave = 0;
+    global.totalEnemiesSpawned = 0; // remove if you are not using this
+
+    // --- Wave state ---
+    global.waveInProgress = false;
+    global.timeSinceLastWave = 0;
+}

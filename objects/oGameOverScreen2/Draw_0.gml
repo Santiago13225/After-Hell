@@ -354,6 +354,7 @@ if accept_key{
 				//resume
 				case 0:
 					room_restart();
+					reset_wave_variables();
 					global.dialog_active = false;
 					//audio_play_sound(sndBeep, 10, false);
 					instance_destroy(oPauseMenu2);
@@ -362,6 +363,7 @@ if accept_key{
 				case 1:
 					global.dialog_active = false;
 					instance_deactivate_object(oPlayer);
+					reset_wave_variables();
 					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 					break;
 			}

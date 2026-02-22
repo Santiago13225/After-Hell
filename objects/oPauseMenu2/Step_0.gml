@@ -249,7 +249,6 @@ if accept_key{
 				}else {
 				    audio_play_sound(sndTestLevelTheme, 8, true);
 				}
-
 					oSFX.beepSnd = true;
 					instance_destroy(oPauseMenu2);
 					break;
@@ -273,7 +272,7 @@ if accept_key{
 					
 					//Stop all level music
 					audio_stop_all();
-
+					reset_wave_variables();
 					//Transition safely back to the title screen
 					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
 

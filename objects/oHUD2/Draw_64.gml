@@ -16,7 +16,7 @@ if(instance_exists(oPlayer)){
 		var _ecHudY = (8 * 3) + _enemyCountOffset;
 		//Draw the wave
 		draw_sprite_ext(sWaveCountHUD, 0, 8 * 3, 8 * 3, 3, 3, 0, c_white, 1);
-		var _waveString = "Wave " + string(oInvisibleSpawner2.currentWave);//Set wave string.
+		var _waveString = "Wave " + string(global.currentWave);//Set wave string.
 		//draw_text(5 + 18, 5 + 2, _waveString);//Print wave string.
 		draw_text_transformed((8 * 3) + (18 * 3), (8 * 3) + (2 * 3), _waveString, 3, 3, 0);
 		//Draw the enemy kill count
@@ -25,8 +25,8 @@ if(instance_exists(oPlayer)){
 		//draw_set_halign(fa_left);
 		//draw_set_valign(fa_top);
 		//draw_set_font(fnt8Bit);
-		draw_text_transformed(_ecHudX + (20 * 3), _ecHudY + (2 * 3), string(oInvisibleSpawner2.zombiesKilledThisWave), 3, 3, 0);//Draw number of sombies killed.
-		draw_text_transformed(_ecHudX + (44 * 3), _ecHudY + (2 * 3), "/" + string(oInvisibleSpawner2.activeEnemyMax), 3, 3, 0);//Draw number of active enemies.
+		draw_text_transformed(_ecHudX + (20 * 3), _ecHudY + (2 * 3), string(global.zombiesKilledThisWave), 3, 3, 0);//Draw number of sombies killed.
+		draw_text_transformed(_ecHudX + (44 * 3), _ecHudY + (2 * 3), "/" + string(global.activeEnemyMax), 3, 3, 0);//Draw number of active enemies.
 		draw_set_font(global.fontHUD);
 		/*
 		var _waveString = "Next Wave In: " + string(oInvisibleSpawner2.waveDuration - oInvisibleSpawner2.timeSinceLastWave);//Set string.

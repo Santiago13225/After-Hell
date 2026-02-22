@@ -341,7 +341,7 @@ if(accept_key){
 			//instance_activate_object(oPlayer);
 			//instance_deactivate_object(oPlayer);
 			//TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
-			
+			reset_wave_variables();
 			clear_weapons();
 			array_resize(global.PlayerAmmo, 1);
 			array_resize(global.PlayerWeapons, 1);

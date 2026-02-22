@@ -141,7 +141,7 @@ if(global.perkIndex != undefined) {
 if(room == rm_Mission0_2){
 	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: 0", 3, 3, 0);
 }else {
-	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: " + string(oInvisibleSpawner2.currentWave), 3, 3, 0);
+	draw_text_transformed(160 * 3, _wy/2 + 3, "Waves Survived: " + string(global.currentWave), 3, 3, 0);
 }
 //draw_text_transformed(160 * 3, _wy/2 + 33, "Time Survived: 00:00:00", 3, 3, 0);
 /*var _timeMS;
