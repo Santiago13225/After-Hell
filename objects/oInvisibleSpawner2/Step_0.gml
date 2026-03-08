@@ -37,7 +37,52 @@ if timer >= spawnTime && global.zombiesSpawnedThisWave < global.activeEnemyMax &
         var chosenSpawn = activeSpawns[|irandom(numActiveSpawns - 1)];
 
 		//Spawn a zombie at the chosen oSpawn object.
+		//var chosenZombieType = chooseZombieType();//old code
+		var filteredTypes = [];
+
+		if(usesTierSystem) {
+		    var maxTier = getMaxTierForWave(global.currentWave);
+
+		    //Determine the highest tier used in this preset
+		    var presetMaxTier = maxPresetTier;
+
+		    //Determine when the highest tier first unlocks
+		    var unlockWave = 1;
+		    for(var w = 1; w <= 10; w++) {//10 is just a safe upper bound
+		        if(getMaxTierForWave(w) >= presetMaxTier) {
+		            unlockWave = w;
+		            break;
+		        }
+		    }
+
+		    for(var i = 0; i < array_length(presetData); i++) {
+		        var enemyTier = presetData[i].tier;
+		        var allow = (enemyTier <= maxTier);
+
+		        //Only apply removal logic if preset goes to tier 4 or 5
+		        if(presetMaxTier >= 4) {
+		            //One wave AFTER highest tier unlock → remove tier 1
+		            if(global.currentWave > unlockWave && enemyTier == 1) {
+		                allow = false;
+		            }
+
+		            //Two waves AFTER highest tier unlock → remove tier 2
+		            if(global.currentWave > unlockWave + 1 && enemyTier == 2) {
+		                allow = false;
+		            }
+		        }
+
+		        if(allow) {
+		            array_push(filteredTypes, presetData[i]);
+		        }
+		    }
+		}else {
+		    filteredTypes = presetData;
+		}
+
+		zombieTypes = filteredTypes;
 		var chosenZombieType = chooseZombieType();
+
 		instance_create_depth(chosenSpawn.x, chosenSpawn.y, chosenSpawn.depth - 1, chosenZombieType);
 		global.zombiesSpawnedThisWave++;
 		//global.totalEnemiesSpawned++;//new

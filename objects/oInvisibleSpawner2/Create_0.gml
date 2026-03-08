@@ -51,6 +51,29 @@ if(room == rm_Tutorial_Level) {
 		];
 	}else {
 		zombieTypes = global.matchPresets[global.matchPresetIndex];
+		//Cache preset reference
+		presetData = global.matchPresets[global.matchPresetIndex];
+
+		//Detect whether this preset uses tiers
+		usesTierSystem = false;
+
+		for(var i = 0; i < array_length(presetData); i++) {
+		    if(variable_struct_exists(presetData[i], "tier")) {
+				usesTierSystem = true;
+				break;
+		    }
+		}
+		
+		//Cache highest tier in this preset
+		maxPresetTier = 0;
+
+		if(usesTierSystem) {
+		    for(var i = 0; i < array_length(presetData); i++) {
+		        if(presetData[i].tier > maxPresetTier) {
+		            maxPresetTier = presetData[i].tier;
+		        }
+		    }
+		}
 	}
 }
 
@@ -78,3 +101,21 @@ function chooseZombieType() {// Returns the chosen zombie type.
 }
 //zombiesKilledThisWave = 0;//Add a new variable to track zombies killed in the current wave.
 //global.waveStartMessageShown = false;
+function getMaxTierForWave(_wave) {
+    if (_wave <= 2) return 1;
+    if (_wave <= 4) return 2;
+    if (_wave <= 6) return 3;
+    if (_wave <= 8) return 4;
+    return 5;
+}
+/*
+function getMinTierForWave(_wave) {
+    //Only remove weak tiers if preset has 4 or more tiers
+    if(maxPresetTier < 4) {
+        return 1;
+    }
+    //After all tiers are introduced, begin phasing out weaker tiers
+    if(_wave >= 7) return 3;//Remove tier 1 and 2
+    if(_wave >= 6) return 2;//Remove tier 1
+    return 1;
+}*/

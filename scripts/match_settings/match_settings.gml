@@ -2,6 +2,183 @@
 
 global.matchPresets = [
 	[//0: Standard
+		{type: oZombie, probability: 5, tier: 1},//oZombie with a 5% chance.
+		{type: oPurpleEyedZombie, probability: 5, tier: 1},//oPurpleEyedZombie with a 5% chance.
+		{type: oRedEyedZombie, probability: 5, tier: 1},//oRedEyedZombie with a 5% chance.
+		{type: oBlueEyedZombie, probability: 5, tier: 1},//oBlueEyedZombie with a 5% chance.
+		{type: oHellHound, probability: 5, tier: 1},//oHellHound with a 5% chance.
+
+		{type: oFetidZombie, probability: 5, tier: 2},//oFetidZombie with a 5% chance.
+		{type: oFetidPurpleEyedZombie, probability: 5, tier: 2},//oFetidPurpleEyedZombie with a 5% chance.
+		{type: oFetidRedEyedZombie, probability: 5, tier: 2},//oFetidRedEyedZombie with a 5% chance.
+		{type: oFetidBlueEyedZombie, probability: 5, tier: 2},//oFetidBlueEyedZombie with a 5% chance.
+		{type: oFetidHellHound, probability: 5, tier: 2},//oFetidHellHound with a 5% chance.
+
+		{type: oEvolvedZombie, probability: 5, tier: 3},//oEvolvedZombie with a 5% chance.
+		{type: oEvolvedPurpleEyedZombie, probability: 5, tier: 3},//oEvolvedPurpleEyedZombie with a 5% chance.
+		{type: oEvolvedRedEyedZombie, probability: 5, tier: 3},//EvolvedRedEyedZombie with a 5% chance.
+		{type: oEvolvedBlueEyedZombie, probability: 5, tier: 3},//oEvolvedBlueEyedZombie with a 5% chance.
+		{type: oEvolvedHellHound, probability: 5, tier: 3},//oEvolvedHellHound with a 5% chance.
+
+		{type: oApexZombie2, probability: 3, tier: 4},//oApexZombie with a 3% chance.
+		{type: oApexPurpleEyedZombie2, probability: 3, tier: 4},//oApexPurpleEyedZombie with a 3% chance.
+		{type: oApexRedEyedZombie2, probability: 3, tier: 4},//oApexRedEyedZombie with a 3% chance.
+		{type: oApexBlueEyedZombie2, probability: 3, tier: 4},//oApexBlueEyedZombie with a 3% chance.
+		{type: oApexHellHound2, probability: 3, tier: 4},//oApexHellHound with a 3% chance.
+
+		{type: oDarkMinionZombie, probability: 2, tier: 5},//oDarkMinionZombie with a 2% chance.
+		{type: oHellHoundElite, probability: 2, tier: 5},//oHellHoundElite with a 2% chance.
+		{type: oNightmarishZombie, probability: 2, tier: 5},//oNightmarishZombie with a 2% chance.
+		{type: oPumpkinMonster, probability: 4, tier: 5}//oPumpkinMonster with a 4% chance.
+	],
+
+	[//1: Hard
+		{type: oEvolvedZombie, probability: 7, tier: 1},
+		{type: oEvolvedPurpleEyedZombie, probability: 7, tier: 1},
+		{type: oEvolvedRedEyedZombie, probability: 7, tier: 1},
+		{type: oEvolvedBlueEyedZombie, probability: 7, tier: 1},
+		{type: oEvolvedHellHound, probability: 7, tier: 1},
+
+		{type: oApexZombie2, probability: 7, tier: 2},
+		{type: oApexPurpleEyedZombie2, probability: 7, tier: 2},
+		{type: oApexRedEyedZombie2, probability: 7, tier: 2},
+		{type: oApexBlueEyedZombie2, probability: 7, tier: 2},
+		{type: oApexHellHound2, probability: 7, tier: 2},
+
+		{type: oDarkMinionZombie, probability: 7, tier: 3},
+		{type: oHellHoundElite, probability: 7, tier: 3},
+		{type: oNightmarishZombie, probability: 8, tier: 3},
+		{type: oPumpkinMonster, probability: 8, tier: 3}
+    ],
+
+	[//2: Harder
+		{type: oApexZombie2, probability: 12, tier: 1},
+		{type: oApexPurpleEyedZombie2, probability: 12, tier: 1},
+		{type: oApexRedEyedZombie2, probability: 12, tier: 1},
+		{type: oApexBlueEyedZombie2, probability: 12, tier: 1},
+		{type: oApexHellHound2, probability: 12, tier: 1},
+
+		{type: oDarkMinionZombie, probability: 10, tier: 2},
+		{type: oHellHoundElite, probability: 10, tier: 2},
+		{type: oNightmarishZombie, probability: 10, tier: 2},
+		{type: oPumpkinMonster, probability: 10, tier: 2}
+	],
+
+	[//3: Elites Only
+		{type: oDarkMinionZombie, probability: 25},
+		{type: oHellHoundElite, probability: 25},
+		{type: oNightmarishZombie, probability: 25},
+		{type: oPumpkinMonster, probability: 25}
+	],
+	
+	[//4: Apex Zombies Only
+		{type: oApexZombie2, probability: 20},
+		{type: oApexPurpleEyedZombie2, probability: 20},
+		{type: oApexRedEyedZombie2, probability: 20},
+		{type: oApexBlueEyedZombie2, probability: 20},
+		{type: oApexHellHound2, probability: 20}
+	],
+	
+	[//5: Evolved Zombies Only
+		{type: oEvolvedZombie, probability: 20},
+		{type: oEvolvedPurpleEyedZombie, probability: 20},
+		{type: oEvolvedRedEyedZombie, probability: 20},
+		{type: oEvolvedBlueEyedZombie, probability: 20},
+		{type: oEvolvedHellHound, probability: 20}
+	],
+	
+	[//6: Red-Eyed Zombies Only
+		{type: oRedEyedZombie, probability: 25, tier: 1},
+		{type: oFetidRedEyedZombie, probability: 25, tier: 2},
+		{type: oEvolvedRedEyedZombie, probability: 25, tier: 3},
+		{type: oApexRedEyedZombie2, probability: 25, tier: 4}
+	],
+	
+	[//7: Purple-Eyed Zombies Only
+		{type: oPurpleEyedZombie, probability: 25, tier: 1},
+		{type: oFetidPurpleEyedZombie, probability: 25, tier: 2},
+		{type: oEvolvedPurpleEyedZombie, probability: 25, tier: 3},
+		{type: oApexPurpleEyedZombie2, probability: 25, tier: 4}
+	],
+	
+	[//8: Nightmarish Zombies Only
+		{type: oNightmarishZombie, probability: 100}
+	],
+	
+	[//9: Dogs Only
+		{type: oHellHound, probability: 20, tier: 1},
+		{type: oFetidHellHound, probability: 20, tier: 2},
+		{type: oEvolvedHellHound, probability: 20, tier: 3},
+		{type: oApexHellHound2, probability: 20, tier: 4},
+		{type: oHellHoundElite, probability: 20, tier: 5}
+	],
+	
+	[//10: Blue-Eyed Zombies Only
+		{type: oBlueEyedZombie, probability: 25, tier: 1},
+		{type: oFetidBlueEyedZombie, probability: 25, tier: 2},
+		{type: oEvolvedBlueEyedZombie, probability: 25, tier: 3},
+		{type: oApexBlueEyedZombie2, probability: 25, tier: 4}
+	],
+	
+	[//11: Fetid Zombies Only
+		{type: oFetidZombie, probability: 20, tier: 1},
+		{type: oFetidPurpleEyedZombie, probability: 20, tier: 2},
+		{type: oFetidRedEyedZombie, probability: 20, tier: 3},
+		{type: oFetidBlueEyedZombie, probability: 20, tier: 4},
+		{type: oFetidHellHound, probability: 20, tier: 5}
+	],
+	
+	[//12: Zombies Only
+		{type: oZombie, probability: 20},
+		{type: oPurpleEyedZombie, probability: 20},
+		{type: oRedEyedZombie, probability: 20},
+		{type: oBlueEyedZombie, probability: 20},
+		{type: oHellHound, probability: 20}
+	],
+	
+	[//13: Zombies Only (*No Variants)
+		{type: oZombie, probability: 100}
+	],
+	
+	[//14: Easier
+		{type: oZombie, probability: 10, tier: 1},
+		{type: oPurpleEyedZombie, probability: 10, tier: 1},
+		{type: oRedEyedZombie, probability: 10, tier: 1},
+		{type: oBlueEyedZombie, probability: 10, tier: 1},
+		{type: oHellHound, probability: 10, tier: 1},
+		
+		{type: oFetidZombie, probability: 10, tier: 2},
+		{type: oFetidPurpleEyedZombie, probability: 10, tier: 2},
+		{type: oFetidRedEyedZombie, probability: 10, tier: 2},
+		{type: oFetidBlueEyedZombie, probability: 10, tier: 2},
+		{type: oFetidHellHound, probability: 10, tier: 2}
+	],
+	
+	[//15: Easy
+		{type: oZombie, probability: 7, tier: 1},
+		{type: oPurpleEyedZombie, probability: 7, tier: 1},
+		{type: oRedEyedZombie, probability: 7, tier: 1},
+		{type: oBlueEyedZombie, probability: 7, tier: 1},
+		{type: oHellHound, probability: 7, tier: 1},
+		
+		{type: oFetidZombie, probability: 7, tier: 2},
+		{type: oFetidPurpleEyedZombie, probability: 7, tier: 2},
+		{type: oFetidRedEyedZombie, probability: 7, tier: 2},
+		{type: oFetidBlueEyedZombie, probability: 7, tier: 2},
+		{type: oFetidHellHound, probability: 7, tier: 2},
+		
+		{type: oEvolvedZombie, probability: 6, tier: 3},
+		{type: oEvolvedPurpleEyedZombie, probability: 6, tier: 3},
+		{type: oEvolvedRedEyedZombie, probability: 6, tier: 3},
+		{type: oEvolvedBlueEyedZombie, probability: 6, tier: 3},
+		{type: oEvolvedHellHound, probability: 6, tier: 3}
+	]
+];
+
+#region
+/*
+global.matchPresets = [
+	[//0: Standard
 		{type: oZombie, probability: 5},//oZombie with a 5% chance.
 		{type: oPurpleEyedZombie, probability: 5},//oPurpleEyedZombie with a 5% chance.
 		{type: oRedEyedZombie, probability: 5},//oRedEyedZombie with a 5% chance.
@@ -174,3 +351,5 @@ global.matchPresets = [
 		{type: oEvolvedHellHound, probability: 6}
 	]
 ];
+*/
+#endregion
