@@ -23,8 +23,24 @@ draw_set_valign(fa_top);
 //Dynamically get width and height of menu
 var _new_w = 0;
 
-for(var i = 0; i < op_length; i++){
+/*for(var i = 0; i < op_length; i++){//Old code loop
 	var _op_w = string_width(option[menu_level, i]);
+	_new_w = max(_new_w, _op_w);
+}*/
+for(var i = 0; i < op_length; i++){//new code loop
+	var text_to_measure = option[menu_level, i];
+
+	//Lock width for Survival Mode preset option
+	if(menu_level == 2 && i == 0){
+		text_to_measure = preset_longest_text;
+	}
+
+	//Lock width for Settings menu Controls option
+	if(menu_level == 6 && i == 2){
+		text_to_measure = control_longest_text;
+	}
+
+	var _op_w = string_width(text_to_measure);
 	_new_w = max(_new_w, _op_w);
 }
 width = _new_w + (op_border * 2);
@@ -110,3 +126,64 @@ for(var i = 0; i < op_length; i++){
 //width = _new_w + (op_border * 2);
 //height = op_border * 2 + string_height(option[0,0]) + (op_length + 1) * op_space;
 //height = (op_border * 2) + sprite_get_height(sMainFont) + ((op_length + 1) * op_space);
+
+//Draw preset arrows
+if(menu_level == 2){
+	var arrowY = y + 14;
+	var leftX = x + 12;
+	var rightX = x + width - 12;
+
+	var leftScale = 0.5 + arrowLeftAnim * 0.3;
+	var rightScale = 0.5 + arrowRightAnim * 0.3;
+
+	draw_sprite_ext(
+		sLeftArrow,
+		0,
+		leftX,
+		arrowY,
+		leftScale,
+		leftScale,
+		0,
+		merge_color(c_white, c_yellow, arrowLeftAnim),
+		1
+	);
+
+	draw_sprite_ext(
+		sRightArrow,
+		0,
+		rightX,
+		arrowY,
+		rightScale,
+		rightScale,
+		0,
+		merge_color(c_white, c_yellow, arrowRightAnim),
+		1
+	);
+}
+
+if(menu_level == 2 && pos == 0){
+	var description;
+
+	switch(preset_index){
+		case 0: description = "No adjustments made. All enemies spawn as normal."; break;
+		case 1: description = "Weaker enemies removed. No skeletons and zombies will spawn."; break;
+		case 2: description = "No skeletons, zombies, and wraiths will spawn."; break;
+		case 3: description = "Only elite enemies spawn."; break;
+		case 4: description = "Only demons spawn."; break;
+		case 5: description = "Only wraiths spawn."; break;
+		case 6: description = "Only enemies that deal extra damage spawn."; break;
+		case 7: description = "Only projectile-shooting enemies spawn."; break;
+		case 8: description = "Only necromancers spawn."; break;
+		case 9: description = "Only dogs spawn."; break;
+		case 10: description = "Only fast enemies spawn."; break;
+		case 11: description = "Only zombies spawn."; break;
+		case 12: description = "Only skeletons spawn."; break;
+		case 13: description = "Only basic skeletons spawn."; break;
+		case 14: description = "No wraiths, demons, and elites will spawn."; break;
+		case 15: description = "Stronger enemies removed. No demons and elites will spawn."; break;
+	}
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_top);
+	draw_text(x + width/2, y + height + 20, "Game Mode Description:\n" + description);
+	draw_set_halign(fa_left);
+}

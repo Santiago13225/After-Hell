@@ -113,11 +113,11 @@ if(menu_level == 1) {
     if(oControllerIndicator.controller_count == 0) {
         //Lock to Keyboard
         global.controllerMode = 0;
-        option[1, 2] = "Controls: Keyboard";
+        option[1, 2] = "Controls: Keyboard and Mouse";
     }else {
         //Unlock - keep the toggleable text
         if(global.controllerMode == 0) {
-            option[1, 2] = "Controls: Keyboard";
+            option[1, 2] = "Controls: Keyboard and Mouse";
         }else {
             option[1, 2] = "Controls: Controller";
         }
@@ -302,7 +302,7 @@ if accept_key{
 							option[1, 2] = "Controls: Controller";
 							global.controllerMode = 1;
 						}else{
-							option[1, 2] = "Controls: Keyboard";
+							option[1, 2] = "Controls: Keyboard and Mouse";
 							global.controllerMode = 0;
 						}
 					}

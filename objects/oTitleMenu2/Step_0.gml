@@ -96,6 +96,9 @@ if is_controller_connected{
 	}
 }
 
+arrowLeftAnim = max(arrowLeftAnim - 0.05, 0);
+arrowRightAnim = max(arrowRightAnim - 0.05, 0);
+
 //Adjust music volume
 if(menu_level == 6 && pos == 0)//Check if in the Settings menu and the first option (music)
 {
@@ -111,8 +114,7 @@ if(menu_level == 6 && pos == 0)//Check if in the Settings menu and the first opt
     }
 }
 //Adjust sound effects volume
-if(menu_level == 6 && pos == 1)//Check if in the Settings menu and the second option (sfx)
-{
+if(menu_level == 6 && pos == 1){//Check if in the Settings menu and the second option (sfx)
     if(left_key){
         global.sfxvolume = max(0, global.sfxvolume - 0.1);//Reduce volume by 10%
 		//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
@@ -123,6 +125,25 @@ if(menu_level == 6 && pos == 1)//Check if in the Settings menu and the second op
 		//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
     }
+}
+
+//Preset selection (Survival Mode preset page)
+if(menu_level == 2 && pos == 0){
+	if(left_key){
+		preset_index--;
+		arrowLeftAnim = 1;
+		if(preset_index < 0){
+			preset_index = array_length(preset_names) - 1;
+		}
+	}
+	if(right_key){
+		preset_index++;
+		arrowRightAnim = 1;
+		if(preset_index >= array_length(preset_names)){
+			preset_index = 0;
+		}
+	}
+	option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
 }
 
 //Store number of options in current menu
@@ -141,11 +162,11 @@ if(menu_level == 6) {
     if(oControllerIndicator.controller_count == 0) {
         //Lock to Keyboard
         global.controllerMode = 0;
-        option[6, 2] = "Controls: Keyboard";
+        option[6, 2] = "Controls: Keyboard and Mouse";
     }else {
         //Unlock - keep the toggleable text
         if(global.controllerMode == 0) {
-            option[6, 2] = "Controls: Keyboard";
+            option[6, 2] = "Controls: Keyboard and Mouse";
         }else {
             option[6, 2] = "Controls: Controller";
         }
@@ -186,12 +207,14 @@ if accept_key{
 					break;
 				//Survival Mode
 				case 1:
-					//menu_level = 2;
+					global.matchPresetIndex = 0;
+					preset_index = 0;//sync local variable
+					option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+					menu_level = 2;
 					//Instead of switching menu pages, destroy the title menu
 					//and create the carousel menu object.
-					instance_destroy();  
-					//instance_create_layer(0, 0, "Instances", oCarouselMenu);
-					instance_create_layer(0, 0, "Instances", oSettingsCarouselMenu);
+					//instance_destroy();
+					//instance_create_layer(0, 0, "Instances", oSettingsCarouselMenu);
 					break;
 				//Multiplayer Mode
 				case 2:
@@ -238,36 +261,25 @@ if accept_key{
 		case 2:
 			switch(pos)
 			{
-				//House
+				//Preset option (does nothing on accept)
 				case 0:
-					TransitionStart(rm_TM1, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_House_Level1, sqFadeOut, sqFadeIn);
+					pos = 1;
 					break;
-				//Facility
+				//Next, go to perk carousel menu
 				case 1:
-					TransitionStart(rm_TM2, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_Facility_Level, sqFadeOut, sqFadeIn);
+					//Store selected preset
+					global.matchPresetIndex = preset_index;
+					instance_destroy();
+					instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
 					break;
-				//Temple
+				//Go Back to Main Menu
 				case 2:
-					TransitionStart(rm_TM3, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_Temple_Level1, sqFadeOut, sqFadeIn);
-					break;
-				//Overlook
-				case 3:
-					TransitionStart(rm_TM4, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_Overlook_Level1, sqFadeOut, sqFadeIn);
-					break;
-				//Next Page
-				case 4:
-					menu_level = 3;
-					break;
-				case 5:
+					//global.matchPresetIndex = 0;//reset preset
 					menu_level = 0;
 					break;
 			}
 			break;
-	
+
 		case 3:
 			switch(pos)
 			{
@@ -386,7 +398,7 @@ if accept_key{
 							option[6, 2] = "Controls: Controller";
 							global.controllerMode = 1;
 						}else{
-							option[6, 2] = "Controls: Keyboard";
+							option[6, 2] = "Controls: Keyboard and Mouse";
 							global.controllerMode = 0;
 						}
 					}

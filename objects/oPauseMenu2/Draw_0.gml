@@ -23,8 +23,20 @@ draw_set_valign(fa_top);
 //Dynamically get width and height of menu
 var _new_w = 0;
 
-for(var i = 0; i < op_length; i++){
+/*for(var i = 0; i < op_length; i++){//old code loop
 	var _op_w = string_width(option[menu_level, i]);
+	_new_w = max(_new_w, _op_w);
+}*/
+
+for(var i = 0; i < op_length; i++){
+	var text_to_measure = option[menu_level, i];
+
+	//Lock width for Settings menu
+	if(menu_level == 1 && i == 2){
+		text_to_measure = settings_longest_text;
+	}
+
+	var _op_w = string_width(text_to_measure);
 	_new_w = max(_new_w, _op_w);
 }
 width = _new_w + (op_border * 2);

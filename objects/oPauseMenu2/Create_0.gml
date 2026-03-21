@@ -36,10 +36,10 @@ option[0, 2] = "Quit";
 //option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
 option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
-option[1, 2] = "Controls: Keyboard";
+option[1, 2] = "Controls: Keyboard and Mouse";
 // Set the initial control mode based on a global variable
 if(global.controllerMode == 0) {
-    option[1, 2] = "Controls: Keyboard";
+    option[1, 2] = "Controls: Keyboard and Mouse";
 }else {
     option[1, 2] = "Controls: Controller";
 }
@@ -54,3 +54,5 @@ option[6, 3] = "Back";
 
 op_length = 0;
 menu_level = 0;
+
+settings_longest_text = "Controls: Keyboard and Mouse";
