@@ -59,8 +59,8 @@ option[5, 2] = "Back";*/
 //Settings Menu
 //option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 //option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
-option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0);
-option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0);
+option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
+option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 option[6, 2] = "Controls: Keyboard and Mouse";
 
 // --- Add after your existing control option setup ---

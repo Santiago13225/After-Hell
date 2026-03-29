@@ -97,14 +97,16 @@ switch(global.perkIndex) {
     case 3: modifierText = "Toughness"; break;
     case 4: modifierText = "Lightweight"; break;
     case 5: modifierText = "Extra Luck"; break;
-    case 6: modifierText = "Flak Jacket"; break;
-    case 7: modifierText = "Wild Card"; break;
-    case 8: modifierText = "Sudden Death"; break;
-    case 9: modifierText = "Bad Luck"; break;
-    case 10: modifierText = "Sluggish"; break;
-    case 11: modifierText = "Weakness"; break;
-    case 12: modifierText = "Deprivation"; break;
-    case 13: modifierText = "Heavy Trigger"; break;
+	case 6: modifierText = "Magnet"; break;
+    case 7: modifierText = "Flak Jacket"; break;
+    case 8: modifierText = "Wild Card"; break;
+	case 9: modifierText = "Last Stand"; break;
+    case 10: modifierText = "Sudden Death"; break;
+    case 11: modifierText = "Bad Luck"; break;
+    case 12: modifierText = "Sluggish"; break;
+    case 13: modifierText = "Weakness"; break;
+    case 14: modifierText = "Deprivation"; break;
+    case 15: modifierText = "Heavy Trigger"; break;
     default: modifierText = "???"; break;
 }
 draw_text_transformed(160 * 3, (90 * 3) + 30, "Modifier: " + modifierText, 3, 3, 0);

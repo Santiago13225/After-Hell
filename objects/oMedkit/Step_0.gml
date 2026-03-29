@@ -2,16 +2,41 @@
 /*This object represents a medkit.*/
 //This event is responsible for handling medkit behavior.
 
+fade_start_time = 60 * 5;//last 5 seconds
+
 if screen_pause(){//Pause self
 	exit;
 }
 
-//Float in Place
-floatDir += floatSpd;
-y = ystart + lengthdir_y(2, floatDir);
+//Lifetime countdown
+timer++;
+if(timer >= lifetime){
+	destroy = true;
+}
 
+var time_left = lifetime - timer;
+
+if(time_left <= fade_start_time){
+    image_alpha = time_left / fade_start_time;
+	
+	//Optional flicker
+	if(time_left < 60 * 2){//last 2 seconds
+		image_alpha *= 0.5 + random(0.5);
+	}
+}else{
+    image_alpha = 1;
+}
+
+//Float in Place
+//floatDir += floatSpd;
+//y = ystart + lengthdir_y(2, floatDir);
 //y = ystart + dsin(floatDir)*2;//alternative to line above
 //var hpVar
+
+if(destroy){
+	create_animated_vfx(sPoof, x, y, depth);
+	instance_destroy();
+}
 
 #region
 var hpVar;
@@ -21,6 +46,26 @@ if(global.juggernaut){
 	hpVar = 50;
 }else {
 	hpVar = 100;
+}
+
+var _radius = 256;
+if(global.magnet) {
+	if(instance_exists(oPlayer)) {
+		if(oPlayer.hp < hpVar){
+			var _dist = point_distance(x, y, oPlayer.x, oPlayer.y);
+
+			if(_dist < _radius) {
+				//calculate direction to player
+				var _dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+				//var _spd = 1;
+				//calculate speed (faster when closer)
+				var _spd = lerp(0, 3, 1 - (_dist / _radius));//Faster when closer
+				//update x and y positions based on the direction and speed
+				x += lengthdir_x(_spd, _dir);
+				y += lengthdir_y(_spd, _dir);
+			}
+		}
+	}
 }
 
 //get collected by the player

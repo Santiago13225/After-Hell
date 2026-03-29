@@ -5,5 +5,9 @@
 depth = -y;//Set depth to whatever to y value is in negative.
 
 //Floating
-floatDir = 0;//Float direction.
-floatSpd = 6;//Float speed.
+//floatDir = 0;//Float direction.
+//floatSpd = 6;//Float speed.
+
+lifetime = 60 * 25;//25 seconds
+timer = 0;
+destroy = false;

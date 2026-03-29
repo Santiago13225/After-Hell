@@ -96,32 +96,43 @@ if(accept_key){
 			global.luck = true;
 			break;
 		case 6:
-			global.flakjacket = true;
+			global.magnet = true;
 			break;
 		case 7:
+			global.flakjacket = true;
+			break;
+		case 8:
 			global.firerate = true;
 			global.energyshield = true;
 			global.juggernaut = true;
 			global.speed = true;
 			global.luck = true;
+			global.magnet = true;
 			global.flakjacket = true;
 			break;
-		case 8:
-			global.instakill = true;
-			break;
 		case 9:
+			global.instakill = true;
 			global.badluck = true;
+			global.lowspeed = true;
+			//global.nomedkit = true;
+			global.slowfirerate = true;
 			break;
 		case 10:
-			global.lowspeed = true;
+			global.instakill = true;
 			break;
 		case 11:
-			global.weakness = true;
+			global.badluck = true;
 			break;
 		case 12:
-			global.nomedkit = true;
+			global.lowspeed = true;
 			break;
 		case 13:
+			global.weakness = true;
+			break;
+		case 14:
+			global.nomedkit = true;
+			break;
+		case 15:
 			global.slowfirerate = true;
 			break;
 	    //future cases: global.perkShield = true, etc.

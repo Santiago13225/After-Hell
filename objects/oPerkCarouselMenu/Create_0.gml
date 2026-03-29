@@ -16,6 +16,7 @@ global.energyshield = false;
 global.juggernaut = false;
 global.speed = false;
 global.luck = false;
+global.magnet = false;
 global.flakjacket = false;
 global.instakill = false;
 global.badluck = false;

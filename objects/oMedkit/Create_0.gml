@@ -14,5 +14,9 @@ if(global.juggernaut){
 }
 
 //Floating
-floatDir = 0;
-floatSpd = 6;
+//floatDir = 0;
+//floatSpd = 6;
+
+lifetime = 60 * 25;//25 seconds
+timer = 0;
+destroy = false;
