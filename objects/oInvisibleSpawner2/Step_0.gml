@@ -90,6 +90,7 @@ if timer >= spawnTime && global.zombiesSpawnedThisWave < global.activeEnemyMax &
     }
 }
 
+//if(room != rm_Tutorial_Level && !global.waveInProgress && global.zombiesKilledThisWave >= global.activeEnemyMax && global.zombiesSpawnedThisWave >= global.activeEnemyMax){
 if(!global.waveInProgress && global.zombiesKilledThisWave >= global.activeEnemyMax && global.zombiesSpawnedThisWave >= global.activeEnemyMax){
 //if(global.zombiesKilledThisWave >= global.activeEnemyMax && global.zombiesSpawnedThisWave >= global.activeEnemyMax){//If there are still zombies to kill...
 	//show_debug_message("Wave completion condition met.");
@@ -99,6 +100,7 @@ if(!global.waveInProgress && global.zombiesKilledThisWave >= global.activeEnemyM
 }
 
 //Check if the wave duration has passed and allow starting a new wave.
+//if(room != rm_Tutorial_Level && global.waveInProgress){
 if global.waveInProgress{
     global.timeSinceLastWave++;
     // Display a message for wave completion

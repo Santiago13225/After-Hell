@@ -127,6 +127,26 @@ if(menu_level == 6 && pos == 1){//Check if in the Settings menu and the second o
     }
 }
 
+//Detect entering main menu
+if(!variable_instance_exists(id, "prev_menu_level")) {
+    prev_menu_level = menu_level;
+}
+
+if(menu_level == 0 && prev_menu_level != 0) {
+	//We just ENTERED the main menu, so reset everything
+	//Reset preset
+	global.matchPresetIndex = 0;
+	preset_index = 0;
+	option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+	//Reset perk
+	global.perkIndex = 0;
+	perk_index = 0;
+	option[3,0] = "  Perk: " + perk_names[perk_index] + "  ";
+}
+
+//Update previous menu level
+prev_menu_level = menu_level;
+
 //Preset selection (Survival Mode preset page)
 if(menu_level == 2 && pos == 0){
 	if(left_key){
@@ -144,6 +164,24 @@ if(menu_level == 2 && pos == 0){
 		}
 	}
 	option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+}
+
+if(menu_level == 3 && pos == 0){
+	if(left_key){
+		perk_index--;
+		arrowLeftAnim = 1;
+		if(perk_index < 0){
+			perk_index = array_length(perk_names) - 1;
+		}
+	}
+	if(right_key){
+		perk_index++;
+		arrowRightAnim = 1;
+		if(perk_index >= array_length(perk_names)){
+			perk_index = 0;
+		}
+	}
+	option[3,0] = "  Perk: " + perk_names[perk_index] + "  ";
 }
 
 //Store number of options in current menu
@@ -185,8 +223,10 @@ if accept_key{
 			{
 				//Story Mode
 				case 0:
-					//global.matchPresetIndex = 0;
+					global.matchPresetIndex = 0;
+					//preset_index = 0;
 					global.perkIndex = 0;
+					//perk_index = 0;
 					global.firerate = false;
 					global.energyshield = false;
 					global.juggernaut = false;
@@ -208,12 +248,11 @@ if accept_key{
 					break;
 				//Survival Mode
 				case 1:
-					global.matchPresetIndex = 0;
-					preset_index = 0;//sync local variable
-					option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+					//global.matchPresetIndex = 0;
+					//preset_index = 0;//sync local variable
+					//option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
 					menu_level = 2;
-					//Instead of switching menu pages, destroy the title menu
-					//and create the carousel menu object.
+					//Instead of switching menu pages, destroy the title menu and create the carousel menu object.
 					//instance_destroy();
 					//instance_create_layer(0, 0, "Instances", oSettingsCarouselMenu);
 					break;
@@ -258,11 +297,11 @@ if accept_key{
 			}
 			break;
 
-		//Levels
+		//Presets
 		case 2:
 			switch(pos)
 			{
-				//Preset option (does nothing on accept)
+				//Preset option
 				case 0:
 					pos = 1;
 					break;
@@ -270,8 +309,9 @@ if accept_key{
 				case 1:
 					//Store selected preset
 					global.matchPresetIndex = preset_index;
-					instance_destroy();
-					instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
+					menu_level = 3;
+					//instance_destroy();
+					//instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
 					break;
 				//Go Back to Main Menu
 				case 2:
@@ -281,39 +321,61 @@ if accept_key{
 			}
 			break;
 
+		//Perks
 		case 3:
 			switch(pos)
 			{
-				//Island
+				//Perk option
 				case 0:
-					TransitionStart(rm_TM5, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_Island_Level1, sqFadeOut, sqFadeIn);
+					pos = 1;
 					break;
-				//Casino
+				//Next, go to map carousel menu
 				case 1:
-					TransitionStart(rm_TM6, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_Casino_Level1, sqFadeOut, sqFadeIn);
+					//Store selected perk
+					global.perkIndex = perk_index;
+					
+					//Apply perk effects(same as carousel)
+					switch(global.perkIndex){
+						case 0: break;
+						case 1: global.firerate = true; break;
+						case 2: global.energyshield = true; break;
+						case 3: global.juggernaut = true; break;
+						case 4: global.speed = true; break;
+						case 5: global.luck = true; break;
+						case 6: global.magnet = true; break;
+						case 7: global.flakjacket = true; break;
+
+						case 8:
+							global.firerate = true;
+							global.energyshield = true;
+							global.juggernaut = true;
+							global.speed = true;
+							global.luck = true;
+							global.magnet = true;
+							global.flakjacket = true;
+							break;
+
+						case 9:
+							global.instakill = true;
+							global.badluck = true;
+							global.lowspeed = true;
+							global.slowfirerate = true;
+							break;
+
+						case 10: global.instakill = true; break;
+						case 11: global.badluck = true; break;
+						case 12: global.lowspeed = true; break;
+						case 13: global.weakness = true; break;
+						case 14: global.nomedkit = true; break;
+						case 15: global.slowfirerate = true; break;
+					}
+
+					instance_destroy();
+					instance_create_layer(0, 0, "Instances", oCarouselMenu);
 					break;
-				//Labyrinth
+				//Go Back to Preset Page
 				case 2:
-					TransitionStart(rm_TM7, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_Labyrinth_Level, sqFadeOut, sqFadeIn);
-					break;
-				//Graveyard
-				case 3:
-					TransitionStart(rm_TM8, sqFadeOut, sqFadeIn);
-					//TransitionStart(rm_Graveyard_Level, sqFadeOut, sqFadeIn);
-					break;
-				//Next Page
-				case 4:
-					menu_level = 4;
-					break;
-				//Back
-				case 5:
 					menu_level = 2;
-					break;
-				case 6:
-					menu_level = 0;
 					break;
 			}
 			break;

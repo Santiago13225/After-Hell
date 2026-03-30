@@ -2,6 +2,21 @@
 /*This object represents the title menu object.*/
 //This event is responsible for setting some variables for the title menu object.
 
+//Initialize all global perk variables to false
+global.firerate = false;
+global.energyshield = false;
+global.juggernaut = false;
+global.speed = false;
+global.luck = false;
+global.magnet = false;
+global.flakjacket = false;
+global.instakill = false;
+global.badluck = false;
+global.lowspeed = false;
+global.weakness = false;
+global.nomedkit = false;
+global.slowfirerate = false;
+
 arrowLeftAnim = 0;
 arrowRightAnim = 0;
 
@@ -33,15 +48,12 @@ option[2, 0] = "  Mode: Standard  ";
 option[2, 1] = "Next Page";
 option[2, 2] = "Back";
 
-//Page 2
-/*option[3, 0] = "Island";
-option[3, 1] = "Casino";
-option[3, 2] = "Labyrinth";
-option[3, 3] = "Graveyard";
-option[3, 4] = "Next Page";
-option[3, 5] = "Previous Page";
-option[3, 6] = "Back";
+//Modifier Menu (Perk Selection)
+option[3, 0] = "  Perk: None  ";
+option[3, 1] = "Next Page";
+option[3, 2] = "Back";
 
+/*
 //Page 3
 option[4, 0] = "Museum";
 option[4, 1] = "Water Station";
@@ -66,7 +78,7 @@ option[6, 2] = "Controls: Keyboard and Mouse";
 // --- Add after your existing control option setup ---
 control_options = ["Controls: Keyboard and Mouse", "Controls: Controller"];
 
-// Determine longest string for the Controls option
+//Determine longest string for the Controls option
 control_longest_text = "";
 for(var i = 0; i < array_length(control_options); i++) {
 	if(string_width(control_options[i]) > string_width(control_longest_text)) {
@@ -74,7 +86,7 @@ for(var i = 0; i < array_length(control_options); i++) {
 	}
 }
 
-// Set the initial control mode based on a global variable
+//Set the initial control mode based on a global variable
 if(global.controllerMode == 0) {
     option[6, 2] = "Controls: Keyboard and Mouse";
 }else {
@@ -101,6 +113,13 @@ if(variable_global_exists("matchPresetIndex")){
 	preset_index = 0;
 }
 
+//Perk system
+if(variable_global_exists("perkIndex")){
+	perk_index = global.perkIndex;
+}else{
+	perk_index = 0;
+}
+
 preset_names = [
 "Standard",
 "Elite Invasion",
@@ -120,7 +139,28 @@ preset_names = [
 "Beginner's Curse"
 ];
 
+perk_names = [
+"None",
+"Rapid Fire",
+"Energy Shield",
+"Toughness",
+"Lightweight",
+"Extra Luck",
+"Magnet",
+"Flak Jacket",
+"Wild Card",
+"Last Stand",
+"Sudden Death",
+"Bad Luck",
+"Sluggish",
+"Weakness",
+"Deprivation",
+"Heavy Trigger"
+];
+
 option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+
+option[3,0] = "  Perk: " + perk_names[perk_index] + "  ";
 
 //Determine longest preset string for menu width locking
 preset_longest_text = "";
@@ -129,5 +169,15 @@ for(var i = 0; i < array_length(preset_names); i++){
 
 	if(string_width(t) > string_width(preset_longest_text)){
 		preset_longest_text = t;
+	}
+}
+
+//Lock width (same idea as presets)
+perk_longest_text = "";
+for(var i = 0; i < array_length(perk_names); i++){
+	var tp = "  Perk: " + perk_names[i] + "  ";
+
+	if(string_width(tp) > string_width(perk_longest_text)){
+		perk_longest_text = tp;
 	}
 }

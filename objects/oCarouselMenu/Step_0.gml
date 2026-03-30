@@ -183,9 +183,12 @@ if(accept_key){
 }
 
 if(back_key){
+	//instance_destroy();
+	//instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
+	//Return to perk select menu
 	instance_destroy();
-	//instance_create_layer(0, 0, "Instances", oTitleMenu2);
-	//instance_create_layer(0, 0, "Instances", oSettingsCarouselMenu);
-	instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
+	var m = instance_create_layer(0, 0, "Instances", oTitleMenu2);
+	m.menu_level = 3;
+	m.pos = 0;
 }
 

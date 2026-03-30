@@ -2,6 +2,12 @@
 /*This object represents a spawner.*/
 //This event is responsible for initializing some spawner values.
 
+usesTierSystem = false;
+presetData = [
+    {type: oZombie, probability: 100}
+];
+maxPresetTier = 0;
+
 depth = -bbox_top;
 isActive = true;
 
@@ -25,6 +31,14 @@ if(!variable_global_exists("waveInProgress")){
 	global.zombiesSpawnedThisWave = 0;
 	global.maxActiveEnemies = 112;//HARD ACTIVE ENEMY CAP
 }
+
+if(room == rm_Tutorial_Level) {
+    global.activeEnemyMax = 6;
+    global.zombiesSpawnedThisWave = 0;
+    global.zombiesKilledThisWave = 0;
+    global.waveInProgress = false;
+}
+
 //waveIncrementTime = 600;//Adjust this value to control the time between each wave increment.
 //waveIncrementTimer = 0;//Keep track of the time passed since the last wave increment.
 //maxTotalEnemies = 999999;//Set your desired maximum total enemies here.
