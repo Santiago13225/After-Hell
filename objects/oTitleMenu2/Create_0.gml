@@ -20,6 +20,9 @@ global.slowfirerate = false;
 arrowLeftAnim = 0;
 arrowRightAnim = 0;
 
+arrowLeftAnim2 = 0;
+arrowRightAnim2 = 0;
+
 width = 64;
 //height = 104;
 height = 32;
@@ -49,9 +52,10 @@ option[2, 1] = "Next Page";
 option[2, 2] = "Back";
 
 //Modifier Menu (Perk Selection)
-option[3, 0] = "  Perk: None  ";
-option[3, 1] = "Next Page";
-option[3, 2] = "Back";
+option[3, 0] = "  Perk 1: None  ";
+option[3, 1] = "  Perk 2: None  ";
+option[3, 2] = "Next Page";
+option[3, 3] = "Back";
 
 /*
 //Page 3
@@ -120,6 +124,13 @@ if(variable_global_exists("perkIndex")){
 	perk_index = 0;
 }
 
+//Perk 2
+if(variable_global_exists("perkIndex2")){
+	perk_index2 = global.perkIndex2;
+}else{
+	perk_index2 = 0;
+}
+
 preset_names = [
 "Standard",
 "Elite Invasion",
@@ -160,7 +171,8 @@ perk_names = [
 
 option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
 
-option[3,0] = "  Perk: " + perk_names[perk_index] + "  ";
+option[3,0] = "  Perk 1: " + perk_names[perk_index] + "  ";
+option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";
 
 //Determine longest preset string for menu width locking
 preset_longest_text = "";
@@ -175,7 +187,7 @@ for(var i = 0; i < array_length(preset_names); i++){
 //Lock width (same idea as presets)
 perk_longest_text = "";
 for(var i = 0; i < array_length(perk_names); i++){
-	var tp = "  Perk: " + perk_names[i] + "  ";
+	var tp = "  Perk 2: " + perk_names[i] + "  ";
 
 	if(string_width(tp) > string_width(perk_longest_text)){
 		perk_longest_text = tp;

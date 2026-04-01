@@ -115,9 +115,13 @@ draw_set_halign(fa_left);
 
 for(var i = 0; i < op_length; i++){
 	var _c = c_white;
-	
-	//Make "Controls" gray if locked
-    if(menu_level == 6 && i == 2 && oControllerIndicator.controller_count == 0) {
+
+	if(menu_level == 3 && i == 1 && perk_index == 0){//Lock Perk 2 visually if Perk 1 is None
+		if(pos == i){
+			draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5);
+		}
+		_c = c_gray;
+	}else if(menu_level == 6 && i == 2 && oControllerIndicator.controller_count == 0) {//Make "Controls" gray if locked
         if(pos == i){
 			draw_sprite_ext(sPixel, 0, x, y + op_border + op_space * i, width, string_height(option[menu_level, i]), 0, c_red, 0.5);
 		}
@@ -134,17 +138,19 @@ for(var i = 0; i < op_length; i++){
 
 //Draw preset arrows
 if(menu_level == 2){
-	var arrowY = y + 14;
+	//var arrowY = y + 14;
 	var leftX = x + 12;
 	var rightX = x + width - 12;
+	
+	var y1 = y + op_border + (op_space * 0) + 6;
 
 	var leftScale = 0.5 + arrowLeftAnim * 0.3;
 	var rightScale = 0.5 + arrowRightAnim * 0.3;
 
-	draw_sprite_ext(sLeftArrow, 0, leftX, arrowY, leftScale, leftScale, 0,
+	draw_sprite_ext(sLeftArrow, 0, leftX, y1, leftScale, leftScale, 0,
 		merge_color(c_white, c_yellow, arrowLeftAnim), 1);
 
-	draw_sprite_ext(sRightArrow, 0, rightX, arrowY, rightScale, rightScale, 0,
+	draw_sprite_ext(sRightArrow, 0, rightX, y1, rightScale, rightScale, 0,
 		merge_color(c_white, c_yellow, arrowRightAnim), 1);
 }
 
@@ -176,24 +182,66 @@ if(menu_level == 2 && pos == 0){
 }
 
 if(menu_level == 3){
-	var arrowY = y + 14;
+	//var arrowY = y + 14;
 	var leftX = x + 12;
 	var rightX = x + width - 12;
-
+	
+	//Row 1 (Perk 1)
+	var y1 = y + op_border + (op_space * 0) + 6;
+	
 	var leftScale = 0.5 + arrowLeftAnim * 0.3;
 	var rightScale = 0.5 + arrowRightAnim * 0.3;
 
-	draw_sprite_ext(sLeftArrow, 0, leftX, arrowY, leftScale, leftScale, 0,
+	draw_sprite_ext(sLeftArrow, 0, leftX, y1, leftScale, leftScale, 0,
 		merge_color(c_white, c_yellow, arrowLeftAnim), 1);
 
-	draw_sprite_ext(sRightArrow, 0, rightX, arrowY, rightScale, rightScale, 0,
+	draw_sprite_ext(sRightArrow, 0, rightX, y1, rightScale, rightScale, 0,
 		merge_color(c_white, c_yellow, arrowRightAnim), 1);
+
+	//Row 2 (Perk 2)
+	var y2 = y + op_border + (op_space * 1) + 6;
+	
+	var leftScale2 = 0.5 + arrowLeftAnim2 * 0.3;
+	var rightScale2 = 0.5 + arrowRightAnim2 * 0.3;
+	
+	draw_sprite_ext(sLeftArrow, 0, leftX, y2, leftScale2, leftScale2, 0,
+		merge_color(c_white, c_yellow, arrowLeftAnim2), 1);
+
+	draw_sprite_ext(sRightArrow, 0, rightX, y2, rightScale2, rightScale2, 0,
+		merge_color(c_white, c_yellow, arrowRightAnim2), 1);
 }
 
 if(menu_level == 3 && pos == 0){
     var description;
 
     switch(perk_index){
+        case 0: description = "No modifiers applied."; break;
+        case 1: description = "Applies a 25% fire rate boost to all weapons."; break;
+        case 2: description = "Gives the player a second health bar that can regenerate over time."; break;
+        case 3: description = "Doubles player health and boosts medkit healing effects."; break;
+        case 4: description = "Increases player movement speed by 25%."; break;
+        case 5: description = "Improves enemy loot drops."; break;
+        case 6: description = "Allows the player to attract nearby loot drops."; break;
+        case 7: description = "Gives the player complete immunity to explosive damage."; break;
+        case 8: description = "Gives the player all beneficial modifiers."; break;
+        case 9: description = "Gives the player all detrimental modifiers."; break;
+        case 10: description = "Player HP set to 1. One hit and it's game over."; break;
+        case 11: description = "No loot drops from enemies."; break;
+        case 12: description = "Reduces player movement speed by 25%."; break;
+        case 13: description = "Halves player health and weakens medkit healing effects."; break;
+        case 14: description = "Disables medkits. No health regeneration allowed."; break;
+        case 15: description = "Applies a 25% fire rate reduction to all weapons."; break;
+    }
+    draw_set_halign(fa_center);
+	draw_set_valign(fa_top);
+    draw_text(x + width/2, y + height + 20, "Modifier Description:\n" + description);
+    draw_set_halign(fa_left);
+}
+
+if(menu_level == 3 && pos == 1){
+    var description;
+
+    switch(perk_index2){
         case 0: description = "No modifiers applied."; break;
         case 1: description = "Applies a 25% fire rate boost to all weapons."; break;
         case 2: description = "Gives the player a second health bar that can regenerate over time."; break;

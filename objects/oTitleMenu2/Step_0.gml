@@ -99,6 +99,9 @@ if is_controller_connected{
 arrowLeftAnim = max(arrowLeftAnim - 0.05, 0);
 arrowRightAnim = max(arrowRightAnim - 0.05, 0);
 
+arrowLeftAnim2 = max(arrowLeftAnim2 - 0.05, 0);
+arrowRightAnim2 = max(arrowRightAnim2 - 0.05, 0);
+
 //Adjust music volume
 if(menu_level == 6 && pos == 0)//Check if in the Settings menu and the first option (music)
 {
@@ -138,10 +141,14 @@ if(menu_level == 0 && prev_menu_level != 0) {
 	global.matchPresetIndex = 0;
 	preset_index = 0;
 	option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
-	//Reset perk
+	//Reset perk 1
 	global.perkIndex = 0;
 	perk_index = 0;
-	option[3,0] = "  Perk: " + perk_names[perk_index] + "  ";
+	option[3,0] = "  Perk 1: " + perk_names[perk_index] + "  ";
+	//Reset perk 2
+	global.perkIndex2 = 0;
+	perk_index2 = 0;
+	option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";
 }
 
 //Update previous menu level
@@ -181,7 +188,52 @@ if(menu_level == 3 && pos == 0){
 			perk_index = 0;
 		}
 	}
-	option[3,0] = "  Perk: " + perk_names[perk_index] + "  ";
+	option[3,0] = "  Perk 1: " + perk_names[perk_index] + "  ";
+	
+	// --- Reset Perk 2 whenever Perk 1 changes ---
+	if(perk_index == 0){
+		//Perk 1 is "None" -> force Perk 2 to "None"
+		perk_index2 = 0;
+	}else if(perk_index2 == perk_index){
+		//Perk 2 is same as Perk 1 -> move it to "None"
+		perk_index2 = 0;
+	}
+	option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";
+}
+
+if(menu_level == 3 && pos == 1){
+	//Only allow changing if Perk 1 is NOT "None"
+	if(perk_index != 0){
+		if(left_key){
+			perk_index2--;
+			arrowLeftAnim2 = 1;
+			if(perk_index2 < 0){
+				perk_index2 = array_length(perk_names) - 1;
+			}
+			//Skip Perk 1
+			if(perk_index2 == perk_index){
+				perk_index2--;
+				if(perk_index2 < 0) perk_index2 = array_length(perk_names) - 1;
+			}
+		}
+		if(right_key){
+			perk_index2++;
+			arrowRightAnim2 = 1;
+			if(perk_index2 >= array_length(perk_names)){
+				perk_index2 = 0;
+			}
+			// Skip Perk 1
+			if(perk_index2 == perk_index){
+				perk_index2++;
+				if(perk_index2 >= array_length(perk_names)) perk_index2 = 0;
+			}
+		}
+	}else {
+		//Perk 1 is "None", Perk 2 must be "None"
+		perk_index2 = 0;
+	}
+
+	option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";
 }
 
 //Store number of options in current menu
@@ -226,6 +278,7 @@ if accept_key{
 					global.matchPresetIndex = 0;
 					//preset_index = 0;
 					global.perkIndex = 0;
+					global.perkIndex2 = 0;
 					//perk_index = 0;
 					global.firerate = false;
 					global.energyshield = false;
@@ -325,16 +378,21 @@ if accept_key{
 		case 3:
 			switch(pos)
 			{
-				//Perk option
+				//Perk option 1
 				case 0:
 					pos = 1;
 					break;
-				//Next, go to map carousel menu
+				//Perk option 2
 				case 1:
-					//Store selected perk
+					pos = 2;
+					break;
+				//Next, go to map carousel menu
+				case 2:
+					//Store selected perks
 					global.perkIndex = perk_index;
+					global.perkIndex2 = perk_index2;
 					
-					//Apply perk effects(same as carousel)
+					//Apply perk effect 1(same as carousel)
 					switch(global.perkIndex){
 						case 0: break;
 						case 1: global.firerate = true; break;
@@ -344,7 +402,6 @@ if accept_key{
 						case 5: global.luck = true; break;
 						case 6: global.magnet = true; break;
 						case 7: global.flakjacket = true; break;
-
 						case 8:
 							global.firerate = true;
 							global.energyshield = true;
@@ -354,14 +411,45 @@ if accept_key{
 							global.magnet = true;
 							global.flakjacket = true;
 							break;
-
 						case 9:
 							global.instakill = true;
 							global.badluck = true;
 							global.lowspeed = true;
 							global.slowfirerate = true;
 							break;
-
+						case 10: global.instakill = true; break;
+						case 11: global.badluck = true; break;
+						case 12: global.lowspeed = true; break;
+						case 13: global.weakness = true; break;
+						case 14: global.nomedkit = true; break;
+						case 15: global.slowfirerate = true; break;
+					}
+					
+					//Apply perk effect 2(same as carousel)
+					switch(global.perkIndex2){
+						case 0: break;
+						case 1: global.firerate = true; break;
+						case 2: global.energyshield = true; break;
+						case 3: global.juggernaut = true; break;
+						case 4: global.speed = true; break;
+						case 5: global.luck = true; break;
+						case 6: global.magnet = true; break;
+						case 7: global.flakjacket = true; break;
+						case 8:
+							global.firerate = true;
+							global.energyshield = true;
+							global.juggernaut = true;
+							global.speed = true;
+							global.luck = true;
+							global.magnet = true;
+							global.flakjacket = true;
+							break;
+						case 9:
+							global.instakill = true;
+							global.badluck = true;
+							global.lowspeed = true;
+							global.slowfirerate = true;
+							break;
 						case 10: global.instakill = true; break;
 						case 11: global.badluck = true; break;
 						case 12: global.lowspeed = true; break;
@@ -374,7 +462,7 @@ if accept_key{
 					instance_create_layer(0, 0, "Instances", oCarouselMenu);
 					break;
 				//Go Back to Preset Page
-				case 2:
+				case 3:
 					menu_level = 2;
 					break;
 			}
