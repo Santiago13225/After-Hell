@@ -118,7 +118,7 @@ var spacing = 8;//Padding between icons
 //var hudY = display_get_gui_height();
 
 //Draw match setting icon to the left of the modifier
-if(room != rm_Mission0_2){
+/*if(room != rm_Mission0_2){
 	if(instance_exists(oPlayer)){
 		if(global.matchPresetIndex != -1) {
 		    var presetSprite = sSettingsCarouselMenu;
@@ -129,14 +129,28 @@ if(room != rm_Mission0_2){
 		        iconScale, iconScale, 0, c_white, 1);
 		}
 	}
-}
+}*/
 
-//Draw modifier icon
+//Draw modifier icon to the left of the 2nd modifier
 if(room != rm_Mission0_2){
 	if(instance_exists(oPlayer)){
 		if(global.perkIndex != -1) {
 		    var modSprite = sPerksCarouselMenu;
 		    var modIndex = global.perkIndex;
+		    draw_sprite_ext(modSprite, modIndex, 
+		        56, 
+		        64 + 136, 
+		        iconScale, iconScale, 0, c_white, 1);
+		}
+	}
+}
+
+//Draw 2nd modifier icon
+if(room != rm_Mission0_2){
+	if(instance_exists(oPlayer)){
+		if(global.perkIndex2 != -1) {
+		    var modSprite = sPerksCarouselMenu;
+		    var modIndex = global.perkIndex2;
 		    draw_sprite_ext(modSprite, modIndex, 
 		        56 + (iconSize * iconScale) + spacing, 
 		        64 + 136, 

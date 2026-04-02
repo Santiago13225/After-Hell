@@ -112,8 +112,32 @@ switch(global.perkIndex) {
     default: modifierText = "???"; break;
 }
 
-//Draw the selected modifier label below the map menu
-draw_text_transformed(menu_x, menu_y + menu_height / 2 + 95, "Modifier: " + modifierText, 1, 1, 0);
+var modifierText2;
+switch(global.perkIndex2) {
+    case 0: modifierText2 = "None"; break;
+    case 1: modifierText2 = "Rapid Fire"; break;
+    case 2: modifierText2 = "Energy Shield"; break;
+    case 3: modifierText2 = "Toughness"; break;
+    case 4: modifierText2 = "Lightweight"; break;
+    case 5: modifierText2 = "Extra Luck"; break;
+	case 6: modifierText2 = "Magnet"; break;
+    case 7: modifierText2 = "Flak Jacket"; break;
+    case 8: modifierText2 = "Wild Card"; break;
+	case 9: modifierText2 = "Last Stand"; break;
+    case 10: modifierText2 = "Sudden Death"; break;
+    case 11: modifierText2 = "Bad Luck"; break;
+    case 12: modifierText2 = "Sluggish"; break;
+    case 13: modifierText2 = "Weakness"; break;
+    case 14: modifierText2 = "Deprivation"; break;
+    case 15: modifierText2 = "Heavy Trigger"; break;
+    default: modifierText2 = "???"; break;
+}
+
+draw_text_transformed(menu_x, menu_y + menu_height / 2 + 90, "Modifier 1: " + modifierText + " | Modifier 2: " + modifierText2, 1, 1, 0);
+
+//Draw the selected modifier labels below the map menu
+//draw_text_transformed(menu_x, menu_y + menu_height / 2 + 90, "Modifier 1: " + modifierText, 1, 1, 0);
+//draw_text_transformed(menu_x, menu_y + menu_height / 2 + 105, "Modifier 2: " + modifierText2, 1, 1, 0);
 
 //Draw match setting label below the modifiers menu
 var matchText;
@@ -138,7 +162,7 @@ switch(global.matchPresetIndex) {
 }
 
 //Draw Match Setting Name Below the Menu
-draw_text_transformed(menu_x, menu_y + menu_height / 2 + 115, "Game Mode: " + matchText, 1, 1, 0);
+draw_text_transformed(menu_x, menu_y + menu_height / 2 + 105, "Game Mode: " + matchText, 1, 1, 0);
 
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);

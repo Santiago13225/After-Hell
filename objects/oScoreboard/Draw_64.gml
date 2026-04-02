@@ -109,7 +109,30 @@ switch(global.perkIndex) {
     case 15: modifierText = "Heavy Trigger"; break;
     default: modifierText = "???"; break;
 }
-draw_text_transformed(160 * 3, (90 * 3) + 30, "Modifier: " + modifierText, 3, 3, 0);
+
+var modifierText2;
+switch(global.perkIndex2) {
+    case 0: modifierText2 = "None"; break;
+    case 1: modifierText2 = "Rapid Fire"; break;
+    case 2: modifierText2 = "Energy Shield"; break;
+    case 3: modifierText2 = "Toughness"; break;
+    case 4: modifierText2 = "Lightweight"; break;
+    case 5: modifierText2 = "Extra Luck"; break;
+	case 6: modifierText2 = "Magnet"; break;
+    case 7: modifierText2 = "Flak Jacket"; break;
+    case 8: modifierText2 = "Wild Card"; break;
+	case 9: modifierText2 = "Last Stand"; break;
+    case 10: modifierText2 = "Sudden Death"; break;
+    case 11: modifierText2 = "Bad Luck"; break;
+    case 12: modifierText2 = "Sluggish"; break;
+    case 13: modifierText2 = "Weakness"; break;
+    case 14: modifierText2 = "Deprivation"; break;
+    case 15: modifierText2 = "Heavy Trigger"; break;
+    default: modifierText2 = "???"; break;
+}
+
+//draw_text_transformed(160 * 3, (90 * 3) + 30, "Modifier: " + modifierText, 3, 3, 0);
+draw_text_transformed(160 * 3, (90 * 3) + 30, "Mod 1: " + modifierText + ", Mod 2: " +  modifierText2, 3, 3, 0);
 
 //Ensure the map sprite icon variable exists for tutorial level
 if(room == rm_Tutorial_Level){
@@ -128,15 +151,21 @@ if(global.selectedMapSprite != undefined) {
 }
 
 //Draw the selected mode icon
-if(global.matchPresetIndex != undefined) {
+/*if(global.matchPresetIndex != undefined) {
 	//draw_sprite_ext(sSettingsCarouselMenu, global.matchPresetIndex, 320 * 3 + (32 * 3) + 30, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
 	draw_sprite_ext(sSettingsCarouselMenu, global.matchPresetIndex, 320 * 3, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
-}
+}*/
 
-//Draw the selected modifier icon
+//Draw the 1st selected modifier icon
 if(global.perkIndex != undefined) {
 	//draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, 320 * 3 + (32 * 3) + 30, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
-	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, 480 * 3 - (32 * 3) - 60, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
+	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, 320 * 3, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
+}
+
+//Draw the 2nd selected modifier icon
+if(global.perkIndex2 != undefined) {
+	//draw_sprite_ext(sPerksCarouselMenu, global.perkIndex, 320 * 3 + (32 * 3) + 30, (90 * 3) + (32 * 3) + 80, 3, 3, 0, c_white, 1);
+	draw_sprite_ext(sPerksCarouselMenu, global.perkIndex2, 480 * 3 - (32 * 3) - 60, (90 * 3) + (32 * 3) + 78, 3, 3, 0, c_white, 1);
 }
 
 //Draw stats for single player

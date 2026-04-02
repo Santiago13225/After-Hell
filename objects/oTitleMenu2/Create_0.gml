@@ -52,8 +52,8 @@ option[2, 1] = "Next Page";
 option[2, 2] = "Back";
 
 //Modifier Menu (Perk Selection)
-option[3, 0] = "  Perk 1: None  ";
-option[3, 1] = "  Perk 2: None  ";
+option[3, 0] = "  Mod 1: None  ";
+option[3, 1] = "  Mod 2: None  ";
 option[3, 2] = "Next Page";
 option[3, 3] = "Back";
 
@@ -169,10 +169,31 @@ perk_names = [
 "Heavy Trigger"
 ];
 
+//perk incompatibility list (index corresponds to perk_names)
+//each element is an array of perk indices that cannot be selected together with this perk
+perk_incompatibility = [
+	[],													//0 - None
+	[15, 8, 9],											//1 - Rapid Fire, incompatible with Heavy Trigger, Wild Card, Last Stand
+	[8],												//2 - Energy Shield, incompatible with Wild Card
+	[13, 10, 8, 9],										//3 - Toughness, incompatible with Weakness, Sudden Death, Wild Card, Last Stand
+	[12, 8, 9],											//4 - Lightweight, incompatible with Sluggish, Wild Card, Last Stand
+	[11, 8, 9],											//5 - Extra Luck, incompatible with Bad Luck, Wild Card, Last Stand,
+	[11, 8, 9],											//6 - Magnet, incompatible with Bad Luck, Wild Card, Last Stand
+	[8],												//7 - Flak Jacket, incompatible with Wild Card
+	[1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15],	//8 - Wild Card, incompatible with Rapid Fire, Energy Shield, Toughness, Lightweight, Extra Luck, Magnet, Flak Jacket, Last Stand, Sudden Death, Bad Luck, Sluggish, Weakness, Deprivation, Heavy Trigger
+	[1, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14, 15],			//9 - Last Stand, incompatible with Rapid Fire, Toughness, Lightweight, Extra Luck, Magnet, Wild Card, Sudden Death, Bad Luck, Sluggish, Weakness, Deprivation, Heavy Trigger
+	[3, 8, 9, 13, 14],									//10 - Sudden Death, incompatible with Toughness, Wild Card, Last Stand, Weakness, Deprivation
+	[5, 6, 8, 9],										//11 - Bad Luck, incompatible with Extra Luck, Magnet, Wild Card, Last Stand
+	[4, 8, 9],											//12 - Sluggish, incompatible with Lightweight, Wild Card, Last Stand
+	[3, 8, 9, 10],										//13 - Weakness, incompatible with Toughness, Wild Card, Last Stand, Sudden Death
+	[8, 9],												//14 - Deprivation, incompatible with Wild Card, Last Stand
+	[1, 8, 9]											//15 - Heavy Trigger, incompatible with Rapid Fire, Wild Card, Last Stand
+];
+
 option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
 
-option[3,0] = "  Perk 1: " + perk_names[perk_index] + "  ";
-option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";
+option[3,0] = "  Mod 1: " + perk_names[perk_index] + "  ";
+option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";
 
 //Determine longest preset string for menu width locking
 preset_longest_text = "";
@@ -187,9 +208,11 @@ for(var i = 0; i < array_length(preset_names); i++){
 //Lock width (same idea as presets)
 perk_longest_text = "";
 for(var i = 0; i < array_length(perk_names); i++){
-	var tp = "  Perk 2: " + perk_names[i] + "  ";
+	var tp = "  Mod 2: " + perk_names[i] + "  ";
 
 	if(string_width(tp) > string_width(perk_longest_text)){
 		perk_longest_text = tp;
 	}
 }
+
+perk_index_prev = perk_index;//usually in menu create event

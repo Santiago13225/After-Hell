@@ -119,7 +119,11 @@ if(global.luck){
 			}
 		}
 		if _chance > 91 && _chance <= 100{//% chance of drop
-			instance_create_depth(x + dx, y + dy, depth, oMedkit);//Create .
+			if(global.instakill || global.nomedkit){
+				instance_create_depth(x, y, depth, oGreenbacks);//Create .
+			}else {
+				instance_create_depth(x + dx, y + dy, depth, oMedkit);//Create .
+			}
 		}
 	}
 }else if(global.badluck){

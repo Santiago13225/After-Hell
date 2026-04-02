@@ -16,6 +16,7 @@ if(instance_exists(oTextbox2)){
 up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
 down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
 accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter);
+back_key = keyboard_check_pressed(vk_backspace);
 
 //Get inputs for volume control
 left_key = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));
@@ -31,6 +32,7 @@ if is_controller_connected{
 	left_key |= gamepad_button_check_pressed(_gamePad, gp_padl);
 	right_key |= gamepad_button_check_pressed(_gamePad, gp_padr);
 	accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
+	back_key |= gamepad_button_check_pressed(_gamePad, gp_face2);// B / Circle
 	
 	//Stick settings
 	var deadzone = 0.5;//threshold
@@ -122,6 +124,15 @@ if(menu_level == 1) {
             option[1, 2] = "Controls: Controller";
         }
     }
+}
+
+if(back_key && menu_level != 0) {
+	switch(menu_level) {
+		case 1: menu_level = 0; break;
+		//case 2: menu_level = 0; break;
+	}
+	pos = 0;//reset cursor position
+	op_length = array_length(option[menu_level]);// <-- ADD THIS LINE
 }
 
 //Using the options

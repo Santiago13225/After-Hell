@@ -6,6 +6,16 @@
 up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
 down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
 accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter);
+back_key = keyboard_check_pressed(vk_backspace);
+
+// --- TRACK PERK 1 CHANGES AND RESET PERK 2 ---
+if(!variable_instance_exists(id, "perk_index_prev")) perk_index_prev = perk_index;
+
+if(perk_index != perk_index_prev) {
+	perk_index2 = 0;//always reset Perk 2 to None
+	option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";//update text
+	perk_index_prev = perk_index;//store new Perk 1 value
+}
 
 //Get inputs for volume control
 left_key = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));
@@ -21,6 +31,7 @@ if is_controller_connected{
 	left_key |= gamepad_button_check_pressed(_gamePad, gp_padl);
 	right_key |= gamepad_button_check_pressed(_gamePad, gp_padr);
 	accept_key |= gamepad_button_check_pressed(_gamePad, gp_face1);
+	back_key |= gamepad_button_check_pressed(_gamePad, gp_face2);// B / Circle
 	
 	/*// --- Analog stick support ---
 	var deadzone = 0.5;//tweak as needed (0.3–0.5 works well) - how far the stick must be pushed to count
@@ -144,11 +155,11 @@ if(menu_level == 0 && prev_menu_level != 0) {
 	//Reset perk 1
 	global.perkIndex = 0;
 	perk_index = 0;
-	option[3,0] = "  Perk 1: " + perk_names[perk_index] + "  ";
+	option[3,0] = "  Mod 1: " + perk_names[perk_index] + "  ";
 	//Reset perk 2
 	global.perkIndex2 = 0;
 	perk_index2 = 0;
-	option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";
+	option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";
 }
 
 //Update previous menu level
@@ -188,9 +199,9 @@ if(menu_level == 3 && pos == 0){
 			perk_index = 0;
 		}
 	}
-	option[3,0] = "  Perk 1: " + perk_names[perk_index] + "  ";
+	option[3,0] = "  Mod 1: " + perk_names[perk_index] + "  ";
 	
-	// --- Reset Perk 2 whenever Perk 1 changes ---
+	/*// --- Reset Perk 2 whenever Perk 1 changes ---
 	if(perk_index == 0){
 		//Perk 1 is "None" -> force Perk 2 to "None"
 		perk_index2 = 0;
@@ -198,13 +209,48 @@ if(menu_level == 3 && pos == 0){
 		//Perk 2 is same as Perk 1 -> move it to "None"
 		perk_index2 = 0;
 	}
-	option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";
+	option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";*/
 }
 
 if(menu_level == 3 && pos == 1){
-	//Only allow changing if Perk 1 is NOT "None"
-	if(perk_index != 0){
+	//Only allow changing if Perk 1 is NOT "None" or "Wild Card"
+	if(perk_index != 0 && perk_index != 8){
+		var dir = 0;
 		if(left_key){
+			dir = -1;
+			arrowLeftAnim2 = 1;
+		}
+		if(right_key){
+			dir = 1;
+			arrowRightAnim2 = 1;
+		}
+		if(dir != 0){
+			var start_index = perk_index2;
+			repeat(array_length(perk_names)){
+				//Move ONE step in chosen direction
+				perk_index2 += dir;
+				//Wrap properly
+				if(perk_index2 < 0){
+					perk_index2 = array_length(perk_names) - 1;
+				}
+				if(perk_index2 >= array_length(perk_names)){
+					perk_index2 = 0;
+				}
+				//Skip duplicate
+				if(perk_index2 == perk_index){
+					continue;
+				}
+				//Skip incompatible
+				if(array_contains(perk_incompatibility[perk_index], perk_index2)){
+					continue;
+				}
+				//VALID perk found → stop
+				break;
+			}
+		}
+
+#region
+		/*if(left_key){
 			perk_index2--;
 			arrowLeftAnim2 = 1;
 			if(perk_index2 < 0){
@@ -222,18 +268,19 @@ if(menu_level == 3 && pos == 1){
 			if(perk_index2 >= array_length(perk_names)){
 				perk_index2 = 0;
 			}
-			// Skip Perk 1
+			//Skip Perk 1
 			if(perk_index2 == perk_index){
 				perk_index2++;
 				if(perk_index2 >= array_length(perk_names)) perk_index2 = 0;
 			}
-		}
+		}*/
+#endregion
 	}else {
 		//Perk 1 is "None", Perk 2 must be "None"
 		perk_index2 = 0;
 	}
 
-	option[3,1] = "  Perk 2: " + perk_names[perk_index2] + "  ";
+	option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";
 }
 
 //Store number of options in current menu
@@ -261,6 +308,20 @@ if(menu_level == 6) {
             option[6, 2] = "Controls: Controller";
         }
     }
+}
+
+if(back_key && menu_level != 0) {
+	switch(menu_level) {
+		case 1: menu_level = 0; break;
+		case 2: menu_level = 0; break;
+		case 3: menu_level = 2; break;
+		case 4: menu_level = 0; break;
+		case 5: menu_level = 0; break;
+		case 6: menu_level = 0; break;
+		case 7: menu_level = 0; break;
+	}
+	pos = 0;//reset cursor position
+	op_length = array_length(option[menu_level]);// <-- ADD THIS LINE
 }
 
 //Using the options
@@ -301,9 +362,18 @@ if accept_key{
 					break;
 				//Survival Mode
 				case 1:
-					//global.matchPresetIndex = 0;
-					//preset_index = 0;//sync local variable
-					//option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+					//Reset preset
+					global.matchPresetIndex = 0;
+					preset_index = 0;
+					option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
+					//Reset perk 1
+					global.perkIndex = 0;
+					perk_index = 0;
+					option[3,0] = "  Mod 1: " + perk_names[perk_index] + "  ";
+					//Reset perk 2
+					global.perkIndex2 = 0;
+					perk_index2 = 0;
+					option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";
 					menu_level = 2;
 					//Instead of switching menu pages, destroy the title menu and create the carousel menu object.
 					//instance_destroy();
