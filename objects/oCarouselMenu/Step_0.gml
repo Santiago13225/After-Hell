@@ -4,6 +4,13 @@ accept_key = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter
 left_key = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));
 right_key = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"));
 
+// --- Update input device status ---
+if(gamepad_is_connected(0)){
+	global.controllerMode = 1;//Controller detected
+}else{
+	global.controllerMode = 0;//No controller, use keyboard/mouse
+}
+
 //Controller inputs
 var _gamePad = 0;
 var is_controller_connected = gamepad_is_connected(_gamePad);
@@ -172,7 +179,7 @@ if(accept_key){
 		case 18:
 			global.screenShake = true;
 			oHUD2.playerTotalScore = 500;
-			TransitionStart(rm_TM19_2, sqFadeOut, sqFadeIn);
+			TransitionStart(rm_TM19, sqFadeOut, sqFadeIn);
 			break;
 		case 19:
 			global.screenShake = true;
@@ -191,4 +198,3 @@ if(back_key){
 	m.menu_level = 3;
 	m.pos = 0;
 }
-

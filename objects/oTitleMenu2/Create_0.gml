@@ -77,10 +77,10 @@ option[5, 2] = "Back";*/
 //option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
-option[6, 2] = "Controls: Keyboard and Mouse";
+option[6, 2] = "Input: Keyboard and Mouse";
 
 // --- Add after your existing control option setup ---
-control_options = ["Controls: Keyboard and Mouse", "Controls: Controller"];
+control_options = ["Input: Keyboard and Mouse", "Input: Controller"];
 
 //Determine longest string for the Controls option
 control_longest_text = "";
@@ -92,9 +92,9 @@ for(var i = 0; i < array_length(control_options); i++) {
 
 //Set the initial control mode based on a global variable
 if(global.controllerMode == 0) {
-    option[6, 2] = "Controls: Keyboard and Mouse";
+    option[6, 2] = "Input: Keyboard and Mouse";
 }else {
-    option[6, 2] = "Controls: Controller";
+    option[6, 2] = "Input: Controller";
 }
 //if global.controllerMode == 0 option[6, 2] = "Controls: Controller"; else option[6, 2] = "Controls: Keyboard";
 option[6, 3] = "Back";

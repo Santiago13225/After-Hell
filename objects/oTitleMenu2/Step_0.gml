@@ -299,13 +299,13 @@ if(menu_level == 6) {
     if(oControllerIndicator.controller_count == 0) {
         //Lock to Keyboard
         global.controllerMode = 0;
-        option[6, 2] = "Controls: Keyboard and Mouse";
+        option[6, 2] = "Input: Keyboard and Mouse";
     }else {
         //Unlock - keep the toggleable text
         if(global.controllerMode == 0) {
-            option[6, 2] = "Controls: Keyboard and Mouse";
+            option[6, 2] = "Input: Keyboard and Mouse";
         }else {
-            option[6, 2] = "Controls: Controller";
+            option[6, 2] = "Input: Controller";
         }
     }
 }
@@ -616,10 +616,10 @@ if accept_key{
 					//Controller option
 					if(oControllerIndicator.controller_count != 0) {//only allow toggle if unlocked
 						if global.controllerMode == 0{
-							option[6, 2] = "Controls: Controller";
+							option[6, 2] = "Input: Controller";
 							global.controllerMode = 1;
 						}else{
-							option[6, 2] = "Controls: Keyboard and Mouse";
+							option[6, 2] = "Input: Keyboard and Mouse";
 							global.controllerMode = 0;
 						}
 					}
