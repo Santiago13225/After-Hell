@@ -19,7 +19,7 @@ var spacing = 8;//Padding between icons
 
 //Ensure the map sprite icon variable exists for tutorial and sandbox levels
 if(!variable_global_exists("selectedMapSprite")) {
-    global.selectedMapSprite = 12;//13th frame
+    global.selectedMapSprite = 19;//20th frame
 }
 
 draw_sprite_ext(sScoreboardScreen, 0, _cX, _cY, 1, 1, 0, c_white, alpha);
@@ -132,12 +132,12 @@ draw_text_transformed(_cX + 160, _cY + 90 + 10, "Mod 1: " + modifierText + ", Mo
 
 //Ensure the map sprite icon variable exists for tutorial level
 if(room == rm_Tutorial_Level){
-	global.selectedMapSprite = 12;//13th frame
+	global.selectedMapSprite = 19;//20th frame
 }
 
 //Ensure the map sprite icon variable exists for sandbox level
 if(room == rm_Mission0_2){
-	global.selectedMapSprite = 12;//13th frame
+	global.selectedMapSprite = 19;//20th frame
 }
 
 //Draw the selected map icon

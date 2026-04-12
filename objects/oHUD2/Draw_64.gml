@@ -15,12 +15,12 @@ if(instance_exists(oPlayer)){
 		var _ecHudX = 8 * 3;
 		var _ecHudY = (8 * 3) + _enemyCountOffset;
 		//Draw the wave
-		draw_sprite_ext(sWaveCountHUD, 0, 8 * 3, 8 * 3, 3, 3, 0, c_white, 1);
+		draw_sprite_ext(sWaveCountHUD2, 0, 8 * 3, 8 * 3, 3, 3, 0, c_white, 1);
 		var _waveString = "Wave " + string(global.currentWave);//Set wave string.
 		//draw_text(5 + 18, 5 + 2, _waveString);//Print wave string.
 		draw_text_transformed((8 * 3) + (18 * 3), (8 * 3) + (2 * 3), _waveString, 3, 3, 0);
 		//Draw the enemy kill count
-		draw_sprite_ext(sEnemyCountHUD, 0, _ecHudX, _ecHudY, 3, 3, 0, c_white, 1);//Draw the background/box.
+		draw_sprite_ext(sEnemyCountHUD2, 0, _ecHudX, _ecHudY, 3, 3, 0, c_white, 1);//Draw the background/box.
 		//Draw the text
 		//draw_set_halign(fa_left);
 		//draw_set_valign(fa_top);

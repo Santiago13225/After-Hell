@@ -17,9 +17,9 @@ if!(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance
 
 	//Draw HP
 	var _healthPercent = oPlayer.hp / oPlayer.maxHp;
-	var _hpImage = _healthPercent * (sprite_get_number(sPlayerHealth) - 1);
+	var _hpImage = _healthPercent * (sprite_get_number(sPlayerHealth2) - 1);
 	//draw_sprite_ext(sPlayerHealth, _hpImage, x, y - sprite_height - 1, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-	draw_sprite_ext(sPlayerHealth, _hpImage, _wx/2 + (dx * 3), _wy/2 + (dy * 3) - (sprite_height * 3) - 3, image_xscale * 3, image_yscale * 3, image_angle, image_blend, image_alpha);
+	draw_sprite_ext(sPlayerHealth2, _hpImage, _wx/2 + (dx * 3), _wy/2 + (dy * 3) - (sprite_height * 3) - 3, image_xscale * 3, image_yscale * 3, image_angle, image_blend, image_alpha);
 
 	//draw_sprite_ext(sPlayerHealth, _hpImage, oPlayer.x, _wy/2 - (sprite_height * 3) - 3, image_xscale * 3, image_yscale * 3, image_angle, image_blend, image_alpha);
 	draw_set_halign(fa_center);
@@ -33,8 +33,8 @@ if!(instance_exists(oPauseMenu2) || instance_exists(oVictoryScreen2) || instance
 		if(maxShield > 0) {
 			var _shieldRatio = oPlayer.shield / oPlayer.maxShield;
 			//_shieldRatio = clamp(_shieldRatio, 0, 1);
-			var _shImage = _shieldRatio * (sprite_get_number(sPlayerShield) - 1);
-			draw_sprite_ext(sPlayerShield, _shImage, _wx/2 + (dx * 3), _wy/2 + (dy * 3) + (sprite_height) - (5 * 3), image_xscale * 3, image_yscale * 3, image_angle, image_blend, image_alpha);//48 = below HP bar
+			var _shImage = _shieldRatio * (sprite_get_number(sPlayerShield2) - 1);
+			draw_sprite_ext(sPlayerShield2, _shImage, _wx/2 + (dx * 3), _wy/2 + (dy * 3) + (sprite_height) - (5 * 3), image_xscale * 3, image_yscale * 3, image_angle, image_blend, image_alpha);//48 = below HP bar
 			draw_text_transformed(_wx/2 + (dx * 3), _wy/2 + (dy * 3) + (sprite_height) - (3 * 3), string(shield), (.6 * 3), (.6 * 3), 0);
 		}
 	}

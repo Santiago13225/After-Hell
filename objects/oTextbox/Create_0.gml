@@ -11,7 +11,7 @@ textbox_height = 64;//Height of the textbox.
 border = 8;//Border size around the text.
 line_sep = 12;//Line separation within the textbox.
 line_width = textbox_width - border*2;//Calculating the width available for text.
-txtb_spr = sMenu;//The sprite to be used for the textbox appearance.
+txtb_spr = sMenuH;//The sprite to be used for the textbox appearance.
 txtb_img = 0;//The current image index for animation.
 txtb_img_spd = 6/60;//Animation speed for changing textbox images.
 

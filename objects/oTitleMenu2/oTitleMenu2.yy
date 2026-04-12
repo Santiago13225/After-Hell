@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sMenu",
-    "path": "sprites/sMenu/sMenu.yy",
+    "name": "sMenuH",
+    "path": "sprites/sMenuH/sMenuH.yy",
   },
   "spriteMaskId": null,
   "visible": true,

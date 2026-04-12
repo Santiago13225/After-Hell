@@ -16,7 +16,7 @@ var spacing = 8;//Padding between icons
 
 //Ensure the map sprite icon variable exists for tutorial and sandbox levels
 if(!variable_global_exists("selectedMapSprite")) {
-    global.selectedMapSprite = 12;//13th frame
+    global.selectedMapSprite = 19;//20th frame
 }
 
 draw_sprite_ext(sScoreboardScreen, 0, 0, 0, 3, 3, 0, c_white, 1);
