@@ -1,4 +1,4 @@
-///oSMGWallbuy Step Event
+///Step Event
 /*This object represents the smg wallbuy object.*/
 //This event is responsible for handling smg wallbuy behavior.
 if(!has_been_interacted){//If we have not interacted with anything yet

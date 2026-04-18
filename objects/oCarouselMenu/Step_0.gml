@@ -38,9 +38,16 @@ if is_controller_connected{
 	if(stick_delay > 0) stick_delay--;
 
 	//Check input
-	if(stick_delay <= 0) {
-		if(lx > deadzone) { right_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(lx < -deadzone) { left_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+	if(stick_delay <= 0){
+		if(lx > deadzone){
+			right_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}else if(lx < -deadzone){
+			left_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}
 		//else if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 		//else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
 
@@ -66,6 +73,10 @@ if(right_key){
 	arrowLeftAnim = 1;//set full animation effect when left is pressed
 }
 
+if(right_key || left_key){
+	audio_play_sound(sndClick, 10, false);
+}
+
 //Decay the animation variables over time (adjust the decay rate as needed)
 arrowLeftAnim = max(arrowLeftAnim - 0.05, 0);
 arrowRightAnim = max(arrowRightAnim - 0.05, 0);
@@ -81,6 +92,7 @@ if(item < 0){
 }
 
 if(accept_key){
+	audio_play_sound(sndBeep, 10, false);
 	//Store the selected map sprite in a global variable for the HUD/scoreboard
 	global.selectedMapSprite = item;//Use the sprite you are displaying in the carousel
 	//global.selectedMapName = text;//Store the map name for text display if needed
@@ -190,6 +202,7 @@ if(accept_key){
 }
 
 if(back_key){
+	audio_play_sound(sndBeep, 10, false);
 	//instance_destroy();
 	//instance_create_layer(0, 0, "Instances", oPerkCarouselMenu);
 	//Return to perk select menu

@@ -838,6 +838,7 @@ if(instance_exists(oMedkitWallbuy3)){
 					audio_play_sound(sndNoMoney, 8, false);
 					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
+						instance_destroy(oTextbox2);
 					}	
 			    }
 			}
@@ -864,6 +865,7 @@ if(instance_exists(oDebris)){
 					audio_play_sound(sndNoMoney, 8, false);
 					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
+						instance_destroy(oTextbox2);
 					}	
 			    }
 			}
@@ -881,8 +883,8 @@ if(instance_exists(oArmoryAugmentor2)){
 			    if(oHUD2.playerScore >= wallbuyCost) {
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
-					audio_play_sound(sndBuy, 8, false);
-					//instance_destroy();
+					//audio_play_sound(sndBuy, 8, false);
+					instance_destroy(oTextbox2);
 					
 					//var droppedItem = instance_create_depth(oPlayer.x - 1, oPlayer.y + 16, -y, inv[selected_item].droppedItem);
 					//droppedItem.item = oItemManager2.inv[selected_item];
@@ -902,15 +904,17 @@ if(instance_exists(oArmoryAugmentor2)){
 					}*/
 					
 					if(oPlayer.weapon == global.WeaponList.pistol) {
+						audio_play_sound(sndBuy, 8, false);
 						array_set(global.PlayerWeapons, 0, global.WeaponList.hpistol);
 						array_set(oItemManager3.inv, 0, global.item_list2.hpistol);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcorePistol);
 					}else if(oPlayer.weapon == global.WeaponList.hpistol) {
+						audio_play_sound(sndBuy, 8, false);
 						array_set(global.PlayerWeapons, 0, global.WeaponList.upistol);
 						array_set(oItemManager3.inv, 0, global.item_list2.upistol);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcorePistol);
 					}else if(oPlayer.weapon == global.WeaponList.raygun) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.raygun;
@@ -927,7 +931,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hraygun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreRaygun);
 					}else if(oPlayer.weapon == global.WeaponList.sniper) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.sniper;
@@ -944,7 +948,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hsniper);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSniper);
 					}else if(oPlayer.weapon == global.WeaponList.shotgun) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.shotgun;
@@ -961,7 +965,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hshotgun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreShotgun);
 					}else if(oPlayer.weapon == global.WeaponList.assault) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.assault;
@@ -978,7 +982,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hassault);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreAssault);
 					}else if(oPlayer.weapon == global.WeaponList.smg) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.smg;
@@ -995,7 +999,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hsmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSMG);
 					}else if(oPlayer.weapon == global.WeaponList.lmg) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.lmg;
@@ -1012,7 +1016,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hlmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreLMG);
 					}else if(oPlayer.weapon == global.WeaponList.bazooka) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.bazooka;
@@ -1029,7 +1033,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.hbazooka);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreBazooka);
 					}else if(oPlayer.weapon == global.WeaponList.hraygun) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.hraygun;
@@ -1046,7 +1050,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.uraygun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreRaygun);
 					}else if(oPlayer.weapon == global.WeaponList.hsniper) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.hsniper;
@@ -1063,7 +1067,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.usniper);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSniper);
 					}else if(oPlayer.weapon == global.WeaponList.hshotgun) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.hshotgun;
@@ -1080,7 +1084,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ushotgun);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreShotgun);
 					}else if(oPlayer.weapon == global.WeaponList.hassault) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.hassault;
@@ -1097,7 +1101,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.uassault);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreAssault);
 					}else if(oPlayer.weapon == global.WeaponList.hsmg) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.hsmg;
@@ -1114,7 +1118,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.usmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreSMG);
 					}else if(oPlayer.weapon == global.WeaponList.hlmg) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.hlmg;
@@ -1131,7 +1135,7 @@ if(instance_exists(oArmoryAugmentor2)){
 						array_set(oItemManager3.inv, _ar_id2, global.item_list2.ulmg);
 						//instance_create_depth(oPlayer.x, oPlayer.y, -y, oHardcoreLMG);
 					}else if(oPlayer.weapon == global.WeaponList.hbazooka) {
-						
+						audio_play_sound(sndBuy, 8, false);
 						var _array1 = global.PlayerWeapons;
 						var _predicate1 = function(_val, _index){
 						    return _val == global.WeaponList.hbazooka;
@@ -1159,6 +1163,7 @@ if(instance_exists(oArmoryAugmentor2)){
 					audio_play_sound(sndNoMoney, 8, false);
 					if(!audio_is_playing(sndBroke)){
 						audio_play_sound(sndBroke, 10, false);
+						instance_destroy(oTextbox2);
 					}	
 			    }
 			}

@@ -88,20 +88,33 @@ if is_controller_connected{
 	if(stick_delay > 0) stick_delay--;
 
 	//Check input
-	if(stick_delay <= 0) {
-		if(lx > deadzone) { right_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(lx < -deadzone) { left_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+	if(stick_delay <= 0){
+		if(lx > deadzone) {
+			right_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}else if(lx < -deadzone){
+			left_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}else if(ly > deadzone){
+			down_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}else if(ly < -deadzone){
+			up_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}
 
 		if(moved) {
-			if(!stick_held) {
+			if(!stick_held){
 				stick_delay = delay_initial;//first delay
 				stick_held = true;
-			}else {
+			}else{
 				stick_delay = delay_repeat;//repeat delay
 			}
-		}else {
+		}else{
 			stick_held = false;//reset if neutral
 		}
 	}
@@ -114,8 +127,9 @@ arrowLeftAnim2 = max(arrowLeftAnim2 - 0.05, 0);
 arrowRightAnim2 = max(arrowRightAnim2 - 0.05, 0);
 
 //Adjust music volume
-if(menu_level == 6 && pos == 0)//Check if in the Settings menu and the first option (music)
-{
+if(menu_level == 6 && pos == 0){//Check if in the Settings menu and the first option (music)
+	var old_volume = global.musicvolume;
+
     if(left_key){
         global.musicvolume = max(0, global.musicvolume - 0.1);//Reduce volume by 10%
 		//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
@@ -126,10 +140,16 @@ if(menu_level == 6 && pos == 0)//Check if in the Settings menu and the first opt
 		//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 		option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
     }
+
+	if(global.musicvolume != old_volume) {
+		audio_play_sound(sndClick, 10, false);
+	}
 }
 //Adjust sound effects volume
 if(menu_level == 6 && pos == 1){//Check if in the Settings menu and the second option (sfx)
-    if(left_key){
+	var old_sfx = global.sfxvolume;
+	
+	if(left_key){
         global.sfxvolume = max(0, global.sfxvolume - 0.1);//Reduce volume by 10%
 		//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
@@ -139,6 +159,10 @@ if(menu_level == 6 && pos == 1){//Check if in the Settings menu and the second o
 		//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
     }
+	
+	if(global.sfxvolume != old_sfx) {
+		audio_play_sound(sndClick, 10, false);
+	}
 }
 
 //Detect entering main menu
@@ -167,6 +191,8 @@ prev_menu_level = menu_level;
 
 //Preset selection (Survival Mode preset page)
 if(menu_level == 2 && pos == 0){
+	var old_index = preset_index;
+
 	if(left_key){
 		preset_index--;
 		arrowLeftAnim = 1;
@@ -181,10 +207,17 @@ if(menu_level == 2 && pos == 0){
 			preset_index = 0;
 		}
 	}
+
+	if(preset_index != old_index){//ONLY play sound if something actually changed
+		audio_play_sound(sndClick, 10, false);
+	}
+
 	option[2,0] = "  Mode: " + preset_names[preset_index] + "  ";
 }
 
 if(menu_level == 3 && pos == 0){
+	var old_index = perk_index;
+
 	if(left_key){
 		perk_index--;
 		arrowLeftAnim = 1;
@@ -199,6 +232,11 @@ if(menu_level == 3 && pos == 0){
 			perk_index = 0;
 		}
 	}
+
+	if(perk_index != old_index){//ONLY play sound if something actually changed
+		audio_play_sound(sndClick, 10, false);
+	}
+
 	option[3,0] = "  Mod 1: " + perk_names[perk_index] + "  ";
 	
 	/*// --- Reset Perk 2 whenever Perk 1 changes ---
@@ -213,8 +251,9 @@ if(menu_level == 3 && pos == 0){
 }
 
 if(menu_level == 3 && pos == 1){
-	//Only allow changing if Perk 1 is NOT "None" or "Wild Card"
-	if(perk_index != 0 && perk_index != 8){
+	var old_index = perk_index2;
+
+	if(perk_index != 0 && perk_index != 8){//Only allow changing if Perk 1 is NOT "None" or "Wild Card"
 		var dir = 0;
 		if(left_key){
 			dir = -1;
@@ -280,6 +319,10 @@ if(menu_level == 3 && pos == 1){
 		perk_index2 = 0;
 	}
 
+	if(perk_index2 != old_index){//ONLY play sound if something actually changed
+		audio_play_sound(sndClick, 10, false);
+	}
+
 	option[3,1] = "  Mod 2: " + perk_names[perk_index2] + "  ";
 }
 
@@ -287,11 +330,18 @@ if(menu_level == 3 && pos == 1){
 op_length = array_length(option[menu_level]);
 
 //Move through the menu
+var old_pos = pos;
+
 pos += down_key - up_key;
-if pos >= op_length{
+
+if(pos != old_pos){
+    audio_play_sound(sndClick, 10, false);
+}
+
+if(pos >= op_length){
 	pos = 0;
 }
-if pos < 0{
+if(pos < 0){
 	pos = op_length-1;
 }
 
@@ -311,6 +361,8 @@ if(menu_level == 6) {
 }
 
 if(back_key && menu_level != 0) {
+	var _prev = menu_level;//store previous menu
+
 	switch(menu_level) {
 		case 1: menu_level = 0; break;
 		case 2: menu_level = 0; break;
@@ -320,12 +372,16 @@ if(back_key && menu_level != 0) {
 		case 6: menu_level = 0; break;
 		case 7: menu_level = 0; break;
 	}
+
+	if(menu_level != _prev) {//Only run if something actually changed
+		audio_play_sound(sndBeep, 10, false);
+	}
 	pos = 0;//reset cursor position
 	op_length = array_length(option[menu_level]);// <-- ADD THIS LINE
 }
 
 //Using the options
-if accept_key{
+if(accept_key){
 	var _sml = menu_level;
 	
 	switch(menu_level)
@@ -336,6 +392,7 @@ if accept_key{
 			{
 				//Story Mode
 				case 0:
+					audio_play_sound(sndBeep, 10, false);
 					global.matchPresetIndex = 0;
 					//preset_index = 0;
 					global.perkIndex = 0;
@@ -389,6 +446,7 @@ if accept_key{
 					break;
 				//Reset Game	
 				case 4:
+					audio_play_sound(sndBeep, 10, false);
 					//game_end();
 					//draw_set_font(global.font);
 					draw_text(16, 16, "Restarting game...");
@@ -426,6 +484,7 @@ if accept_key{
 			{
 				//Preset option
 				case 0:
+					audio_play_sound(sndBeep, 10, false);
 					pos = 1;
 					break;
 				//Next, go to perk carousel menu
@@ -450,14 +509,17 @@ if accept_key{
 			{
 				//Perk option 1
 				case 0:
+					audio_play_sound(sndBeep, 10, false);
 					pos = 1;
 					break;
 				//Perk option 2
 				case 1:
+					audio_play_sound(sndBeep, 10, false);
 					pos = 2;
 					break;
 				//Next, go to map carousel menu
 				case 2:
+					audio_play_sound(sndBeep, 10, false);
 					//Store selected perks
 					global.perkIndex = perk_index;
 					global.perkIndex2 = perk_index2;
@@ -602,19 +664,18 @@ if accept_key{
 				//Music
 				case 0:
 					//Update the displayed volume percentage
-					//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 					option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 					break;
 				//Sound Effects
 				case 1:
 					//Update the displayed volume percentage
-					//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 					option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 					break;
 				//Controls
 				case 2:
 					//Controller option
 					if(oControllerIndicator.controller_count != 0) {//only allow toggle if unlocked
+						audio_play_sound(sndBeep, 10, false);
 						if global.controllerMode == 0{
 							option[6, 2] = "Input: Controller";
 							global.controllerMode = 1;
@@ -622,6 +683,8 @@ if accept_key{
 							option[6, 2] = "Input: Keyboard and Mouse";
 							global.controllerMode = 0;
 						}
+					}else{
+						audio_play_sound(sndCancel, 10, false);
 					}
 					break;
 				//Back
@@ -637,22 +700,27 @@ if accept_key{
 			{
 				//YouTube
 				case 0:
+					audio_play_sound(sndBeep, 10, false);
 					url_open("https://youtube.com/@centillioneons4223?si=NdM79kEtwOOrm_ma");
 					break;
 				//Discord
 				case 1:
+					audio_play_sound(sndBeep, 10, false);
 					url_open("https://discord.gg/M7KNv2xtGq");
 					break;
 				//Peyton Burnham
 				case 2:
+					audio_play_sound(sndBeep, 10, false);
 					url_open("https://youtube.com/@peytonburnham4316?si=p9hPxJ4nZXdwINIe");
 					break;
 				//Vorpal Lance Music
 				case 3:
+					audio_play_sound(sndBeep, 10, false);
 					url_open("https://youtube.com/@VorpalLanceMusic?si=eE-hTWMeYtK5lDDr");
 					break;
 				//Chris Jay
 				case 4:
+					audio_play_sound(sndBeep, 10, false);
 					url_open("https://soundbetter.com/profiles/386761-chris-jay");
 					break;
 				//Main Menu
@@ -664,7 +732,8 @@ if accept_key{
 
 	}
 	//Set position back
-	if _sml != menu_level{
+	if(_sml != menu_level){
+		audio_play_sound(sndBeep, 10, false);//play confirm sound ONLY if page changed
 		pos = 0;
 	}
 	//Correct option length

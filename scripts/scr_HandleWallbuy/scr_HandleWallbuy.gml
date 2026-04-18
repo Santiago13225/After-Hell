@@ -46,6 +46,7 @@ if distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2) {
 			}else {
 				audio_play_sound(sndNoMoney, 8, false);
 				if(!audio_is_playing(sndBroke)) audio_play_sound(sndBroke, 10, false);
+				instance_destroy(oTextbox2);
 			}
 		}else {//Already own one variant → top up ammo
 			var ammoCost = ceil(cost * 0.5);//half price for refills
@@ -56,6 +57,7 @@ if distance_to_object(oPlayer) < 32 && instance_exists(oTextbox2) {
 			}else{
 				audio_play_sound(sndNoMoney, 8, false);
 				if(!audio_is_playing(sndBroke)) audio_play_sound(sndBroke, 10, false);
+				instance_destroy(oTextbox2);
 			}	
 			instance_destroy(oTextbox2);
 		}
