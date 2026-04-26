@@ -101,10 +101,10 @@ if(startKeyPressed && pause_lock_timer <= 0){
 			//audio_pause_sound(sndUniversal);
 			audio_play_sound(sndBeep, 8, false);
 			instance_create_depth(0, 0, 0, oPauseMenu2);
-		}else {
+		}/*else {
 			audio_play_sound(sndBeep, 8, false);
 			//instance_destroy(oPauseMenu);
-		}
+		}*/
 	}
 }else if(startKeyPressed && pause_lock_timer > 0){
 	audio_play_sound(sndCancel, 8, false);

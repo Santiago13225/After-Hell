@@ -13,6 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6c34138c-0f12-4326-9235-dae7faa5f736",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"662d4bb3-f00a-4e36-af68-ebaf7f42b264",},
   ],
   "gridX": 8,
@@ -43,7 +44,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 2.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -54,7 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"662d4bb3-f00a-4e36-af68-ebaf7f42b264","path":"sprites/sWaveEndScreen/sWaveEndScreen.yy",},},},"Disabled":false,"id":"b742d98c-0371-4b5e-af83-e828097b66d3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6c34138c-0f12-4326-9235-dae7faa5f736","path":"sprites/sWaveEndScreen/sWaveEndScreen.yy",},},},"Disabled":false,"id":"f5912c40-c966-494f-9f97-8ce2d62b1858","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"662d4bb3-f00a-4e36-af68-ebaf7f42b264","path":"sprites/sWaveEndScreen/sWaveEndScreen.yy",},},},"Disabled":false,"id":"b742d98c-0371-4b5e-af83-e828097b66d3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

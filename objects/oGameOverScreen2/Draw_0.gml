@@ -343,36 +343,45 @@ if(gamepad_is_connected(_gamePad)) {
 	if(stick_delay > 0) stick_delay--;
 
 	//Check input
-	if(stick_delay <= 0) {
-		if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+	if(stick_delay <= 0){
+		if(ly > deadzone){
+			down_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}else if(ly < -deadzone){
+			up_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}
 
-		if(moved) {
-			if(!stick_held) {
+		if(moved){
+			if(!stick_held){
 				stick_delay = delay_initial;//first delay
 				stick_held = true;
-			}else {
+			}else{
 				stick_delay = delay_repeat;//repeat delay
 			}
-		}else {
+		}else{
 			stick_held = false;//reset if neutral
 		}
 	}
 }
 
 //move through the menu
+var old_pos = pos;
 pos += down_key - up_key;
-if pos >= op_length
-{
+if(pos != old_pos){
+    audio_play_sound(sndClick, 10, false);
+}
+if(pos >= op_length){
 	pos = 0;
 }
-if pos < 0
-{
+if(pos < 0){
 	pos = op_length-1;
 }
 
 //using the options
-if accept_key{
+if(accept_key){
 	var _sml = menu_level;
 	
 	switch(menu_level)
@@ -384,6 +393,7 @@ if accept_key{
 				//resume
 				case 0:
 					room_restart();
+					audio_play_sound(sndBeep, 10, false);
 					reset_wave_variables();
 					global.dialog_active = false;
 					//audio_play_sound(sndBeep, 10, false);
@@ -391,6 +401,7 @@ if accept_key{
 					break;
 				//quit game
 				case 1:
+					audio_play_sound(sndBeep, 10, false);
 					global.dialog_active = false;
 					instance_deactivate_object(oPlayer);
 					reset_wave_variables();

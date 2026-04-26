@@ -1,8 +1,7 @@
 ///oPauseMenu Step Event
 /*This object represents a pause menu.*/
 //This event is responsible for handling pause menu behavior.
-
-if !instance_exists(oPlayer){
+if(!instance_exists(oPlayer)){
 	instance_destroy();
 	exit;
 }
@@ -52,10 +51,23 @@ if is_controller_connected{
 
 	//Check input
 	if(stick_delay <= 0) {
-		if(lx > deadzone) { right_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(lx < -deadzone) { left_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(ly > deadzone) { down_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
-		else if(ly < -deadzone) { up_key = true; audio_play_sound(sndClick, 10, false); moved = true; }
+		if(lx > deadzone){ 
+			right_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}else if(lx < -deadzone){
+			left_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}else if(ly > deadzone) {
+			down_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}else if(ly < -deadzone) {
+			up_key = true;
+			//audio_play_sound(sndClick, 10, false);
+			moved = true;
+		}
 
 		if(moved) {
 			if(!stick_held) {
@@ -71,43 +83,54 @@ if is_controller_connected{
 }
 
 //Adjust music volume
-if(menu_level == 1 && pos == 0)//Check if in the Settings menu and the first option (music)
-{
-    if(left_key){
-        global.musicvolume = max(0, global.musicvolume - 0.1);//Reduce volume by 10%
+if(menu_level == 1 && pos == 0){//Check if in the Settings menu and the first option (music)
+	var old_volume = global.musicvolume;
+
+	if(left_key){
+		global.musicvolume = max(0, global.musicvolume - 0.1);//Reduce volume by 10%
 		//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
-    }
-    else if(right_key){
-        global.musicvolume = min(1, global.musicvolume + 0.1);//Increase volume by 10%
+	}else if(right_key){
+		global.musicvolume = min(1, global.musicvolume + 0.1);//Increase volume by 10%
 		//option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 		option[1, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
-    }
+	}
+	if(global.musicvolume != old_volume){
+		audio_play_sound(sndClick, 10, false);
+	}
 }
 //Adjust sound effects volume
-if(menu_level == 1 && pos == 1)//Check if in the Settings menu and the second option (sfx)
-{
-    if(left_key){
-        global.sfxvolume = max(0, global.sfxvolume - 0.1);//Reduce volume by 10%
+if(menu_level == 1 && pos == 1){//Check if in the Settings menu and the second option (sfx)
+	var old_sfx = global.sfxvolume;
+
+	if(left_key){
+		global.sfxvolume = max(0, global.sfxvolume - 0.1);//Reduce volume by 10%
 		//option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
-    }
-    else if(right_key){
-        global.sfxvolume = min(1, global.sfxvolume + 0.1);//Increase volume by 10%
+	}else if(right_key){
+		global.sfxvolume = min(1, global.sfxvolume + 0.1);//Increase volume by 10%
 		//option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[1, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
-    }
+	}
+	if(global.sfxvolume != old_sfx){
+		audio_play_sound(sndClick, 10, false);
+	}
 }
 
 //Store number of options in current menu
 op_length = array_length(option[menu_level]);
 
 //Move through the menu
+var old_pos = pos;
 pos += down_key - up_key;
-if pos >= op_length{
+
+if(pos != old_pos){
+	audio_play_sound(sndClick, 10, false);
+}
+if(pos >= op_length){
 	pos = 0;
 }
-if pos < 0{
+if(pos < 0){
 	pos = op_length-1;
 }
 
@@ -126,10 +149,15 @@ if(menu_level == 1) {
     }
 }
 
-if(back_key && menu_level != 0) {
-	switch(menu_level) {
+if(back_key && menu_level != 0){
+	var _prev = menu_level;//store previous menu
+
+	switch(menu_level){
 		case 1: menu_level = 0; break;
 		//case 2: menu_level = 0; break;
+	}
+	if(menu_level != _prev){//Only run if something actually changed
+		audio_play_sound(sndBeep, 10, false);
 	}
 	pos = 0;//reset cursor position
 	op_length = array_length(option[menu_level]);// <-- ADD THIS LINE
@@ -269,6 +297,7 @@ if accept_key{
 					break;
 				//Quit Game
 				case 2:
+					//audio_play_sound(sndBeep, 10, false);
 					global.dialog_active = false;
 					if(instance_exists(oHUD2)) {//Reset HUD safely(only if exists)
 						oHUD2.playerScore = 500;
@@ -283,6 +312,7 @@ if accept_key{
 					
 					//Stop all level music
 					audio_stop_all();
+					audio_play_sound(sndBeep, 10, false);
 					reset_wave_variables();
 					//Transition safely back to the title screen
 					TransitionStart(rm_Title_Screen, sqFadeOut, sqFadeIn);
@@ -308,14 +338,17 @@ if accept_key{
 				//Controls
 				case 2:
 					//Controller option
-					if(oControllerIndicator.controller_count != 0) {//only allow toggle if unlocked
-						if global.controllerMode == 0{
+					if(oControllerIndicator.controller_count != 0){//only allow toggle if unlocked
+						audio_play_sound(sndBeep, 10, false);
+						if(global.controllerMode == 0){
 							option[1, 2] = "Input: Controller";
 							global.controllerMode = 1;
 						}else{
 							option[1, 2] = "Input: Keyboard and Mouse";
 							global.controllerMode = 0;
 						}
+					}else{
+						audio_play_sound(sndCancel, 10, false);
 					}
 					break;
 				//Back
@@ -326,7 +359,8 @@ if accept_key{
 			break;
 	}
 	//Set position back
-	if _sml != menu_level{
+	if(_sml != menu_level){
+		audio_play_sound(sndBeep, 10, false);//play confirm sound ONLY if page changed
 		pos = 0;
 	}
 	//Correct option length

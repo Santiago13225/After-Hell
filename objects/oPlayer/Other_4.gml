@@ -3,6 +3,7 @@
 //This event is responsible for handling player object room start behavior.
 
 audio_play_sound(sndLaugh, 8, false);
+//audio_play_sound(sndRoundStart2, 8, false);
 //global.rm[0]
 //if room_exists(rm_House_Level1){
 

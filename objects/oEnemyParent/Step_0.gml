@@ -37,13 +37,13 @@ if hp <= 0{//If hp is 0 or less.
 		audio_play_sound(sndRoundEnd1, 10, false);//Play round end sound.
 		instance_create_depth(x, y, -8000, oWaveEndScreen);//Show round end notification.
         waveCompletionMessageShown = true;//Set the complete message shown flag to true.
-		if waveCompletionMessageShown == true{//If the wave complete message has been shown.
+		/*if waveCompletionMessageShown == true{//If the wave complete message has been shown.
 			var _create_end = function(){//Encapsulate the following two lines in a function and store it in a variable.
 			    audio_play_sound(sndRoundStart1, 10, false);//Play wave start sound.
 				instance_create_depth(x, y, -8000, oWaveStartScreen);//Show wave start message.
 			}
 			call_later(10, time_source_units_seconds, _create_end);//Play wave start message after 15 seconds.
-		}
+		}*/
 		//oInvisibleSpawner2.ds_list_clear(oInvisibleSpawner2.activeSpawns);
     }
 
