@@ -28,13 +28,14 @@ path = path_add();
 		target_y = oPlayer.y;
 		
 		//Attempt to find path using grid
-	    if mp_grid_path(oSetupPathway.grid, path, x, y, target_x, target_y, true) {
+	    if(mp_grid_path(oSetupPathway.grid, path, x, y, target_x, target_y, choose(0, 1))){
 	        path_start(path, pathspeed, path_action_stop, true);
 	        usingPathfinding = true;
-			alarm_set(0, 120); // Retry later to keep updating the path
+			//alarm_set(0, 120);//Retry later to keep updating the path
+			alarm_set(0, calc_path_delay);
 	    }else {
 	        usingPathfinding = false;
-			alarm_set(0, 15); // Retry in 15 steps (~0.25 seconds)
+			alarm_set(0, 15);//Retry in 15 steps (~0.25 seconds)
 	        //Optional: Log if path fails
 	        //show_debug_message("Zombie failed to find path at: " + string(x) + "," + string(y));
 	    }

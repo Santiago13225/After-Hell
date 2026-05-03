@@ -4,6 +4,8 @@
 
 event_inherited();//Inherit the parent event.
 
+wasPaused = false;
+
 //Movement Variables
 spd = 0;//Zombie's initial speed.
 chaseSpd = .6;//Speed used when chasing a target.
@@ -39,5 +41,7 @@ if instance_exists(oPlayer){//If the player exists.
 	target_y = oPlayer.y;//Set the target y-coordinate to the player's y-coordinate.
 }
 
-alarm[0] = 1;//Set Alarm 0 to true, which triggers it almost immediately.
+//alarm[0] = 1;//Set Alarm 0 to true, which triggers it almost immediately.
+calc_path_delay = 30;
+alarm[0] = irandom(60);
 usingPathfinding = false;

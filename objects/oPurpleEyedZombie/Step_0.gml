@@ -2,10 +2,22 @@
 /*This object represents a Purple Eyed Zombie.*/
 //This event is resposible for handling zombie behavior.
 
-//Pause Self
-if screen_pause(){
+var _paused = instance_exists(oScreenPause);
+
+if(wasPaused && !_paused){//Detect unpause
+	alarm[0] = irandom(60);//Re-randomize timing
+}
+
+wasPaused = _paused;//Store state
+
+if(_paused) {//Pause self. New!
 	exit;
 }
+
+//if screen_pause(){//Pause Self
+//	exit;
+//}
+
 /*
 if instance_exists(oScreenPause)
 {

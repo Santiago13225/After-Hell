@@ -23,6 +23,18 @@ if hp <= 0{//If HP is less than or equal to 0...
 	if(global.screenShake){
 		screen_shake(8);//Screen shake.
 	}
-	
+
+	//Find the setup object safely
+	var _setup = instance_find(oSetupPathway, 0);
+
+	if(_setup != noone) {
+		var _grid = _setup.grid;
+
+		var cx = x div 16;
+		var cy = y div 16;
+
+		mp_grid_clear_cell(_grid, cx, cy);
+	}
+
 	instance_destroy();//Destroy self.
 }

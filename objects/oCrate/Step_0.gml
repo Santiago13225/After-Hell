@@ -11,7 +11,19 @@ if hp <= 0{//If HP is less than or equal to 0...
 	//Poof
 	//instance_create_depth(x + 8, y + 16, depth, oAnimatedVFX);
 	create_animated_vfx(sPoof, x+8, y+16, depth);//Create poof effect.
-	
+
+	//Find the setup object safely
+	var _setup = instance_find(oSetupPathway, 0);
+
+	if(_setup != noone) {
+		var _grid = _setup.grid;
+
+		var cx = x div 16;
+		var cy = y div 16;
+
+		mp_grid_clear_cell(_grid, cx, cy);
+	}
+
 	//Destroy
 	instance_destroy();
 }

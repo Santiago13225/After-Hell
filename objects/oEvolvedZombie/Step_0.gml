@@ -2,9 +2,22 @@
 /*This object represents an Evolved Zombie.*/
 //This event is resposible for handling zombie behavior.
 
-if screen_pause(){//Pause self.
+var _paused = instance_exists(oScreenPause);
+
+if(wasPaused && !_paused){//Detect unpause
+	alarm[0] = irandom(60);//Re-randomize timing
+}
+
+wasPaused = _paused;//Store state
+
+if(_paused) {//Pause self. New!
 	exit;
 }
+
+//if(screen_pause()){//Pause self.
+//	exit;
+//}
+
 /*
 if instance_exists(oScreenPause)
 {
