@@ -177,9 +177,9 @@ switch(state){
 	//y += yspd;
 
 	//Get the correct face
-	if dir > 90 && dir < 270{
+	if(dir > 90 && dir < 270){
 		face = -1;
-	} else{
+	}else{
 		face = 1;
 	}
 	/*if xspd > 0{

@@ -857,6 +857,25 @@ if(instance_exists(oDebris)){
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
+					//REMOVE FROM GRID (CRATE LOGIC)
+					/*var _setup = instance_find(oSetupPathway, 0);
+					if(_setup != noone) {
+						var _grid = _setup.grid;
+
+						var cell = 16;
+
+						var x1 = bbox_left div cell;
+						var y1 = bbox_top div cell;
+						var x2 = bbox_right div cell;
+						var y2 = bbox_bottom div cell;
+
+						for (var gx = x1; gx <= x2; gx++) {
+							for (var gy = y1; gy <= y2; gy++) {
+								mp_grid_clear_cell(_grid, gx, gy);
+							}
+						}
+					}
+					global.grid_dirty = true;*/
 					instance_destroy();
 					//instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
 			    }else {

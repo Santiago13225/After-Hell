@@ -24,6 +24,7 @@ if hp <= 0{//If HP is less than or equal to 0...
 		mp_grid_clear_cell(_grid, cx, cy);
 	}
 
+	global.radar_dirty = true;
 	//Destroy
 	instance_destroy();
 }

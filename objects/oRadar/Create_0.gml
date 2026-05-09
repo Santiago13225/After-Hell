@@ -8,3 +8,7 @@ y = (guiheight) - 850;
 
 //Radar size - the size of the radar being displayed
 radarsize = 150;
+
+radar_surface = -1;
+radar_mask_surface = -1;
+global.radar_dirty = true;

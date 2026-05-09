@@ -6,10 +6,157 @@ var _centery = y;
 var _radarsize = radarsize;
 
 if(instance_exists(oPlayer)){
+
+	// 1. REBUILD SURFACE (ONLY WHEN NEEDED)
+	if(global.radar_dirty || !surface_exists(radar_surface)) {
+		if(surface_exists(radar_surface)) {
+			surface_free(radar_surface);
+		}
+
+		radar_surface = surface_create(_guiwidth, _guiheight);
+		surface_set_target(radar_surface);
+		draw_clear_alpha(c_black, 0);
+
+		with(oWall) {//MOVE YOUR WALL DRAWING HERE (ONLY RUNS RARELY)
+			var cell = 8;
+
+			var x1 = bbox_left;
+			var y1 = bbox_top;
+			var x2 = bbox_right;
+			var y2 = bbox_bottom;
+
+			for(var wx = x1; wx < x2; wx += cell) {
+				for(var wy = y1; wy < y2; wy += cell) {
+					var rx = (wx / room_width * _guiwidth);
+					var ry = (wy / room_height * _guiheight);
+					draw_rectangle(rx, ry, rx + cell * 0.5, ry + cell * 0.5, false);
+				}
+			}
+		}
+		surface_reset_target();
+		global.radar_dirty = false;
+	}
+
 //draw radar outline circle
 draw_set_alpha(0.5);
 draw_circle_color(_centerx, _centery, _radarsize, c_lime, c_lime, 0);
 draw_set_alpha(1);
+
+/*with(oWall) {//Draw all wall-type objects on radar
+	var xx = _centerx + (x / room_width * _guiwidth) - (oPlayer.x / room_width * _guiwidth);
+	var yy = _centery + (y / room_height * _guiheight) - (oPlayer.y / room_height * _guiheight);
+
+	if(point_in_circle(xx, yy, _centerx, _centery, _radarsize)){
+		draw_rectangle(xx - 1, yy - 1, xx + 1, yy + 1, false);
+	}
+}*/
+
+/*with(oWall){
+	//Convert object bounding box into radar space
+	var x1 = bbox_left;
+	var y1 = bbox_top;
+	var x2 = bbox_right;
+	var y2 = bbox_bottom;
+
+	var rx1 = _centerx + (x1 / room_width * _guiwidth) - (oPlayer.x / room_width * _guiwidth);
+	var ry1 = _centery + (y1 / room_height * _guiheight) - (oPlayer.y / room_height * _guiheight);
+
+	var rx2 = _centerx + (x2 / room_width * _guiwidth) - (oPlayer.x / room_width * _guiwidth);
+	var ry2 = _centery + (y2 / room_height * _guiheight) - (oPlayer.y / room_height * _guiheight);
+
+	if(point_in_circle((rx1+rx2) * 0.5, (ry1+ry2) * 0.5, _centerx, _centery, _radarsize)) {
+		draw_rectangle(rx1, ry1, rx2, ry2, false);
+	}
+}*/
+
+/*with(oWall) {
+	var cell = 8;//radar detail resolution (smaller = smoother walls)
+
+	var x1 = bbox_left;
+	var y1 = bbox_top;
+	var x2 = bbox_right;
+	var y2 = bbox_bottom;
+
+	for(var wx = x1; wx < x2; wx += cell) {
+		for(var wy = y1; wy < y2; wy += cell) {
+
+			var rx = _centerx + (wx / room_width * _guiwidth) - (oPlayer.x / room_width * _guiwidth);
+			var ry = _centery + (wy / room_height * _guiheight) - (oPlayer.y / room_height * _guiheight);
+
+			if(point_in_circle(rx, ry, _centerx, _centery, _radarsize)) {
+				draw_rectangle(rx, ry, rx + cell * 0.5, ry + cell * 0.5, false);
+			}
+		}
+	}
+}*/
+
+// 3. DRAW WALL SURFACE (OFFSET TO PLAYER)
+/*var px = oPlayer.x / room_width * _guiwidth;
+var py = oPlayer.y / room_height * _guiheight;
+
+draw_surface_part(
+	radar_surface,
+	px - _radarsize,
+	py - _radarsize,
+	_radarsize * 2,
+	_radarsize * 2,
+	_centerx - _radarsize,
+	_centery - _radarsize
+);*/
+//draw_surface(radar_surface, 0, 0);
+
+//====================================================
+// DRAW RADAR TO MASK SURFACE
+//====================================================
+
+if(!surface_exists(radar_mask_surface)) {
+	radar_mask_surface = surface_create(_radarsize * 2, _radarsize * 2);
+}
+
+surface_set_target(radar_mask_surface);
+draw_clear_alpha(c_black, 0);
+
+//----------------------------------------------------
+// 1. DRAW SOLID WHITE CIRCLE
+//----------------------------------------------------
+
+draw_set_color(c_white);
+draw_circle(_radarsize, _radarsize, _radarsize, false);
+
+//----------------------------------------------------
+// 2. KEEP ONLY PIXELS INSIDE CIRCLE
+//----------------------------------------------------
+
+gpu_set_blendmode_ext(bm_dest_color, bm_zero);
+
+//Player position on radar texture
+var px = oPlayer.x / room_width * _guiwidth;
+var py = oPlayer.y / room_height * _guiheight;
+
+//Draw radar map INTO the circle
+draw_surface_part(
+	radar_surface,
+	px - _radarsize,
+	py - _radarsize,
+	_radarsize * 2,
+	_radarsize * 2,
+	0,
+	0
+);
+
+gpu_set_blendmode(bm_normal);
+
+surface_reset_target();
+
+//----------------------------------------------------
+// 3. DRAW FINISHED RADAR
+//----------------------------------------------------
+
+draw_surface(
+	radar_mask_surface,
+	_centerx - _radarsize,
+	_centery - _radarsize
+);
 
 //draw center player position
 draw_circle_color(_centerx, _centery, 10, c_blue, c_blue, 0);

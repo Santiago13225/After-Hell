@@ -15,3 +15,14 @@ if bbox_right > _camLeft && bbox_left < _camRight && bbox_bottom > _camTop && bb
 		audio_play_sound(sndFire, 8, false);
 	}
 }
+
+if instance_exists(oPlayer){//If the player exists.
+	dir = point_direction(x, y, oPlayer.x, oPlayer.y);//Get the player's direction.
+}
+
+//Get the correct face
+if dir > 90 && dir < 270{
+	face = -1;
+}else{
+	face = 1;
+}
