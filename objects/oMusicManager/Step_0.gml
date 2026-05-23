@@ -1,7 +1,6 @@
 var _finalVol = global.mscVolume * global.masterVolume;
 
 if(songAsset != targetSongAsset){
-	
 	//tell the old song to fade out
 	if(audio_is_playing(songInstance)){
 		//add our songInstance to our array of songs to fade out
@@ -16,8 +15,9 @@ if(songAsset != targetSongAsset){
 		songAsset = noone;
 	}
 	
-	//play the song, if the old song has faded out
-	if(array_length(fadeOutInstances) == 0){
+	//play the song, if all songs have faded out, or if it's supposed to overlap
+	//if(array_length(fadeOutInstances) == 0){
+	if((array_length(fadeOutInstances) == 0) || songOverlap){
 		if(audio_exists(targetSongAsset)){
 			//play the song and store its instance in a variable
 			songInstance = audio_play_sound(targetSongAsset, 4, true);
@@ -29,6 +29,7 @@ if(songAsset != targetSongAsset){
 	
 		//set the songAsset to match the targetSongAsset
 		songAsset = targetSongAsset;
+		songOverlap = false;
 	}
 }
 
@@ -42,8 +43,7 @@ if(audio_is_playing(songInstance)){
 		}else{
 			fadeInInstVol = 1;
 		}
-	}//immediately start the song if the fade in time is 0 frames
-	else{
+	}else{//immediately start the song if the fade in time is 0 frames
 		fadeInInstVol = 1;
 	}
 	
@@ -58,9 +58,7 @@ for(var i = 0; i < array_length(fadeOutInstances); i++){
 		if(fadeOutInstVol[i] > 0){
 			fadeOutInstVol[i] -= 1/fadeOutInstTime[i];
 		}
-	}
-	//Immediately cut volume to 0 otherwise
-	else{
+	}else{//Immediately cut volume to 0 otherwise
 		fadeOutInstVol[i] = 0;
 	}
 	

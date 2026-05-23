@@ -16,3 +16,4 @@ fadeOutInstances = array_create(0);//the audio instances to fade out
 fadeOutInstVol = array_create(0);//the volumes of each individual audio instance
 fadeOutInstTime = array_create(0);//how fast the fadeout should happen
 
+songOverlap = false;

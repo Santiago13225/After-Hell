@@ -12,7 +12,7 @@
 //draw_text_transformed(x, y - sprite_height - 12, string(hp), .6, .6, 0);
 //draw_set_halign(fa_left);
 //Draw the weapon behind the player
-if aimDir >= 0 && aimDir < 180{
+if(aimDir >= 0 && aimDir < 180){
 	draw_my_weapon();
 	draw_my_laser();
 }
@@ -23,7 +23,7 @@ global.MUSIC = sndTestLevelTheme;
 draw_self();
 
 //Draw the weapon
-if aimDir >= 180 && aimDir < 360{
+if(aimDir >= 180 && aimDir < 360){
 	draw_my_weapon();
 	draw_my_laser();
 }

@@ -16,7 +16,7 @@ holdspace = 0;
 global.dialog_active = true;//Disable silhouette drawing.
 //else if (room == rm_TM1){
 	//sndUniversal = sndTestLevelTheme;
-audio_play_sound(sndAmbient, 8, true);
+//audio_play_sound(sndAmbient, 8, true);
 	//audio_play_sound(sndUniversal, 8, true);
 //}
 

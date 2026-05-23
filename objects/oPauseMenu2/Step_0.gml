@@ -219,7 +219,7 @@ if accept_key{
 #endregion
 */
 				//First, stop all level music so that no duplicate instances remain.
-				audio_stop_sound(sndTutorialTheme);
+				/*audio_stop_sound(sndTutorialTheme);
 				audio_stop_sound(sndTestLevelTheme);
 				audio_stop_sound(sndHouseTheme1);
 				audio_stop_sound(sndFacilityTheme1);
@@ -239,11 +239,10 @@ if accept_key{
 				audio_stop_sound(sndCathedralTheme);
 				audio_stop_sound(sndVoidTheme);
 				audio_stop_sound(sndCloudwalkTheme);
-				audio_stop_sound(sndInfernoTheme);
+				audio_stop_sound(sndInfernoTheme);*/
 
 				//Now, start the appropriate music based on the current room.
-				
-				if(room == rm_Tutorial_Level) {
+				/*if(room == rm_Tutorial_Level) {
 				    audio_play_sound(sndTutorialTheme, 8, true);
 				}else if(room == rm_Level1) {
 				    audio_play_sound(sndTestLevelTheme, 8, true);
@@ -287,7 +286,7 @@ if accept_key{
 				    audio_play_sound(sndInfernoTheme, 8, true);
 				}else {
 				    audio_play_sound(sndTestLevelTheme, 8, true);
-				}
+				}*/
 					oSFX.beepSnd = true;
 					instance_destroy(oPauseMenu2);
 					break;

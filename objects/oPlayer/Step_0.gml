@@ -32,7 +32,7 @@ if(startKeyPressed && pause_lock_timer <= 0){
 	if(!instance_exists(oScoreboard)){
 		if(!instance_exists(oPauseMenu2)){
 			global.dialog_active = true;//Disable silhouette drawing.
-			if audio_is_playing(sndTutorialTheme){
+			/*if audio_is_playing(sndTutorialTheme){
 				audio_pause_sound(sndTutorialTheme);
 			}
 			if audio_is_playing(sndTestLevelTheme){
@@ -95,7 +95,7 @@ if(startKeyPressed && pause_lock_timer <= 0){
 			}
 			if audio_is_playing(sndInfernoTheme){
 				audio_pause_sound(sndInfernoTheme);
-			}
+			}*/
 			//audio_pause_sound(sndTestLevelTheme);
 			//audio_pause_sound(global.MUSIC);
 			//audio_pause_sound(sndUniversal);
@@ -124,7 +124,7 @@ if(selectKeyPressed){
 	}
 }
 
-if(instance_exists(oInvisibleSpawner2)){
+/*if(instance_exists(oInvisibleSpawner2)){
 	if(global.enemyKillCount == oInvisibleSpawner2.maxTotalEnemies){
 		//audio_pause_all();
 		//audio_pause_sound(sndTestLevelTheme);
@@ -200,7 +200,7 @@ if(instance_exists(oInvisibleSpawner2)){
 		//audio_play_sound(sndVictory, 8, false);//earrape
 		//oSFX.winSnd = true;
 	}
-}
+}*/
 
 //Update visuals for room warping
 if(instance_exists(oWarp)){
@@ -243,10 +243,10 @@ xspd = lengthdir_x(_spd, moveDir);
 yspd = lengthdir_y(_spd, moveDir);
 
 //Collision
-if place_meeting(x + xspd, y, oWall){
+if(place_meeting(x + xspd, y, oWall)){
 	xspd = 0;
 }
-if place_meeting(x, y + yspd, oWall){
+if(place_meeting(x, y + yspd, oWall)){
 	yspd = 0;
 }
 
@@ -264,11 +264,11 @@ depth = -bbox_bottom;
 //or
 
 //Get damage
-if get_damage(oDamagePlayer, true){
-	if place_meeting(x, y, oEnemyParent){
+if(get_damage(oDamagePlayer, true)){
+	if(place_meeting(x, y, oEnemyParent)){
 		//Play a sound effect
 		audio_play_sound(sndHit, 8, false);
-	} else if place_meeting(x, y, oEnemyBullet){
+	}else if(place_meeting(x, y, oEnemyBullet)){
 		//Play a sound effect
 		audio_play_sound(sndHit, 8, false);
 	}
@@ -307,18 +307,20 @@ if global.controllerMode == 0{
 }
 
 //Controller
-if global.controllerMode == 1{
-	if global.xaxisRight != 0 || global.yaxisRight != 0{
+if(global.controllerMode == 1){
+	if(global.xaxisRight != 0 || global.yaxisRight != 0){
 		aimDir = point_direction(0, 0, global.xaxisRight, global.yaxisRight);
 	}
 }
 
 	//Make sure the player is facing the correct direction
 	face = round(aimDir/90);
-		if face == 4 {face = 0; };
-	
+	if(face == 4){
+		face = 0;
+	}
+
 	//Animate
-	if xspd == 0 && yspd == 0{
+	if(xspd == 0 && yspd == 0){
 		image_index = 0;
 	}
 	
@@ -332,17 +334,15 @@ if global.controllerMode == 1{
 //var _playerWeapons = global.PlayerWeapons;
 
 //Cycle through weapons
-if swapKeyPressed{//same as upswap key
+if(swapKeyPressed){//same as upswap key
 	//Change the selection and wrap around
-	if array_length(_playerWeapons) > 1{
-		//Play a sound effect
-		audio_play_sound(sndCock, 8, false);
+	if(array_length(_playerWeapons) > 1){
+		audio_play_sound(sndCock, 8, false);//Play a sound effect
 	}else{
-		//Play a sound effect
-		audio_play_sound(sndBeep, 8, false);
+		audio_play_sound(sndBeep, 8, false);//Play a sound effect
 	}
 	selectedWeapon++;
-	if selectedWeapon >= array_length(_playerWeapons){
+	if(selectedWeapon >= array_length(_playerWeapons)){
 		selectedWeapon = 0;	
 	}
 
@@ -351,17 +351,15 @@ if swapKeyPressed{//same as upswap key
 }
 
 //Cycle through weapons
-if upSwapKeyPressed{
+if(upSwapKeyPressed){
 	//Change the selection and wrap around
-	if array_length(_playerWeapons) > 1{
-		//Play a sound effect
-		audio_play_sound(sndCock, 8, false);
+	if(array_length(_playerWeapons) > 1){
+		audio_play_sound(sndCock, 8, false);//Play a sound effect
 	}else{
-		//Play a sound effect
-		audio_play_sound(sndBeep, 8, false);
+		audio_play_sound(sndBeep, 8, false);//Play a sound effect
 	}
 	selectedWeapon++;
-	if selectedWeapon >= array_length(_playerWeapons){
+	if(selectedWeapon >= array_length(_playerWeapons)){
 		selectedWeapon = 0;	
 	}
 
@@ -370,17 +368,15 @@ if upSwapKeyPressed{
 }
 
 //Cycle through weapons
-if downSwapKeyPressed{
+if(downSwapKeyPressed){
 	//Change the selection and wrap around
-	if array_length(_playerWeapons) > 1{
-		//Play a sound effect
-		audio_play_sound(sndCock, 8, false);
+	if(array_length(_playerWeapons) > 1){
+		audio_play_sound(sndCock, 8, false);//Play a sound effect
 	}else{
-		//Play a sound effect
-		audio_play_sound(sndBeep, 8, false);
+		audio_play_sound(sndBeep, 8, false);//Play a sound effect
 	}
 	selectedWeapon--;
-	if selectedWeapon < 0{
+	if(selectedWeapon < 0){
 		selectedWeapon = array_length(_playerWeapons) - 1;	
 	}
 
@@ -394,11 +390,11 @@ weapon = _playerWeapons[selectedWeapon];//For manual weapon pickup but less opti
 #endregion
 
 //Shoot the weapon
-if shootTimer > 0 {
+if(shootTimer > 0){
 	shootTimer--;
 }
 
-if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weapon == global.WeaponList.pistol){
+if(shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weapon == global.WeaponList.pistol)){
 	
 	//subtract ammo
 	if(weapon != global.WeaponList.pistol && weapon != global.WeaponList.hpistol && weapon != global.WeaponList.upistol){
@@ -435,23 +431,23 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weap
 	create_animated_vfx(sShootFlash, _weaponTipX, _weaponTipY, depth-10, aimDir);
 	//Play a sound effect
 	//audio_play_sound(snd8BitExplosion1, 8, false);
-	if weapon == global.WeaponList.pistol || weapon == global.WeaponList.hpistol || weapon == global.WeaponList.upistol{
+	if(weapon == global.WeaponList.pistol || weapon == global.WeaponList.hpistol || weapon == global.WeaponList.upistol){
 		audio_play_sound(sndShot, 6, false);
-	} else if weapon == global.WeaponList.raygun || weapon == global.WeaponList.hraygun || weapon == global.WeaponList.uraygun{
+	}else if(weapon == global.WeaponList.raygun || weapon == global.WeaponList.hraygun || weapon == global.WeaponList.uraygun){
 		audio_play_sound(sndRGBlast, 6, false);
-	} else if weapon == global.WeaponList.shotgun || weapon == global.WeaponList.hshotgun || weapon == global.WeaponList.ushotgun{
+	}else if(weapon == global.WeaponList.shotgun || weapon == global.WeaponList.hshotgun || weapon == global.WeaponList.ushotgun){
 		audio_play_sound(sndSGBlast, 6, false);
-	} else if weapon == global.WeaponList.sniper || weapon == global.WeaponList.hsniper || weapon == global.WeaponList.usniper{
+	}else if(weapon == global.WeaponList.sniper || weapon == global.WeaponList.hsniper || weapon == global.WeaponList.usniper){
 		audio_play_sound(sndSniperBlast, 6, false);
-	} else if weapon == global.WeaponList.assault || weapon == global.WeaponList.hassault || weapon == global.WeaponList.uassault{
+	}else if(weapon == global.WeaponList.assault || weapon == global.WeaponList.hassault || weapon == global.WeaponList.uassault){
 		audio_play_sound(sndAssault, 6, false);
-	} else if weapon == global.WeaponList.smg || weapon == global.WeaponList.hsmg || weapon == global.WeaponList.usmg{
+	}else if(weapon == global.WeaponList.smg || weapon == global.WeaponList.hsmg || weapon == global.WeaponList.usmg){
 		audio_play_sound(sndSMG, 6, false);
-	} else if weapon == global.WeaponList.lmg || weapon == global.WeaponList.hlmg || weapon == global.WeaponList.ulmg{
+	}else if(weapon == global.WeaponList.lmg || weapon == global.WeaponList.hlmg || weapon == global.WeaponList.ulmg){
 		audio_play_sound(sndLMG, 6, false);
-	} else if weapon == global.WeaponList.bazooka || weapon == global.WeaponList.hbazooka || weapon == global.WeaponList.ubazooka{
+	}else if(weapon == global.WeaponList.bazooka || weapon == global.WeaponList.hbazooka || weapon == global.WeaponList.ubazooka){
 		audio_play_sound(sndRocket, 6, false);
-	} else{
+	}else{
 		audio_play_sound(sndShot, 6, false);
 	}
 	//Create the correct number of bullets
@@ -463,7 +459,7 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weap
 			dir = other.aimDir - _spread/2 + _spreadDiv * i;
 			
 			//Turn the bullet to the correct direction at creation if necessary
-			if dirFix == true{
+			if(dirFix == true){
 				image_angle = dir;
 			}
 		}
@@ -472,7 +468,7 @@ if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] > 0 || weap
 	//create_screen_pause(2);//use if you want to slow down time when shooting
 }
 
-if shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0){
+if(shootKey && shootTimer <= 0 && (global.PlayerAmmo[selectedWeapon] == 0)){
 	//shootTimer = weapon.cooldown;//Old code
 	var modifiedCooldown = weapon.cooldown;
 	if(global.firerate) {
@@ -495,7 +491,7 @@ if(global.juggernaut) {
 	var lowHealthThreshold = 30;//Set the desired low health threshold here
 }
 
-if (hp <= lowHealthThreshold && !lowHealth) {
+if(hp <= lowHealthThreshold && !lowHealth) {
     lowHealth = true;
 	//audio_loop_sound
 	audio_play_sound(sndLowHealth, 9, true);
@@ -505,14 +501,14 @@ if (hp <= lowHealthThreshold && !lowHealth) {
 }
 
 //Check if the player recovered health and stop the effects
-if (hp > lowHealthThreshold && lowHealth) {
+if(hp > lowHealthThreshold && lowHealth) {
     lowHealth = false;
     audio_stop_sound(sndLowHealth);//Stop the looped sound
     draw_set_alpha(1);//Reset the screen color when health is not low
 }
 
 //Call the screen flashing effect when the player's health is low
-if (lowHealth) {
+if(lowHealth) {
 	//scr_flash
 	image_blend = c_red;
 	scr_flash_screen();
@@ -1191,7 +1187,7 @@ if(instance_exists(oArmoryAugmentor2)){
 }
 
 //Death / Game Over
-if hp <= 0{	
+if(hp <= 0){	
 	audio_pause_all();
 	//Play a sound effect
 	audio_play_sound(sndGameOver, 8, false);

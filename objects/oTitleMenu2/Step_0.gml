@@ -134,8 +134,7 @@ if(menu_level == 6 && pos == 0){//Check if in the Settings menu and the first op
         global.musicvolume = max(0, global.musicvolume - 0.1);//Reduce volume by 10%
 		//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 		option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
-    }
-    else if(right_key){
+    }else if(right_key){
         global.musicvolume = min(1, global.musicvolume + 0.1);//Increase volume by 10%
 		//option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
 		option[6, 0] = "Music Volume: " + string_format(global.musicvolume * 100, 2, 0) + "%";
@@ -153,8 +152,7 @@ if(menu_level == 6 && pos == 1){//Check if in the Settings menu and the second o
         global.sfxvolume = max(0, global.sfxvolume - 0.1);//Reduce volume by 10%
 		//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
-    }
-    else if(right_key){
+    }else if(right_key){
         global.sfxvolume = min(1, global.sfxvolume + 0.1);//Increase volume by 10%
 		//option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";
 		option[6, 1] = "Sfx Volume: " + string_format(global.sfxvolume * 100, 2, 0) + "%";

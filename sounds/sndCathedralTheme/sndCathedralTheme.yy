@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 86.95653,
+  "duration": 130.53387,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sndCathedralTheme.ogg",
+  "soundFile": "sndCathedralTheme.mp3",
   "type": 0,
   "volume": 1.0,
 }
