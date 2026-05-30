@@ -17,7 +17,7 @@ if(aimDir >= 0 && aimDir < 180){
 	draw_my_laser();
 }
 
-global.MUSIC = sndTestLevelTheme;
+global.MUSIC = sndTestLevelTheme1;
 
 //Draw the player
 draw_self();

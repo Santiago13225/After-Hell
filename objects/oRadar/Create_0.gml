@@ -12,3 +12,4 @@ radarsize = 150;
 radar_surface = -1;
 radar_mask_surface = -1;
 global.radar_dirty = true;
+radar_scale = 0.75;//Adjust this single value to zoom in/out on all maps

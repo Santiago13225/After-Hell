@@ -11,6 +11,7 @@ if(!has_been_interacted){//If we have not interacted with anything yet
 		if(!instance_exists(oTextbox2)){
 			if(global.controllerMode == 0){
 				create_textbox("ShotgunWallbuy");
+				//create_textbox("MusicBlockTile");
 			}else {
 				create_textbox("ShotgunWallbuyC");
 			}

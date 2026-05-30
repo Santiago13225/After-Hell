@@ -853,25 +853,6 @@ if(instance_exists(oDebris)){
 			        //Deduct the cost from the player's score
 			        oHUD2.playerScore -= wallbuyCost;
 					audio_play_sound(sndBuy, 8, false);
-					//REMOVE FROM GRID (CRATE LOGIC)
-					/*var _setup = instance_find(oSetupPathway, 0);
-					if(_setup != noone) {
-						var _grid = _setup.grid;
-
-						var cell = 16;
-
-						var x1 = bbox_left div cell;
-						var y1 = bbox_top div cell;
-						var x2 = bbox_right div cell;
-						var y2 = bbox_bottom div cell;
-
-						for (var gx = x1; gx <= x2; gx++) {
-							for (var gy = y1; gy <= y2; gy++) {
-								mp_grid_clear_cell(_grid, gx, gy);
-							}
-						}
-					}
-					global.grid_dirty = true;*/
 					instance_destroy();
 					//instance_create_depth(oPlayer.x, oPlayer.y, -y, oMedkit);
 			    }else {
@@ -883,6 +864,86 @@ if(instance_exists(oDebris)){
 						instance_destroy(oTextbox2);
 					}	
 			    }
+			}
+		}
+	}
+}
+
+if(instance_exists(oMusicBlockHouse)){
+	with(oMusicBlockHouse){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+				audio_play_sound(sndRadio, 8, false);
+				if(audio_is_playing(sndHouseTheme1)){
+					set_song_ingame(sndHouseTheme2, 2 * 60, 2 *60, true);
+				}else{
+					set_song_ingame(sndHouseTheme1, 2 * 60, 2 *60, true);
+				}
+				instance_destroy(oTextbox2);
+			}
+		}
+	}
+}
+
+if(instance_exists(oMusicBlockFacility)){
+	with(oMusicBlockFacility){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+				audio_play_sound(sndRadio, 8, false);
+				if(audio_is_playing(sndFacilityTheme1)){
+					set_song_ingame(sndFacilityTheme2, 2 * 60, 2 *60, true);
+				}else{
+					set_song_ingame(sndFacilityTheme1, 2 * 60, 2 *60, true);
+				}
+				instance_destroy(oTextbox2);
+			}
+		}
+	}
+}
+
+if(instance_exists(oMusicBlockTemple)){
+	with(oMusicBlockTemple){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+				audio_play_sound(sndRadio, 8, false);
+				if(audio_is_playing(sndTempleTheme1)){
+					set_song_ingame(sndTempleTheme2, 2 * 60, 2 *60, true);
+				}else{
+					set_song_ingame(sndTempleTheme1, 2 * 60, 2 *60, true);
+				}
+				instance_destroy(oTextbox2);
+			}
+		}
+	}
+}
+
+if(instance_exists(oMusicBlockOverlook)){
+	with(oMusicBlockOverlook){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+				audio_play_sound(sndRadio, 8, false);
+				if(audio_is_playing(sndOverlookTheme1)){
+					set_song_ingame(sndOverlookTheme2, 2 * 60, 2 *60, true);
+				}else{
+					set_song_ingame(sndOverlookTheme1, 2 * 60, 2 *60, true);
+				}
+				instance_destroy(oTextbox2);
+			}
+		}
+	}
+}
+
+if(instance_exists(oMusicBlockTestLevel)){
+	with(oMusicBlockTestLevel){
+		if((distance_to_object(oPlayer) < 32) && instance_exists(oTextbox2)){
+			if(keyboard_check_pressed(vk_space) xor ((global.controllerMode == 1) && gamepad_button_check_pressed(0, gp_face3))){
+				audio_play_sound(sndRadio, 8, false);
+				if(audio_is_playing(sndTestLevelTheme1)){
+					set_song_ingame(sndTestLevelTheme2, 2 * 60, 2 *60, true);
+				}else{
+					set_song_ingame(sndTestLevelTheme1, 2 * 60, 2 *60, true);
+				}
+				instance_destroy(oTextbox2);
 			}
 		}
 	}
@@ -1217,6 +1278,11 @@ if((collision_circle(x, y, 32, oShotgunWallbuy2, false, true) ||
     collision_circle(x, y, 32, oLMGWallbuy2, false, true) ||
     collision_circle(x, y, 32, oMedkitWallbuy3, false, true) ||
     collision_circle(x, y, 32, oDebris, false, true) ||
+	collision_circle(x, y, 32, oMusicBlockHouse, false, true) ||
+	collision_circle(x, y, 32, oMusicBlockFacility, false, true) ||
+	collision_circle(x, y, 32, oMusicBlockTemple, false, true) ||
+	collision_circle(x, y, 32, oMusicBlockOverlook, false, true) ||
+	collision_circle(x, y, 32, oMusicBlockTestLevel, false, true) ||
     collision_circle(x, y, 32, oArmoryAugmentor2, false, true))) && instance_exists(oTextbox2) {
     nearWallbuy = true;
 }

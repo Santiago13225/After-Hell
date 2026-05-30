@@ -8,7 +8,7 @@ if(room == rm_Tutorial_Level){
 }
 
 if(room == rm_Mission0_2 || room == rm_Level1){
-	set_song_ingame(sndTestLevelTheme, 2*60, 10*60, true);
+	set_song_ingame(sndTestLevelTheme1, 2*60, 10*60, true);
 }
 
 if(room == rm_House_Level1){

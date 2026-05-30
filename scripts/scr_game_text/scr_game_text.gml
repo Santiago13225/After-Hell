@@ -52,7 +52,10 @@ function scr_game_text(_text_id){
 		case "Upgrade - Standard":
 			scr_text("Upgrade [Cost: 5000] \n[Space] to Purchase \n[E] to Dismiss", true);
 			break;
-			
+		case "MusicBlockTile":
+			scr_text("Music Block \n[Space] to Change the Background Music \n[E] to Dismiss", true);
+			break;
+
 		case "ShotgunWallbuyC":
 			scr_text("Shotgun [Cost: 500] \nAmmo [Cost: 250] \n[^] to Purchase \n[#] to Dismiss", true);
 			break;
@@ -82,6 +85,9 @@ function scr_game_text(_text_id){
 			break;
 		case "Upgrade - StandardC":
 			scr_text("Upgrade [Cost: 5000] \n[^] to Purchase \n[#] to Dismiss", true);
+			break;
+		case "MusicBlockTileC":
+			scr_text("Aww yeah! \n[^] to Change Music \n[#] to Dismiss", true);
 			break;
 	}
 }

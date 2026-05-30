@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sStrongbox3",
-    "path": "sprites/sStrongbox3/sStrongbox3.yy",
+    "name": "sMedkitWallbuy",
+    "path": "sprites/sMedkitWallbuy/sMedkitWallbuy.yy",
   },
   "spriteMaskId": null,
   "visible": true,
